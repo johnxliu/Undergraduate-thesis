@@ -1,0 +1,123 @@
+\chapter{Introducción a la teoría de cuerdas}
+
+
+\section{Motivación}
+
+La teoría
+
+\section{La partícula relativista}
+
+\todo{Fundamentos relatividad especial}
+
+\section{La cuerda relativista}
+
+La teória de cuerdas parte de considerar que las entidades fundamentales son cuerdas
+en vez de partículas. 
+Consideremos primero la descripción relativista de una cuerda. En el caso de una
+partícula la acción es
+\begin{equation}
+  S=-m\int ds = -m\int d\tau \sqrt{-\dot{x}_\mu\dot{x}^\mu}=-m\int dt \sqrt{1-\dot {\vec{x}} \cdot \dot {\vec{x}}}.
+\end{equation}
+
+donde la posición de la partícula $X^\mu$ está parametrizada por $\tau$.
+Una cuerda estará parametrizada por una variable temporal $\tau$ y una variable espacial $\sigma$.
+Para una cuerda cerrada con periodicidad $2\pi$, $X^\mu(\tau,\sigma)=X^\mu(\tau,\sigma+2\pi)$.
+De forma más compacta, $(\sigma^0,\sigma^1)=(\tau,\sigma)$.
+
+La acción de una partícula es proporcional a la longitud de su línea de universo.
+De forma análoga, la acción de una cuerda debería ser proporcional al área de la
+\emph{worldsheet}. 
+La métrica inducida en la \emph{worldsheet} es la \emph{pull-back} de la métrica de Minkowski
+en la \emph{worldsheet},
+\begin{equation}
+  \gamma_{ab}=\pdv{X^\mu}{\sigma^\alpha}\pdv{X^\nu}{\sigma^\beta}\eta_{\mu\nu}.
+\end{equation}
+
+La medida de integración invariante bajo cambios generales de coordenadas más sencillas 
+es $d^2\sigma \sqrt{-\det\gamma}$, por lo que la acción es
+\begin{equation}
+  S_{NG}=-T\int d^2\sigma \sqrt{-\det\gamma}.
+\end{equation}
+
+El parámetro $T$ se corresponde con la tensión de la cuerda y se puede expresar como
+\begin{equation}
+  T=\frac{1}{2\pi\alpha'}
+\end{equation}
+
+donde $\alpha'$ es la pendiente de Regge.
+Para cuantizar la teoría, la raíz cuadrada es problemática, por lo que se introduce
+el campo $h$ definido sobre la \emph{worldsheet} en la llamada acción de Polyakov
+\begin{equation}
+  S_P=-T\int d^2  \sqrt{-h}h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X_\mu.
+\end{equation}
+
+Este campo $h$ se comporta como una métrica en dos dimensiones y queda fijada por las
+ecuaciones de movimiento
+\begin{equation}
+  h_{\alpha\beta}=2f(\sigma)\partial_\alpha X^\mu \partial_\beta X_\mu
+\end{equation}
+
+donde $f(\sigma)$ es una función cualquiera.
+
+%Simetría diffxWeyl y conformal transormations.
+
+Debido a la simetría gauge de la teoría, la cuantización no es directa.
+Para obtener directamente una teoría unitaria, se cuantizan solo los grados de libertad 
+físicos. Como contrapartida, se pierde la invariancia de Lorentz explícita.
+
+Escogamos las coordenadas en el cono de luz
+\begin{equation}
+  \sigma^\pm=\tau\pm\sigma
+\end{equation}
+
+y
+\begin{equation}
+  X^\pm=\frac{1}{\sqrt 2} (X^0 \pm X^{d-1}).
+\end{equation}
+
+Las ecuaciones de movimiento llevan a que 
+\begin{equation}
+  X^+=x^+\alpha p^+ \tau
+\end{equation}
+
+y
+\begin{equation}
+  X^-=X^-_L(\sigma^+)+X^-_R(\sigma^-)
+\end{equation}
+
+donde 
+\begin{equation}
+  X^-_L(\sigma^+)=\frac 1 2 x^- + \frac 1 2 \alpha p^- \sigma^+ + i\sqrt{\frac \alpha 2}
+  \sum_{n\neq0} \frac 1 n \tilde{\alpha}^-_n e^{-in\sigma^+}
+\end{equation}
+
+y
+\begin{equation}
+  X^-_R(\sigma^+)=\frac 1 2 x^- + \frac 1 2 \alpha p^- \sigma^- + i\sqrt{\frac \alpha 2}
+  \sum_{n\neq0} \frac 1 n \alpha^-_n e^{-in\sigma^-}
+\end{equation}
+
+Definiendo
+\begin{equation}
+  L_n=\frac 1 2 \sum_m \alpha_{n-m} \cdot \alpha_m
+\end{equation}
+
+y
+\begin{equation}
+  \tilde{L}_n=\frac 1 2 \sum_m \tilde{\alpha}_{n-m} \cdot \tilde{\alpha}_m.
+\end{equation}
+
+Puesto que $M^2=-p_\mu p^\mu$.
+
+La cuantización conduce a la fórmula de masas 
+\begin{equation}
+  M^2=\frac{4}{\alpha}\sum_{i=1}^{d-2}\sum_{n>0}\qty(\alpha^i_{-n}\alpha^i_n - \frac{d-2}{24})=
+  \frac{4}{\alpha}\sum_{i=1}^{d-2}\sum_{n>0}\qty(\tilde{\alpha}^i_{-n}\tilde{\alpha}^i_n -\frac{d-2}{24})
+\end{equation}
+
+Es importante ver que hay una expresión en términos de modos moviéndose a la derecha
+y otra con modos moviéndose a la izquierda.
+
+\section{Cuantización}
+
+

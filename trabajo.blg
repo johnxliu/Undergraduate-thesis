@@ -1,50 +1,60 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: trabajo.aux
+A level-1 auxiliary file: 1-Introduccion.aux
+A level-1 auxiliary file: 2-Termodinamica.aux
+A level-1 auxiliary file: 3-QFT.aux
 The style file: babunsrt.bst
 Database file #1: mybib.bib
+I was expecting a `,' or a `}'---line 57 of file mybib.bib
+ :       
+ :       url = {http://www.damtp.cam.ac.uk/user/tong/string.html},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty language in Mertens2015
 Warning--empty journal in Mertens2015
-You've used 1 entry,
+Warning--empty publisher in Susskind
+Warning--empty journal in Tong:2009np
+You've used 4 entries,
             2465 wiz_defined-function locations,
-            587 strings with 5579 characters,
-and the built_in function-call counts, 243 in all, are:
-= -- 15
-> -- 4
+            610 strings with 6062 characters,
+and the built_in function-call counts, 827 in all, are:
+= -- 61
+> -- 20
 < -- 0
-+ -- 2
-- -- 1
-* -- 21
-:= -- 39
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 1
++ -- 9
+- -- 5
+* -- 74
+:= -- 120
+add.period$ -- 10
+call.type$ -- 4
+change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 13
-empty$ -- 25
-format.name$ -- 2
-if$ -- 44
+cite$ -- 8
+duplicate$ -- 54
+empty$ -- 98
+format.name$ -- 12
+if$ -- 176
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 21
-num.names$ -- 1
-pop$ -- 6
+int.to.str$ -- 4
+missing$ -- 6
+newline$ -- 34
+num.names$ -- 4
+pop$ -- 25
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 4
+skip$ -- 18
 stack$ -- 0
 substring$ -- 0
-swap$ -- 3
+swap$ -- 15
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 1
-width$ -- 2
-write$ -- 25
-(There were 2 warnings)
+warning$ -- 4
+while$ -- 4
+width$ -- 5
+write$ -- 54
+(There was 1 error message)

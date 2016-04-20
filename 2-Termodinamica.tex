@@ -1,0 +1,170 @@
+\chapter{Termodinámica de cuerdas}
+
+\section{Cálculo de la densidad de estados para una cuerda excitada}
+
+\section{Modelo random walk}
+Intuitivamente, la masa (energía) de una cuerda es su densidad $\sigma$ por la longitud $L$.
+En unidades naturales, la masa tiene unidades inversas a la longitud, por lo que si pensamos
+que la cuerda está dividida en segmentos de longitud $l_s$, 
+\begin{equation}
+  E\sim  \frac{L}{l_s^2}.
+\end{equation}
+
+Cada segmento podrá tener una orientación arbitraria. Para simplificar los cálculos,
+supongamos que toma direcciones ortogonales. Entonces el número de orientaciones posibles
+de cada segmento es $2n$, donde $n$ es el número de dimensiones espaciales accesibles.
+El número de segmentos es $L/l_s$.
+Por tanto, el número de microestados para una energía dada es
+\begin{equation}
+  \omega(E)=(2n)^{(L/l_s)}\propto e^{l_s E \ln (n)}.
+\end{equation}
+
+La entropía de la cuerda es $S\propto El_s$, con temperatura $\beta_H\sim l_S$.
+
+Se puede calcular que el radio del random walk es $R=\expval{r}\sim E^{1/2}$. Esto
+nos dice que cuerdas muy largas estarán contenidas en un volumen pequeño $V\sim E^{D/2}$.
+
+Para una cuerda cerrada, habría que dividir el número de microestados por el 
+volumen de walk, multiplicar por el volumen accesible y dividir por la longitud de la cuerda.
+Entonces,
+\begin{equation}
+  \omega(E)\sim V \frac{e^{\beta_H E}}{E^{1+D/2}}
+\end{equation}
+
+El cálculo de la extensión de una cuerda altamente excitada con respecto a su centro de masas 
+conduce a que $R^2_i$ es proporcional a la suma de las inversas de los números oscilatorios para
+la dirección $i$.
+Por ello, para un nivel energético $N$ fijo, $(\alpha^i_{-1})^N\ket{0}$ tendría la mayor extensión en la dirección $i$, $\sim N$ y
+$\alpha^i_N\ket{0}$ tendría la menor extensión.
+Tomando el promedio sobre todas las direcciones espaciales, $R^2\sim (d-1)\sqrt{N}$, siendo
+$d-1$ el número de direcciones espaciales. Volvemos a  observa la importante peculariedad $R\sim \sqrt{L}$,
+por lo que las cuerdas largas tiende a enmarañarse.
+
+\section{Coalescencia multicuerda}
+
+\section{Termodinámica de cuerda en espacio plano}
+
+%Random walk de una cuerda. Cálculo de la densidad de estados.
+%Coalescencia de cuerdas. Microcanónico. Macrocanónico.
+%Termodinámica de cuerdas. Energía libre. Invariancia modular explícita. Escalar termal.
+
+La función de partición bosónica en un espectro discreto es $z=\prod_i 1/(1-\exp(-\beta E_i))$.
+La energía libre viene dada por $F=-1/\beta \ln z=\beta\sum_i \ln(1-\exp(-\beta E_i))$.
+En el caso continuo, donde $E=E(k)$, reemplazamos el sumatorio por $V\int d^{d-1}k/(2\pi)^{d-1}$.
+Por tanto,
+\begin{equation}
+  F=\frac{V}{\beta}\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\ln(1-\exp(-\beta E))
+\end{equation}
+
+Mediante el desarrollo de Taylor $\ln(1-x)=-\sum^\infty_{r=1} x^r/r$
+\begin{equation}
+  F=-\frac{V}{\beta}\sum^\infty_{r=1} \frac 1 r\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\exp(-r\beta E)
+\end{equation}
+
+Aplicando la identidad
+\begin{equation}
+  \frac 1 r \exp(-\beta r E)=\frac{\beta}{\sqrt{2\pi}}\int_0^\infty \frac{ds}{s^{3/2}}\exp\qty(-\frac{E^2s}{2}-\frac{r^2\beta^2}{2s})
+\end{equation}
+
+y como $E^2=k^2+m^2$
+
+\begin{equation}
+  F=-\frac{V}{\sqrt{2\pi}}\sum^\infty_{r=1} \int_0^\infty \frac{ds}{s^{3/2}} \exp \qty(-\frac{m^2s}{2} -\frac{r^2\beta^2}{2s})
+  \int \frac{d^{d-1}k}{(2\pi)^{d-1}}\exp\qty(-\frac{k^2s}{2})
+\end{equation}
+
+La última integral tiene como resultado $(2\pi s)^{\frac{d-1}{2}}$, por lo que
+\begin{equation}
+  F=-V \int_0^\infty \frac{ds}{s(2\pi s)^{d/2}}\sum^\infty_{r=1} \exp \qty(-\frac{m^2s}{2}- \frac{r^2\beta^2}{2s})
+\end{equation}
+
+Por otro lado, la función de partición de estado multicuerda es $Z=e^z=-\beta F$. 
+Entonces podemos hacer la asociación de la energía libre con integral de camino de 
+una partícula tras aplicar una rotación de Wick en la dimensión temporal y compactificando el
+tiempo con periodo $\beta$
+\begin{equation}
+  Z=-\beta F= \int_0^\infty \frac{ds}{2s}\sum^{'\infty}_{w=-\infty} \int \mathcal{D}x 
+  \exp\qty(-\frac 1 2 \int_0^s d\tau \qty[\qty(\pdv{X^\mu}{t})^2+m^2])
+\end{equation}
+
+Se llega al mismo resultado calculando la función de partición de una partícula  si identificamos 
+el parámetro $s$ con el tiempo propio  de la partícula y compactificamos 
+la coordenada $X^0$ con periodo $\beta$. El número de vueltas que da la
+partícula en la dimensión temporal es $w$. La función de partición se suma sobre
+todas las vueltas posibles y se integra en todos los tiempos propios.
+
+En una teoría de cuerdas bosónica, $d=26$ y la energía libre se obtendría sumando las
+energías libres para tdo el espectro posible, con masas
+\begin{equation}
+  m^2=\frac{2}{\alpha'}(N+\bar N-2)
+\end{equation}
+
+Puesto que se tiene que cumplir el level-matching $N=\bar N$, habrá que incluir en la 
+integral la expresión de la delta de Kronecker
+\begin{equation}
+   \delta_{N\bar N}=\int_{-1/2}^{1/2}d\tau_1 \exp(2\pi i\tau_1 (N-\bar N))
+\end{equation}
+
+Entonces
+\begin{equation}
+  F=\sum_i \delta_{N_i \bar N_i} F(N_i,\bar N_i)
+\end{equation}
+
+donde $i$ recorre todas las posibles combinaciones de $N_i$ y $\bar N_i$.
+Haciendo el cambio de variable $s=2\pi\alpha'\tau_2$
+\begin{equation}
+  F=-V \int_0^\infty \frac{d\tau_2}{\tau_2(4\pi^2\alpha'\tau_2)^{d/2}}\frac 1 2\sum_{r=-\infty}^{'\infty} 
+  \sum_i e^{-(N_i+\bar N_i -2)2\pi\tau_2} e^{-\frac{r^2\beta^2}{4\pi\alpha'\tau_2}}\int_{-1/2}^{1/2} d\tau_1 e^{2\pi i\tau_1(N_i-\bar N_i)}
+\end{equation}
+
+Definiendo $\tau=\tau_1+i\tau_2$ y $q=e^{2\pi i\tau_1}$, se introduce la $\eta$ de 
+Dedekind como
+\begin{equation}
+  \eta(\tau)=q^{1/24}\prod_{n=1}^{\infty} (1-q^n)
+\end{equation}
+
+Se llega a
+\begin{equation}
+  F=-V \sum_{r=-\infty}^{'\infty} \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1  \frac{1}{(4\pi^2\alpha'\tau_2)^{d/2}}
+  \abs{\eta(\tau)}^{-2d+4}\exp\qty(-\frac{r^2\beta^2}{4\pi\alpha'\tau_2})
+\end{equation}
+
+El mismo resultado se obtiene calculla la integral de camino en el toro
+\begin{equation}
+  Z= \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal Dx
+  \exp\qty(-\frac{1}{4\pi\alpha'}\int d^2\sigma \sqrt h h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X_\mu)
+\end{equation}
+
+donde la región de 
+
+Se ha llegado a una expresión cuyo integradndo no es modular invariante. Es decir, 
+$\tau\to\tau+1$ y $\tau\to1/\tau$ no son invariancias.
+Para conseguir la invariancia modular se restringe el dominio de integración al dominio
+fundamental y se modifica el integrado, añadiendo el número cuántico $w$ sobre el que 
+se suma, de modo que para $d=26$ se tiene
+\begin{equation}
+  F=-V \sum_{r,w=-\infty}^{\infty} \int_\mathcal{F}  \frac{d\tau_1d\tau_2}{2\tau_2}   \frac{1}{(4\pi^2\alpha'\tau_2)^{13}}
+  \abs{\eta(\tau)}^{-48}\exp\qty(-\frac{\abs{r^2-w\tau}^2\beta^2}{4\pi\alpha'\tau_2})
+\end{equation}
+
+Haciendo la suma, se llega a
+\begin{equation}
+  Z=-\beta F=\int_{\matchal F}\frac{d\tau_1d\tau_2}{2\tau_2}\Tr\qty(q^{L_0}\bar q^{\bar L_0})
+\end{equation}
+
+donde
+\begin{align}
+  L_0&=\alpha'\frac{p^2}{4}+\frac{\alpha'}{4}\qty(\frac{2\pi n}{\beta}+\frac{w\beta}{2\pi\alpha'})^2+N\\ 
+ \bar L_0&=\alpha'\frac{p^2}{4}+\frac{\alpha'}{4}\qty(\frac{2\pi n}{\beta}-\frac{w\beta}{2\pi\alpha'})^2+\bar N
+\end{align}
+
+
+%\section{Cuerdas en background estático}
+%Supongamos una cuerda en presencia de un background $G_{\mu\nu}$ independiente del tiempo.
+%La función de partición calculada como la integral de camino en el toro es
+%\begin{equation}
+%  Z= \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal Dx \sqrt G
+%  \exp\qty(-\frac{1}{4\pi\alpha'}\int d^2\sigma \sqrt h h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X^\nu G_{\mu\nu})
+%\end{equation}
+%
+%La métrica de la worldsheet

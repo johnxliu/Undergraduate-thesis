@@ -1,0 +1,152 @@
+\chapter{QFT en espacio curvo}
+
+\section{Agujeros negros}
+El caso más sencillo de agujero negro es el agujero negro de Schwarzschild, que
+describe una distribución de masa con simetría esférica y estática. La métrica asociada
+es 
+\begin{equation}
+  ds^2= \qty(1-\frac{2MG}{r})dt^2-\qty(1-\frac{2MG}{r})^{-1}dr^2-r^2d\Omega^2.
+\end{equation}
+
+Observamos que en el radio de Schwarzschild $r_S=2MG$ la componente temporal de la 
+métrica se anula mientras que la componente radial va a infinito.
+Se denomina horizonte de sucesos a la esfera con radio $r_S$ centrada en $r=0$.
+
+Para estudiar la física cerca del horizonte es más conveniente emplear las coordenadas
+de Rindler. Para ello sustituimos la coordenada radial por la distancia propia hasta
+el horizonte
+\begin{equation}
+  \rho(r)=\int_0^r dr' \sqrt{g_{rr}(r')}.
+\end{equation}
+
+La métrica se transforma en 
+\begin{equation}
+  ds^2=\qty(1-\frac{2MG}{r(\rho)})dt^2-d\rho^2-r(\rho)^2d\Omega^2.
+\end{equation}
+
+A distancias próximas al horizonte $r\approx r_S$, $\rho\approx 2\sqrt{2MG(r-2MG)}$
+\begin{equation}
+  ds^2\approx \rho^2\qty(\frac{dt}{4MG})^2 -d\rho^2-r(\rho)^2d\Omega^2.
+\end{equation}
+
+Cerca de la coordenada azimutal $\theta=0$, podemos reemplzar las coordenadas
+angulares $\theta,\phi$ por las coordenadas cartesianas $x,y$. Definiendo
+también un tiempo adimensional $\omega=t/(4MG)$ obtenemos la métrica de Rindler
+\begin{equation}
+  ds^2=\rho^2d\omega^2 -d\rho^2 -dx^2-dy^2.
+\end{equation}
+
+Esta métrica describe en realidad un espacio de Minkowski en coordenadas hiperbólicas.
+Si escogemos la transformación
+\begin{align}
+  T&=\rho \sinh \omega, \\
+  Z&=\rho \cosh \omega.
+\end{align}
+la métrica es
+\begin{equation}
+  ds^2=dT^2-dZ^2-dx^2-dy^2.
+\end{equation}
+
+Es conveniente definir un observador fijo para cada punto del espacio, llamado
+FIDO. Estos observadores para mantenerse
+en reposo dentro del campo gravitatorio necesitan una fuerza que los mantenga
+en su sitio. Para los FREFOs, su aceleración es, para $\rho<<MG$ es aproximadamente $1/\rho$.
+
+Si dividimos el espacio de Minkowski en cuatro regiones, el espacio de Rindler ocupa
+la región I. Los FREFOs emplean el las coordenadas del (T,Z,x,y), mientras que
+los FREFOS emplean $(\omega, \rho, x, y)$. El horizonte se sitúa en $T=Z=0$, o
+en coordenadas de Rindler, $\rho=0$.
+Gráficamente, se observa que una translación espacial de $\omega$ para un equivale
+a un boost en el espacio de Minkowski.
+
+Al espacio de Rindler solo le llega información de I y IV, pero la región II está 
+desconectada causalmente por culpa del horizonte.
+Además, un partícula que pase de IV a I será vista como proveniente del tiempo 
+$\omega=-\infty$, por lo que se pueden interpretar como condiciones iniciales.
+
+Estudiamos un campo escalar masivo cuántico $\xi$ en un espacio de Rindler.
+La evolución temporal de un sistema cualquiera viene dada por un hamiltoniano. En el
+espacio de Rindler la evolución en $\omega$ se determina mediante el hamiltoniano de
+Rindler, cuya expresión en función del tensor energía-momento es
+\begin{equation}
+  H_R=\int_0^\infty d\rho dxdy \rho T^{00} (\rho, x, y).
+\end{equation}
+
+En el caso de un campo escalar masivo sometido a un potencial $V$, la densidad de energía
+es
+\begin{equation}
+  T^{00}=\frac{\Pi^2}{2}+\frac{1}{2}\qty(\nabla \xi)^2+V(\xi).
+\end{equation}
+
+Entonces el hamiltoniano es
+\begin{equation}
+  H_R=\int_0^\infty d\rho dx_\perp \frac{\rho}{2}\qty(\Pi^2+\qty(\pdv{\xi}{\rho})^2+\qty(\pdv{\xi}{x_\perp})^2+2V(\xi)).
+\end{equation}
+
+Desde el punto de vista del espacio de Minkowski, $H_R$ es el generador de boosts en 
+la dirección Z.
+
+En una teoría cuántica, el hecho que haya correlación entre el campo para dos puntos
+del espacio origina un fenómeno interesante en el espacio de Rindler. 
+Hemos visto que la región III está desconectada de la región I, por lo que consideramos
+al campo en cada región como subsistemas distintos. Pero debido a que el campo en I está
+correlacionado con el campo III, están entrelazados entre sí.
+Por esta razón, no podemos describir al campo en I como un sistema puro como una
+matriz de densidad obtenida tomando la traza parcial en III de la matriz de densidad
+del sistema completo.
+
+En general, si el estado asociado a dos subsistemas A y B que no están interactuando 
+es $\ket{\Psi}$, su matriz de densidad es
+\begin{equation}
+  \rho_{AB}=\ket{\Psi}\bra{\Psi}.
+\end{equation}
+
+La matriz de densidad que describe el sistema A es
+\begin{equation}
+  \rho_{A}=\Tr_B \rho_{AB}=\expval{\rho_{AB}}{\beta} .
+\end{equation}
+ 
+A cada matriz de densidad le corresponde la entropía de von Neumann
+\begin{equation}
+  S=-\Tr (\rho_A \ln \rho_A)=-\Sum_j \rho_j \ln \rho_j.
+\end{equation}
+
+Donde $\rho_j$ son los valores propios de $\rho_A$.
+Esta entropía se debe a que estamos perdiendo información al ignorar el subsistema $B$, que 
+está entrelazado con $A$, por lo que también se denomina entropía de entrelazamiento.
+La intepretación de $\rho_j$ es que estamos describiendo un sistema cuyo estado no 
+conocemos, pero sabemos que a cada estado le corresponde una probabilidad $\rho_j$.
+
+Por otro lado un sistema termodinámico en equilibrio a temperatura $\beta$ tiene 
+asociado la matriz densidad 
+\begin{equation}
+  \rho=\frac{e^{-\beta H}}{\Tr e^{\beta H}}.
+\end{equation}
+
+Retomamos el campo escalar en un espacio de Rindler. 
+Para $T=0$, los campos en cada punto forman un conjunto completo de observables que 
+conmutan. Denominamos $\xi_L$ a los campos en $Z<0$ y $\xi_R$ si $Z>0$.
+En teoría cuántica de campos, un estado se describe como una distribución que 
+depende de los campos $\Psi[\xi]=\Psi[\xi_L,\xi_R]$.
+
+Supondremos que $\Psi[\xi_L,\xi_R]$ está en el estado fundamental (vacío) del hamiltoniano
+de Minkowski. Para hallar el estado fundamental mediante la integral de camino 
+en mecánica cuántica de partículas aplicamos
+\begin{align}
+  \braket{y,T}{x,0}\sim \int_{X(0)=x,X(T)=y} \mathcal D X e^{-S} \sim 
+  \mel{y}{e^{-HT}}{x}=\sum_{n,n'} \ip{y}{n}\mel{n}{e^{-HT}}{n'}\ip{n'}{n}=\\
+  =\sum_{n,n'} \Psi_n(y) e^{-E_n T} \bar{\Psi}_n(x)\sim   \Psi_0(y) e^{-E_0 T} \bar{\Psi}_0(x).
+\end{align}
+
+Donde hemos aplicado una rotación de Wick $t\to T=it$ por continuación analítica.
+Por lo que $\bar{\Psi}_0(x)\sim \int_{X(0)=x} \mathcal D x e^{-S}$.
+De forma similar en teoría cuántica de campos 
+\begin{equation}
+  \Psi[\xi_L,\xi_R]=\frac{1}{\sqrt{Z}}\int_{X^0>0, \xi(X^0=0)=(\xi_L,\xi_R)} e^{-S}
+\end{equation}
+
+Para evaluar la integral, tenemos en cuenta que como la translación en $\omega$
+equivale a un boost en el espacio de Minkowski, en el espacio euclídeo se traduce
+en una rotación.
+El ángulo $\theta$ con respecto al eje $Z$ en el plano $(Z,X^0)$ se corresponde con
+el tiempo de Rindler $\omega$.
