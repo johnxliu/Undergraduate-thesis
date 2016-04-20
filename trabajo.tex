@@ -1,5 +1,4 @@
-\documentclass[secnumarabic,nobalancelastpage,amsmath,amssymb,10pt,
-nofootinbib]{memoir}
+\documentclass[secnumarabic,nobalancelastpage,10pt,nofootinbib,a4paper]{memoir}
 %\documentclass[aps,secnumarabic,nobalancelastpage,amsmath,amssymb,
 %nofootinbib]{revtex4}
 
@@ -8,32 +7,32 @@ nofootinbib]{memoir}
 
 \usepackage[spanish, activeacute]{babel} %Definir idioma español
 \usepackage[utf8]{inputenc} %Codificacion utf-8
+\usepackage[T1]{fontenc}
 
-\usepackage{physics}
 \usepackage{graphics}      % standard graphics specifications
 \usepackage{graphicx}      % alternative graphics specifications
-\usepackage{longtable}     % helps with long table options
 \usepackage{url}           % for on-line citations
-\usepackage{bm}            % special 'bold-math' package
 \usepackage{hyperref}
+%\usepackage{cleveref}
+\usepackage{bm}            % special 'bold-math' package
 
-\usepackage{amsfonts}
-\usepackage{booktabs}
+\usepackage{amsmath,amssymb,amsfonts}
 \usepackage{physics}
-\usepackage{epigraph}
+\usepackage[exponent-product=\cdot,range-phrase=--,range-units=single]{siunitx}
+
+\usepackage{longtable}     % helps with long table options
+\usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{babelbib}
-\usepackage[exponent-product=\cdot,range-phrase=--,range-units=single]{siunitx}
+\usepackage{epigraph}
+
 %\setlength{\paperheight}{11in}
-
 \usepackage{todonotes}
+\usepackage{microtype}
 
-\newcommand{\reals}{\mathbb{R}}
-\newtheorem{defi}{Definición}
+\graphicspath{{images/}}
+
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
-\makeatletter
-\def\Dated@name{Fecha: }
-\makeatother
 
 
 \begin{document}
@@ -55,6 +54,8 @@ nofootinbib]{memoir}
 \mainmatter
 
 \renewcommand{\baselinestretch}{1.50}\normalsize
+
+\include{0-Abstract}
 
 \include{1-Introduccion}
 

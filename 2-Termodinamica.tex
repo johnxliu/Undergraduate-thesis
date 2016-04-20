@@ -3,11 +3,13 @@
 \section{Cálculo de la densidad de estados para una cuerda excitada}
 
 \section{Modelo random walk}
-Intuitivamente, la masa (energía) de una cuerda es su densidad $\sigma$ por la longitud $L$.
+
+\todo{Revisar planteamiento}
+Intuitivamente, la masa (energía) de una cuerda es su densidad lineal $\sigma$ por su longitud $L$.
 En unidades naturales, la masa tiene unidades inversas a la longitud, por lo que si pensamos
-que la cuerda está dividida en segmentos de longitud $l_s$, 
+que la cuerda está dividida en $N$ segmentos de longitud $l_s$, 
 \begin{equation}
-  E\sim  \frac{L}{l_s^2}.
+  E\sim  \frac{N}{l_s} \sim \frac{L}{l_s^2}.
 \end{equation}
 
 Cada segmento podrá tener una orientación arbitraria. Para simplificar los cálculos,
@@ -28,8 +30,11 @@ Para una cuerda cerrada, habría que dividir el número de microestados por el
 volumen de walk, multiplicar por el volumen accesible y dividir por la longitud de la cuerda.
 Entonces,
 \begin{equation}
-  \omega(E)\sim V \frac{e^{\beta_H E}}{E^{1+D/2}}
+  \omega(E)\sim V \frac{e^{\beta_H E}}{E^{1+D/2}}.
 \end{equation}
+
+\todo{No necesitamos conocer los detalles de la teoría}
+De esta forma, obtenemos la densidad de estados 
 
 El cálculo de la extensión de una cuerda altamente excitada con respecto a su centro de masas 
 conduce a que $R^2_i$ es proporcional a la suma de las inversas de los números oscilatorios para
@@ -42,10 +47,15 @@ por lo que las cuerdas largas tiende a enmarañarse.
 
 \section{Coalescencia multicuerda}
 
-\section{Termodinámica de cuerda en espacio plano}
+\todo{Repaso de las colectividades estadísticas}
 
-%Random walk de una cuerda. Cálculo de la densidad de estados.
-%Coalescencia de cuerdas. Microcanónico. Macrocanónico.
+\subsection{Formulación microcanónica}
+
+
+\subsection{Formulación canónica}
+
+\section{Termodinámica de cuerdas en espacio plano}
+
 %Termodinámica de cuerdas. Energía libre. Invariancia modular explícita. Escalar termal.
 
 La función de partición bosónica en un espectro discreto es $z=\prod_i 1/(1-\exp(-\beta E_i))$.
@@ -149,7 +159,7 @@ se suma, de modo que para $d=26$ se tiene
 
 Haciendo la suma, se llega a
 \begin{equation}
-  Z=-\beta F=\int_{\matchal F}\frac{d\tau_1d\tau_2}{2\tau_2}\Tr\qty(q^{L_0}\bar q^{\bar L_0})
+  Z=-\beta F=\int_{\mathcal F}\frac{d\tau_1d\tau_2}{2\tau_2}\Tr\qty(q^{L_0}\bar q^{\bar L_0})
 \end{equation}
 
 donde

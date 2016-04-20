@@ -1,16 +1,12 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: trabajo.aux
+A level-1 auxiliary file: 0-Abstract.aux
 A level-1 auxiliary file: 1-Introduccion.aux
 A level-1 auxiliary file: 2-Termodinamica.aux
 A level-1 auxiliary file: 3-QFT.aux
 The style file: babunsrt.bst
 Database file #1: mybib.bib
-I was expecting a `,' or a `}'---line 57 of file mybib.bib
- :       
- :       url = {http://www.damtp.cam.ac.uk/user/tong/string.html},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty language in Mertens2015
 Warning--empty journal in Mertens2015
@@ -18,30 +14,30 @@ Warning--empty publisher in Susskind
 Warning--empty journal in Tong:2009np
 You've used 4 entries,
             2465 wiz_defined-function locations,
-            610 strings with 6062 characters,
-and the built_in function-call counts, 827 in all, are:
-= -- 61
+            612 strings with 6124 characters,
+and the built_in function-call counts, 840 in all, are:
+= -- 63
 > -- 20
 < -- 0
 + -- 9
 - -- 5
-* -- 74
-:= -- 120
-add.period$ -- 10
+* -- 76
+:= -- 122
+add.period$ -- 11
 call.type$ -- 4
 change.case$ -- 2
 chr.to.int$ -- 0
 cite$ -- 8
 duplicate$ -- 54
-empty$ -- 98
+empty$ -- 99
 format.name$ -- 12
-if$ -- 176
+if$ -- 179
 int.to.chr$ -- 0
 int.to.str$ -- 4
 missing$ -- 6
-newline$ -- 34
+newline$ -- 35
 num.names$ -- 4
-pop$ -- 25
+pop$ -- 24
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
@@ -56,5 +52,5 @@ type$ -- 0
 warning$ -- 4
 while$ -- 4
 width$ -- 5
-write$ -- 54
-(There was 1 error message)
+write$ -- 56
+(There were 4 warnings)

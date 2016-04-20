@@ -41,5 +41,7 @@
 \btxnamefont {\btxlastnamefont {Tong}, David}\btxauthorcolon\ \btxjtitlefont
   {\btxifchangecase {{String Theory}}{{String Theory}}}.
 \newblock 2009.
+\newblock {\latintext
+  \btxurlfont{http://www.damtp.cam.ac.uk/user/tong/string.html}}.
 
 \end{thebibliography}
