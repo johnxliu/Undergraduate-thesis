@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+  \providebibliographyfont{name}{}%
+  \providebibliographyfont{lastname}{}%
+  \providebibliographyfont{title}{\emph}%
+  \providebibliographyfont{jtitle}{\btxtitlefont}%
+  \providebibliographyfont{etal}{\emph}%
+  \providebibliographyfont{journal}{}%
+  \providebibliographyfont{volume}{}%
+  \providebibliographyfont{ISBN}{\MakeUppercase}%
+  \providebibliographyfont{ISSN}{\MakeUppercase}%
+  \providebibliographyfont{url}{\url}%
+  \providebibliographyfont{numeral}{}%
+  \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {Mertens2015}
+\btxnamefont {\btxlastnamefont {Mertens}, Thomas\btxfnamespacelong
+  G.}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase {{Hagedorn String
+  Thermodynamics in Curved Spacetimes and near Black Hole Horizons}}{{Hagedorn
+  String Thermodynamics in Curved Spacetimes and near Black Hole Horizons}}}.
+\newblock 2015.
+\newblock {\latintext \btxurlfont{http://arxiv.org/abs/1506.07798}}.
+
+\end{thebibliography}

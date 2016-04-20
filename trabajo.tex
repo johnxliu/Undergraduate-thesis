@@ -1,0 +1,506 @@
+\documentclass[secnumarabic,nobalancelastpage,amsmath,amssymb,10pt,
+nofootinbib]{memoir}
+%\documentclass[aps,secnumarabic,nobalancelastpage,amsmath,amssymb,
+%nofootinbib]{revtex4}
+
+% secnumarabic is a particularly nice way of identifying sections by
+% number to aid electronic review and commentary.
+
+\usepackage[spanish, activeacute]{babel} %Definir idioma español
+\usepackage[utf8]{inputenc} %Codificacion utf-8
+
+\usepackage{physics}
+\usepackage{graphics}      % standard graphics specifications
+\usepackage{graphicx}      % alternative graphics specifications
+\usepackage{longtable}     % helps with long table options
+\usepackage{url}           % for on-line citations
+\usepackage{bm}            % special 'bold-math' package
+\usepackage{hyperref}
+
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{physics}
+\usepackage{epigraph}
+\usepackage{tabularx}
+\usepackage{babelbib}
+\usepackage[exponent-product=\cdot,range-phrase=--,range-units=single]{siunitx}
+%\setlength{\paperheight}{11in}
+
+\newcommand{\reals}{\mathbb{R}}
+\newtheorem{defi}{Definición}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\makeatletter
+\def\Dated@name{Fecha: }
+\makeatother
+
+
+\begin{document}
+
+\title{La temperatura de Hagedorn y la entropía de agujeros negros}
+\author         {John Liu Anta\\ Universidad de Oviedo}
+\date{\today}
+
+
+\maketitle
+\thispagestyle{empty}
+
+
+\frontmatter
+
+\tableofcontents*
+
+
+
+\mainmatter
+
+
+\renewcommand{\baselinestretch}{1.50}\normalsize
+
+\chapter{Introducción a la teoría de cuerdas}
+%ST clásica y cuantización
+
+\section{La partícula relativista}
+
+
+\section{La cuerda relativista}
+
+La teória de cuerdas parte de considerar que las entidades fundamentales son cuerdas
+en vez de partículas. 
+Consideremos primero la descripción relativista de una cuerda. En el caso de una
+partícula la acción es
+\begin{equation}
+  S=-m\int ds = -m\int d\tau \sqrt{-\dot{x}_\mu\dot{x}^\mu}=-m\int dt \sqrt{1-\dot {\vec{x}} \cdot \dot {\vec{x}}}.
+\end{equation}
+
+donde la posición de la partícula $X^\mu$ está parametrizada por $\tau$.
+Una cuerda estará parametrizada por una variable temporal $\tau$ y una variable espacial $\sigma$.
+Para una cuerda cerrada con periodicidad $2\pi$, $X^\mu(\tau,\sigma)=X^\mu(\tau,\sigma+2\pi)$.
+De forma más compacta, $(\sigma^0,\sigma^1)=(\tau,\sigma)$.
+
+La acción de una partícula es proporcional a la longitud de su línea de universo.
+De forma análoga, la acción de una cuerda debería ser proporcional al área de la
+\emph{worldsheet}. 
+La métrica inducida en la \emph{worldsheet} es la \emph{pull-back} de la métrica de Minkowski
+en la \emph{worldsheet},
+\begin{equation}
+  \gamma_{ab}=\pdv{X^\mu}{\sigma^\alpha}\pdv{X^\nu}{\sigma^\beta}\eta_{\mu\nu}.
+\end{equation}
+
+La medida de integración invariante bajo cambios generales de coordenadas más sencillas 
+es $d^2\sigma \sqrt{-\det\gamma}$, por lo que la acción es
+\begin{equation}
+  S_{NG}=-T\int d^2\sigma \sqrt{-\det\gamma}.
+\end{equation}
+
+El parámetro $T$ se corresponde con la tensión de la cuerda y se puede expresar como
+\begin{equation}
+  T=\frac{1}{2\pi\alpha'}
+\end{equation}
+
+donde $\alpha'$ es la pendiente de Regge.
+Para cuantizar la teoría, la raíz cuadrada es problemática, por lo que se introduce
+el campo $h$ definido sobre la \emph{worldsheet} en la llamada acción de Polyakov
+\begin{equation}
+  S_P=-T\int d^2  \sqrt{-h}h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X_\mu.
+\end{equation}
+
+Este campo $h$ se comporta como una métrica en dos dimensiones y queda fijada por las
+ecuaciones de movimiento
+\begin{equation}
+  h_{\alpha\beta}=2f(\sigma)\partial_\alpha X^\mu \partial_\beta X_\mu
+\end{equation}
+
+donde $f(\sigma)$ es una función cualquiera.
+
+%Simetría diffxWeyl y conformal transormations.
+
+Debido a la simetría gauge de la teoría, la cuantización no es directa.
+Para obtener directamente una teoría unitaria, se cuantizan solo los grados de libertad 
+físicos. Como contrapartida, se pierde la invariancia de Lorentz explícita.
+
+Escogamos las coordenadas en el cono de luz
+\begin{equation}
+  \sigma^\pm=\tau\pm\sigma
+\end{equation}
+
+y
+\begin{equation}
+  X^\pm=\frac{1}{\sqrt 2} (X^0 \pm X^{d-1}).
+\end{equation}
+
+Las ecuaciones de movimiento llevan a que 
+\begin{equation}
+  X^+=x^+\alpha p^+ \tau
+\end{equation}
+
+y
+\begin{equation}
+  X^-=X^-_L(\sigma^+)+X^-_R(\sigma^-)
+\end{equation}
+
+donde 
+\begin{equation}
+  X^-_L(\sigma^+)=\frac 1 2 x^- + \frac 1 2 \alpha p^- \sigma^+ + i\sqrt{\frac \alpha 2}
+  \sum_{n\neq0} \frac 1 n \tilde{\alpha}^-_n e^{-in\sigma^+}
+\end{equation}
+
+y
+\begin{equation}
+  X^-_R(\sigma^+)=\frac 1 2 x^- + \frac 1 2 \alpha p^- \sigma^- + i\sqrt{\frac \alpha 2}
+  \sum_{n\neq0} \frac 1 n \alpha^-_n e^{-in\sigma^-}
+\end{equation}
+
+Definiendo
+\begin{equation}
+  L_n=\frac 1 2 \sum_m \alpha_{n-m} \cdot \alpha_m
+\end{equation}
+
+y
+\begin{equation}
+  \tilde{L}_n=\frac 1 2 \sum_m \tilde{\alpha}_{n-m} \cdot \tilde{\alpha}_m.
+\end{equation}
+
+Puesto que $M^2=-p_\mu p^\mu$.
+
+La cuantización conduce a la fórmula de masas 
+\begin{equation}
+  M^2=\frac{4}{\alpha}\sum_{i=1}^{d-2}\sum_{n>0}\qty(\alpha^i_{-n}\alpha^i_n - \frac{d-2}{24})=
+  \frac{4}{\alpha}\sum_{i=1}^{d-2}\sum_{n>0}\qty(\tilde{\alpha}^i_{-n}\tilde{\alpha}^i_n -\frac{d-2}{24})
+\end{equation}
+
+Es importante ver que hay una expresión en términos de modos moviéndose a la derecha
+y otra con modos moviéndose a la izquierda.
+
+\section{Cuantización}
+
+
+\chapter{Termodinámica de cuerdas}
+
+\section{Cálculo de la densidad de estados para una cuerda excitada}
+
+\section{Modelo random walk}
+Intuitivamente, la masa (energía) de una cuerda es su densidad $\sigma$ por la longitud $L$.
+En unidades naturales, la masa tiene unidades inversas a la longitud, por lo que si pensamos
+que la cuerda está dividida en segmentos de longitud $l_s$, 
+\begin{equation}
+  E\sim  \frac{L}{l_s^2}.
+\end{equation}
+
+Cada segmento podrá tener una orientación arbitraria. Para simplificar los cálculos,
+supongamos que toma direcciones ortogonales. Entonces el número de orientaciones posibles
+de cada segmento es $2n$, donde $n$ es el número de dimensiones espaciales accesibles.
+El número de segmentos es $L/l_s$.
+Por tanto, el número de microestados para una energía dada es
+\begin{equation}
+  \omega(E)=(2n)^{(L/l_s)}\propto e^{l_s E \ln (n)}.
+\end{equation}
+
+La entropía de la cuerda es $S\propto El_s$, con temperatura $\beta_H\sim l_S$.
+
+Se puede calcular que el radio del random walk es $R=\expval{r}\sim E^{1/2}$. Esto
+nos dice que cuerdas muy largas estarán contenidas en un volumen pequeño $V\sim E^{D/2}$.
+
+Para una cuerda cerrada, habría que dividir el número de microestados por el 
+volumen de walk, multiplicar por el volumen accesible y dividir por la longitud de la cuerda.
+Entonces,
+\begin{equation}
+  \omega(E)\sim V \frac{e^{\beta_H E}}{E^{1+D/2}}
+\end{equation}
+
+El cálculo de la extensión de una cuerda altamente excitada con respecto a su centro de masas 
+conduce a que $R^2_i$ es proporcional a la suma de las inversas de los números oscilatorios para
+la dirección $i$.
+Por ello, para un nivel energético $N$ fijo, $(\alpha^i_{-1})^N\ket{0}$ tendría la mayor extensión en la dirección $i$, $\sim N$ y
+$\alpha^i_N\ket{0}$ tendría la menor extensión.
+Tomando el promedio sobre todas las direcciones espaciales, $R^2\sim (d-1)\sqrt{N}$, siendo
+$d-1$ el número de direcciones espaciales. Volvemos a  observa la importante peculariedad $R\sim \sqrt{L}$,
+por lo que las cuerdas largas tiende a enmarañarse.
+
+\section{Coalescencia multicuerda}
+
+\section{Termodinámica de cuerda en espacio plano}
+
+%Random walk de una cuerda. Cálculo de la densidad de estados.
+%Coalescencia de cuerdas. Microcanónico. Macrocanónico.
+%Termodinámica de cuerdas. Energía libre. Invariancia modular explícita. Escalar termal.
+
+La función de partición bosónica en un espectro discreto es $z=\prod_i 1/(1-\exp(-\beta E_i))$.
+La energía libre viene dada por $F=-1/\beta \ln z=\beta\sum_i \ln(1-\exp(-\beta E_i))$.
+En el caso continuo, donde $E=E(k)$, reemplazamos el sumatorio por $V\int d^{d-1}k/(2\pi)^{d-1}$.
+Por tanto,
+\begin{equation}
+  F=\frac{V}{\beta}\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\ln(1-\exp(-\beta E))
+\end{equation}
+
+Mediante el desarrollo de Taylor $\ln(1-x)=-\sum^\infty_{r=1} x^r/r$
+\begin{equation}
+  F=-\frac{V}{\beta}\sum^\infty_{r=1} \frac 1 r\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\exp(-r\beta E)
+\end{equation}
+
+Aplicando la identidad
+\begin{equation}
+  \frac 1 r \exp(-\beta r E)=\frac{\beta}{\sqrt{2\pi}}\int_0^\infty \frac{ds}{s^{3/2}}\exp\qty(-\frac{E^2s}{2}-\frac{r^2\beta^2}{2s})
+\end{equation}
+
+y como $E^2=k^2+m^2$
+
+\begin{equation}
+  F=-\frac{V}{\sqrt{2\pi}}\sum^\infty_{r=1} \int_0^\infty \frac{ds}{s^{3/2}} \exp \qty(-\frac{m^2s}{2} -\frac{r^2\beta^2}{2s})
+  \int \frac{d^{d-1}k}{(2\pi)^{d-1}}\exp\qty(-\frac{k^2s}{2})
+\end{equation}
+
+La última integral tiene como resultado $(2\pi s)^{\frac{d-1}{2}}$, por lo que
+\begin{equation}
+  F=-V \int_0^\infty \frac{ds}{s(2\pi s)^{d/2}}\sum^\infty_{r=1} \exp \qty(-\frac{m^2s}{2}- \frac{r^2\beta^2}{2s})
+\end{equation}
+
+Por otro lado, la función de partición de estado multicuerda es $Z=e^z=-\beta F$. 
+Entonces podemos hacer la asociación de la energía libre con integral de camino de 
+una partícula tras aplicar una rotación de Wick en la dimensión temporal y compactificando el
+tiempo con periodo $\beta$
+\begin{equation}
+  Z=-\beta F= \int_0^\infty \frac{ds}{2s}\sum^{'\infty}_{w=-\infty} \int \mathcal{D}x 
+  \exp\qty(-\frac 1 2 \int_0^s d\tau \qty[\qty(\pdv{X^\mu}{t})^2+m^2])
+\end{equation}
+
+Se llega al mismo resultado calculando la función de partición de una partícula  si identificamos 
+el parámetro $s$ con el tiempo propio  de la partícula y compactificamos 
+la coordenada $X^0$ con periodo $\beta$. El número de vueltas que da la
+partícula en la dimensión temporal es $w$. La función de partición se suma sobre
+todas las vueltas posibles y se integra en todos los tiempos propios.
+
+En una teoría de cuerdas bosónica, $d=26$ y la energía libre se obtendría sumando las
+energías libres para tdo el espectro posible, con masas
+\begin{equation}
+  m^2=\frac{2}{\alpha'}(N+\bar N-2)
+\end{equation}
+
+Puesto que se tiene que cumplir el level-matching $N=\bar N$, habrá que incluir en la 
+integral la expresión de la delta de Kronecker
+\begin{equation}
+   \delta_{N\bar N}=\int_{-1/2}^{1/2}d\tau_1 \exp(2\pi i\tau_1 (N-\bar N))
+\end{equation}
+
+Entonces
+\begin{equation}
+  F=\sum_i \delta_{N_i \bar N_i} F(N_i,\bar N_i)
+\end{equation}
+
+donde $i$ recorre todas las posibles combinaciones de $N_i$ y $\bar N_i$.
+Haciendo el cambio de variable $s=2\pi\alpha'\tau_2$
+\begin{equation}
+  F=-V \int_0^\infty \frac{d\tau_2}{\tau_2(4\pi^2\alpha'\tau_2)^{d/2}}\frac 1 2\sum_{r=-\infty}^{'\infty} 
+  \sum_i e^{-(N_i+\bar N_i -2)2\pi\tau_2} e^{-\frac{r^2\beta^2}{4\pi\alpha'\tau_2}}\int_{-1/2}^{1/2} d\tau_1 e^{2\pi i\tau_1(N_i-\bar N_i)}
+\end{equation}
+
+Definiendo $\tau=\tau_1+i\tau_2$ y $q=e^{2\pi i\tau_1}$, se introduce la $\eta$ de 
+Dedekind como
+\begin{equation}
+  \eta(\tau)=q^{1/24}\prod_{n=1}^{\infty} (1-q^n)
+\end{equation}
+
+Se llega a
+\begin{equation}
+  F=-V \sum_{r=-\infty}^{'\infty} \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1  \frac{1}{(4\pi^2\alpha'\tau_2)^{d/2}}
+  \abs{\eta(\tau)}^{-2d+4}\exp\qty(-\frac{r^2\beta^2}{4\pi\alpha'\tau_2})
+\end{equation}
+
+El mismo resultado se obtiene calculla la integral de camino en el toro
+\begin{equation}
+  Z= \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal Dx
+  \exp\qty(-\frac{1}{4\pi\alpha'}\int d^2\sigma \sqrt h h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X_\mu)
+\end{equation}
+
+donde la región de 
+
+Se ha llegado a una expresión cuyo integradndo no es modular invariante. Es decir, 
+$\tau\to\tau+1$ y $\tau\to1/\tau$ no son invariancias.
+Para conseguir la invariancia modular se restringe el dominio de integración al dominio
+fundamental y se modifica el integrado, añadiendo el número cuántico $w$ sobre el que 
+se suma, de modo que para $d=26$ se tiene
+\begin{equation}
+  F=-V \sum_{r,w=-\infty}^{\infty} \int_\mathcal{F}  \frac{d\tau_1d\tau_2}{2\tau_2}   \frac{1}{(4\pi^2\alpha'\tau_2)^{13}}
+  \abs{\eta(\tau)}^{-48}\exp\qty(-\frac{\abs{r^2-w\tau}^2\beta^2}{4\pi\alpha'\tau_2})
+\end{equation}
+
+Haciendo la suma, se llega a
+\begin{equation}
+  Z=-\beta F=\int_{\matchal F}\frac{d\tau_1d\tau_2}{2\tau_2}\Tr\qty(q^{L_0}\bar q^{\bar L_0})
+\end{equation}
+
+donde
+\begin{align}
+  L_0&=\alpha'\frac{p^2}{4}+\frac{\alpha'}{4}\qty(\frac{2\pi n}{\beta}+\frac{w\beta}{2\pi\alpha'})^2+N\\ 
+ \bar L_0&=\alpha'\frac{p^2}{4}+\frac{\alpha'}{4}\qty(\frac{2\pi n}{\beta}-\frac{w\beta}{2\pi\alpha'})^2+\bar N
+\end{align}
+
+
+%\section{Cuerdas en background estático}
+%Supongamos una cuerda en presencia de un background $G_{\mu\nu}$ independiente del tiempo.
+%La función de partición calculada como la integral de camino en el toro es
+%\begin{equation}
+%  Z= \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal Dx \sqrt G
+%  \exp\qty(-\frac{1}{4\pi\alpha'}\int d^2\sigma \sqrt h h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X^\nu G_{\mu\nu})
+%\end{equation}
+%
+%La métrica de la worldsheet
+
+
+\chapter{QFT en espacio curvo}
+
+\section{Agujeros negros}
+El caso más sencillo de agujero negro es el agujero negro de Schwarzschild, que
+describe una distribución de masa con simetría esférica y estática. La métrica asociada
+es 
+\begin{equation}
+  ds^2= \qty(1-\frac{2MG}{r})dt^2-\qty(1-\frac{2MG}{r})^{-1}dr^2-r^2d\Omega^2.
+\end{equation}
+
+Observamos que en el radio de Schwarzschild $r_S=2MG$ la componente temporal de la 
+métrica se anula mientras que la componente radial va a infinito.
+Se denomina horizonte de sucesos a la esfera con radio $r_S$ centrada en $r=0$.
+
+Para estudiar la física cerca del horizonte es más conveniente emplear las coordenadas
+de Rindler. Para ello sustituimos la coordenada radial por la distancia propia hasta
+el horizonte
+\begin{equation}
+  \rho(r)=\int_0^r dr' \sqrt{g_{rr}(r')}.
+\end{equation}
+
+La métrica se transforma en 
+\begin{equation}
+  ds^2=\qty(1-\frac{2MG}{r(\rho)})dt^2-d\rho^2-r(\rho)^2d\Omega^2.
+\end{equation}
+
+A distancias próximas al horizonte $r\approx r_S$, $\rho\approx 2\sqrt{2MG(r-2MG)}$
+\begin{equation}
+  ds^2\approx \rho^2\qty(\frac{dt}{4MG})^2 -d\rho^2-r(\rho)^2d\Omega^2.
+\end{equation}
+
+Cerca de la coordenada azimutal $\theta=0$, podemos reemplzar las coordenadas
+angulares $\theta,\phi$ por las coordenadas cartesianas $x,y$. Definiendo
+también un tiempo adimensional $\omega=t/(4MG)$ obtenemos la métrica de Rindler
+\begin{equation}
+  ds^2=\rho^2d\omega^2 -d\rho^2 -dx^2-dy^2.
+\end{equation}
+
+Esta métrica describe en realidad un espacio de Minkowski en coordenadas hiperbólicas.
+Si escogemos la transformación
+\begin{align}
+  T&=\rho \sinh \omega, \\
+  Z&=\rho \cosh \omega.
+\end{align}
+la métrica es
+\begin{equation}
+  ds^2=dT^2-dZ^2-dx^2-dy^2.
+\end{equation}
+
+Es conveniente definir un observador fijo para cada punto del espacio, llamado
+FIDO. Estos observadores para mantenerse
+en reposo dentro del campo gravitatorio necesitan una fuerza que los mantenga
+en su sitio. Para los FREFOs, su aceleración es, para $\rho<<MG$ es aproximadamente $1/\rho$.
+
+Si dividimos el espacio de Minkowski en cuatro regiones, el espacio de Rindler ocupa
+la región I. Los FREFOs emplean el las coordenadas del (T,Z,x,y), mientras que
+los FREFOS emplean $(\omega, \rho, x, y)$. El horizonte se sitúa en $T=Z=0$, o
+en coordenadas de Rindler, $\rho=0$.
+Gráficamente, se observa que una translación espacial de $\omega$ para un equivale
+a un boost en el espacio de Minkowski.
+
+Al espacio de Rindler solo le llega información de I y IV, pero la región II está 
+desconectada causalmente por culpa del horizonte.
+Además, un partícula que pase de IV a I será vista como proveniente del tiempo 
+$\omega=-\infty$, por lo que se pueden interpretar como condiciones iniciales.
+
+Estudiamos un campo escalar masivo cuántico $\xi$ en un espacio de Rindler.
+La evolución temporal de un sistema cualquiera viene dada por un hamiltoniano. En el
+espacio de Rindler la evolución en $\omega$ se determina mediante el hamiltoniano de
+Rindler, cuya expresión en función del tensor energía-momento es
+\begin{equation}
+  H_R=\int_0^\infty d\rho dxdy \rho T^{00} (\rho, x, y).
+\end{equation}
+
+En el caso de un campo escalar masivo sometido a un potencial $V$, la densidad de energía
+es
+\begin{equation}
+  T^{00}=\frac{\Pi^2}{2}+\frac{1}{2}\qty(\nabla \xi)^2+V(\xi).
+\end{equation}
+
+Entonces el hamiltoniano es
+\begin{equation}
+  H_R=\int_0^\infty d\rho dx_\perp \frac{\rho}{2}\qty(\Pi^2+\qty(\pdv{\xi}{\rho})^2+\qty(\pdv{\xi}{x_\perp})^2+2V(\xi)).
+\end{equation}
+
+Desde el punto de vista del espacio de Minkowski, $H_R$ es el generador de boosts en 
+la dirección Z.
+
+En una teoría cuántica, el hecho que haya correlación entre el campo para dos puntos
+del espacio origina un fenómeno interesante en el espacio de Rindler. 
+Hemos visto que la región III está desconectada de la región I, por lo que consideramos
+al campo en cada región como subsistemas distintos. Pero debido a que el campo en I está
+correlacionado con el campo III, están entrelazados entre sí.
+Por esta razón, no podemos describir al campo en I como un sistema puro como una
+matriz de densidad obtenida tomando la traza parcial en III de la matriz de densidad
+del sistema completo.
+
+En general, si el estado asociado a dos subsistemas A y B que no están interactuando 
+es $\ket{\Psi}$, su matriz de densidad es
+\begin{equation}
+  \rho_{AB}=\ket{\Psi}\bra{\Psi}.
+\end{equation}
+
+La matriz de densidad que describe el sistema A es
+\begin{equation}
+  \rho_{A}=\Tr_B \rho_{AB}=\expval{\rho_{AB}}{\beta} .
+\end{equation}
+ 
+A cada matriz de densidad le corresponde la entropía de von Neumann
+\begin{equation}
+  S=-\Tr (\rho_A \ln \rho_A)=-\Sum_j \rho_j \ln \rho_j.
+\end{equation}
+
+Donde $\rho_j$ son los valores propios de $\rho_A$.
+Esta entropía se debe a que estamos perdiendo información al ignorar el subsistema $B$, que 
+está entrelazado con $A$, por lo que también se denomina entropía de entrelazamiento.
+La intepretación de $\rho_j$ es que estamos describiendo un sistema cuyo estado no 
+conocemos, pero sabemos que a cada estado le corresponde una probabilidad $\rho_j$.
+
+Por otro lado un sistema termodinámico en equilibrio a temperatura $\beta$ tiene 
+asociado la matriz densidad 
+\begin{equation}
+  \rho=\frac{e^{-\beta H}}{\Tr e^{\beta H}}.
+\end{equation}
+
+Retomamos el campo escalar en un espacio de Rindler. 
+Para $T=0$, los campos en cada punto forman un conjunto completo de observables que 
+conmutan. Denominamos $\xi_L$ a los campos en $Z<0$ y $\xi_R$ si $Z>0$.
+En teoría cuántica de campos, un estado se describe como una distribución que 
+depende de los campos $\Psi[\xi]=\Psi[\xi_L,\xi_R]$.
+
+Supondremos que $\Psi[\xi_L,\xi_R]$ está en el estado fundamental (vacío) del hamiltoniano
+de Minkowski. Para hallar el estado fundamental mediante la integral de camino 
+en mecánica cuántica de partículas aplicamos
+\begin{align}
+  \braket{y,T}{x,0}\sim \int_{X(0)=x,X(T)=y} \mathcal D X e^{-S} \sim 
+  \mel{y}{e^{-HT}}{x}=\sum_{n,n'} \ip{y}{n}\mel{n}{e^{-HT}}{n'}\ip{n'}{n}=\\
+  =\sum_{n,n'} \Psi_n(y) e^{-E_n T} \bar{\Psi}_n(x)\sim   \Psi_0(y) e^{-E_0 T} \bar{\Psi}_0(x).
+\end{align}
+
+Donde hemos aplicado una rotación de Wick $t\to T=it$ por continuación analítica.
+Por lo que $\bar{\Psi}_0(x)\sim \int_{X(0)=x} \mathcal D x e^{-S}$.
+De forma similar en teoría cuántica de campos 
+\begin{equation}
+  \Psi[\xi_L,\xi_R]=\frac{1}{\sqrt{Z}}\int_{X^0>0, \xi(X^0=0)=(\xi_L,\xi_R)} e^{-S}
+\end{equation}
+
+Para evaluar la integral, tenemos en cuenta que como la translación en $\omega$
+equivale a un boost en el espacio de Minkowski, en el espacio euclídeo se traduce
+en una rotación.
+El ángulo $\theta$ con respecto al eje $Z$ en el plano $(Z,X^0)$ se corresponde con
+el tiempo de Rindler $\omega$.
+
+\nocite{*}
+\bibliographystyle{babunsrt}
+\bibliography{mybib}
+
+\end{document}
