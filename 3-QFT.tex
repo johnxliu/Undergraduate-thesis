@@ -1,6 +1,19 @@
-\chapter{QFT en espacio curvo}
+\chapter{QFT en sistemas acelerados y espacio curvo}
 
-\section{Agujeros negros}
+\section{Efecto Unruh}
+
+Una propiedad sorprendente de las teoría cuánticas de campos es que el estado de vacío
+puede depender del observador.
+Concretamente, el efecto Unruh manifiesta que el vacío para un observador inercial 
+corresponde con un estado térmico a temperatura
+\begin{equation}
+  T_U=\frac{a}{2\pi k_B}.
+\end{equation}
+
+
+\section{Radiación de Hawking}
+
+\todo{Cálculo Unruh en un BH por path integral}
 El caso más sencillo de agujero negro es el agujero negro de Schwarzschild, que
 describe una distribución de masa con simetría esférica y estática. La métrica asociada
 es 
@@ -29,7 +42,7 @@ A distancias próximas al horizonte $r\approx r_S$, $\rho\approx 2\sqrt{2MG(r-2M
   ds^2\approx \rho^2\qty(\frac{dt}{4MG})^2 -d\rho^2-r(\rho)^2d\Omega^2.
 \end{equation}
 
-Cerca de la coordenada azimutal $\theta=0$, podemos reemplzar las coordenadas
+Cerca de la coordenada azimutal $\theta=0$, podemos reemplazar las coordenadas
 angulares $\theta,\phi$ por las coordenadas cartesianas $x,y$. Definiendo
 también un tiempo adimensional $\omega=t/(4MG)$ obtenemos la métrica de Rindler
 \begin{equation}
@@ -114,7 +127,7 @@ A cada matriz de densidad le corresponde la entropía de von Neumann
 Donde $\rho_j$ son los valores propios de $\rho_A$.
 Esta entropía se debe a que estamos perdiendo información al ignorar el subsistema $B$, que 
 está entrelazado con $A$, por lo que también se denomina entropía de entrelazamiento.
-La intepretación de $\rho_j$ es que estamos describiendo un sistema cuyo estado no 
+La interpretación de $\rho_j$ es que estamos describiendo un sistema cuyo estado no 
 conocemos, pero sabemos que a cada estado le corresponde una probabilidad $\rho_j$.
 
 Por otro lado un sistema termodinámico en equilibrio a temperatura $\beta$ tiene 

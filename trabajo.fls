@@ -247,6 +247,8 @@ INPUT 2-Termodinamica.aux
 INPUT 2-Termodinamica.aux
 INPUT 3-QFT.aux
 INPUT 3-QFT.aux
+INPUT 4-Curvatura.aux
+INPUT 4-Curvatura.aux
 OUTPUT trabajo.aux
 INPUT /usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 INPUT /usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -371,6 +373,9 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/ecbx1095.tfm
 OUTPUT 3-QFT.aux
 INPUT 3-QFT.tex
 INPUT 3-QFT.tex
+OUTPUT 4-Curvatura.aux
+INPUT 4-Curvatura.tex
+INPUT 4-Curvatura.tex
 INPUT trabajo.bbl
 INPUT trabajo.bbl
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -387,6 +392,8 @@ INPUT 2-Termodinamica.aux
 INPUT 2-Termodinamica.aux
 INPUT 3-QFT.aux
 INPUT 3-QFT.aux
+INPUT 4-Curvatura.aux
+INPUT 4-Curvatura.aux
 INPUT ./trabajo.out
 INPUT ./trabajo.out
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc

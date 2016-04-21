@@ -2,6 +2,27 @@
 
 \section{Cálculo de la densidad de estados para una cuerda excitada}
 
+La fórmula de masas para una cuerda abierta es
+\begin{equation}
+  \alpha' m^2=-1+N
+\end{equation}
+y para una cuerda cerrada
+\begin{equation}
+  \alpha' m^2=-4+2(N+\bar N).
+\end{equation}
+
+\todo{Obtención de la densidad de estados en el paso al continuo}
+Queremos calcular la densidad de estados de una cuerda en función del número de 
+oscilador, 
+\begin{equation}
+  p(N)\approx \alpha N^ {\frac{d-1}{2}}\exp{\qty(2\pi\sqrt{\frac{N(d-2)}{6})}}.
+\end{equation}
+
+Expresando la densidad de estados en función de la masa
+\begin{equation}
+  p(M)\approx \alpha N^ {\frac{d-1}{2}}\exp{\qty(2\pi\sqrt{\frac{N(d-2)}{6})}}.
+\end{equation}
+
 \section{Modelo random walk}
 
 \todo{Revisar planteamiento}
@@ -42,7 +63,7 @@ la dirección $i$.
 Por ello, para un nivel energético $N$ fijo, $(\alpha^i_{-1})^N\ket{0}$ tendría la mayor extensión en la dirección $i$, $\sim N$ y
 $\alpha^i_N\ket{0}$ tendría la menor extensión.
 Tomando el promedio sobre todas las direcciones espaciales, $R^2\sim (d-1)\sqrt{N}$, siendo
-$d-1$ el número de direcciones espaciales. Volvemos a  observa la importante peculariedad $R\sim \sqrt{L}$,
+$d-1$ el número de direcciones espaciales. Volvemos a  observa la importante peculariadad $R\sim \sqrt{L}$,
 por lo que las cuerdas largas tiende a enmarañarse.
 
 \section{Coalescencia multicuerda}
@@ -104,7 +125,7 @@ partícula en la dimensión temporal es $w$. La función de partición se suma s
 todas las vueltas posibles y se integra en todos los tiempos propios.
 
 En una teoría de cuerdas bosónica, $d=26$ y la energía libre se obtendría sumando las
-energías libres para tdo el espectro posible, con masas
+energías libres para todo el espectro posible, con masas
 \begin{equation}
   m^2=\frac{2}{\alpha'}(N+\bar N-2)
 \end{equation}
@@ -139,7 +160,7 @@ Se llega a
   \abs{\eta(\tau)}^{-2d+4}\exp\qty(-\frac{r^2\beta^2}{4\pi\alpha'\tau_2})
 \end{equation}
 
-El mismo resultado se obtiene calculla la integral de camino en el toro
+El mismo resultado se obtiene calculando la integral de camino en el toro
 \begin{equation}
   Z= \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal Dx
   \exp\qty(-\frac{1}{4\pi\alpha'}\int d^2\sigma \sqrt h h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X_\mu)
@@ -147,7 +168,7 @@ El mismo resultado se obtiene calculla la integral de camino en el toro
 
 donde la región de 
 
-Se ha llegado a una expresión cuyo integradndo no es modular invariante. Es decir, 
+Se ha llegado a una expresión cuyo integrando no es modular invariante. Es decir, 
 $\tau\to\tau+1$ y $\tau\to1/\tau$ no son invariancias.
 Para conseguir la invariancia modular se restringe el dominio de integración al dominio
 fundamental y se modifica el integrado, añadiendo el número cuántico $w$ sobre el que 
@@ -178,3 +199,7 @@ donde
 %\end{equation}
 %
 %La métrica de la worldsheet
+
+\section{Discrepancia entre colectividad microcanónica y canónica}
+
+\todo{Comentar más allá de Hagedorn?}
