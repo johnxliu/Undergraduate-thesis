@@ -2,16 +2,104 @@
 
 \section{Efecto Unruh}
 
-Una propiedad sorprendente de las teoría cuánticas de campos es que el estado de vacío
+Una propiedad sorprendente de las teorías cuánticas de campos es que el estado de vacío
 puede depender del observador.
-Concretamente, el efecto Unruh manifiesta que el vacío para un observador inercial 
-corresponde con un estado térmico a temperatura
+Concretamente, el efecto Unruh manifiesta que el vacío para un observador inercial,
+visto por un observador con aceleración constante corresponde con un estado térmico a temperatura
 \begin{equation}
   T_U=\frac{a}{2\pi k_B}.
 \end{equation}
 
+En la deducción del efecto Unruh estudiaremos un campo escalar sin masa $\phi(t,z)$ en un espacio de Minkowski
+con una dimensión espacial $t$ y una dimensión espacial $z$.
+La ecuación que describe el campo es la ecuación de Klein-Gordon
+\begin{equation}
+  -\pdv[2]{\phi}{t}+\pdv[2]{\phi}{z}=0.
+\end{equation}
+
+La solución general de esta ecuación de ondas toma la forma
+\begin{equation}
+  \phi(x,t)=f(t-x)+g(t+x).
+\end{equation}
+
+Las funciones $f$ y $g$ representan dos ondas que se mueven a la velocidad de la luz en sentidos
+opuestos. 
+Hacemos el cambio de variable a coordenadas nulas
+\begin{equation}
+  U=t-z,   \qquad V=t+z.
+\end{equation}
+
+De este modo, la solución general se expresa como
+\begin{equation}
+  \phi(U,V)=\phi_U(U)+\phi_V(V).
+\end{equation}
+
+Nos interesa expandir la solución en términos de ondas armónicas
+\begin{gather}
+  \phi_\omega^U(U)=\frac{1}{\sqrt{4\pi\omega}} e^{-i\omega U},  \\
+  \phi_\omega^V(V)=\frac{1}{\sqrt{4\pi\omega}} e^{-i\omega V}.
+\end{gather}
+
+Puesto que la solución $\phi_V$ está desacoplada de $\phi_U$
+
+La expansión del campo en modos es
+\begin{equation}
+\phi(U) = \int_0^\infty d\omega \qty[a_\omega^U \phi_\omega^\phi (U)+a_\omega^U^* \phi_\omega^\phi (U)^*].
+\end{equation}
+
+El proceso de cuantización canónica consiste en reemplazar en valor del campo en cada
+punto del espacio-tiempo $\phi(x,t)$, por un operador $\hat \phi(x,t)$ que satisfará unas
+relaciones de conmutación particulares. 
+Esto significa que los coeficientes de la expansión de $\phi_U$ pasan a ser los operadores
+$\hat a_\omega^U^$ y $\hat a_\omega^U^\dagger$ y por tanto
+\begin{equation}
+  \hat \phi(U) = \int_0^\infty d\omega \qty[\hat a_\omega^U\phi_\omega^\phi (U)+\hat a_\omega^U^\dagger \phi_\omega^\phi (U)^*].
+\end{equation}
+
+El operador $\hat a_\omega^U^\dagger$ se denomina operador creación, pues veremos que crea 
+partículas de frecuencia $\omega$ y $\hat a_\omega^U$ se conoce como operador destrucción porque
+aniquila partículas de frecuencia $\omega$.
+Las relaciones de conmutación que cumplen son
+\begin{gather}
+  [\hat a_\omega^U^\dagger,\hat a_{\omega'}^U^\dagger]=[\hat a_\omega^U,\hat a_{\omega'}^U]=0, \\
+  [\hat a_\omega^U,\hat a_{\omega'}^U^\dagger]=\delta(\omega-\omega').
+\end{gather}
+
+Todavía no hemos especificado el espacio de Hilbert sobre el que actúa el operador del campo, el cual
+se denota por $\mathcal H_\phi$. 
+El estado del campo queda especificado descrito por un elemento de $\mathcal H_\phi$.
+Como en este caso los modos $U$ y $V$ están desacoplados, podemos considerar independientemente el espacio
+de Hilbert asociado a cada uno, $\mathcal H_U$ y $\mathcal H_V$.
+El espacio de Hilbert del campo es el producto tensorial de ambos $\mathcal H_\phi=\mathcal H_U\otimes \mathcal H_V$.
+
+%Construcción espacio de Fock
+
+
+%Expansión en otra base. Transformación Bogoliubov. Vacío.
+
+
+%Observadores acelerados
+
+
+%Coords Rindler
+
+
+
 
 \section{Radiación de Hawking}
+\todo{Obtenemos el resultado para observadores asintóticos}
+
+%Introducción relatividad general. Métrica Schwarzschild
+
+
+%Transformación de coordenadas. Ecuación de ondas. Modos Boulware.
+
+
+%Propagación al pasado.
+
+
+
+
 
 \todo{Cálculo Unruh en un BH por path integral}
 El caso más sencillo de agujero negro es el agujero negro de Schwarzschild, que

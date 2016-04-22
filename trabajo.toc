@@ -9,15 +9,15 @@
 \contentsline {section}{\numberline {2.1}C\IeC {\'a}lculo de la densidad de estados para una cuerda excitada}{7}{section.2.1}
 \contentsline {section}{\numberline {2.2}Modelo random walk}{7}{section.2.2}
 \contentsline {section}{\numberline {2.3}Coalescencia multicuerda}{8}{section.2.3}
-\contentsline {subsection}{Formulaci\IeC {\'o}n microcan\IeC {\'o}nica}{8}{section*.10}
-\contentsline {subsection}{Formulaci\IeC {\'o}n can\IeC {\'o}nica}{8}{section*.11}
-\contentsline {section}{\numberline {2.4}Termodin\IeC {\'a}mica de cuerdas en espacio plano}{8}{section.2.4}
-\contentsline {section}{\numberline {2.5}Discrepancia entre colectividad microcan\IeC {\'o}nica y can\IeC {\'o}nica}{10}{section.2.5}
-\contentsline {chapter}{\chapternumberline {3}QFT en sistemas acelerados y espacio curvo}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}Efecto Unruh}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}Radiaci\IeC {\'o}n de Hawking}{11}{section.3.2}
-\contentsline {chapter}{\chapternumberline {4}Cuerdas en espacios curvos}{15}{chapter.4}
-\contentsline {chapter}{Bibliograf\'{\i }a}{17}{section*.15}
+\contentsline {subsection}{Formulaci\IeC {\'o}n microcan\IeC {\'o}nica}{9}{section*.11}
+\contentsline {subsection}{Formulaci\IeC {\'o}n can\IeC {\'o}nica}{9}{section*.12}
+\contentsline {section}{\numberline {2.4}Termodin\IeC {\'a}mica de cuerdas en espacio plano}{9}{section.2.4}
+\contentsline {section}{\numberline {2.5}Discrepancia entre colectividad microcan\IeC {\'o}nica y can\IeC {\'o}nica}{11}{section.2.5}
+\contentsline {chapter}{\chapternumberline {3}QFT en sistemas acelerados y espacio curvo}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Efecto Unruh}{13}{section.3.1}
+\contentsline {section}{\numberline {3.2}Radiaci\IeC {\'o}n de Hawking}{15}{section.3.2}
+\contentsline {chapter}{\chapternumberline {4}Cuerdas en espacios curvos}{19}{chapter.4}
+\contentsline {chapter}{Bibliograf\'{\i }a}{21}{section*.17}
 \select@language {spanish}
 \select@language {spanish}
 \select@language {spanish}
