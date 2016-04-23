@@ -11,7 +11,8 @@ visto por un observador con aceleración constante corresponde con un estado té
 \end{equation}
 
 En la deducción del efecto Unruh estudiaremos un campo escalar sin masa $\phi(t,z)$ en un espacio de Minkowski
-con una dimensión espacial $t$ y una dimensión espacial $z$.
+con una dimensión espacial $t$ y una dimensión espacial $z$.  
+\todo{Argumentar por qué es válido usar esta teoría}
 La ecuación que describe el campo es la ecuación de Klein-Gordon
 \begin{equation}
   -\pdv[2]{\phi}{t}+\pdv[2]{\phi}{z}=0.
@@ -73,16 +74,100 @@ de Hilbert asociado a cada uno, $\mathcal H_U$ y $\mathcal H_V$.
 El espacio de Hilbert del campo es el producto tensorial de ambos $\mathcal H_\phi=\mathcal H_U\otimes \mathcal H_V$.
 
 %Construcción espacio de Fock
+La base del espacio $\mathcal H_U$ se puede construir mediante la representación de Fock. 
+Para ello, se define el estado de vacío $\ket{0_U}$, como el estado que no contiene ningún tipo
+de partícula, por tanto
+\begin{equation}
+  a^U_\omega \ket{0_U} = 0.
+\end{equation}
 
+Donde omitimos el acento circunflejo de los operadores por comodidad.
+Luego procedemos a crear estados con $n_i$ partículas de frecuencia $\omega_i$, mediante
+aplicación repetida del operador creación $a_{\omega_i}^{U\dagger}$, con la normalización apropiada
+\begin{equation}
+  \ket{n_{1,\omega_1}, n_{2,\omega_2},\cdots,n_{N,\omega_N}} = \frac{1}{\sqrt{n_1!n_2!\cdots n_N!}}(a_{\omega_1}^{U\dagger})^{n_1}
+  (a_{\omega_2}^{U\dagger})^{n_2}\cdots a_{\omega_N}^{U\dagger})^{n_N} \ket{0_U}.
+\end{equation}
+
+Los estados construidos son estados propios del operador número de partículas $N_{\omega_i}^U=a_{\omega_i}^{U\dagger}a_{\omega_i}^U$
+con valor propio $n_i$.
+La base de $\mathcal H_U$ se obtiene juntando los estados 
+Formalmente, $\mathcal H_U$ es la completitud de la suma directa 
+\todo{Rigor}
+\begin{equation}
+  \mathcal H_U = \oplus  .
+\end{equation}
 
 %Expansión en otra base. Transformación Bogoliubov. Vacío.
+Si ahora expandimos el campo, en otra base de modos $u$
+\begin{equation}
+  \phi_\omega^u(U)=\frac{1}{\sqrt{4\pi\omega}}e^{-i\omega u(U)}.
+\end{equation}
 
+El campo se expresa como
+\begin{equation}
+  \phi_U(U) = \int_0^\infty d\omega [a_\omega^u \phi^u_\omega(U) +  a_\omega^{u*} \phi_\omega^u(U)^*.
+\end{equation}
+
+Expandiendo la nueva base en términos de la anterior
+\begin{equation}
+  \phi_\omega^u(U) = \int_0^\infty d\omega' \alpha_{\omega\omega'} \phi_{\omega'}^U(U) 
+  +\beta_{\omega\omega'} \phi_{\omega'}^U(U)^*.
+\end{equation}
+
+Los coeficientes $\alpha_{\omega\omega'}$ y $\beta_{\omega\omega'}$ se denominan coeficientes
+de Bogoliubov y vienen dados por
+\begin{gather}
+  \alpha_{\omega\omega'} = -\frac{1}{2\pi}\sqrt{\frac{\omega'}{\omega}}\int_{-\infty}^\infty dU e^{-i(\omega u(U) -\omega' U)}\\
+  \beta_{\omega\omega'} = -\frac{1}{2\pi}\sqrt{\frac{\omega'}{\omega}}\int_{-\infty}^\infty dU e^{-i(\omega u(U) +\omega' U)}.
+\end{gather}
+
+Cuantizando la teoría y formando el espacio de Fock, comprobamos que el vacío obtenido mediante
+los modos $\phi^U_\omega (U)$, puede contener partículas asociadas a los modos $u$
+\begin{equation}
+  \ev{0_U}{N_\omega^u}=\int_0^\infty d\omega' \abs{\beta_{\omega\omega'}}^2.
+\end{equation}
+
+Esto quiere decir que en una teoría cuántica de campos, el vacío depende de la base de modos
+que se haya escogido antes de la cuantización.
+\todo{En realidad la ambigüedad es el concepto de partícula}
+La ambigüedad se puede resolver escogiendo el vacío que tenga la mínima energía.
+En el espacio de Minkowski la energía está bien definida y coincide para todos los observadores
+inercial por lo que es invariante de Lorentz.
+Sin embargo, en un espacio-tiempo curvo el concepto de energía puede no estar bien definido
+y por tanto no hay un estado de vacío privilegiado.
 
 %Observadores acelerados
+Con el fin de estudiar cuál es el vacío dado por un observador acelerado en un espacio de 
+Minkowski, introducimos las coordenadas de Rindler $(\eta,\xi)$ definidas por
+\begin{gather}
+  t=\frac{1}{a} e^{a\xi} \sinh a\eta \\
+  z=\frac{1}{a}e^{a\xi} \cosh a\eta,
+\end{gather}
+donde $\abs{t}<z$ y $a>0$.
 
+\todo{Dibujo}
+Las coordenadas de Rindler solo cubren la región $\abs{t}<z$, denominada cuña derecha de Rindler.
+De forma análoga, se puede cubrir la cuña izquierda de Rindler ($\abs{t}<-z$) mediante
+las coordenadas $(\tilde \eta, \tilde \xi)$ dadas por
+\begin{gather}
+  t=-\frac{1}{a} e^{a\tilde \xi} \sinh a\tilde \eta \\
+  z=-\frac{1}{a} e^{a\tilde \xi} \cosh a\tilde \eta.
+\end{gather}
 
-%Coords Rindler
+Las trayectorias con $\eta=\eta_0$ constante corresponden observadores que se mueven con
+aceleración propia $ae^{-a\xi_0}$.
+\todo{Pq $\xi_0=0$}
+El tiempo propio que miden estos observadores es $\tau = e^{a\xi_0}$.
 
+Los observadores con aceleración constante moviéndose a la derecha no pueden percibir los 
+efectos producidos II ni influir en I. 
+Además, la información que le llegue de III será percibida como proveniente de un tiempo
+infinitamente anterior, por lo que la recta $t=z$ define un horizonte de sucesos futuro y 
+la recta $t=-z$ un horizonte de sucesos pasado.
+
+Que haya una región del espacio-tiempo desconectada causalmente para un observador inercial,
+hace que 
 
 
 
