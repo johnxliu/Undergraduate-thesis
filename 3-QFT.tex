@@ -167,9 +167,53 @@ infinitamente anterior, por lo que la recta $t=z$ define un horizonte de sucesos
 la recta $t=-z$ un horizonte de sucesos pasado.
 
 Que haya una región del espacio-tiempo desconectada causalmente para un observador inercial,
-hace que 
+hace que se desconozca parte del estado del campo, lo que conduce a que el campo siga una 
+distribución térmica.
+En la demostración partimos de la ecuación de Klein-Gordon en coordenadas de Rindler
+para la cuña derecha
+\begin{equation}
+  -\pdv[2]{\phi}{\eta}+\pdv[2]{\phi}{\xi} = 0.
+  \label{eq:kgr}
+\end{equation}
 
+Definiendo la coordenadas nulas de Rindler 
+\begin{equation}
+  \begin{gathered}
+  u=\eta-\xi,\\
+  v=\eta+\xi, 
+  \end{gathered}
+\end{equation}
 
+La solución general de \ref{eq:kgr} es $\phi(u,v)=\phi_u(u)+\phi_v(v)$, que se expande en los
+modos normales
+\begin{equation}
+  \begin{aligned}
+    \phi^u_\omega(u) &=\frac{1}{\sqrt{4\pi\omega}}e^{-i\omega u},\\
+    \phi^u_\omega(v) &=\frac{1}{\sqrt{4\pi\omega}}e^{-i\omega v}.
+  \end{aligned}
+\end{equation}
+
+Aplicaríamos un tratamiento análogo a la cuña izquierda.
+
+El campo propagándose hacia la derecha en coordenadas de Minkowski se expande como
+\begin{equation}
+  \begin{aligned}
+    \phi_U(U)=&\int_0^\infty \Theta(-U)\qty[a^u_\omega \phi^u_\omega(u(U))+a_\omega^{u*}\phi_\omega^u(u(U))^*] \\
+    &+\Theta(U)\qty[a^{\tilde u}_\omega \phi^{\tilde u}_\omega(\tilde u(U))+a_\omega^{\tilde u*}\phi_\omega^{\tilde u}(\tilde u(U))^*].
+  \end{aligned}
+\end{equation}
+
+Donde $\theta(U)$ es la función de Heaviside 
+\begin{equation}
+   \Theta(U)=
+  \begin{cases}
+    0\qquad \text{si }U<0 \\
+    1\qquad \text{si }U>0
+    .
+  \end{cases}
+\end{equation}
+
+El cálculo de los coeficientes de Bogoliubov conduce a 
 
 \section{Radiación de Hawking}
 \todo{Obtenemos el resultado para observadores asintóticos}

@@ -11,16 +11,40 @@ y para una cuerda cerrada
   \alpha' m^2=-4+2(N+\bar N).
 \end{equation}
 
-\todo{Obtención de la densidad de estados en el paso al continuo}
+\todo{Explicar}
 Queremos calcular la densidad de estados de una cuerda en función del número de 
 oscilador, 
+
+\begin{equation}
+  N=\sum_{m=1}^N m n_m, \qquad n_m\in\mathbb N
+\end{equation}
+
+Las particiones de $N$
+\todo{Demostracion particiones de N}
 \begin{equation}
   p(N)\approx \alpha N^ {\frac{d-1}{2}}\exp\qty(2\pi\sqrt{\frac{N(d-2)}{6}}).
 \end{equation}
 
-Expresando la densidad de estados en función de la masa
+En el caso de cuerdas bosónicas cerradas, expresando la densidad de estados en función de la masa
 \begin{equation}
   p(M)\approx \alpha N^ {\frac{d-1}{2}}\exp\qty(2\pi\sqrt{\frac{N(d-2)}{6}}).
+\end{equation}
+
+
+\begin{equation}
+  \omega(E) \approx V \frac{e^{\beta_H E}}{E^{D/2+1}}.
+\end{equation}
+
+La función de partición en la colectividad macrocanónica es
+\begin{equation}
+  z(\beta)=\int^\infty_{E_0} dE \frac{e^{\beta_H E}}{{E^{D/2+1}}}e^{-\beta E}
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    z&=(\beta-\beta_H)^{D/2}\ln(\beta-\beta_H), &\text{si $D$ par}\\
+    z&=(\beta-\beta_H)^{D/2}, &\text{si $D$ impar}.
+  \end{aligned}
 \end{equation}
 
 \section{Modelo random walk}
@@ -68,10 +92,42 @@ por lo que las cuerdas largas tiende a enmarañarse.
 
 \section{Coalescencia multicuerda}
 
-\todo{Repaso de las colectividades estadísticas}
+\todo{Repaso de las colectividades estadísticas, qué es una función de partición}
 
 \subsection{Formulación microcanónica}
 
+La función de partición de una cuerda es
+\begin{equation}
+  z(\beta) = \int_0^\infty \omega(E)e^{-\beta E}.
+\end{equation}
+
+La función de partición de un sistema de cuerdas es
+\begin{equation}
+  Z(\beta) = \int_0^\infty \Omega(E)e^{-\beta E}.
+\end{equation}
+
+Si el número de 
+
+
+\begin{equation}
+  \begin{aligned}
+      Z = e^z&= 1+ \int_0^\infty dE_1\omega(E_1)e^{-\beta E_1} +\frac 1 2 \int_0^\infty \int_0^\infty
+      \omega(E_1)\omega(E_2)e^{-\beta(E_1+E_2)}\dots \\
+      &=\int_0^\infty dE \delta(E) + \int_0^\infty dE e^{-\beta E}\int  dE_1\omega(E_1)\delta(E-E_1)\\
+      &+\frac 1 2\int_0^\infty dE e^{-\beta E} \int_0^\infty\int_0^\infty dE_1 dE_2 \omega(E_1)\omega(E_2) \delta(E-E_1-E_2)\dots
+  \end{aligned}
+\end{equation}
+
+Entonces
+\begin{equation}
+  \Omega(E)=\sum_{n=0}^\infty \frac{1}{n!}\int \prod_{i=1}^n dE_i \omega(E_i)\delta\qty(E-\sum_{j=1}^n E_j).
+\end{equation}
+
+\begin{equation}
+  \omega(E)\sim \frac{e^{\beta_H E}}{E^{D/2+1}}.
+\end{equation}
+
+\todo{Acabar deducción}
 
 \subsection{Formulación canónica}
 
