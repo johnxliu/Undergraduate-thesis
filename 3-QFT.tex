@@ -1,10 +1,11 @@
 \chapter{QFT en sistemas acelerados y espacio curvo}
 
+\todo{Mejor meter subsecciones?}
 \section{Efecto Unruh}
 
 Una propiedad sorprendente de las teorías cuánticas de campos es que el estado de vacío
 puede depender del observador.
-Concretamente, el efecto Unruh manifiesta que el vacío para un observador inercial,
+Concretamente, el efecto Unruh establece que el vacío para un observador inercial,
 visto por un observador con aceleración constante corresponde con un estado térmico a temperatura
 \begin{equation}
   T_U=\frac{a}{2\pi k_B}.
@@ -41,7 +42,8 @@ Nos interesa expandir la solución en términos de ondas armónicas
   \phi_\omega^V(V)=\frac{1}{\sqrt{4\pi\omega}} e^{-i\omega V}.
 \end{gather}
 
-Puesto que la solución $\phi_V$ está desacoplada de $\phi_U$
+Puesto que la solución $\phi_V$ está desacoplada de $\phi_U$, basta considerar $\phi_U$ ya que
+el tratamiento de $\phi_V$ sería análogo.
 
 La expansión del campo en modos es
 \begin{equation}
@@ -91,7 +93,9 @@ aplicación repetida del operador creación $a_{\omega_i}^{U\dagger}$, con la no
 
 Los estados construidos son estados propios del operador número de partículas $N_{\omega_i}^U=a_{\omega_i}^{U\dagger}a_{\omega_i}^U$
 con valor propio $n_i$.
-La base de $\mathcal H_U$ se obtiene juntando los estados 
+La base de $\mathcal H_U$ se obtiene juntando los estados con un número arbitrario de partículas
+de todas las frecuencias posibles.
+\todo{La suma directa es no numerable, al tener que considerar todas las frecuencias?}
 Formalmente, $\mathcal H_U$ es la completitud de la suma directa 
 \todo{Rigor}
 \begin{equation}
@@ -99,31 +103,32 @@ Formalmente, $\mathcal H_U$ es la completitud de la suma directa
 \end{equation}
 
 %Expansión en otra base. Transformación Bogoliubov. Vacío.
-Si ahora expandimos el campo, en otra base de modos $u$
+Supongamos que queremos expandir el campo en otra base de modos $u$
 \begin{equation}
-  \phi_\omega^u(U)=\frac{1}{\sqrt{4\pi\omega}}e^{-i\omega u(U)}.
+  \phi_\omega^u(U)=\frac{1}{\sqrt{4\pi\omega}}e^{-i\omega u(U)}, 
 \end{equation}
 
-El campo se expresa como
+entonces
 \begin{equation}
-  \phi_U(U) = \int_0^\infty d\omega [a_\omega^u \phi^u_\omega(U) +  a_\omega^{u*} \phi_\omega^u(U)^*.
+  \phi_U(U) = \int_0^\infty d\omega [a_\omega^u \phi^u_\omega(U) +  a_\omega^{u*} \phi_\omega^u(U)^*].
 \end{equation}
 
 Expandiendo la nueva base en términos de la anterior
 \begin{equation}
-  \phi_\omega^u(U) = \int_0^\infty d\omega' \alpha_{\omega\omega'} \phi_{\omega'}^U(U) 
-  +\beta_{\omega\omega'} \phi_{\omega'}^U(U)^*.
+  \phi_\omega^u(U) = \int_0^\infty d\omega'\qty[ \alpha_{\omega\omega'} \phi_{\omega'}^U(U) 
+  +\beta_{\omega\omega'} \phi_{\omega'}^U(U)^*].
 \end{equation}
 
 Los coeficientes $\alpha_{\omega\omega'}$ y $\beta_{\omega\omega'}$ se denominan coeficientes
 de Bogoliubov y vienen dados por
 \begin{gather}
-  \alpha_{\omega\omega'} = -\frac{1}{2\pi}\sqrt{\frac{\omega'}{\omega}}\int_{-\infty}^\infty dU e^{-i(\omega u(U) -\omega' U)}\\
+  \alpha_{\omega\omega'} = -\frac{1}{2\pi}\sqrt{\frac{\omega'}{\omega}}\int_{-\infty}^\infty dU e^{-i(\omega u(U) -\omega' U)},\\
   \beta_{\omega\omega'} = -\frac{1}{2\pi}\sqrt{\frac{\omega'}{\omega}}\int_{-\infty}^\infty dU e^{-i(\omega u(U) +\omega' U)}.
 \end{gather}
 
 Cuantizando la teoría y formando el espacio de Fock, comprobamos que el vacío obtenido mediante
 los modos $\phi^U_\omega (U)$, puede contener partículas asociadas a los modos $u$
+si el coeficiente $\beta_{\omega\omega'}$ no es nulo
 \begin{equation}
   \ev{0_U}{N_\omega^u}=\int_0^\infty d\omega' \abs{\beta_{\omega\omega'}}^2.
 \end{equation}
@@ -133,20 +138,21 @@ que se haya escogido antes de la cuantización.
 \todo{En realidad la ambigüedad es el concepto de partícula}
 La ambigüedad se puede resolver escogiendo el vacío que tenga la mínima energía.
 En el espacio de Minkowski la energía está bien definida y coincide para todos los observadores
-inercial por lo que es invariante de Lorentz.
+inerciales, al ser invariante de Lorentz.
 Sin embargo, en un espacio-tiempo curvo el concepto de energía puede no estar bien definido
 y por tanto no hay un estado de vacío privilegiado.
+\todo{Tiene algún sentido el concepto de partícula en un espacio que no sea asintóticamente
+plano o no estacionario?}
 
 %Observadores acelerados
 Con el fin de estudiar cuál es el vacío dado por un observador acelerado en un espacio de 
 Minkowski, introducimos las coordenadas de Rindler $(\eta,\xi)$ definidas por
 \begin{gather}
-  t=\frac{1}{a} e^{a\xi} \sinh a\eta \\
+  t=\frac{1}{a} e^{a\xi} \sinh a\eta ,\\
   z=\frac{1}{a}e^{a\xi} \cosh a\eta,
 \end{gather}
 donde $\abs{t}<z$ y $a>0$.
 
-\todo{Dibujo}
 Las coordenadas de Rindler solo cubren la región $\abs{t}<z$, denominada cuña derecha de Rindler.
 De forma análoga, se puede cubrir la cuña izquierda de Rindler ($\abs{t}<-z$) mediante
 las coordenadas $(\tilde \eta, \tilde \xi)$ dadas por
@@ -155,22 +161,34 @@ las coordenadas $(\tilde \eta, \tilde \xi)$ dadas por
   z=-\frac{1}{a} e^{a\tilde \xi} \cosh a\tilde \eta.
 \end{gather}
 
-Las trayectorias con $\eta=\eta_0$ constante corresponden observadores que se mueven con
+%Usar imagen libre, centrar
+\begin{figure}[htb]
+\includegraphics[width=0.8\textwidth]{rindler.png}\hfill
+ \caption{Espacio de Minkowski en coordenadas de Rindler (usar imagen libre)
+}                   
+  \label{fig:rindler}
+\end{figure}
+
+Las trayectorias con $\eta=\eta_0$ constante corresponden con observadores que se mueven con
 aceleración propia $ae^{-a\xi_0}$.
 \todo{Pq $\xi_0=0$}
-El tiempo propio que miden estos observadores es $\tau = e^{a\xi_0}$.
+El tiempo propio que miden estos observadores es $\tau = e^{a\xi_0}\eta$.
+Escogiendo apropiadamente el origen de coordenadas, un observador con aceleración constante
+es tiene viene dado por $\eta=\tau$ y $\xi=0$.
 
-Los observadores con aceleración constante moviéndose a la derecha no pueden percibir los 
-efectos producidos II ni influir en I. 
-Además, la información que le llegue de III será percibida como proveniente de un tiempo
+Fijándonos en el diagrama de Rindler (figura \ref{fig:rindler}),
+un observador con aceleración constante moviéndose a la derecha no puede percibir los 
+efectos producidos  en III ni influir en II. 
+Además, la información que le llegue de II será percibida como proveniente de un tiempo
 infinitamente anterior, por lo que la recta $t=z$ define un horizonte de sucesos futuro y 
 la recta $t=-z$ un horizonte de sucesos pasado.
 
-Que haya una región del espacio-tiempo desconectada causalmente para un observador inercial,
-hace que se desconozca parte del estado del campo, lo que conduce a que el campo siga una 
-distribución térmica.
-En la demostración partimos de la ecuación de Klein-Gordon en coordenadas de Rindler
-para la cuña derecha
+Como el observador acelerado hacia la derecha desconoce el estado del campo en la 
+cuña izquierda de Rindler, el estado que percibe no es puro, si no mixto.
+La descripción de estados mixtos se realiza mediante una matriz de densidad, que al trazar
+sobre los estados desconocidos conduce a que el vacío sea un estado térmico.
+Con el fin de hacer la deducción explícita, partimos de la ecuación de Klein-Gordon en
+coordenadas de Rindler para la cuña derecha
 \begin{equation}
   -\pdv[2]{\phi}{\eta}+\pdv[2]{\phi}{\xi} = 0.
   \label{eq:kgr}
@@ -184,7 +202,7 @@ Definiendo la coordenadas nulas de Rindler
   \end{gathered}
 \end{equation}
 
-La solución general de \ref{eq:kgr} es $\phi(u,v)=\phi_u(u)+\phi_v(v)$, que se expande en los
+la solución general de \ref{eq:kgr} es $\phi(u,v)=\phi_u(u)+\phi_v(v)$, que se expande en los
 modos normales
 \begin{equation}
   \begin{aligned}
@@ -203,17 +221,18 @@ El campo propagándose hacia la derecha en coordenadas de Minkowski se expande c
   \end{aligned}
 \end{equation}
 
-Donde $\theta(U)$ es la función de Heaviside 
+Donde $\Theta(U)$ es la función de Heaviside 
 \begin{equation}
    \Theta(U)=
   \begin{cases}
     0\qquad \text{si }U<0 \\
     1\qquad \text{si }U>0
-    .
   \end{cases}
+  .
 \end{equation}
 
 El cálculo de los coeficientes de Bogoliubov conduce a 
+\todo{Tal vez separar}
 \begin{equation}
   \begin{aligned}
     &\alpha_{\omega,\omega'}^{ u} = -\frac{e^{\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{-i\omega/a}
@@ -226,6 +245,23 @@ El cálculo de los coeficientes de Bogoliubov conduce a
     \Gamma(-i\omega/a)
   \end{aligned}
 \end{equation}
+
+Por conveniencia, los modos de Unruh se definen como
+\begin{equation}
+  \begin{aligned}
+    \phi^I_\omega(U)=\Theta(-U)\phi^u_\omega(u(U)) + e^{-\frac{\pi\omega}{a}}\Theta(U)\phi_\omega^{\tilde u}(\tilde u(U))^*,\\
+    \phi^{II}_\omega(U)=\Theta(U)\phi^{\tilde u}_\omega(\tilde u(U)) + e^{-\frac{\pi\omega}{a}}\Theta(-U)\phi_\omega^{u}(u(U))^*.
+  \end{aligned}
+\end{equation}
+
+La cuantización de los modos de Unruh conduce a los operadores creación y destrucción
+\begin{equation}
+  \begin{aligned}
+    a_\omega^I = -2\sinh\frac{\pi\omega}{a}\int_0^\infty d\omega' \beta_{\omega\omega'}^{\tilde u} a_{\omega'}^U,\\
+    a_\omega^{II} = -2\sinh\frac{\pi\omega}{a}\int_0^\infty d\omega' \beta_{\omega\omega'}^{u} a_{\omega'}^U.\\
+  \end{aligned}
+\end{equation}
+ 
 
 \begin{equation}
   \ev{a_\omega^{u\dagger}a_\omega^u}{0_H} = \int_0^\infty d\omega'' \beta_{\omega\omega''}^u
