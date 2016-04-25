@@ -1,4 +1,5 @@
 \chapter{QFT en sistemas acelerados y espacio curvo}
+%Corregir numeracion
 
 \todo{Mejor meter subsecciones?}
 \section{Efecto Unruh}
@@ -10,6 +11,7 @@ visto por un observador con aceleración constante corresponde con un estado té
 \begin{equation}
   T_U=\frac{a}{2\pi k_B}.
 \end{equation}
+En este apartado, seguiremos la derivación expuesta en \cite{Barbado:2015uua}.
 
 En la deducción del efecto Unruh estudiaremos un campo escalar sin masa $\phi(t,z)$ en un espacio de Minkowski
 con una dimensión espacial $t$ y una dimensión espacial $z$.  
@@ -250,23 +252,46 @@ Por conveniencia, los modos de Unruh se definen como
 \begin{equation}
   \begin{aligned}
     \phi^I_\omega(U)=\Theta(-U)\phi^u_\omega(u(U)) + e^{-\frac{\pi\omega}{a}}\Theta(U)\phi_\omega^{\tilde u}(\tilde u(U))^*,\\
-    \phi^{II}_\omega(U)=\Theta(U)\phi^{\tilde u}_\omega(\tilde u(U)) + e^{-\frac{\pi\omega}{a}}\Theta(-U)\phi_\omega^{u}(u(U))^*.
+    \phi^{II}_\omega(U)=\Theta(U)\phi^{\tilde u}_\omega(\tilde u(U)) + e^{-\frac{\pi\omega}{a}}\Theta(-U)\phi_\omega^{u}(u(U))^*,
   \end{aligned}
 \end{equation}
+los cuales estan definidos en todo el espacio de Minkowski.
 
-La cuantización de los modos de Unruh conduce a los operadores creación y destrucción
+La cuantización de los modos de Unruh conduce a los operadores de destrucción
 \begin{equation}
   \begin{aligned}
     a_\omega^I = -2\sinh\frac{\pi\omega}{a}\int_0^\infty d\omega' \beta_{\omega\omega'}^{\tilde u} a_{\omega'}^U,\\
     a_\omega^{II} = -2\sinh\frac{\pi\omega}{a}\int_0^\infty d\omega' \beta_{\omega\omega'}^{u} a_{\omega'}^U.\\
   \end{aligned}
 \end{equation}
- 
 
+El vacío de estos modos es el vacío de Mikowski, es decir
+\begin{equation}
+  a_\omega^I \ket{0_H} = a_\omega^{II}\ket{0_H} = 0.
+\end{equation}
+ 
+Para buscar el valor esperado de partículas que observa un observador acelerado
+en el vacío de Mikowski, primero calculamos
 \begin{equation}
   \ev{a_\omega^{u\dagger}a_\omega^u}{0_H} = \int_0^\infty d\omega'' \beta_{\omega\omega''}^u
   \beta_{\omega'\omega''}^{u*} = \frac{1}{e^{\frac{2\pi\omega}{a}}-1}\delta(\omega-\omega').
 \end{equation}
+
+En el límite $\omega'\to\omega$, esta cantidad es el valor esperado de partículas que se
+detectarían, pero debido a la delta, se obtiene una divergencia.
+El motivo es calcular el número de partículos en toda la cuña derecha de Rindler, 
+implica que hay que considerar un observador acelerado eternamente, lo que requiere infinita
+energía.
+En una situación real, la delta se transformaría en un valor finito.
+Por tanto,
+\begin{equation}
+  \ev{N_\omega^u}{0_H} \sim \frac{1}{e^{\frac{2\pi\omega}{a}}-1}.
+\end{equation}
+
+Este valor esperado se corresponde con un sistema de bosones a temperatura $T=a/(2\pi k_B)$.
+Sin embargo, todavía no conocemos la forma exacta del vacío de Minkowski.
+
+
 
 \begin{equation}
   \phi_{n,\bar n}(\bar u)=\frac{1}{\sqrt{\Delta \omega}}\int_{n\Delta}^{(n+1)\Delta \omega} e^{i\frac{2\pi \bar n n}{\Delta \omega}}
