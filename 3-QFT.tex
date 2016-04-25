@@ -45,25 +45,25 @@ Puesto que la solución $\phi_V$ está desacoplada de $\phi_U$
 
 La expansión del campo en modos es
 \begin{equation}
-\phi(U) = \int_0^\infty d\omega \qty[a_\omega^U \phi_\omega^\phi (U)+a_\omega^{U*} \phi_\omega^\phi (U)^*].
+\phi_U(U) = \int_0^\infty d\omega \qty[a_\omega^U \phi_\omega^\phi (U)+a_\omega^{U*} \phi_\omega^\phi (U)^*].
 \end{equation}
 
 El proceso de cuantización canónica consiste en reemplazar en valor del campo en cada
-punto del espacio-tiempo $\phi(x,t)$, por un operador $\hat \phi(x,t)$ que satisfará unas
+punto del espacio-tiempo $\phi(x,t)$, por un operador $\widehat \phi(x,t)$ que satisfará unas
 relaciones de conmutación particulares. 
 Esto significa que los coeficientes de la expansión de $\phi_U$ pasan a ser los operadores
-$\hat a_\omega^U$ y $\hat a_\omega^{U\dagger}$ y por tanto
+$\widehat a_\omega^U$ y $\widehat a_\omega^{U\dagger}$ y por tanto
 \begin{equation}
-  \hat \phi(U) = \int_0^\infty d\omega \qty[\hat a_\omega^U\phi_\omega^\phi (U)+\hat a_\omega^{U\dagger} \phi_\omega^\phi (U)^*].
+  \widehat \phi_U(U) = \int_0^\infty d\omega \qty[\widehat a_\omega^U\phi_\omega^\phi (U)+\widehat a_\omega^{U\dagger} \phi_\omega^\phi (U)^*].
 \end{equation}
 
-El operador $\hat a_\omega^{U\dagger}$ se denomina operador creación, pues veremos que crea 
-partículas de frecuencia $\omega$ y $\hat a_\omega^U$ se conoce como operador destrucción porque
+El operador $\widehat a_\omega^{U\dagger}$ se denomina operador creación, pues veremos que crea 
+partículas de frecuencia $\omega$ y $\widehat a_\omega^U$ se conoce como operador destrucción porque
 aniquila partículas de frecuencia $\omega$.
 Las relaciones de conmutación que cumplen son
 \begin{gather}
-  [\hat a_\omega^{U\dagger},\hat a_{\omega'}^{U\dagger}]=[\hat a_\omega^U,\hat a_{\omega'}^U]=0, \\
-  [\hat a_\omega^U,\hat a_{\omega'}^{U\dagger}]=\delta(\omega-\omega').
+  [\widehat a_\omega^{U\dagger},\widehat a_{\omega'}^{U\dagger}]=[\widehat a_\omega^U,\widehat a_{\omega'}^U]=0, \\
+  [\widehat a_\omega^U,\widehat a_{\omega'}^{U\dagger}]=\delta(\omega-\omega').
 \end{gather}
 
 Todavía no hemos especificado el espacio de Hilbert sobre el que actúa el operador del campo, el cual
@@ -214,6 +214,49 @@ Donde $\theta(U)$ es la función de Heaviside
 \end{equation}
 
 El cálculo de los coeficientes de Bogoliubov conduce a 
+\begin{equation}
+  \begin{aligned}
+    &\alpha_{\omega,\omega'}^{ u} = -\frac{e^{\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{-i\omega/a}
+    \Gamma(i\omega/a), \quad
+    \beta_{\omega,\omega'}^{ u} = \frac{e^{-\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{-i\omega/a}
+    \Gamma(i\omega/a)\\
+    &\alpha_{\omega,\omega'}^{\tilde u} = -\frac{e^{\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{i\omega/a}
+    \Gamma(-i\omega/a), \quad
+    \beta_{\omega,\omega'}^{\tilde u} = \frac{e^{-\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{i\omega/a} 
+    \Gamma(-i\omega/a)
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \ev{a_\omega^{u\dagger}a_\omega^u}{0_H} = \int_0^\infty d\omega'' \beta_{\omega\omega''}^u
+  \beta_{\omega'\omega''}^{u*} = \frac{1}{e^{\frac{2\pi\omega}{a}}-1}\delta(\omega-\omega').
+\end{equation}
+
+\begin{equation}
+  \phi_{n,\bar n}(\bar u)=\frac{1}{\sqrt{\Delta \omega}}\int_{n\Delta}^{(n+1)\Delta \omega} e^{i\frac{2\pi \bar n n}{\Delta \omega}}
+  \phi_\omega(\bar u).
+\end{equation}
+
+
+\begin{equation}
+  \ket{0_H} = \prod_{n,\bar n} \qty(\sum_{m=0}^\infty K_{nm} \ket{m_{n\bar n}}_u\otimes \ket{m_{n\bar n}}_{\bar u}).
+\end{equation}
+
+\begin{equation}
+  K_{n,m+1}=e^{-\frac{\pi n\Delta \omega }{a}}K_{nm}.
+\end{equation}
+
+\begin{equation}
+  \ket{0_H} = \prod_{n,\bar n} \qty(\sum_{m=0}^\infty e^{-\frac{\pi n\Delta \omega }{a}}K_{nm}\ket{m_{n\bar n}}_u\otimes \ket{m_{n\bar n}}_{\bar u}).
+\end{equation}
+
+\begin{equation}
+  \ev{0_U}{N^u_{n,\bar n}} =
+\end{equation}
+
+\begin{equation}
+  \rho 
+\end{equation}
 
 \section{Radiación de Hawking}
 \todo{Obtenemos el resultado para observadores asintóticos}
