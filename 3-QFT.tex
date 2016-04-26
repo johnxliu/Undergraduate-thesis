@@ -15,7 +15,7 @@ En este apartado, seguiremos la derivación expuesta en \cite{Barbado:2015uua}.
 
 En la deducción del efecto Unruh estudiaremos un campo escalar sin masa $\phi(t,z)$ en un espacio de Minkowski
 con una dimensión espacial $t$ y una dimensión espacial $z$.  
-\todo{Argumentar por qué se pueden extrapolar los resultados}
+\todo{Se puede argumentar por qué se pueden extrapolar los resultados?}
 La ecuación que describe el campo es la ecuación de Klein-Gordon
 \begin{equation}
   -\pdv[2]{\phi}{t}+\pdv[2]{\phi}{z}=0.
@@ -97,12 +97,12 @@ Los estados construidos son estados propios del operador número de partículas 
 con valor propio $n_i$.
 La base de $\mathcal H_U$ se obtiene juntando los estados con un número arbitrario de partículas
 de todas las frecuencias posibles.
-\todo{La suma directa es no numerable, al tener que considerar todas las frecuencias?}
-Formalmente, $\mathcal H_U$ es la completitud de la suma directa 
-\todo{Rigor}
-\begin{equation}
-  \mathcal H_U = \oplus  .
-\end{equation}
+%\todo{Definición exacta? La suma directa es no numerable, al tener que considerar todas las frecuencias?}
+%Formalmente, $\mathcal H_U$ es la completitud de la suma directa de 
+%\todo{Rigor}
+%\begin{equation}
+%  \mathcal H_U = \overline{\bigoplus  \otimes \ket{n_i}} .
+%\end{equation}
 
 %Expansión en otra base. Transformación Bogoliubov. Vacío.
 Supongamos que queremos expandir el campo en otra base de modos $u$
@@ -142,8 +142,8 @@ En el espacio de Minkowski la energía está bien definida y coincide para todos
 inerciales, al ser invariante de Lorentz.
 Sin embargo, en un espacio-tiempo curvo el concepto de energía puede no estar bien definido
 y por tanto no hay un estado de vacío privilegiado.
-\todo{Tiene algún sentido el concepto de partícula en un espacio que no sea asintóticamente
-plano o no estacionario?}
+%\todo{Tiene algún sentido el concepto de partícula en un espacio que no sea asintóticamente
+%plano o no estacionario?}
 
 %Observadores acelerados
 Con el fin de estudiar cuál es el vacío dado por un observador acelerado en un espacio de 
@@ -172,7 +172,7 @@ las coordenadas $(\tilde \eta, \tilde \xi)$ dadas por
 
 Las trayectorias con $\eta=\eta_0$ constante corresponden con observadores que se mueven con
 aceleración propia $ae^{-a\xi_0}$.
-\todo{Pq $\xi_0=0$}
+%\todo{Pq $\xi_0=0$}
 El tiempo propio que miden estos observadores es $\tau = e^{a\xi_0}\eta$.
 Escogiendo apropiadamente el origen de coordenadas, un observador con aceleración constante
 es tiene viene dado por $\eta=\tau$ y $\xi=0$.
@@ -278,7 +278,7 @@ en el vacío de Minkowski, primero calculamos
 
 En el límite $\omega'\to\omega$, esta cantidad es el valor esperado de partículas que se
 detectarían, pero debido a la delta, se obtiene una divergencia.
-El motivo es calcular el número de partículas en toda la cuña derecha de Rindler, 
+El motivo es que calcular el número de partículas en toda la cuña derecha de Rindler, 
 implica que hay que considerar un observador acelerado eternamente, lo que requiere infinita
 energía.
 En una situación real, la delta se transformaría en un valor finito.
@@ -294,31 +294,30 @@ Sin embargo, todavía no conocemos la forma exacta del vacío de Minkowski.
 En vez de considerar ondas armónicas con frecuencia bien definida, trabajamos con paquetes
 de onda con resolución $\Delta \omega$ centrados en $(n+1/2)\Delta \omega$,
 \begin{equation}
-  \phi_{n,\bar n}^u(u)=\frac{1}{\sqrt{\Delta \omega}}\int_{n\Delta\omega}^{(n+1)\Delta \omega}d\omega e^{i\frac{2\pi \bar n n}{\Delta \omega}\omega}
+  \phi_{n\bar n}^u(u)=\frac{1}{\sqrt{\Delta \omega}}\int_{n\Delta\omega}^{(n+1)\Delta \omega}d\omega e^{i\frac{2\pi \bar n n}{\Delta \omega}\omega}
   \phi^u_\omega(u).
 \end{equation}
 
-\todo{Describir un poco más}
-Al cuantizar estos paquetes se introduce para la cuña derecha el operador destrucción $a_{n,\bar n}^u$
-y en la cuña izquierda $a_{n,\bar n}^{\tilde u}$. 
+Al cuantizar estos paquetes se introduce para la cuña derecha el operador destrucción $a_{n\bar n}^u$
+y en la cuña izquierda $a_{n\bar n}^{\tilde u}$. 
 Construyendo los modos de Unruh asociados a paquetes de ondas, se obtiene que
-los operadores que los operadores $a_{n,\bar n}^I$ y $a_{n,\bar n}^{II}$ cumplen
+los operadores que los operadores $a_{n\bar n}^I$ y $a_{n\bar n}^{II}$ cumplen
 \begin{equation}
   a_{n\bar n}^I\ket{0_U} = a_{n\bar n}^{II} \ket{0_U} = 0.
 \end{equation}
 
-Entonces, 
+De la expresión de $a_{n\bar n}^I$ y $a_{n\bar n}^{II}$ en términos de $a_{n\bar n}^u$ y $a_{n\bar n}^u$, se llega a 
 \begin{equation}
-  a_{n,\bar n}^{u\dagger} a_{n,\bar n}^u \ket{0_U} = a_{n,\bar n}^{\tilde u\dagger}a_{n,\bar n}^{\tilde u} \ket{0_U},
+  a_{n\bar n}^{u\dagger} a_{n\bar n}^u \ket{0_U} = a_{n\bar n}^{\tilde u\dagger}a_{n\bar n}^{\tilde u} \ket{0_U},
 \end{equation}
 y por tanto hay el mismo número de partículas asociadas a paquetes de ondas de Rindler en ambas
 cuñas.
 
-El estado de vacío 
+Teniendo en cuenta que el estado de vacío ha contener el mismo número de partículas en cada cuña,
 \begin{equation}
   \ket{0_H} = \prod_{n,\bar n} \qty(\sum_{m=0}^\infty K_{nm} \ket{m_{n\bar n}}_u\otimes \ket{m_{n\bar n}}_{\bar u}).
 \end{equation}
-\todo{Es $\prod$ un producto tensorial?}
+\todo{Es $\prod$ un producto tensorial/ suma directa?}
 
 %\begin{equation}
 %  K_{n,m+1}=e^{-\frac{\pi n\Delta \omega }{a}}K_{nm}.
@@ -329,7 +328,7 @@ El estado de vacío
 %\end{equation}
 
 Tras calcular los coeficientes $K_{n \bar n}$ y hacer la traza parcial sobre los estados de
-la cuña izquierda, obtenemos que la matriz 
+la cuña izquierda, obtenemos que la matriz densidad
 \begin{equation}
   \rho  \propto \prod_{n,\bar n} \qty(\sum_{m=0}^\infty e^{-2\pi m n\Delta  \omega/a}\ket{m_{n\bar n}}_u \bra{m_{n\bar n}}_u),
 \end{equation}
@@ -344,18 +343,8 @@ que describe una distribución de Maxwell-Boltzmann a temperatura $T_U=a/(2\pi k
 
 
 \section{Radiación de Hawking}
-\todo{Obtenemos el resultado para observadores asintóticos}
-
 %Introducción relatividad general. Métrica Schwarzschild
 
-
-%Transformación de coordenadas. Ecuación de ondas. Modos Boulware.
-
-
-%Propagación al pasado.
-
-
-\todo{Cálculo Unruh en un BH por path integral}
 El caso más sencillo de agujero negro es el agujero negro de Schwarzschild, que
 describe una distribución de masa con simetría esférica y estática. La métrica asociada
 es 
@@ -363,45 +352,57 @@ es
   ds^2= \qty(1-\frac{2MG}{r})dt^2-\qty(1-\frac{2MG}{r})^{-1}dr^2-r^2d\Omega^2.
 \end{equation}
 
-Observamos que en el radio de Schwarzschild $r_S=2MG$ la componente temporal de la 
+Observamos que en el radio de Schwarzschild $r_s=2MG$, la componente temporal de la 
 métrica se anula mientras que la componente radial va a infinito.
-Se denomina horizonte de sucesos a la esfera con radio $r_S$ centrada en $r=0$.
+Se denomina horizonte de sucesos a la esfera con radio $r_s$ centrada en $r=0$.
+%Singularidad
 
-Para estudiar la física cerca del horizonte es más conveniente emplear las coordenadas
-de Rindler. Para ello sustituimos la coordenada radial por la distancia propia hasta
-el horizonte
-\begin{equation}
-  \rho(r)=\int_0^r dr' \sqrt{g_{rr}(r')}.
-\end{equation}
 
-La métrica se transforma en 
-\begin{equation}
-  ds^2=\qty(1-\frac{2MG}{r(\rho)})dt^2-d\rho^2-r(\rho)^2d\Omega^2.
-\end{equation}
+%Coordenadas tortuga
 
-A distancias próximas al horizonte $r\approx r_S$, $\rho\approx 2\sqrt{2MG(r-2MG)}$
-\begin{equation}
-  ds^2\approx \rho^2\qty(\frac{dt}{4MG})^2 -d\rho^2-r(\rho)^2d\Omega^2.
-\end{equation}
+%Transformación de coordenadas. Ecuación de ondas. Modos Boulware.
 
-Cerca de la coordenada azimutal $\theta=0$, podemos reemplazar las coordenadas
-angulares $\theta,\phi$ por las coordenadas cartesianas $x,y$. Definiendo
-también un tiempo adimensional $\omega=t/(4MG)$ obtenemos la métrica de Rindler
-\begin{equation}
-  ds^2=\rho^2d\omega^2 -d\rho^2 -dx^2-dy^2.
-\end{equation}
 
-Esta métrica describe en realidad un espacio de Minkowski en coordenadas hiperbólicas.
-Si escogemos la transformación
-\begin{align}
-  T&=\rho \sinh \omega, \\
-  Z&=\rho \cosh \omega.
-\end{align}
-la métrica es
-\begin{equation}
-  ds^2=dT^2-dZ^2-dx^2-dy^2.
-\end{equation}
+%Propagación al pasado.
 
+
+
+
+%Para estudiar la física cerca del horizonte es más conveniente emplear las coordenadas
+%de Rindler. Para ello sustituimos la coordenada radial por la distancia propia hasta
+%el horizonte
+%\begin{equation}
+%  \rho(r)=\int_0^r dr' \sqrt{g_{rr}(r')}.
+%\end{equation}
+%
+%La métrica se transforma en 
+%\begin{equation}
+%  ds^2=\qty(1-\frac{2MG}{r(\rho)})dt^2-d\rho^2-r(\rho)^2d\Omega^2.
+%\end{equation}
+%
+%A distancias próximas al horizonte $r\approx r_s$, $\rho\approx 2\sqrt{2MG(r-2MG)}$
+%\begin{equation}
+%  ds^2\approx \rho^2\qty(\frac{dt}{4MG})^2 -d\rho^2-r(\rho)^2d\Omega^2.
+%\end{equation}
+%
+%Cerca de la coordenada azimutal $\theta=0$, podemos reemplazar las coordenadas
+%angulares $\theta,\phi$ por las coordenadas cartesianas $x,y$. Definiendo
+%también un tiempo adimensional $\omega=t/(4MG)$ obtenemos la métrica de Rindler
+%\begin{equation}
+%  ds^2=\rho^2d\omega^2 -d\rho^2 -dx^2-dy^2.
+%\end{equation}
+%
+%Esta métrica describe en realidad un espacio de Minkowski en coordenadas hiperbólicas.
+%Si escogemos la transformación
+%\begin{align}
+%  T&=\rho \sinh \omega, \\
+%  Z&=\rho \cosh \omega.
+%\end{align}
+%la métrica es
+%\begin{equation}
+%  ds^2=dT^2-dZ^2-dx^2-dy^2.
+%\end{equation}
+%
 %Es conveniente definir un observador fijo para cada punto del espacio, llamado
 %FIDO. Estos observadores para mantenerse
 %en reposo dentro del campo gravitatorio necesitan una fuerza que los mantenga
