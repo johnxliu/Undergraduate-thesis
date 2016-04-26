@@ -134,38 +134,39 @@ Entonces
 \section{Termodinámica de cuerdas en espacio plano}
 
 %Termodinámica de cuerdas. Energía libre. Invariancia modular explícita. Escalar termal.
+Buscamos la energía libre de una cuerda bosónica cerrada.
+\todo{Estamos estudiando un gas de cuerdas}
 
 La función de partición bosónica en un espectro discreto es $z=\prod_i 1/(1-\exp(-\beta E_i))$.
 La energía libre viene dada por $F=-1/\beta \ln z=\beta\sum_i \ln(1-\exp(-\beta E_i))$.
-En el caso continuo, donde $E=E(k)$, reemplazamos el sumatorio por $V\int d^{d-1}k/(2\pi)^{d-1}$.
-Por tanto,
+En el caso continuo, donde $E=E(k)$, reemplazamos el sumatorio por $V\int d^{d-1}k/(2\pi)^{d-1}$.Por tanto,
 \begin{equation}
-  F=\frac{V}{\beta}\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\ln(1-\exp(-\beta E))
+  F=\frac{V}{\beta}\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\ln(1-\exp(-\beta E)).
 \end{equation}
 
-Mediante el desarrollo de Taylor $\ln(1-x)=-\sum^\infty_{r=1} x^r/r$
+Expandiendo el logaritmo por el desarrollo de Taylor $\ln(1-x)=-\sum^\infty_{r=1} x^r/r$,
 \begin{equation}
-  F=-\frac{V}{\beta}\sum^\infty_{r=1} \frac 1 r\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\exp(-r\beta E)
+  F=-\frac{V}{\beta}\sum^\infty_{r=1} \frac 1 r\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\exp(-r\beta E).
 \end{equation}
 
 Aplicando la identidad
 \begin{equation}
-  \frac 1 r \exp(-\beta r E)=\frac{\beta}{\sqrt{2\pi}}\int_0^\infty \frac{ds}{s^{3/2}}\exp\qty(-\frac{E^2s}{2}-\frac{r^2\beta^2}{2s})
+  \frac 1 r \exp(-\beta r E)=\frac{\beta}{\sqrt{2\pi}}\int_0^\infty \frac{ds}{s^{3/2}}\exp\qty(-\frac{E^2s}{2}-\frac{r^2\beta^2}{2s}),
 \end{equation}
 
-y como $E^2=k^2+m^2$
-
+y como $E^2=k^2+m^2$, se llega a 
 \begin{equation}
   F=-\frac{V}{\sqrt{2\pi}}\sum^\infty_{r=1} \int_0^\infty \frac{ds}{s^{3/2}} \exp \qty(-\frac{m^2s}{2} -\frac{r^2\beta^2}{2s})
-  \int \frac{d^{d-1}k}{(2\pi)^{d-1}}\exp\qty(-\frac{k^2s}{2})
+  \int \frac{d^{d-1}k}{(2\pi)^{d-1}}\exp\qty(-\frac{k^2s}{2}).
 \end{equation}
 
-La última integral tiene como resultado $(2\pi s)^{\frac{d-1}{2}}$, por lo que
+La integral en momentos tiene como resultado $(2\pi s)^{\frac{d-1}{2}}$, por lo que
 \begin{equation}
-  F=-V \int_0^\infty \frac{ds}{s(2\pi s)^{d/2}}\sum^\infty_{r=1} \exp \qty(-\frac{m^2s}{2}- \frac{r^2\beta^2}{2s})
+  F=-V \int_0^\infty \frac{ds}{s(2\pi s)^{d/2}}\sum^\infty_{r=1} \exp \qty(-\frac{m^2s}{2}- \frac{r^2\beta^2}{2s}).
 \end{equation}
 
 Por otro lado, la función de partición de estado multicuerda es $Z=e^z=-\beta F$. 
+\todo{Omitir path-integral?}
 Entonces podemos hacer la asociación de la energía libre con integral de camino de 
 una partícula tras aplicar una rotación de Wick en la dimensión temporal y compactificando el
 tiempo con periodo $\beta$
@@ -181,70 +182,87 @@ partícula en la dimensión temporal es $w$. La función de partición se suma s
 todas las vueltas posibles y se integra en todos los tiempos propios.
 
 En una teoría de cuerdas bosónica, $d=26$ y la energía libre se obtendría sumando las
-energías libres para todo el espectro posible, con masas
+energías libres para todo el espectro posible, con la fórmula de masas
+\todo{Incluir expresión de N}
 \begin{equation}
-  m^2=\frac{2}{\alpha'}(N+\bar N-2)
+  m^2=\frac{2}{\alpha'}(N+\bar N-2).
 \end{equation}
 
-Puesto que se tiene que cumplir el level-matching $N=\bar N$, habrá que incluir en la 
+Puesto que se tiene que cumplir la condición $N=\bar N$, hay que incluir en la 
 integral la expresión de la delta de Kronecker
 \begin{equation}
-   \delta_{N\bar N}=\int_{-1/2}^{1/2}d\tau_1 \exp(2\pi i\tau_1 (N-\bar N))
+   \delta_{N\bar N}=\int_{-1/2}^{1/2}d\tau_1 \exp(2\pi i\tau_1 (N-\bar N)).
 \end{equation}
 
-Entonces
+La energía libre sería
 \begin{equation}
-  F=\sum_i \delta_{N_i \bar N_i} F(N_i,\bar N_i)
+  F=\sum_i \delta_{N_i \bar N_i} F(N_i,\bar N_i),
 \end{equation}
 
 donde $i$ recorre todas las posibles combinaciones de $N_i$ y $\bar N_i$.
-Haciendo el cambio de variable $s=2\pi\alpha'\tau_2$
+Haciendo el cambio de variable $s=2\pi\alpha'\tau_2$,
 \begin{equation}
   F=-V \int_0^\infty \frac{d\tau_2}{\tau_2(4\pi^2\alpha'\tau_2)^{d/2}}\frac 1 2\sum_{r=-\infty}^{'\infty} 
   \sum_i e^{-(N_i+\bar N_i -2)2\pi\tau_2} e^{-\frac{r^2\beta^2}{4\pi\alpha'\tau_2}}\int_{-1/2}^{1/2} d\tau_1 e^{2\pi i\tau_1(N_i-\bar N_i)}
 \end{equation}
 
-Definiendo $\tau=\tau_1+i\tau_2$ y $q=e^{2\pi i\tau_1}$, se introduce la $\eta$ de 
+El apóstrofe indica que se ha omitido el término con $r=0$ del sumatorio, pues es la contribución
+de vacío que no depende de la temperatura.
+
+Definiendo $\tau=\tau_1+i\tau_2$ y $q=e^{2\pi i\tau_1}$, introducimos la $\eta$ de 
 Dedekind como
 \begin{equation}
-  \eta(\tau)=q^{1/24}\prod_{n=1}^{\infty} (1-q^n)
+  \eta(\tau)=q^{1/24}\prod_{n=1}^{\infty} (1-q^n).
 \end{equation}
-
-Se llega a
+Sustituyendo, llegamos a 
 \begin{equation}
   F=-V \sum_{r=-\infty}^{'\infty} \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1  \frac{1}{(4\pi^2\alpha'\tau_2)^{d/2}}
-  \abs{\eta(\tau)}^{-2d+4}\exp\qty(-\frac{r^2\beta^2}{4\pi\alpha'\tau_2})
+  \abs{\eta(\tau)}^{-2d+4}\exp\qty(-\frac{r^2\beta^2}{4\pi\alpha'\tau_2}).
+  \label{eq:strip}
 \end{equation}
+\todo{De momento no comentamos la path integral}
+%El mismo resultado se obtiene calculando la integral de camino en el toro
+%\begin{equation}
+%  Z= \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal Dx
+%  \exp\qty(-\frac{1}{4\pi\alpha'}\int d^2\sigma \sqrt h h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X_\mu)
+%\end{equation}
 
-El mismo resultado se obtiene calculando la integral de camino en el toro
-\begin{equation}
-  Z= \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal Dx
-  \exp\qty(-\frac{1}{4\pi\alpha'}\int d^2\sigma \sqrt h h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X_\mu)
-\end{equation}
+%donde la región de 
 
-donde la región de 
-
-Se ha llegado a una expresión cuyo integrando no es modular invariante. Es decir, 
-$\tau\to\tau+1$ y $\tau\to1/\tau$ no son invariancias.
-Para conseguir la invariancia modular se restringe el dominio de integración al dominio
+\todo{Dibujo}
+Se ha llegado a una expresión cuyo integrando no es invariante modular. Es decir, la 
+transformación $\tau\to\tau+1$ y $\tau\to1/\tau$ en el integrando modifica el resultado
+de la integral.
+Para conseguir la invariancia modular, se restringe el dominio de integración al dominio
 fundamental y se modifica el integrado, añadiendo el número cuántico $w$ sobre el que 
 se suma, de modo que para $d=26$ se tiene
 \begin{equation}
   F=-V \sum_{r,w=-\infty}^{\infty} \int_\mathcal{F}  \frac{d\tau_1d\tau_2}{2\tau_2}   \frac{1}{(4\pi^2\alpha'\tau_2)^{13}}
-  \abs{\eta(\tau)}^{-48}\exp\qty(-\frac{\abs{r^2-w\tau}^2\beta^2}{4\pi\alpha'\tau_2})
+  \abs{\eta(\tau)}^{-48}\exp\qty(-\frac{\abs{r^2-w\tau}^2\beta^2}{4\pi\alpha'\tau_2}).
+  \label{eq:fund}
 \end{equation}
 
-Haciendo la suma, se llega a
+%Haciendo la suma, se llega a
+%\begin{equation}
+%  Z=-\beta F=\int_{\mathcal F}\frac{d\tau_1d\tau_2}{2\tau_2}\Tr\qty(q^{L_0}\bar q^{\bar L_0})
+%\end{equation}
+%
+%donde
+%\begin{align}
+%  L_0&=\alpha'\frac{p^2}{4}+\frac{\alpha'}{4}\qty(\frac{2\pi n}{\beta}+\frac{w\beta}{2\pi\alpha'})^2+N\\ 
+% \bar L_0&=\alpha'\frac{p^2}{4}+\frac{\alpha'}{4}\qty(\frac{2\pi n}{\beta}-\frac{w\beta}{2\pi\alpha'})^2+\bar N
+%\end{align}
+%
+
+Ahora que ya hemos hallado la energía libre, buscamos cuándo diverge.
+De acuerdo con \ref{eq:strip}, para valores próximos a $\tau_2=0$, los términos con $r=\pm 1$
+son dominantes. El comportamiento de la exponencial es
 \begin{equation}
-  Z=-\beta F=\int_{\mathcal F}\frac{d\tau_1d\tau_2}{2\tau_2}\Tr\qty(q^{L_0}\bar q^{\bar L_0})
+  \exp\qty(\frac{8\pi^2 \alpha' -\beta^2}{4\pi\alpha'\tau_2}),
 \end{equation}
+por lo que al integrar $\tau_2$ desde cero la energía libre diverge si $\beta\leq \beta_H=4\pi\sqrt{\alpha'}$.
 
-donde
-\begin{align}
-  L_0&=\alpha'\frac{p^2}{4}+\frac{\alpha'}{4}\qty(\frac{2\pi n}{\beta}+\frac{w\beta}{2\pi\alpha'})^2+N\\ 
- \bar L_0&=\alpha'\frac{p^2}{4}+\frac{\alpha'}{4}\qty(\frac{2\pi n}{\beta}-\frac{w\beta}{2\pi\alpha'})^2+\bar N
-\end{align}
-
+Si examinamos el integrando en la región fundamental \ref{eq:fund}, 
 
 %\section{Cuerdas en background estático}
 %Supongamos una cuerda en presencia de un background $G_{\mu\nu}$ independiente del tiempo.
