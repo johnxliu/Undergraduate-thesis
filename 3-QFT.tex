@@ -1,7 +1,7 @@
 \chapter{QFT en sistemas acelerados y espacio curvo}
-%Corregir numeracion
+%\todo{Corregir numeracion}
 
-\todo{Mejor meter subsecciones?}
+%\todo{Mejor meter subsecciones?}
 \section{Efecto Unruh}
 
 Una propiedad sorprendente de las teorías cuánticas de campos es que el estado de vacío
@@ -15,7 +15,7 @@ En este apartado, seguiremos la derivación expuesta en \cite{Barbado:2015uua}.
 
 En la deducción del efecto Unruh estudiaremos un campo escalar sin masa $\phi(t,z)$ en un espacio de Minkowski
 con una dimensión espacial $t$ y una dimensión espacial $z$.  
-\todo{Argumentar por qué es válido usar esta teoría}
+\todo{Argumentar por qué se pueden extrapolar los resultados}
 La ecuación que describe el campo es la ecuación de Klein-Gordon
 \begin{equation}
   -\pdv[2]{\phi}{t}+\pdv[2]{\phi}{z}=0.
@@ -137,7 +137,6 @@ si el coeficiente $\beta_{\omega\omega'}$ no es nulo
 
 Esto quiere decir que en una teoría cuántica de campos, el vacío depende de la base de modos
 que se haya escogido antes de la cuantización.
-\todo{En realidad la ambigüedad es el concepto de partícula}
 La ambigüedad se puede resolver escogiendo el vacío que tenga la mínima energía.
 En el espacio de Minkowski la energía está bien definida y coincide para todos los observadores
 inerciales, al ser invariante de Lorentz.
@@ -234,7 +233,7 @@ Donde $\Theta(U)$ es la función de Heaviside
 \end{equation}
 
 El cálculo de los coeficientes de Bogoliubov conduce a 
-\todo{Tal vez separar}
+%\todo{Tal vez separar}
 \begin{equation}
   \begin{aligned}
     &\alpha_{\omega,\omega'}^{ u} = -\frac{e^{\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{-i\omega/a}
@@ -255,7 +254,7 @@ Por conveniencia, los modos de Unruh se definen como
     \phi^{II}_\omega(U)=\Theta(U)\phi^{\tilde u}_\omega(\tilde u(U)) + e^{-\frac{\pi\omega}{a}}\Theta(-U)\phi_\omega^{u}(u(U))^*,
   \end{aligned}
 \end{equation}
-los cuales estan definidos en todo el espacio de Minkowski.
+los cuales están definidos en todo el espacio de Minkowski.
 
 La cuantización de los modos de Unruh conduce a los operadores de destrucción
 \begin{equation}
@@ -265,13 +264,13 @@ La cuantización de los modos de Unruh conduce a los operadores de destrucción
   \end{aligned}
 \end{equation}
 
-El vacío de estos modos es el vacío de Mikowski, es decir
+El vacío de estos modos es el vacío de Minkowski, es decir
 \begin{equation}
   a_\omega^I \ket{0_H} = a_\omega^{II}\ket{0_H} = 0.
 \end{equation}
  
 Para buscar el valor esperado de partículas que observa un observador acelerado
-en el vacío de Mikowski, primero calculamos
+en el vacío de Minkowski, primero calculamos
 \begin{equation}
   \ev{a_\omega^{u\dagger}a_\omega^u}{0_H} = \int_0^\infty d\omega'' \beta_{\omega\omega''}^u
   \beta_{\omega'\omega''}^{u*} = \frac{1}{e^{\frac{2\pi\omega}{a}}-1}\delta(\omega-\omega').
@@ -279,7 +278,7 @@ en el vacío de Mikowski, primero calculamos
 
 En el límite $\omega'\to\omega$, esta cantidad es el valor esperado de partículas que se
 detectarían, pero debido a la delta, se obtiene una divergencia.
-El motivo es calcular el número de partículos en toda la cuña derecha de Rindler, 
+El motivo es calcular el número de partículas en toda la cuña derecha de Rindler, 
 implica que hay que considerar un observador acelerado eternamente, lo que requiere infinita
 energía.
 En una situación real, la delta se transformaría en un valor finito.
@@ -291,33 +290,58 @@ Por tanto,
 Este valor esperado se corresponde con un sistema de bosones a temperatura $T=a/(2\pi k_B)$.
 Sin embargo, todavía no conocemos la forma exacta del vacío de Minkowski.
 
-
-
+\todo{Pq usar paquetes? Se puede omitir de la demostración?}
+En vez de considerar ondas armónicas con frecuencia bien definida, trabajamos con paquetes
+de onda con resolución $\Delta \omega$ centrados en $(n+1/2)\Delta \omega$,
 \begin{equation}
-  \phi_{n,\bar n}(\bar u)=\frac{1}{\sqrt{\Delta \omega}}\int_{n\Delta}^{(n+1)\Delta \omega} e^{i\frac{2\pi \bar n n}{\Delta \omega}}
-  \phi_\omega(\bar u).
+  \phi_{n,\bar n}^u(u)=\frac{1}{\sqrt{\Delta \omega}}\int_{n\Delta\omega}^{(n+1)\Delta \omega}d\omega e^{i\frac{2\pi \bar n n}{\Delta \omega}\omega}
+  \phi^u_\omega(u).
 \end{equation}
 
+\todo{Describir un poco más}
+Al cuantizar estos paquetes se introduce para la cuña derecha el operador destrucción $a_{n,\bar n}^u$
+y en la cuña izquierda $a_{n,\bar n}^{\tilde u}$. 
+Construyendo los modos de Unruh asociados a paquetes de ondas, se obtiene que
+los operadores que los operadores $a_{n,\bar n}^I$ y $a_{n,\bar n}^{II}$ cumplen
+\begin{equation}
+  a_{n\bar n}^I\ket{0_U} = a_{n\bar n}^{II} \ket{0_U} = 0.
+\end{equation}
 
+Entonces, 
+\begin{equation}
+  a_{n,\bar n}^{u\dagger} a_{n,\bar n}^u \ket{0_U} = a_{n,\bar n}^{\tilde u\dagger}a_{n,\bar n}^{\tilde u} \ket{0_U},
+\end{equation}
+y por tanto hay el mismo número de partículas asociadas a paquetes de ondas de Rindler en ambas
+cuñas.
+
+El estado de vacío 
 \begin{equation}
   \ket{0_H} = \prod_{n,\bar n} \qty(\sum_{m=0}^\infty K_{nm} \ket{m_{n\bar n}}_u\otimes \ket{m_{n\bar n}}_{\bar u}).
 \end{equation}
+\todo{Es $\prod$ un producto tensorial?}
 
-\begin{equation}
-  K_{n,m+1}=e^{-\frac{\pi n\Delta \omega }{a}}K_{nm}.
-\end{equation}
+%\begin{equation}
+%  K_{n,m+1}=e^{-\frac{\pi n\Delta \omega }{a}}K_{nm}.
+%\end{equation}
 
-\begin{equation}
-  \ket{0_H} = \prod_{n,\bar n} \qty(\sum_{m=0}^\infty e^{-\frac{\pi n\Delta \omega }{a}}K_{nm}\ket{m_{n\bar n}}_u\otimes \ket{m_{n\bar n}}_{\bar u}).
-\end{equation}
+%\begin{equation}
+%  \ket{0_H} = \prod_{n,\bar n} \qty(\sum_{m=0}^\infty e^{-\frac{\pi n\Delta \omega }{a}}K_{nm}\ket{m_{n\bar n}}_u\otimes \ket{m_{n\bar n}}_{\bar u}).
+%\end{equation}
 
+Tras calcular los coeficientes $K_{n \bar n}$ y hacer la traza parcial sobre los estados de
+la cuña izquierda, obtenemos que la matriz 
 \begin{equation}
-  \ev{0_U}{N^u_{n,\bar n}} =
+  \rho  \propto \prod_{n,\bar n} \qty(\sum_{m=0}^\infty e^{-2\pi m n\Delta  \omega/a}\ket{m_{n\bar n}}_u \bra{m_{n\bar n}}_u),
 \end{equation}
+que describe una distribución de Maxwell-Boltzmann a temperatura $T_U=a/(2\pi k_B)$.
+\todo{Contradicción distribución MB vs BE?}
 
-\begin{equation}
-  \rho 
-\end{equation}
+\todo{Omitimos sutilezas de detectores Unruh-DeWitt, cálculo alternativo a la path integral\ldots}
+
+%\begin{equation}
+%  \ev{0_U}{N^u_{n,\bar n}} =
+%\end{equation}
+
 
 \section{Radiación de Hawking}
 \todo{Obtenemos el resultado para observadores asintóticos}
@@ -329,9 +353,6 @@ Sin embargo, todavía no conocemos la forma exacta del vacío de Minkowski.
 
 
 %Propagación al pasado.
-
-
-
 
 
 \todo{Cálculo Unruh en un BH por path integral}
@@ -381,106 +402,106 @@ la métrica es
   ds^2=dT^2-dZ^2-dx^2-dy^2.
 \end{equation}
 
-Es conveniente definir un observador fijo para cada punto del espacio, llamado
-FIDO. Estos observadores para mantenerse
-en reposo dentro del campo gravitatorio necesitan una fuerza que los mantenga
-en su sitio. Para los FREFOs, su aceleración es, para $\rho<<MG$ es aproximadamente $1/\rho$.
-
-Si dividimos el espacio de Minkowski en cuatro regiones, el espacio de Rindler ocupa
-la región I. Los FREFOs emplean el las coordenadas del (T,Z,x,y), mientras que
-los FREFOS emplean $(\omega, \rho, x, y)$. El horizonte se sitúa en $T=Z=0$, o
-en coordenadas de Rindler, $\rho=0$.
-Gráficamente, se observa que una translación espacial de $\omega$ para un equivale
-a un boost en el espacio de Minkowski.
-
-Al espacio de Rindler solo le llega información de I y IV, pero la región II está 
-desconectada causalmente por culpa del horizonte.
-Además, un partícula que pase de IV a I será vista como proveniente del tiempo 
-$\omega=-\infty$, por lo que se pueden interpretar como condiciones iniciales.
-
-Estudiamos un campo escalar masivo cuántico $\xi$ en un espacio de Rindler.
-La evolución temporal de un sistema cualquiera viene dada por un hamiltoniano. En el
-espacio de Rindler la evolución en $\omega$ se determina mediante el hamiltoniano de
-Rindler, cuya expresión en función del tensor energía-momento es
-\begin{equation}
-  H_R=\int_0^\infty d\rho dxdy \rho T^{00} (\rho, x, y).
-\end{equation}
-
-En el caso de un campo escalar masivo sometido a un potencial $V$, la densidad de energía
-es
-\begin{equation}
-  T^{00}=\frac{\Pi^2}{2}+\frac{1}{2}\qty(\nabla \xi)^2+V(\xi).
-\end{equation}
-
-Entonces el hamiltoniano es
-\begin{equation}
-  H_R=\int_0^\infty d\rho dx_\perp \frac{\rho}{2}\qty(\Pi^2+\qty(\pdv{\xi}{\rho})^2+\qty(\pdv{\xi}{x_\perp})^2+2V(\xi)).
-\end{equation}
-
-Desde el punto de vista del espacio de Minkowski, $H_R$ es el generador de boosts en 
-la dirección Z.
-
-En una teoría cuántica, el hecho que haya correlación entre el campo para dos puntos
-del espacio origina un fenómeno interesante en el espacio de Rindler. 
-Hemos visto que la región III está desconectada de la región I, por lo que consideramos
-al campo en cada región como subsistemas distintos. Pero debido a que el campo en I está
-correlacionado con el campo III, están entrelazados entre sí.
-Por esta razón, no podemos describir al campo en I como un sistema puro como una
-matriz de densidad obtenida tomando la traza parcial en III de la matriz de densidad
-del sistema completo.
-
-En general, si el estado asociado a dos subsistemas A y B que no están interactuando 
-es $\ket{\Psi}$, su matriz de densidad es
-\begin{equation}
-  \rho_{AB}=\ket{\Psi}\bra{\Psi}.
-\end{equation}
-
-La matriz de densidad que describe el sistema A es
-\begin{equation}
-  \rho_{A}=\Tr_B \rho_{AB}=\expval{\rho_{AB}}{\beta}.
-\end{equation}
- 
-A cada matriz de densidad le corresponde la entropía de von Neumann
-\begin{equation}
-  S=-\Tr (\rho_A \ln \rho_A)=-\sum_j \rho_j \ln \rho_j.
-\end{equation}
-
-Donde $\rho_j$ son los valores propios de $\rho_A$.
-Esta entropía se debe a que estamos perdiendo información al ignorar el subsistema $B$, que 
-está entrelazado con $A$, por lo que también se denomina entropía de entrelazamiento.
-La interpretación de $\rho_j$ es que estamos describiendo un sistema cuyo estado no 
-conocemos, pero sabemos que a cada estado le corresponde una probabilidad $\rho_j$.
-
-Por otro lado un sistema termodinámico en equilibrio a temperatura $\beta$ tiene 
-asociado la matriz densidad 
-\begin{equation}
-  \rho=\frac{e^{-\beta H}}{\Tr e^{\beta H}}.
-\end{equation}
-
-Retomamos el campo escalar en un espacio de Rindler. 
-Para $T=0$, los campos en cada punto forman un conjunto completo de observables que 
-conmutan. Denominamos $\xi_L$ a los campos en $Z<0$ y $\xi_R$ si $Z>0$.
-En teoría cuántica de campos, un estado se describe como una distribución que 
-depende de los campos $\Psi[\xi]=\Psi[\xi_L,\xi_R]$.
-
-Supondremos que $\Psi[\xi_L,\xi_R]$ está en el estado fundamental (vacío) del hamiltoniano
-de Minkowski. Para hallar el estado fundamental mediante la integral de camino 
-en mecánica cuántica de partículas aplicamos
-\begin{align}
-  \braket{y,T}{x,0}\sim \int_{X(0)=x,X(T)=y} \mathcal D X e^{-S} \sim 
-  \mel{y}{e^{-HT}}{x}=\sum_{n,n'} \ip{y}{n}\mel{n}{e^{-HT}}{n'}\ip{n'}{n}=\\
-  =\sum_{n,n'} \Psi_n(y) e^{-E_n T} \bar{\Psi}_n(x)\sim   \Psi_0(y) e^{-E_0 T} \bar{\Psi}_0(x).
-\end{align}
-
-Donde hemos aplicado una rotación de Wick $t\to T=it$ por continuación analítica.
-Por lo que $\bar{\Psi}_0(x)\sim \int_{X(0)=x} \mathcal D x e^{-S}$.
-De forma similar en teoría cuántica de campos 
-\begin{equation}
-  \Psi[\xi_L,\xi_R]=\frac{1}{\sqrt{Z}}\int_{X^0>0, \xi(X^0=0)=(\xi_L,\xi_R)} e^{-S}
-\end{equation}
-
-Para evaluar la integral, tenemos en cuenta que como la translación en $\omega$
-equivale a un boost en el espacio de Minkowski, en el espacio euclídeo se traduce
-en una rotación.
-El ángulo $\theta$ con respecto al eje $Z$ en el plano $(Z,X^0)$ se corresponde con
-el tiempo de Rindler $\omega$.
+%Es conveniente definir un observador fijo para cada punto del espacio, llamado
+%FIDO. Estos observadores para mantenerse
+%en reposo dentro del campo gravitatorio necesitan una fuerza que los mantenga
+%en su sitio. Para los FREFOs, su aceleración es, para $\rho<<MG$ es aproximadamente $1/\rho$.
+%
+%Si dividimos el espacio de Minkowski en cuatro regiones, el espacio de Rindler ocupa
+%la región I. Los FREFOs emplean el las coordenadas del (T,Z,x,y), mientras que
+%los FREFOS emplean $(\omega, \rho, x, y)$. El horizonte se sitúa en $T=Z=0$, o
+%en coordenadas de Rindler, $\rho=0$.
+%Gráficamente, se observa que una translación espacial de $\omega$ para un equivale
+%a un boost en el espacio de Minkowski.
+%
+%Al espacio de Rindler solo le llega información de I y IV, pero la región II está 
+%desconectada causalmente por culpa del horizonte.
+%Además, un partícula que pase de IV a I será vista como proveniente del tiempo 
+%$\omega=-\infty$, por lo que se pueden interpretar como condiciones iniciales.
+%
+%Estudiamos un campo escalar masivo cuántico $\xi$ en un espacio de Rindler.
+%La evolución temporal de un sistema cualquiera viene dada por un hamiltoniano. En el
+%espacio de Rindler la evolución en $\omega$ se determina mediante el hamiltoniano de
+%Rindler, cuya expresión en función del tensor energía-momento es
+%\begin{equation}
+%  H_R=\int_0^\infty d\rho dxdy \rho T^{00} (\rho, x, y).
+%\end{equation}
+%
+%En el caso de un campo escalar masivo sometido a un potencial $V$, la densidad de energía
+%es
+%\begin{equation}
+%  T^{00}=\frac{\Pi^2}{2}+\frac{1}{2}\qty(\nabla \xi)^2+V(\xi).
+%\end{equation}
+%
+%Entonces el hamiltoniano es
+%\begin{equation}
+%  H_R=\int_0^\infty d\rho dx_\perp \frac{\rho}{2}\qty(\Pi^2+\qty(\pdv{\xi}{\rho})^2+\qty(\pdv{\xi}{x_\perp})^2+2V(\xi)).
+%\end{equation}
+%
+%Desde el punto de vista del espacio de Minkowski, $H_R$ es el generador de boosts en 
+%la dirección Z.
+%
+%En una teoría cuántica, el hecho que haya correlación entre el campo para dos puntos
+%del espacio origina un fenómeno interesante en el espacio de Rindler. 
+%Hemos visto que la región III está desconectada de la región I, por lo que consideramos
+%al campo en cada región como subsistemas distintos. Pero debido a que el campo en I está
+%correlacionado con el campo III, están entrelazados entre sí.
+%Por esta razón, no podemos describir al campo en I como un sistema puro como una
+%matriz de densidad obtenida tomando la traza parcial en III de la matriz de densidad
+%del sistema completo.
+%
+%En general, si el estado asociado a dos subsistemas A y B que no están interactuando 
+%es $\ket{\Psi}$, su matriz de densidad es
+%\begin{equation}
+%  \rho_{AB}=\ket{\Psi}\bra{\Psi}.
+%\end{equation}
+%
+%La matriz de densidad que describe el sistema A es
+%\begin{equation}
+%  \rho_{A}=\Tr_B \rho_{AB}=\expval{\rho_{AB}}{\beta}.
+%\end{equation}
+% 
+%A cada matriz de densidad le corresponde la entropía de von Neumann
+%\begin{equation}
+%  S=-\Tr (\rho_A \ln \rho_A)=-\sum_j \rho_j \ln \rho_j.
+%\end{equation}
+%
+%Donde $\rho_j$ son los valores propios de $\rho_A$.
+%Esta entropía se debe a que estamos perdiendo información al ignorar el subsistema $B$, que 
+%está entrelazado con $A$, por lo que también se denomina entropía de entrelazamiento.
+%La interpretación de $\rho_j$ es que estamos describiendo un sistema cuyo estado no 
+%conocemos, pero sabemos que a cada estado le corresponde una probabilidad $\rho_j$.
+%
+%Por otro lado un sistema termodinámico en equilibrio a temperatura $\beta$ tiene 
+%asociado la matriz densidad 
+%\begin{equation}
+%  \rho=\frac{e^{-\beta H}}{\Tr e^{\beta H}}.
+%\end{equation}
+%
+%Retomamos el campo escalar en un espacio de Rindler. 
+%Para $T=0$, los campos en cada punto forman un conjunto completo de observables que 
+%conmutan. Denominamos $\xi_L$ a los campos en $Z<0$ y $\xi_R$ si $Z>0$.
+%En teoría cuántica de campos, un estado se describe como una distribución que 
+%depende de los campos $\Psi[\xi]=\Psi[\xi_L,\xi_R]$.
+%
+%Supondremos que $\Psi[\xi_L,\xi_R]$ está en el estado fundamental (vacío) del hamiltoniano
+%de Minkowski. Para hallar el estado fundamental mediante la integral de camino 
+%en mecánica cuántica de partículas aplicamos
+%\begin{align}
+%  \braket{y,T}{x,0}\sim \int_{X(0)=x,X(T)=y} \mathcal D X e^{-S} \sim 
+%  \mel{y}{e^{-HT}}{x}=\sum_{n,n'} \ip{y}{n}\mel{n}{e^{-HT}}{n'}\ip{n'}{n}=\\
+%  =\sum_{n,n'} \Psi_n(y) e^{-E_n T} \bar{\Psi}_n(x)\sim   \Psi_0(y) e^{-E_0 T} \bar{\Psi}_0(x).
+%\end{align}
+%
+%Donde hemos aplicado una rotación de Wick $t\to T=it$ por continuación analítica.
+%Por lo que $\bar{\Psi}_0(x)\sim \int_{X(0)=x} \mathcal D x e^{-S}$.
+%De forma similar en teoría cuántica de campos 
+%\begin{equation}
+%  \Psi[\xi_L,\xi_R]=\frac{1}{\sqrt{Z}}\int_{X^0>0, \xi(X^0=0)=(\xi_L,\xi_R)} e^{-S}
+%\end{equation}
+%
+%Para evaluar la integral, tenemos en cuenta que como la translación en $\omega$
+%equivale a un boost en el espacio de Minkowski, en el espacio euclídeo se traduce
+%en una rotación.
+%El ángulo $\theta$ con respecto al eje $Z$ en el plano $(Z,X^0)$ se corresponde con
+%el tiempo de Rindler $\omega$.
