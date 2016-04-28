@@ -19,6 +19,7 @@ con una dimensión espacial $t$ y una dimensión espacial $z$.
 La ecuación que describe el campo es la ecuación de Klein-Gordon
 \begin{equation}
   -\pdv[2]{\phi}{t}+\pdv[2]{\phi}{z}=0.
+  \label{eq:kg}
 \end{equation}
 
 La solución general de esta ecuación de ondas toma la forma
@@ -343,7 +344,11 @@ que describe una distribución de Maxwell-Boltzmann a temperatura $T_U=a/(2\pi k
 
 
 \section{Radiación de Hawking}
+\todo{Introducción}
+La radiación de Hawking
 %Introducción relatividad general. Métrica Schwarzschild
+
+
 
 El caso más sencillo de agujero negro es el agujero negro de Schwarzschild, que
 describe una distribución de masa con simetría esférica y estática. La métrica asociada
@@ -359,6 +364,60 @@ Se denomina horizonte de sucesos a la esfera con radio $r_s$ centrada en $r=0$.
 
 
 %Coordenadas tortuga
+Es conveniente introducir la coordenada tortuga
+\begin{equation}
+  r^*=r+2M\ln\qty(\frac{r}{r_s}-1),
+\end{equation}
+que toma el valor $r^*=-\infty$ en el horizonte.
+La métrica en estas coordenadas es
+\begin{equation}
+  ds^2= \qty(1-\frac{2M}{r})[-dt^2+dr^{*2}]+r^2d\Omega^2.
+\end{equation}
+
+Si estudiamos un campo escalar no masivo con simetría esférica $\psi(t,r)$, la ecuación de Klein-Gordon
+en un espacio de Schwarzschild es
+\begin{equation}
+  -\pdv[2]{\psi}{t} + \pdv[2]{\psi}{r^*} + \frac{2}{r}\qty(1-\frac{r_s}{r}) \pdv{\psi}{r^*} = 0.
+\end{equation}
+
+Las soluciones a esta ecuación ya no son ondas planas como en la métrica de Minkowski.
+Haciendo el cambio de variable $\psi=\phi/r$, obtenemos
+\begin{equation}
+  -\pdv[2]{\phi}{t} + \pdv[2]{\phi}{r^*} - \frac{r_s}{r^3}\qty(1-\frac{r_s}{r}) \phi= 0.
+\end{equation}
+
+La cual se corresponde con la ecuación de Klein-Gordon que vimos en \ref{eq:kg}, salvo 
+por un término de potencial efectivo
+\begin{equation}
+  V(r) = \frac{r_s}{r^3}\qty(1-\frac{r_s}{r}).
+\end{equation}
+
+En una primera aproximación podemos ignorar este potencial, pues su único efecto es distorsionar
+la radiación de Hawking emitida.
+
+Definiendo las coordenadas Eddington-Finkelstein
+\begin{equation}
+  \begin{aligned}
+    u=t-r^*,\\
+    v=t+r^*,
+  \end{aligned}
+\end{equation}
+la solución general es
+\begin{equation}
+  \phi(u,v)=\phi_u(u) + \phi_v(v).
+\end{equation}
+
+El campo se descompone en los modos de Boulware
+\begin{equation}
+  \begin{aligned}
+    \phi_\omega^u(u)=\frac{1}{\sqrt{4\pi \omega}}e^{-i\omega u}\\
+    \phi_\omega^v(v)=\frac{1}{\sqrt{4\pi \omega}}e^{-i\omega v}.
+  \end{aligned}
+\end{equation}
+
+El vació asociado a la cuantización con estos modos se denomina vacío de Boulware.
+
+
 
 %Transformación de coordenadas. Ecuación de ondas. Modos Boulware.
 
