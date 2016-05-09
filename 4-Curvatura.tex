@@ -6,4 +6,204 @@ La temperatura de Hagedorn se extrae del comportamiento divergente de la energí
 
 
 Por tanto, necesitamos ver cómo calcular la energía libre en un espacio-tiempo curvo.
-Veremos dos métodos distintos:
+Veremos dos métodos distintos: mediante la integral de camino en el toro de una cuerda
+que se enrolla en el tiempo de la variedad termal (tiempo euclídeo con periodo $\beta$) y
+la integral de camino a un loop de un campo taquiónico.
+
+\section{Path integral en la worldsheet}
+
+La integral de camino del toro en una campo $G_{\mu\nu}$, el cual representa la curvatura
+del espacio-tiempo, en $d$ dimensiones es
+\begin{equation}
+  Z=\int_0^\infty \frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal DX
+  \sqrt G e^{-S},
+  \label{eq:toruspi}
+\end{equation}
+donde el determinante de Faddeev-Popov se introduce debido a la libertad gauge bajo difeomorfismos
+y trasformaciones Weyl.
+La acción es 
+\begin{equation}
+  S= \frac{1}{4\pi \alpha'}\int_{0}^{1} d^2\sigma \sqrt h h^{\alpha\beta} \partial_\alpha X^\mu\partial_\beta X^\nu G_{\mu\nu}.
+\end{equation}
+La métrica de la worldsheet es
+\begin{equation}
+  h_{\alpha\beta} =
+\qty(
+\begin{array}{cc}
+  1 & \tau_1 \\
+  \tau_1 & \tau_1^2+\tau_2^2
+\end{array}
+).
+\end{equation}
+
+Definimos las nuevas coordenadas $\sigma=\sigma_1/\tau_2$ y $\tau=\sigma_2$, de modo 
+que la acción se convierte en 
+\begin{equation}
+  \begin{aligned}
+    S= \frac{1}{4\pi \alpha'}\int_0^{1/\tau_2} d\sigma  \int_0^1 d\tau 
+    &\biggl[
+      \qty(1+\frac{\tau_1^2}{\tau^2_2})\partial_\sigma X^\mu \partial_\sigma X^\nu G_{\mu\nu} +
+      2\frac{\tau_1}{\tau_2}\partial_\sigma X^\mu \partial_\tau X^\nu G_{\mu\nu}  \\
+      &+ \partial_\tau X^\mu \partial_\tau X^\nu G_{\mu\nu}\biggl].
+  \end{aligned}
+\end{equation}
+
+Haciendo el desarrollo de Fourier de $X^\mu(\sigma,\tau)$ en la coordenada $\sigma$, obtenemos
+\begin{equation}
+  \begin{aligned}
+    X^i(\sigma,\tau) =& \sum_{n=-\infty}^\infty X_n^i(\tau) e^{in2\pi \tau_2 \sigma} \\
+    X^0(\sigma,\tau) =& \pm \beta \tau_2 \sigma +  \sum_{n=-\infty}^\infty X_n^0(\tau) e^{in2\pi \tau_2 \sigma}.
+  \end{aligned}
+\end{equation}
+
+Como la divergencia de Hagedorn se produce en $\tau_2\to\infty$, nos quedamos con el modo $n=0$.
+%Esto significa que despreciamos las vibraciones de la cuerda ortogonales a 
+Al integrar en $\tau_2$, obtenemos la acción de una partícula
+\begin{equation}
+  \begin{aligned}
+    S=\frac{1}{4\pi\alpha'\tau_2}\int_0^1 d\tau \big[
+      \beta^2 (\tau_1^2+\tau_2^2)G_{00} \pm 2\beta\tau_1 G_{0\mu}\partial_\tau X^\mu  +G_{\mu\nu} \partial_\tau X^\mu \partial_\tau X^\nu
+    \big].
+  \end{aligned}
+\end{equation}
+
+Depreciar el resto de modos en la serie de Fourier hace que a la acción resultante le falten
+términos adicionales. 
+En una métrica plana, la corrección a la acción es
+\begin{equation}
+  \Delta S = - \frac{\tau_2^2 \beta^2_{H0}}{4\pi\alpha' \tau_2}.
+\end{equation}
+
+Definiendo un nuevo parámetro $t=\tau_2 \tau$ e incluyendo la corrección a la acción
+\begin{equation}
+  \begin{aligned}
+    S=\frac{1}{4\pi\alpha'}\biggl[ -\beta^2\tau_2 + \int_0^{\tau_2} dt \biggl\{
+      \beta^2 \frac{\tau_1^2+\tau_2^2}{\tau_2^2}G_{00} \pm 2\beta\frac{\tau_1}{\tau_2} G_{0\mu}\partial_t X^\mu  +G_{\mu\nu} \partial_t X^\mu \partial_t X^\nu
+    \biggl\}\biggl].
+  \end{aligned}
+\end{equation}
+
+En una métrica estacionaria y que cumpla $G_{0i}=0$
+\begin{equation}
+  \begin{aligned}
+    S=\frac{1}{4\pi\alpha'}\biggl[ -\beta^2\tau_2 + \int_0^{\tau_2} dt \biggl\{&
+      \beta^2 \frac{\tau_1^2+\tau_2^2}{\tau_2^2}G_{00} \pm 2\beta\frac{\tau_1}{\tau_2} G_{00}\partial_t X^0  +G_{00} \qty(\partial_t X^0)^2 \\
+    &+G_{ij} \partial_t X^i \partial_t X^j
+    \biggl\}\biggl].
+  \end{aligned}
+\end{equation}
+
+Si descomponemos la coordenada temporal en una parte clásica y una corrección adicional,
+$X^0=X^{cl}+\tilde X^0$, podemos resolver la ecuación de movimiento para el término clásico y
+así simplificar la acción.
+La ecuación de Euler-Lagrange es 
+\todo{Reemplazar indices}
+\begin{equation}
+  \partial_t\qty[G_{00}\partial_t X^0 \pm \beta \frac{\tau_1}{\tau_2}G_{00}]=0.
+\end{equation}
+
+Por lo que 
+\begin{equation}
+  G_{00}\partial_t X^0 \pm \beta \frac{\tau_1}{\tau_2}G_{00}=C.
+\end{equation}
+
+Como la coordenada $X^0$ es periódica,
+\begin{equation}
+  0=X^0(\tau_2) -X^0(0) = X^0(t)\eval_0^{\tau_2}= \int_0^{\tau_2}\partial_t X^0(t) = \ev{\partial_t X^0}
+\end{equation}
+
+Promediando,
+\begin{equation}
+  \ev{\partial_t X^0} \pm \ev{\beta \frac{\tau_1}{\tau_2}}=\ev{\frac{C}{G_{00}}} .
+\end{equation}
+
+Obtenemos
+\begin{equation}
+  C = \pm \beta \frac{\tau_1}{\ev{G_{00}^{-1}}}
+\end{equation}
+
+La acción clásica es
+\begin{equation}
+  S^{cl}=\frac{1}{4\pi\alpha'}\ev{G_{00}(\partial_t X^0)^2 \pm 2\beta \frac{\tau_1}{\tau_2}G_{00}\partial_t X^0}.
+\end{equation}
+
+Aplicando 
+\begin{equation}
+  \ev{G_{00}(\partial_t X^0)^2 \pm \beta \frac{\tau_1}{\tau_2}G_{00}\partial_t X^0} = C\ev{\partial_t X^0} = 0,
+\end{equation}
+y
+\begin{equation}
+  \ev{G_{00}}\partial_t X^0 = \tau_2 C\mp \frac{\tau_1}{\tau_2}\beta \ev{G_{00}},
+\end{equation}
+la acción clásica puede escribirse como
+\begin{equation}
+  S^{cl}= \frac{1}{4\pi\alpha'} \qty[\frac{\tau_1^2\beta^2}{\ev{G_{00}^{-1}}}-\beta^2\frac{\tau_1^2}{\tau_2^2}\ev{G_{00}}].
+\end{equation}
+
+La integral de camino en $\tilde X^0$ es
+\begin{equation}
+  Z_0=\frac{1}{\sqrt{4\pi^2\alpha'\ev{G_{00}^{-1}}}}\beta.
+\end{equation}
+
+La integral en $\tau_1$ en la ecuación \ref{eq:toruspi}, da lugar al término 
+\begin{equation}
+  \frac{2\pi\sqrt{\alpha'}\sqrt{\ev{G_{00}^{-1}}}}{\beta}.
+\end{equation}
+
+La integral de camino se reduce a 
+\begin{equation}
+  Z=2\int_0^\infty \frac{d\tau_2}{2\tau_2}\int \mathcal D \vec {X} \sqrt{\prod_t \det G_{ij}}e^{-Sp}
+\end{equation}
+donde la acción 
+\begin{equation}
+  S=\frac{1}{4\pi\alpha'}\qty[-\beta^2_{H0}\tau_2+\beta^2 \int_0^{\tau_2}dt \qty(G_{00}+G_{ij}\partial_t X^i\partial_t X^j)]
+\end{equation}
+
+
+\section{Campo efectivo}
+
+La acción de un campo taquiónico a orden más bajo en $\alpha'$ es
+\begin{equation}
+  S=\frac{1}{2}\int d^d x\sqrt G e^{-2\Phi}  \qty(G^{\mu\nu}\partial_\mu T\partial_\nu T+m^2T^2),
+\end{equation}
+donde $T$ es un campo escalar y $\Phi$ el campo del dilatón.
+
+Si el tiempo tiene periodo $2\pi R$, el deserrollo de Fourier de $T$ es
+\begin{equation}
+  T(x^0,x^i)=\sum_{n=-\infty}^{\infty} T_n(x^i)e^{\frac{inx^0}{R}}.
+\end{equation}
+En la variedad termal, $R=\beta/2\pi$. 
+Si la métrica es estacionaria y $G_{i0}=0$,
+\begin{equation}
+  S=\pi R \int d^{d-1} \sqrt{G}e^{-2\Phi}\qty(G^{ij}\partial_i T_n \partial_j T_{-n} + \frac{k^2 G^{00}}{R^2}T_n T_{-n} + m^2 T_n T_{-n}).
+\end{equation}
+\todo{Demostrar}
+
+Como $T$ es un campo real, $T_n=T^*_{-n}$ y por tanto
+\begin{equation}
+  S=\pi R \int d^{d-1} \sqrt{G}e^{-2\Phi}\qty(G^{ij}\partial_i T_n \partial_j T_{n}^* + \frac{k^2 G^{00}}{R^2}T_n T_{n}^* + m^2 T_n T_{n}^*).
+\end{equation}
+
+Aplicando la dualidad T y la transformación $R\to \alpha'/R$, los momentos se convierten en 
+enrrollamientos
+\begin{equation}
+  S \sim \int d^{d-1} x \sqrt G e^{-2\Phi}\qty(G^{ij}\partial_i T_w \partial_j T_{w}^* + \frac{w^2 R^2 G_{00}}{{\alpha'}^2}T_w T_{w}^* + m^2 T_w T_{w}^*) .
+\end{equation}
+
+Vemos cómo aperece un término de masa efectiva $m^2_{loc} = m^2 +\frac{w^2 R^2 G_{00}}{{\alpha'}^2}$,
+que depende de la posición espacio-temporal.
+Dependiendo del tipo de teoría que se considere (bośonica, tipo II supersimétrica o heterótica), 
+esta masa efectiva será distinta.
+
+De ahora en adelante simplificamos la notación $T=T_1$. 
+Integrando por partes la acción 
+\todo{Demostrar}
+\begin{equation}
+  S = \int d^{d-1} x \sqrt G e^{-2\Phi} T^* \qty[-\nabla^2-G^{ij}\frac{\partial_j \sqrt{G_{00}}}{\sqrt G_{00}}\partial_i + m^2_{loc}]T,
+\end{equation}
+donde $\nabla^2 = G^{ij}\nabla_i \partial_j$.
+Para calcular la integral de camino asociada a está acción tenemos que buscar los valores
+propios del operador 
+\begin{equation}
+  \widehat{O} =-\nabla^2-G^{ij}\frac{\partial_j \sqrt{G_{00}}}{\sqrt G_{00}}\partial_i + m^2_{loc}.
+\end{equation}
