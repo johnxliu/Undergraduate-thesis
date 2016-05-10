@@ -94,27 +94,26 @@ En una métrica estacionaria y que cumpla $G_{0i}=0$
 \end{equation}
 
 Si descomponemos la coordenada temporal en una parte clásica y una corrección adicional,
-$X^0=X^{cl}+\tilde X^0$, podemos resolver la ecuación de movimiento para el término clásico y
-así simplificar la acción.
+$X^0=X^{c}+\tilde X^0$, podemos hacer la integral de camino sólo sobre $\tilde X^0$. 
+Primero hemos de buscar la acción clásica.
 La ecuación de Euler-Lagrange es 
-\todo{Reemplazar indices}
 \begin{equation}
-  \partial_t\qty[G_{00}\partial_t X^0 \pm \beta \frac{\tau_1}{\tau_2}G_{00}]=0.
+  \partial_t\qty[G_{00}\partial_t X^c \pm \beta \frac{\tau_1}{\tau_2}G_{00}]=0.
 \end{equation}
 
 Por lo que 
 \begin{equation}
-  G_{00}\partial_t X^0 \pm \beta \frac{\tau_1}{\tau_2}G_{00}=C.
+  G_{00}\partial_t X^c \pm \beta \frac{\tau_1}{\tau_2}G_{00}=C.
 \end{equation}
 
 Como la coordenada $X^0$ es periódica,
 \begin{equation}
-  0=X^0(\tau_2) -X^0(0) = X^0(t)\eval_0^{\tau_2}= \int_0^{\tau_2}\partial_t X^0(t) = \ev{\partial_t X^0}
+  0=X^0(\tau_2) -X^0(0) = X^0(t)\eval_0^{\tau_2}= \int_0^{\tau_2}\partial_t X^0(t) = \ev{\partial_t X^0} 
 \end{equation}
 
 Promediando,
 \begin{equation}
-  \ev{\partial_t X^0} \pm \ev{\beta \frac{\tau_1}{\tau_2}}=\ev{\frac{C}{G_{00}}} .
+  \ev{\partial_t X^c} \pm \ev{\beta \frac{\tau_1}{\tau_2}}=\ev{\frac{C}{G_{00}}} .
 \end{equation}
 
 Obtenemos
@@ -140,7 +139,8 @@ la acción clásica puede escribirse como
   S^{cl}= \frac{1}{4\pi\alpha'} \qty[\frac{\tau_1^2\beta^2}{\ev{G_{00}^{-1}}}-\beta^2\frac{\tau_1^2}{\tau_2^2}\ev{G_{00}}].
 \end{equation}
 
-La integral de camino en $\tilde X^0$ es
+Como la trayectoria clásica hace estacionaria la acción, los términos lineales en $\tilde X^0$
+se anulan y la integral de camino en $\tilde X^0$ es
 \begin{equation}
   Z_0=\frac{1}{\sqrt{4\pi^2\alpha'\ev{G_{00}^{-1}}}}\beta.
 \end{equation}
@@ -166,36 +166,59 @@ La acción de un campo taquiónico a orden más bajo en $\alpha'$ es
 \begin{equation}
   S=\frac{1}{2}\int d^d x\sqrt G e^{-2\Phi}  \qty(G^{\mu\nu}\partial_\mu T\partial_\nu T+m^2T^2),
 \end{equation}
-donde $T$ es un campo escalar y $\Phi$ el campo del dilatón.
+donde $T$ es un campo escalar real y $\Phi$ el campo del dilatón.
 
-Si el tiempo tiene periodo $2\pi R$, el deserrollo de Fourier de $T$ es
+Si el tiempo tiene periodo $2\pi R$, el desarrollo de Fourier de $T$ es
 \begin{equation}
   T(x^0,x^i)=\sum_{n=-\infty}^{\infty} T_n(x^i)e^{\frac{inx^0}{R}}.
 \end{equation}
+Hay que tener en cuenta que $T_n(x^i)$ es un campo escalar complejo
+y $n$ es el momento discretizado en la dimensión compacta.
 En la variedad termal, $R=\beta/2\pi$. 
-Si la métrica es estacionaria y $G_{i0}=0$,
+Suponemos una métrica estacionaria y $G_{i0}=0$.
+Sustituyendo,
 \begin{equation}
-  S=\pi R \int d^{d-1} \sqrt{G}e^{-2\Phi}\qty(G^{ij}\partial_i T_n \partial_j T_{-n} + \frac{k^2 G^{00}}{R^2}T_n T_{-n} + m^2 T_n T_{-n}).
+  \begin{aligned}
+    S=\sum_{n,m} \int d^{d-1} \sqrt{G}e^{-2\Phi}\biggl(&-\frac{nm}{R^2}G^{00}\partial_0 T_n \partial_0 T_{m} 
+    + G^{ij}\partial_i T_n \partial_j T_{m} \\
+    &+ m^2 T_n T_{m}\biggl) \int_{-\pi R}^{\pi R} \frac{dx^0}{2}e^{i\frac{n+m}{R}x^0}.
+  \end{aligned}
 \end{equation}
-\todo{Demostrar}
+
+La integral en $x^0$ es $\pi R \delta_{-n,m}$, por lo que
+\begin{equation}
+  S=\sum_n\pi R \int d^{d-1} \sqrt{G}e^{-2\Phi}\qty(G^{ij}\partial_i T_n \partial_j T_{-n} + \frac{n^2 G^{00}}{R^2}T_n T_{-n} + m^2 T_n T_{-n}).
+\end{equation}
 
 Como $T$ es un campo real, $T_n=T^*_{-n}$ y por tanto
 \begin{equation}
-  S=\pi R \int d^{d-1} \sqrt{G}e^{-2\Phi}\qty(G^{ij}\partial_i T_n \partial_j T_{n}^* + \frac{k^2 G^{00}}{R^2}T_n T_{n}^* + m^2 T_n T_{n}^*).
+  S=\sum_n \pi R \int d^{d-1} \sqrt{G}e^{-2\Phi}\qty(G^{ij}\partial_i T_n \partial_j T_{n}^* + \frac{n^2 G^{00}}{R^2}T_n T_{n}^* + m^2 T_n T_{n}^*).
 \end{equation}
 
-Aplicando la dualidad T y la transformación $R\to \alpha'/R$, los momentos se convierten en 
+Aunque en la acción solo aparece el momento $n$ y no los enrollamientos $w$, esto se debe 
+al desarrollo de Fourier, pues la acción completa cumpliría la dualidad T. 
+Haciendo las transformaciones 
+\todo{Dudoso}
+\begin{equation}
+  \begin{aligned}
+    G_{00}&\to \frac{1}{G_{00}},\\
+    \Phi&\to \Phi -\frac{1}{2}\ln G_{00},\\
+    T_n&\to T_w.
+  \end{aligned}
+\end{equation}
+y $R\to \alpha'/R$, los momentos se convierten en 
 enrrollamientos
 \begin{equation}
-  S \sim \int d^{d-1} x \sqrt G e^{-2\Phi}\qty(G^{ij}\partial_i T_w \partial_j T_{w}^* + \frac{w^2 R^2 G_{00}}{{\alpha'}^2}T_w T_{w}^* + m^2 T_w T_{w}^*) .
+  S \sim\sum_w  \int d^{d-1} x \sqrt G e^{-2\Phi}\qty(G^{ij}\partial_i T_w \partial_j T_{w}^* + \frac{w^2 R^2 G_{00}}{{\alpha'}^2}T_w T_{w}^* + m^2 T_w T_{w}^*) .
 \end{equation}
 
-Vemos cómo aperece un término de masa efectiva $m^2_{loc} = m^2 +\frac{w^2 R^2 G_{00}}{{\alpha'}^2}$,
+Vemos cómo aparece un término de masa efectiva $m^2_{loc} = m^2 +\frac{w^2 R^2 G_{00}}{{\alpha'}^2}$,
 que depende de la posición espacio-temporal.
 Dependiendo del tipo de teoría que se considere (bośonica, tipo II supersimétrica o heterótica), 
 esta masa efectiva será distinta.
+\todo{O no?}
 
-De ahora en adelante simplificamos la notación $T=T_1$. 
+La contribución dominante de la acción vendrá dada por $w=\pm 1$, por lo que definimos $T=T_1$.
 Integrando por partes la acción 
 \todo{Demostrar}
 \begin{equation}
@@ -207,3 +230,66 @@ propios del operador
 \begin{equation}
   \widehat{O} =-\nabla^2-G^{ij}\frac{\partial_j \sqrt{G_{00}}}{\sqrt G_{00}}\partial_i + m^2_{loc}.
 \end{equation}
+
+Definiendo el producto escalar
+\begin{equation}
+  \braket{\psi_1}{\psi_2} = \int d^{d-1} x \sqrt G \psi_1(x)^* \psi_2(x),
+\end{equation}
+el operador $\widehat O$ es hermítico y por tanto posee un conjunto ortonormal de funciones
+propias $\psi_n$ con valores propios reales, $\lambda_n$.
+%La acción se reduce a 
+%\begin{equation}
+%  S=\int d^{d-1} x\sqrt G T^* \widehat O T 
+%  =\sum_{n,m} d^{d-1}\sqrt G \psi_n^* \psi_m a^*_n a_m\lambda_m = \sum_n \abs{a_n}^2 \lambda_n.
+%\end{equation}
+
+La integral de camino da como resultado
+\begin{equation}
+  Z=\int \mathcal D T e^{-S} =\pi_n \frac{1}{\lambda_n} = \det(\widehat O)^{-1}.
+\end{equation}
+
+La energía libre de un gas de cuerdas es
+\begin{equation}
+  F=-\frac{1}{\beta}\ln Z =\frac{1}{\beta} \Tr \ln \widehat O.
+\end{equation}
+
+Aplicando la fórmula de Schwinger del logaritmo, 
+\begin{equation}
+  \ln a = -\int_0^\infty \frac{dT}{T}\qty(e^{-aT}-e^{-T}),
+\end{equation}
+y despreciando el término $e^{-T}$, la energía libre es
+\begin{equation}
+  F=-\frac{1}{\beta}\int_0^\infty \frac{dT}{T} \Tr e^{T\widehat O}.
+\end{equation}
+
+\begin{equation}
+  \ket{\phi_n}=G_{00}^{1/4}  \ket{\psi_n}.
+\end{equation}
+
+
+\begin{equation}
+  \braket{\phi_1}{\phi_2} = \int d^{d-1} x \sqrt G_{ij} \phi_1(x)^* \phi_2(x),
+\end{equation}
+
+Tras el cambio de base
+\begin{equation}
+  F=\frac{1}{\beta}\int_0^\infty \frac{dT}{T} \Tr e^{T\widehat D}.
+\end{equation}
+
+\begin{equation}
+  \widehat D = -\nabla^2  + m_{loc}^2- \frac{3}{16}\frac{G^{ij} \partial_i G_{00}\partial_j G_{00}}{G_{00}^2}
+  +\frac{\nabla^2 G_{00}}{4G_{00}}.
+\end{equation}
+Los últimos dos términos corresponden con un potencial efectivo
+\begin{equation}
+  K(x) = \frac{3}{16}\frac{G^{ij} \partial_i G_{00}\partial_j G_{00}}{G_{00}^2}
+  +\frac{\nabla^2 G_{00}}{4G_{00}}.
+\end{equation}
+
+\begin{equation}
+  F=\frac{1}{\beta}\int_0^\infty \frac{dT}{T} \int_{S^1} \mathcal D x\sqrt G_{ij}  e^{ -\frac{1}{4\pi\alpha'}\int_0^T dt \qty(  
+  \frac{1}{4}G_{ij}\dot x^i \dot x^j  + m_{loc}^2+K(x) )}.
+\end{equation}
+\todo{Turbio}
+
+
