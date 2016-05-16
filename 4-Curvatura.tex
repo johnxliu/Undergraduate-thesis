@@ -262,13 +262,17 @@ y despreciando el término $e^{-T}$, la energía libre es
   F=-\frac{1}{\beta}\int_0^\infty \frac{dT}{T} \Tr e^{T\widehat O}.
 \end{equation}
 
+Para poder interpretar la energía líbre en términos de una partícula
+moviéndose en un espacio sin tiempo, tenemos que aislar la componente $G_{00}$
+de la métrica, que aparece al tomar la traza.
+Haciendo el cambio de base
 \begin{equation}
   \ket{\phi_n}=G_{00}^{1/4}  \ket{\psi_n}.
 \end{equation}
 
-
+El producto escalar asociado es
 \begin{equation}
-  \braket{\phi_1}{\phi_2} = \int d^{d-1} x \sqrt G_{ij} \phi_1(x)^* \phi_2(x),
+  \braket{\phi_1}{\phi_2} = \int d^{d-1} x \sqrt G_{ij} \phi_1(x)^* \phi_2(x).
 \end{equation}
 
 Tras el cambio de base
@@ -293,3 +297,67 @@ Los últimos dos términos corresponden con un potencial efectivo
 \todo{Turbio}
 
 
+
+\section{Cuerdas cerca de agujeros negros}
+
+Al aplicar los cálculos anteriores a un espacio de Rindler, hemos de tener en cuenta si la
+correcciones a orden superior en $\alpha'$ modifican la divergencia de la energía libre.
+
+\begin{equation}
+  F=-\frac{1}{\beta}\int \frac{dT}{T} \Tr e^{T\qty(  -\nabla^2-G^{ij}\frac{\partial_j \sqrt{G_{00}}}{\sqrt G_{00}}\partial_i + m^2_{loc}) }.
+\end{equation}
+
+Tomemos como ejemplo la teoría supersimétrica de tipo II.
+
+El laplaciano en coordenadas de Rindler es
+\begin{equation}
+  \nabla^2  = \partial_\rho^2 + \frac{1}{\rho}\partial_\rho.
+\end{equation}
+
+La masa efectiva es 
+\begin{equation}
+  m_{loc}^2=-\frac{2}{\alpha'}+\frac{R^2G_{00}}{\alpha'^2}.
+\end{equation}
+
+
+Para calcular la traza buscamos los valores propios del operador en el exponente.
+Las funciones propias regulares son del tipo
+\begin{equation}
+  \psi_n(\rho)\propto e^{-\frac{\beta \rho^2}{4\pi\alpha'^{3/2}} }
+  L_n\qty(\frac{\beta\rho^2}{2\pi\alpha'^{3/2}}),
+\end{equation}
+con valores propios
+\begin{equation}
+  \lambda_n=\frac{\beta-2\pi\sqrt{\alpha'}+2\beta n }{\pi\alpha'^{3/2}}.
+\end{equation}
+
+La contribución dominante a la energía libre viene dada por $\lambda_0$.
+La traza depende las dimensiones adicionales al espacio de Rindler. 
+En una teoría supersimétrica, tenemos ocho dimensiones cuya variedad tenemos que especificar.
+Suponeniendo dimesiones planas, la energía libre es
+\begin{equation}
+  F= -\frac{V_T}{\beta}\int_0^\infty \frac{dT}{T}\qty(\frac{1}{4\pi T})^4 e^{\frac{\beta-2\pi\sqrt{\alpha'}}{\pi\alpha'^{3/2}}T}.
+\end{equation}
+
+En el límite superior de $T$, la energía libre diverge si
+\begin{equation}
+  \beta \leq 2\pi\sqrt{\alpha'}=\beta_R.
+\end{equation}
+
+Concluimos que la temperatura de Hagedorn en un espacio de Rindler coincide con la temperatura
+de Hawking.
+Hemos supuesto cuerdas de tipo II y que las dimensiones adicionales son planas.
+De haber escogido otras condiciones, la temperatura de Hagedorn recibiría nuevas correcciones,
+como veremos más adelante.
+
+Identificando las funciones propias como funciones de onda de una cuerda, el estado fundamental
+\begin{equation}
+  \psi_0(\rho)\propto e^{-\frac{\beta \rho^2}{4\pi\alpha'^{3/2}} }
+\end{equation}
+representa una cuerda localizada a la distancia $l_s$
+
+%Analiticidad vs divergencia
+
+%Densidad de estados
+
+%Streched horizon. Local temp.
