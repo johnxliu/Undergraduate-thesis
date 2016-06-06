@@ -88,6 +88,8 @@ ecuaciones de movimiento
 donde $f(\sigma)$ es una función cualquiera. La libertad de poder escoger $f(\sigma)$
 es una simetría gauge
 
+\todo{Simetría gauge, Weyl}
+
 
 \section{Cuantización}
 
@@ -200,38 +202,135 @@ La masa de la cuerda es por tanto
   M^2=-p_\mu p^\mu = 2p^+p^- - \sum_{i=1}^{D-2} p^i p^i = 
   \frac{2}{\alpha'}\sum_{i=1}^{D-2} \sum_{n\neq 0} \alpha_{-n}^i \alpha_n^i
   =\frac{2}{\alpha'}\sum_{i=1}^{D-2} \sum_{n\neq 0}\tilde \alpha_{-n}^i \tilde\alpha_n^i.
+  \label{eq:mass}
 \end{equation}
 
 Hemos obtenido la solución clásica mediante los $2(D-2)$ modos de oscilación transversos 
 $\alpha^i_n$ y $\tilde \alpha_n^i$ y las constantes $x^i$, $p^i$,$p^+$ y $x^-$.
-La cuantización consiste en promover los grados de libertad a operadores que satisfacen
-una reglas de conmutación. Estas reglas son
+La cuantización consiste en promover los grados de libertad a operadores (denotados
+por un acento circunflejo) que satisfacen una reglas de conmutación.
+\footnote{En realidad, debido a la simetría gauge, la cuantización se haría a partir de los
+corchetes de Poisson de la teoría clásica. No tendremos en cuenta esta sutileza porque el
+resultado es el mismo.}
+Estas reglas son
 \begin{equation}
   \begin{gathered}
-    \qty[x^i,p^j] = i\delta^{ij}\qquad , \qquad [x^-,p^+] = -i,\\
-    [\alpha_n^i,\alpha_m^j]
+    \qty[\widehat x^i,\widehat p^j] = i\delta^{ij}\qquad , \qquad [\widehat x^-,\widehat p^+] = -i,\\
+    \qty[\widehat \alpha_n^i,\widehat \alpha_m^j]= \qty[\widehat {\tilde \alpha}_n^i,\widehat {\tilde \alpha}_m^j]= n \delta^{ij}\delta_{n+m,0}
   \end{gathered}
 \end{equation}
 
+Los estados físicos sobre los que actúan los operadores se construyen a partir de un estado 
+de vacío $\ket{0;p}$, que describe una cuerda de momento $p$ en el estado fundamental.
+El vacío verifica
 \begin{equation}
-  M^2 = \frac{4}{\alpha'}\qty(\sum_{i=1}^{D-2} \sum_{n>0} \alpha_{-n}^i\alpha_n -a)
-   = \frac{4}{\alpha'}\qty(\sum_{i=1}^{D-2} \sum_{n>0} \tilde \alpha_{-n}^i\tilde \alpha_n -a)
+  \widehat p^\mu \ket{0;p} = p^\mu \ket{0;p} \qquad, \qquad \widehat \alpha^i_n\ket{0;p}=\widehat {\tilde\alpha}^i_n = 0 \qquad \text{con} \quad n>0.
 \end{equation}
 
-La cuantización conduce a la fórmula de masas 
+Las distintas excitaciones de la cuerda se obtienen aplicando $\alpha_{-n}^i$ y $\widehat{\tilde\alpha}_{-n}^i$
+con $n>0$ sobre el vacío.
+Cada excitación de la cuerda corresponde a una partícula, como veremos más adelante.
+
+La fórmula de masas es análoga al caso clásico \ref{eq:mass} salvo una diferencia importante.
+Clásicamente el producto de $\alpha^i_{-n}$ y $\alpha^i_n$ conmuta, por lo que hay una 
+ambigüedad en el orden a asignar a los operadores $\widehat\alpha^i_{-n}$ y $\widehat \alpha^i_n$.
+La ambigüedad introduce una constante $c$ desconocida en el operador de la masa al cuadrado,
 \begin{equation}
-  M^2=\frac{4}{\alpha}\sum_{i=1}^{d-2}\sum_{n>0}\qty(\alpha^i_{-n}\alpha^i_n - \frac{d-2}{24})=
-  \frac{4}{\alpha}\sum_{i=1}^{d-2}\sum_{n>0}\qty(\tilde{\alpha}^i_{-n}\tilde{\alpha}^i_n -\frac{d-2}{24})
+  \widehat M^2 = \frac{4}{\alpha'}\qty(\sum_{i=1}^{D-2} \sum_{n>0} \alpha_{-n}^i\alpha_n -c)
+   = \frac{4}{\alpha'}\qty(\sum_{i=1}^{D-2} \sum_{n>0} \tilde \alpha_{-n}^i\tilde \alpha_n -c).
 \end{equation}
+
+Por conveniencia, definimos los operadores número
+\begin{equation}
+  \widehat N=\sum_{i=1}^{D-2} \sum_{n>0}\widehat \alpha_{-n}^i\widehat\alpha_n^i \quad , \quad   
+  \widehat {\tilde N}=\sum_{i=1}^{D-2} \sum_{n>0} \widehat{\tilde \alpha}_n^i\widehat{ \tilde\alpha}_n^i, 
+\end{equation}
+por lo que 
+\begin{equation}
+  \widehat M^2 = \frac{4}{\alpha'} (\widehat N -c ) = \frac{4}{\alpha'} (\widehat{\tilde N} -c).
+\end{equation}
+
+La condición $\widehat N=\widehat {\tilde N}$ se conoce como \emph{level-matching}.
+
+La forma general de determinar $c$ (la carga central) consiste en imponer la simetría Weyl.
+Nosotros no entraremos en los detalles, nos basta saber que para cuerdas bosónicas libres
+bosónicas, $c=\frac{D-2}{24}$.
+
 
 \subsection{Espectro de una cuerda}
+En el estado de vacío, $\widehat N\ket{0;p}=\widehat {\tilde N}\ket{0;p}=0$, por lo que la masa es
 \begin{equation}
-  M^2 = -\frac{1}{\alpha'}\frac{D-2}{6}
+  M^2 = -\frac{1}{\alpha'}\frac{D-2}{6}.
 \end{equation}
 
+Si $D>2$ la masa al cuadrado de la cuerda es negativa y la partícula a la que corresponde se denomina taquión.
+Los taquiones aparecen también en teoría cuántica de campos al estudiar un campo $\phi$ con un 
+potencial $V(\phi)$.
+La masa de la partícula asociada al campo es
 \begin{equation}
-  M^2 = \frac{4}{\alpha'}\qty(1-\frac{D-2}{24})
+  M^2 = \pdv[2]{V(\phi)}{\phi}.
 \end{equation}
+Por tanto, una masa al cuadrado negativa indica que estamos haciendo una expansión en torno
+a un máximo. 
+Un ejemplo es el campo de Higgs cuando el valor del campo es cero.
+A pesar de los problemas que introduce un taquión, no lo tendremos más en cuenta. 
+De todas formas, al considerar cuerdas fermiónicas en la teoría supersimétrica, el taquión
+desaparece.
+
+El primer estado excitado se obtiene como
+\begin{equation}
+  \widehat{\tilde\alpha}_{-1}^i\widehat \alpha_{-1}^j\ket{0;p},
+\end{equation}
+con masa
+\begin{equation}
+  M^2 = \frac{4}{\alpha'}\qty(1-\frac{D-2}{24}).
+\end{equation}
+
+Teniendo en cuenta los valores posibles de $i$ y $j$ hay $(D-2)^2$ estados excitados.
+
+\todo{Rematar}
+
+Para que estos estados puedan describirse mediante la clasificación de Wigner de las
+representaciones del grupo de Poincaré, los estados han de ser una representación $SO(D-2)$.
+Esto significa que las partículas tienen masa nula, en caso contrario, se rompería la simetría
+de Lorentz. Como $M^2=0$, obtenemos que la dimensión del espacio-tiempo es
+\begin{equation}
+  D=26.
+\end{equation}
+Además, la representación de estos estados se descompone un una parte simétrica, una antisimétrica
+y una traza. Los campos asociados son el campo del gravitón $G_{\mu\nu}$, el campo Kalb-Ramond $B_{\mu\nu}$
+y el dilatón $\Phi$, respectivamente.
+
+Por tanto, la teoría bosónica predice métrica de la relatividad general $G_{\mu\nu}$ de forma 
+natural, además de otro campo tensorial y un campo escalar.
+
+Las siguientes excitaciones empiezan a tener masas del orden de la masa de Planck
+\begin{equation}
+  M_p=
+\end{equation}
+y están muy lejos de ser observadas. Sin embargo, el resto del trabajo se centrará en cuerdas
+a esta escala de energía.
+
+
+\subsection{Cuerdas supersimétricas}
+
+La cuerdas supersimétricas describen tanto bosones como fermiones.
+Algunas 
+
+Existen distintas formas de incorporar fermiones:
+en las cuerdas de tipo II , mientras que las cuerdas heteróticas
+
+\todo{Acabar}
+
+\subsection{La integral de camino}
+
+Función beta
+
+Dualidad T
+
+
+
+
 
 Definiendo
 \begin{equation}
@@ -244,13 +343,4 @@ Definiendo
 
 Es importante ver que hay una expresión en términos de modos moviéndose a la derecha
 y otra con modos moviéndose a la izquierda.
-
-\subsection{Cuerdas supersimétricas}
-
-
-\subsection{La integral de camino}
-
-Función beta
-
-Dualidad T
 
