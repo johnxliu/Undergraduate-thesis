@@ -7,6 +7,8 @@
 
 
 \todo{Convenio}
+Tomamos una métrica con signatura $(-+++)$.
+\todo{Decir cuerda cerrada y bosonica}
 
 \section{La cuerda relativista}
 
@@ -148,6 +150,7 @@ Por tanto,
 \begin{equation}
   X^+ = x^+ + \alpha' p^+ \tau.
 \end{equation}
+La constante $x^+$ puede eliminarse mediante una traslación en $\tau$.
 
 Con esta elección gauge, la solución $X^-$ que determinada casi por completo.
 La ecuación de movimiento para la métrica $h$ se obtiene variando a acción
@@ -175,8 +178,8 @@ Haciendo la descomposición de la solución $X^-$
 \end{equation}
 la ecuación \ref{eq:lig} conduce a 
   \begin{align}
-    \partial_+ X_L^- = \frac{1}{\alpha'p^+}\sum_{i=1}^{D-2} \partial_+ X^i \partial_+ X^i, \label{eq:lig1}\\
-    \partial_- X_R^- = \frac{1}{\alpha'p^-}\sum_{i=1}^{D-2} \partial_- X^i \partial_- X^i. \label{eq:lig2}
+    \partial_+ X_L^- = \frac{1}{\alpha'p^+}\sum_{i=1}^{d-2} \partial_+ X^i \partial_+ X^i, \label{eq:lig1}\\
+    \partial_- X_R^- = \frac{1}{\alpha'p^-}\sum_{i=1}^{d-2} \partial_- X^i \partial_- X^i. \label{eq:lig2}
   \end{align}
 
 En el desarrollo de Fourier
@@ -193,20 +196,20 @@ las constantes $p^-$, $\tilde \alpha^-_n$ y $\alpha^-_n$ quedan determinadas por
 
 El momento $p^-$ se puede expresar a través de $\alpha^i_n$ y de $\tilde \alpha^i_n$ como
 \begin{equation}
-  p^- = \frac{1}{\alpha' p^+}\sum_{i=1}^{D-2} \qty(\frac{1}{2}\alpha'p^i p^i +\sum_{n\neq0}\alpha_n^i\alpha_{-n}^i) 
-   = \frac{1}{\alpha' p^+}\sum_{i=1}^{D-2} \qty(\frac{1}{2}\alpha'p^i p^i +\sum_{n\neq0}\tilde \alpha_n^i\tilde \alpha_{-n}^i) .
+  p^- = \frac{1}{\alpha' p^+}\sum_{i=1}^{d-2} \qty(\frac{1}{2}\alpha'p^i p^i +\sum_{n\neq0}\alpha_n^i\alpha_{-n}^i) 
+   = \frac{1}{\alpha' p^+}\sum_{i=1}^{d-2} \qty(\frac{1}{2}\alpha'p^i p^i +\sum_{n\neq0}\tilde \alpha_n^i\tilde \alpha_{-n}^i) .
 \end{equation}
 
 La masa de la cuerda es por tanto
 \begin{equation}
-  M^2=-p_\mu p^\mu = 2p^+p^- - \sum_{i=1}^{D-2} p^i p^i = 
-  \frac{2}{\alpha'}\sum_{i=1}^{D-2} \sum_{n\neq 0} \alpha_{-n}^i \alpha_n^i
-  =\frac{2}{\alpha'}\sum_{i=1}^{D-2} \sum_{n\neq 0}\tilde \alpha_{-n}^i \tilde\alpha_n^i.
+  M^2=-p_\mu p^\mu = 2p^+p^- - \sum_{i=1}^{d-2} p^i p^i = 
+  \frac{2}{\alpha'}\sum_{i=1}^{d-2} \sum_{n\neq 0} \alpha_{-n}^i \alpha_n^i
+  =\frac{2}{\alpha'}\sum_{i=1}^{d-2} \sum_{n\neq 0}\tilde \alpha_{-n}^i \tilde\alpha_n^i.
   \label{eq:mass}
 \end{equation}
 
-Hemos obtenido la solución clásica mediante los $2(D-2)$ modos de oscilación transversos 
-$\alpha^i_n$ y $\tilde \alpha_n^i$ y las constantes $x^i$, $p^i$,$p^+$ y $x^-$.
+Hemos obtenido la solución clásica mediante los $2(d-2)$ modos de oscilación transversos 
+$\alpha^i_n$ y $\tilde \alpha_n^i$ y las constantes $x^i$, $p^i$,$p^+$ y $x^-$, donde $i=1,\cdots d-2$.
 La cuantización consiste en promover los grados de libertad a operadores (denotados
 por un acento circunflejo) que satisfacen una reglas de conmutación.
 \footnote{En realidad, debido a la simetría gauge, la cuantización se haría a partir de los
@@ -236,14 +239,14 @@ Clásicamente el producto de $\alpha^i_{-n}$ y $\alpha^i_n$ conmuta, por lo que 
 ambigüedad en el orden a asignar a los operadores $\widehat\alpha^i_{-n}$ y $\widehat \alpha^i_n$.
 La ambigüedad introduce una constante $c$ desconocida en el operador de la masa al cuadrado,
 \begin{equation}
-  \widehat M^2 = \frac{4}{\alpha'}\qty(\sum_{i=1}^{D-2} \sum_{n>0} \alpha_{-n}^i\alpha_n -c)
-   = \frac{4}{\alpha'}\qty(\sum_{i=1}^{D-2} \sum_{n>0} \tilde \alpha_{-n}^i\tilde \alpha_n -c).
+  \widehat M^2 = \frac{4}{\alpha'}\qty(\sum_{i=1}^{d-2} \sum_{n>0} \alpha_{-n}^i\alpha_n -c)
+   = \frac{4}{\alpha'}\qty(\sum_{i=1}^{d-2} \sum_{n>0} \tilde \alpha_{-n}^i\tilde \alpha_n -c).
 \end{equation}
 
 Por conveniencia, definimos los operadores número
 \begin{equation}
-  \widehat N=\sum_{i=1}^{D-2} \sum_{n>0}\widehat \alpha_{-n}^i\widehat\alpha_n^i \quad , \quad   
-  \widehat {\tilde N}=\sum_{i=1}^{D-2} \sum_{n>0} \widehat{\tilde \alpha}_n^i\widehat{ \tilde\alpha}_n^i, 
+  \widehat N=\sum_{i=1}^{d-2} \sum_{n>0}\widehat \alpha_{-n}^i\widehat\alpha_n^i \quad , \quad   
+  \widehat {\tilde N}=\sum_{i=1}^{d-2} \sum_{n>0} \widehat{\tilde \alpha}_n^i\widehat{ \tilde\alpha}_n^i, 
 \end{equation}
 por lo que 
 \begin{equation}
@@ -254,16 +257,16 @@ La condición $\widehat N=\widehat {\tilde N}$ se conoce como \emph{level-matchi
 
 La forma general de determinar $c$ (la carga central) consiste en imponer la simetría Weyl.
 Nosotros no entraremos en los detalles, nos basta saber que para cuerdas bosónicas libres
-bosónicas, $c=\frac{D-2}{24}$.
+bosónicas, $c=\frac{d-2}{24}$.
 
 
 \subsection{Espectro de una cuerda}
 En el estado de vacío, $\widehat N\ket{0;p}=\widehat {\tilde N}\ket{0;p}=0$, por lo que la masa es
 \begin{equation}
-  M^2 = -\frac{1}{\alpha'}\frac{D-2}{6}.
+  M^2 = -\frac{1}{\alpha'}\frac{d-2}{6}.
 \end{equation}
 
-Si $D>2$ la masa al cuadrado de la cuerda es negativa y la partícula a la que corresponde se denomina taquión.
+Si $d>2$ la masa al cuadrado de la cuerda es negativa y la partícula a la que corresponde se denomina taquión.
 Los taquiones aparecen también en teoría cuántica de campos al estudiar un campo $\phi$ con un 
 potencial $V(\phi)$.
 La masa de la partícula asociada al campo es
@@ -283,19 +286,19 @@ El primer estado excitado se obtiene como
 \end{equation}
 con masa
 \begin{equation}
-  M^2 = \frac{4}{\alpha'}\qty(1-\frac{D-2}{24}).
+  M^2 = \frac{4}{\alpha'}\qty(1-\frac{d-2}{24}).
 \end{equation}
 
-Teniendo en cuenta los valores posibles de $i$ y $j$ hay $(D-2)^2$ estados excitados.
+Teniendo en cuenta los valores posibles de $i$ y $j$ hay $(d-2)^2$ estados excitados.
 
 \todo{Rematar}
 
 Para que estos estados puedan describirse mediante la clasificación de Wigner de las
-representaciones del grupo de Poincaré, los estados han de ser una representación $SO(D-2)$.
+representaciones del grupo de Poincaré, los estados han de ser una representación $SO(d-2)$.
 Esto significa que las partículas tienen masa nula, en caso contrario, se rompería la simetría
 de Lorentz. Como $M^2=0$, obtenemos que la dimensión del espacio-tiempo es
 \begin{equation}
-  D=26.
+  d=26.
 \end{equation}
 Además, la representación de estos estados se descompone un una parte simétrica, una antisimétrica
 y una traza. Los campos asociados son el campo del gravitón $G_{\mu\nu}$, el campo Kalb-Ramond $B_{\mu\nu}$
@@ -315,18 +318,90 @@ a esta escala de energía.
 \subsection{Cuerdas supersimétricas}
 
 La cuerdas supersimétricas describen tanto bosones como fermiones.
-Algunas 
+La teoría es supersimétrica porque a cada bosón le corresponde un fermión y vice versa.
 
-Existen distintas formas de incorporar fermiones:
-en las cuerdas de tipo II , mientras que las cuerdas heteróticas
+Existen dos formas de incorporar fermiones:
+en las cuerdas de tipo II, los fermiones se mueven en la worldsheet hacia la izquierda y a la derecha,
+mientras que las cuerdas heteróticas, solo se mueven hacia la izquierda.
+En ambos casos, la dimensión del espacio-tiempo es $d=10$.
 
 \todo{Acabar}
 
 \subsection{La integral de camino}
 
-Función beta
+Una forma alternativa de cuantizar una teoría clásica consiste en la integral de camino, 
+introducidad por Feynman. 
+Sin entrar en detalles, la amplitud de probabilidad de que una partícula que está localizada 
+en $(x_0,t_0)$, se detecte en $(x',t')$ se calcula teniendo en cuenta todas las trayectorias
+que podría tomar la partícula entre estos dos puntos.
+La amplitud de probabilidad asociada a cada trayectoria $x$ depende de la acción de esa trayectoria
+como $e^{i/\hbar S[x]}$ y la amplitud total es simplemente la suma de las amplitudes de probabilidad
+de todas las trayectorias posibles.
+Las amplitudes de probabilidad difiere solo en la fase y no en la amplitud, por lo que habrá 
+interferencia entre las distintas trayectorias.
+En el límite clásico, la única contribución viene dada por la trayectoria clásica.
 
-Dualidad T
+Formalmente, la amplitud de probabilidad se expresa mediante el propagador
+\begin{equation}
+  K(x',t';x_0,t_0) = \int \mathcal Dx e^{\frac{i}{\hbar} S[x]}.
+\end{equation}
+
+La integral no es integral el sentido habitual (Riemann o Lebesgue) y su definición matemática
+es muy elaborada, pero basta tomarla en el sentido de suma de caminos.
+Para evitar tratar con un integrando complejo, reemplazaremos el tiempo $t$ en la acción por un tiempo imaginario de modo que
+\begin{equation}
+  K(x',t';x_0,t_0) = \int \mathcal Dx e^{\frac{-1}{\hbar} S[x]}.
+\end{equation}
+Este procedimiento se conoce como rotación de Wick y su justificación matemática también presenta complicaciones.
+
+
+La integral de camino en teoría de cuerdas se define de manera análoga, pero integramos 
+sobre todas las trayectorias de la cuerda y sobre todas la métrica de la wordsheet,
+\begin{equation}
+  Z = \int \mathcal DX \mathcal Dh e^{-S_p+\lambda \chi}.
+\end{equation}
+
+En el exponente aparece un factor adicional $\lambda\chi$ que determina cómo contribuyen las trayectorias
+de cuerdas con una determinada topología de la wordsheet.
+La constante $\lambda$ determina cómo interaccionan las cuerdas entre sí y $\chi$ es la característica
+de Euler de la wordlsheet.
+La característica de Euler de una superficie de género $g$ (número de agujeros) es
+\begin{equation}
+  \chi = 2(1-g).
+\end{equation}
+
+\todo{Añadir dibujo}
+
+Para incorporar interacciones de cuerdas con campos de fondo, introducimos términos adicionales a la acción.
+Por ejemplo, el model sigma no lineal describe cuerdas propagándose en campos $G_{\mu\nu}$, $B_{\mu\nu}$ y $\Phi$.
+\begin{equation}
+  S = -\frac{1}{4\pi \alpha'}\int d^2 \sigma \sqrt h \qty[\qty(h^{\alpha\beta}G_{\mu\nu} + i\epsilon^{\alpha\beta}B_\mu\nu)\partial_\alpha X^\mu
+  \partial_\beta X^\nu +\alpha'R\Phi].
+\end{equation}
+
+\subsection{Dualidad T}
+
+Una propiedad muy importante de las teorías de cuerdas es la dualidad T.
+Si consideramos cuerdas bosónicas con una dimensión espacial
+
+\begin{equation}
+  p_L = \frac{n}{R} + \frac{wR}{\alpha'} \qquad,\qquad  p_L = \frac{n}{R} - \frac{mR}{\alpha'} .
+\end{equation}
+
+La fórmula de masas es
+\begin{equation}
+  M^2 = \frac{n^2}{R^2} + \frac{w^2 R^2}{\alpha'^2} +\frac{2}{\alpha'}\qty(N+\tilde N -2).
+\end{equation}
+
+La transformación $R\to \alpha'/R$ $n\to w$
+
+
+En presencia de campos adicionales, las reglas de transformación son
+\begin{equation}
+  \begin{gathered}
+    G_{00}\to \frac{1}{G_{00}}, \quad G_{0i} \\
+  \end{gathered}
+\end{equation}
 
 
 
