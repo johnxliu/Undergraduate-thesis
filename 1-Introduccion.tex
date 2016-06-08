@@ -309,7 +309,7 @@ natural, además de otro campo tensorial y un campo escalar.
 
 Las siguientes excitaciones empiezan a tener masas del orden de la masa de Planck
 \begin{equation}
-  M_p=
+  M_p\approx\SI{2e-8}{kg} \approx \SI{e19}{GeV/c^2}
 \end{equation}
 y están muy lejos de ser observadas. Sin embargo, el resto del trabajo se centrará en cuerdas
 a esta escala de energía.
@@ -330,7 +330,7 @@ En ambos casos, la dimensión del espacio-tiempo es $d=10$.
 \subsection{La integral de camino}
 
 Una forma alternativa de cuantizar una teoría clásica consiste en la integral de camino, 
-introducidad por Feynman. 
+introducida por Feynman. 
 Sin entrar en detalles, la amplitud de probabilidad de que una partícula que está localizada 
 en $(x_0,t_0)$, se detecte en $(x',t')$ se calcula teniendo en cuenta todas las trayectorias
 que podría tomar la partícula entre estos dos puntos.
@@ -356,15 +356,15 @@ Este procedimiento se conoce como rotación de Wick y su justificación matemát
 
 
 La integral de camino en teoría de cuerdas se define de manera análoga, pero integramos 
-sobre todas las trayectorias de la cuerda y sobre todas la métrica de la wordsheet,
+sobre todas las trayectorias de la cuerda y sobre todas la métrica de la worldsheet,
 \begin{equation}
   Z = \int \mathcal DX \mathcal Dh e^{-S_p+\lambda \chi}.
 \end{equation}
 
 En el exponente aparece un factor adicional $\lambda\chi$ que determina cómo contribuyen las trayectorias
-de cuerdas con una determinada topología de la wordsheet.
+de cuerdas con una determinada topología de la worldsheet.
 La constante $\lambda$ determina cómo interaccionan las cuerdas entre sí y $\chi$ es la característica
-de Euler de la wordlsheet.
+de Euler de la worldsheet.
 La característica de Euler de una superficie de género $g$ (número de agujeros) es
 \begin{equation}
   \chi = 2(1-g).
@@ -381,31 +381,41 @@ Por ejemplo, el model sigma no lineal describe cuerdas propagándose en campos $
 
 \subsection{Dualidad T}
 
-Una propiedad muy importante de las teorías de cuerdas es la dualidad T.
-Si consideramos cuerdas bosónicas con una dimensión espacial
-
+Una propiedad muy importante de las teorías de cuerdas es la dualidad T,
+que describe la equivalencia entre dos teorías distintas.
+Consideremos cuerdas bosónicas con una dimensión espacial formando un círculo de radio $R$,
+es decir, con una dimensión compactificada.
+El momento $p$ en la dimensión compacta no puede tomar cualquier valor, sino que está cuantificado,
 \begin{equation}
-  p_L = \frac{n}{R} + \frac{wR}{\alpha'} \qquad,\qquad  p_L = \frac{n}{R} - \frac{mR}{\alpha'} .
+  p = \frac{n}{R}, \qquad n \in \mathbb Z.
 \end{equation}
 
-La fórmula de masas es
+Pero además las cuerdas pueden enrollarse sobre la dimensión compacta $w$ veces, dando lugar
+a la contribución al momento total $wR/\alpha'$.
+
+La fórmula de masas con una dimensión compacta es
 \begin{equation}
   M^2 = \frac{n^2}{R^2} + \frac{w^2 R^2}{\alpha'^2} +\frac{2}{\alpha'}\qty(N+\tilde N -2).
 \end{equation}
 
-La transformación $R\to \alpha'/R$ $n\to w$
-
+Si hacemos la transformación $R\leftrightarrow \alpha'/R$ y $n\leftrightarrow w$, la
+masa de la cuerda no varía. 
+Este es un ejemplo de la dualidad T, cuerdas moviéndose en un círculo de radio $R$ equivalen
+a cuerdas moviéndose en un círculo de radio $\alpha'/R$.
+Por tanto, las cuerdas no distinguen entre círculos pequeños y grandes.
 
 En presencia de campos adicionales, las reglas de transformación son
 \begin{equation}
   \begin{gathered}
-    G_{00}\to \frac{1}{G_{00}}, \quad G_{0i} \\
+    G_{00}\to \frac{1}{G_{00}}, \quad G_{0i}\to \frac{B_{0i}}{G_{00}},\quad G_{ij}\to G_{ij} -\frac{G_{0i}G_{0j}}{G_{00}}+\frac{B_{0i}B_{0j}}{G_{00}}, \\
+    B_{0i}\to\frac{G_{0i}}{G_{00}},\quad B_{ij}\to B_{ij}-\frac{G_{0i}B_{0j}}{G_{00}}+\frac{B_{0i}G_{0j}}{G_{00}},\\
+    \Phi\to\Phi-\frac{1}{2}\ln G_{00},\quad n\leftrightarrow w
   \end{gathered}
 \end{equation}
+y se conocen como reglas de Busher.
 
 
-
-
+Conformal weights
 
 Definiendo
 \begin{equation}
