@@ -6,9 +6,11 @@
 \todo{Describir brevemente objetivos, utilidad y estado actual}
 
 
+
 \todo{Convenio}
 Tomamos una métrica con signatura $(-+++)$.
-\todo{Decir cuerda cerrada y bosonica}
+dimensión total $d$ y dimensiones espaciales no compactas $D$
+\todo{Decir cuerda cerrada y bosónica}
 
 \section{La cuerda relativista}
 
@@ -16,7 +18,6 @@ Tomamos una métrica con signatura $(-+++)$.
 
 La teoría de cuerdas parte de considerar que las entidades fundamentales son cuerdas
 en vez de partículas. 
-
 
 La trayectoria $\mathbf x(t)$ de una partícula satisface que su acción $S$ es un extremal.
 Coloquialmente, esto significa que la variación de la acción a primer orden es nula bajo
@@ -35,15 +36,18 @@ Con esta transformación, la acción es
  S = -m\int d\tau \sqrt{-\dv{x_\mu}{\tau}\dv{x^\mu}{\tau}}=-m\int d\tau .
 \end{equation}
 
-
 Generalizaremos la acción de una partícula libre a una cuerda libre.
 Una cuerda está parametrizada por una variable temporal $\tau$ y una variable espacial $\sigma$, adimensional.
 De forma más compacta, $(\sigma^0,\sigma^1)=(\tau,\sigma)$. 
 La trayectoria de la cuerda en el espacio-tiempo genera un superficie llamada \emph{worldsheet}.
-Las coordenadas en la worldsheet determinan un punto del espacio-tiempo $X^\mu$, también llamado
+Las coordenadas en la worldsheet $(\tau,\sigma)$ determinan un punto del espacio-tiempo $X^\mu$, también llamado
 espacio \emph{target} para evitar confusión.
+\todo{Dibujo}
 
-Para una cuerda cerrada con periodicidad $2\pi$, identificamos $X^\mu(\tau,\sigma)=X^\mu(\tau,\sigma+2\pi)$.
+En este trabajo, consideraremos solo cuerdas cerradas. 
+Si la cuerda tiene periodicidad $2\pi$, identificamos $X^\mu(\tau,\sigma)=X^\mu(\tau,\sigma+2\pi)$.
+
+\subsection{Acción de Nambu-Goto}
 
 La acción de una partícula es proporcional a la longitud de su línea de universo.
 De forma análoga, la acción de una cuerda debería ser proporcional al área de la
@@ -51,7 +55,7 @@ worldsheet.
 Para poder medir el área, es necesario definir una métrica $\gamma_{\alpha\beta}$ en la worldsheet.
 La forma natural de definir una métrica en una superficie, a partir de la métrica del espacio que
 contiene a la superficie, es mediante el concepto de \emph{pull-back}.
-En este caso, la métrica en la worldsheet el pull-back de la métrica de Minkowski
+En este caso, la métrica en la worldsheet es el pull-back de la métrica de Minkowski
 \begin{equation}
   \gamma_{ab}=\pdv{X^\mu}{\sigma^\alpha}\pdv{X^\nu}{\sigma^\beta}\eta_{\mu\nu}.
 \end{equation}
@@ -62,10 +66,7 @@ coincide con la calcula con la métrica $\eta_{\mu\nu}$, ya que
   g_{\mu\nu}(X(\sigma)) dX^\mu(\sigma)dX^\nu(\sigma) = \gamma_{\alpha\beta} d\sigma^\alpha d\sigma^\beta.
 \end{equation}
 
-
-
-La medida de integración invariante bajo cambios generales de coordenadas más sencilla 
-es $d^2\sigma \sqrt{-\det\gamma}$, por lo que la acción, llamada de Nambu-Goto, es
+El área de la worldsheet es $\int d^2\sigma \sqrt{-\det\gamma}$, por lo que la acción, llamada de Nambu-Goto, es
 \begin{equation}
   S_{NG}=-T\int d^2\sigma \sqrt{-\det\gamma}.
 \end{equation}
@@ -75,6 +76,10 @@ El parámetro $T$ se corresponde con la tensión de la cuerda y se puede expresa
   T=\frac{1}{2\pi\alpha'},
 \end{equation}
 donde $\alpha'$ es la pendiente de Regge.
+Como $\alpha'$ tiene dimensiones de longitud al cuadrado, define una longitud característica
+de la cuerda, $l_s=\sqrt{\alpha'}$.
+
+\subsection{Acción de Polyakov}
 
 A la hora de cuantizar la teoría, la raíz cuadrada es problemática, por lo que se introduce
 un campo tensorial $h$ definido sobre la worldsheet en la llamada acción de Polyakov
@@ -89,6 +94,18 @@ ecuaciones de movimiento
 \end{equation}
 donde $f(\sigma)$ es una función cualquiera. La libertad de poder escoger $f(\sigma)$
 es una simetría gauge
+
+La acción de Polyakov presenta tres tipos de simetrías, que son transformaciones que dejan
+invariante la acción. Estas son
+
+\begin{itemize}
+  \item Simetría de Poincaré. $X^\mu \to \Lambda^\mu_\nu X^\nu + c^\mu$
+  \item Invariancia reparametrización 
+  \item Simetría de Weyl
+    \begin{equation}
+      h_{\alpha\beta} \to \Omega^2 h_{\alpha\beta}
+    \end{equation}
+\end{itemize}
 
 \todo{Simetría gauge, Weyl}
 
@@ -202,7 +219,7 @@ El momento $p^-$ se puede expresar a través de $\alpha^i_n$ y de $\tilde \alpha
 
 La masa de la cuerda es por tanto
 \begin{equation}
-  M^2=-p_\mu p^\mu = 2p^+p^- - \sum_{i=1}^{d-2} p^i p^i = 
+  m^2=-p_\mu p^\mu = 2p^+p^- - \sum_{i=1}^{d-2} p^i p^i = 
   \frac{2}{\alpha'}\sum_{i=1}^{d-2} \sum_{n\neq 0} \alpha_{-n}^i \alpha_n^i
   =\frac{2}{\alpha'}\sum_{i=1}^{d-2} \sum_{n\neq 0}\tilde \alpha_{-n}^i \tilde\alpha_n^i.
   \label{eq:mass}
@@ -239,7 +256,7 @@ Clásicamente el producto de $\alpha^i_{-n}$ y $\alpha^i_n$ conmuta, por lo que 
 ambigüedad en el orden a asignar a los operadores $\widehat\alpha^i_{-n}$ y $\widehat \alpha^i_n$.
 La ambigüedad introduce una constante $c$ desconocida en el operador de la masa al cuadrado,
 \begin{equation}
-  \widehat M^2 = \frac{4}{\alpha'}\qty(\sum_{i=1}^{d-2} \sum_{n>0} \alpha_{-n}^i\alpha_n -c)
+  \widehat m^2 = \frac{4}{\alpha'}\qty(\sum_{i=1}^{d-2} \sum_{n>0} \alpha_{-n}^i\alpha_n -c)
    = \frac{4}{\alpha'}\qty(\sum_{i=1}^{d-2} \sum_{n>0} \tilde \alpha_{-n}^i\tilde \alpha_n -c).
 \end{equation}
 
@@ -250,7 +267,8 @@ Por conveniencia, definimos los operadores número
 \end{equation}
 por lo que 
 \begin{equation}
-  \widehat M^2 = \frac{4}{\alpha'} (\widehat N -c ) = \frac{4}{\alpha'} (\widehat{\tilde N} -c).
+  \widehat m^2 = \frac{4}{\alpha'} (\widehat N -c ) = \frac{4}{\alpha'} (\widehat{\tilde N} -c).
+  \label{eq:massdef}
 \end{equation}
 
 La condición $\widehat N=\widehat {\tilde N}$ se conoce como \emph{level-matching}.
@@ -263,7 +281,7 @@ bosónicas, $c=\frac{d-2}{24}$.
 \subsection{Espectro de una cuerda}
 En el estado de vacío, $\widehat N\ket{0;p}=\widehat {\tilde N}\ket{0;p}=0$, por lo que la masa es
 \begin{equation}
-  M^2 = -\frac{1}{\alpha'}\frac{d-2}{6}.
+  m^2 = -\frac{1}{\alpha'}\frac{d-2}{6}.
 \end{equation}
 
 Si $d>2$ la masa al cuadrado de la cuerda es negativa y la partícula a la que corresponde se denomina taquión.
@@ -271,7 +289,7 @@ Los taquiones aparecen también en teoría cuántica de campos al estudiar un ca
 potencial $V(\phi)$.
 La masa de la partícula asociada al campo es
 \begin{equation}
-  M^2 = \pdv[2]{V(\phi)}{\phi}.
+  m^2 = \pdv[2]{V(\phi)}{\phi}.
 \end{equation}
 Por tanto, una masa al cuadrado negativa indica que estamos haciendo una expansión en torno
 a un máximo. 
@@ -286,7 +304,7 @@ El primer estado excitado se obtiene como
 \end{equation}
 con masa
 \begin{equation}
-  M^2 = \frac{4}{\alpha'}\qty(1-\frac{d-2}{24}).
+  m^2 = \frac{4}{\alpha'}\qty(1-\frac{d-2}{24}).
 \end{equation}
 
 Teniendo en cuenta los valores posibles de $i$ y $j$ hay $(d-2)^2$ estados excitados.
@@ -296,7 +314,7 @@ Teniendo en cuenta los valores posibles de $i$ y $j$ hay $(d-2)^2$ estados excit
 Para que estos estados puedan describirse mediante la clasificación de Wigner de las
 representaciones del grupo de Poincaré, los estados han de ser una representación $SO(d-2)$.
 Esto significa que las partículas tienen masa nula, en caso contrario, se rompería la simetría
-de Lorentz. Como $M^2=0$, obtenemos que la dimensión del espacio-tiempo es
+de Lorentz. Como $m^2=0$, obtenemos que la dimensión del espacio-tiempo es
 \begin{equation}
   d=26.
 \end{equation}
@@ -350,19 +368,19 @@ La integral no es integral el sentido habitual (Riemann o Lebesgue) y su definic
 es muy elaborada, pero basta tomarla en el sentido de suma de caminos.
 Para evitar tratar con un integrando complejo, reemplazaremos el tiempo $t$ en la acción por un tiempo imaginario de modo que
 \begin{equation}
-  K(x',t';x_0,t_0) = \int \mathcal Dx e^{\frac{-1}{\hbar} S[x]}.
+  K(x',t';x_0,t_0) = \int \mathcal Dx e^{- S[x]/ \hbar}.
 \end{equation}
 Este procedimiento se conoce como rotación de Wick y su justificación matemática también presenta complicaciones.
 
 
 La integral de camino en teoría de cuerdas se define de manera análoga, pero integramos 
-sobre todas las trayectorias de la cuerda y sobre todas la métrica de la worldsheet,
+sobre todas las trayectorias de la cuerda y sobre todas la métricas de la worldsheet,
 \begin{equation}
   Z = \int \mathcal DX \mathcal Dh e^{-S_p+\lambda \chi}.
 \end{equation}
 
 En el exponente aparece un factor adicional $\lambda\chi$ que determina cómo contribuyen las trayectorias
-de cuerdas con una determinada topología de la worldsheet.
+de cuerdas en una determinada topología de la worldsheet.
 La constante $\lambda$ determina cómo interaccionan las cuerdas entre sí y $\chi$ es la característica
 de Euler de la worldsheet.
 La característica de Euler de una superficie de género $g$ (número de agujeros) es
@@ -395,7 +413,7 @@ a la contribución al momento total $wR/\alpha'$.
 
 La fórmula de masas con una dimensión compacta es
 \begin{equation}
-  M^2 = \frac{n^2}{R^2} + \frac{w^2 R^2}{\alpha'^2} +\frac{2}{\alpha'}\qty(N+\tilde N -2).
+  m^2 = \frac{n^2}{R^2} + \frac{w^2 R^2}{\alpha'^2} +\frac{2}{\alpha'}\qty(N+\tilde N -2).
 \end{equation}
 
 Si hacemos la transformación $R\leftrightarrow \alpha'/R$ y $n\leftrightarrow w$, la

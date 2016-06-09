@@ -1,19 +1,20 @@
 \chapter{Termodinámica de cuerdas}
 
+En este capítulo
+
 \section{Cálculo de la densidad de estados para una cuerda excitada}
 
-La fórmula de masas para una cuerda abierta es
-\begin{equation}
-  \alpha' m^2=-1+N
-\end{equation}
-y para una cuerda cerrada
+La fórmula de masas \ref{eq:massdef} para una cuerda bosónica cerrada en $d=26$ es
 \begin{equation}
   \alpha' m^2=-4+2(N+\bar N).
 \end{equation}
 
-\todo{Explicar}
+\todo{Explicar def densidad estados}
 Queremos calcular la densidad de estados de una cuerda en función del número de 
 oscilador, 
+
+
+Tenemos que considerar el número de estados posibles 
 
 \begin{equation}
   N=\sum_{m=1}^N m n_m, \qquad n_m\in\mathbb N
@@ -45,7 +46,9 @@ La función de partición en la colectividad macrocanónica es
     z&=(\beta-\beta_H)^{D/2}\ln(\beta-\beta_H), &\text{si $D$ par}\\
     z&=(\beta-\beta_H)^{D/2}, &\text{si $D$ impar}.
   \end{aligned}
+  \label{eq:zp}
 \end{equation}
+\todo{Conclusión}
 
 \section{Modelo random walk}
 
@@ -106,9 +109,7 @@ La función de partición de un sistema de cuerdas es
   Z(\beta) = \int_0^\infty \Omega(E)e^{-\beta E}.
 \end{equation}
 
-Si el número de 
-
-
+Aplicando la aproximación de Maxwell-Boltzmann $Z=e^z$ y haciendo un dsarrollo de Taylor,
 \begin{equation}
   \begin{aligned}
       Z = e^z&= 1+ \int_0^\infty dE_1\omega(E_1)e^{-\beta E_1} +\frac 1 2 \int_0^\infty \int_0^\infty
@@ -117,19 +118,53 @@ Si el número de
       &+\frac 1 2\int_0^\infty dE e^{-\beta E} \int_0^\infty\int_0^\infty dE_1 dE_2 \omega(E_1)\omega(E_2) \delta(E-E_1-E_2)\dots
   \end{aligned}
 \end{equation}
-
+Donde hemos aplicado la definición de la delta de Dirac $\delta(x) =\int du e^{-u-x}$.
 Entonces
 \begin{equation}
   \Omega(E)=\sum_{n=0}^\infty \frac{1}{n!}\int \prod_{i=1}^n dE_i \omega(E_i)\delta\qty(E-\sum_{j=1}^n E_j).
 \end{equation}
 
+Teniendo en cuenta que la densidad de estados para una sola cuerda es
 \begin{equation}
   \omega(E)\sim \frac{e^{\beta_H E}}{E^{D/2+1}}.
 \end{equation}
 
 \todo{Acabar deducción}
+Integral $E_0$ y  $E_1=E$
+\begin{equation}
+  \begin{aligned}
+    &\Omega(E) \sim \frac{e^{\beta_H E}}{E^{D/2+1}} \sum_{n=1}^\infty \frac{1}{(n-1)!}\qty(\frac{2}{DE_0})^{n-1},\\
+    &\Omega(E) \sim \frac{e^{\beta_H E}}{E} \sum_{n=1}^\infty \frac{1}{(n-1)!}\qty(\ln \frac{E}{E_0})^{n-1}.\\
+  \end{aligned}
+\end{equation}
+La suma da lugar a una exponencial,
+\begin{equation}
+  \begin{aligned}
+    &\Omega(E) \sim \frac{e^{\beta_H E}}{E^{D/2+1}}e^{\frac{2}{DE_0}}, \quad D>0\\
+    &\Omega(E) \sim \frac{e^{\beta_H E}}{E_0}}, \quad D=0.
+  \end{aligned}
+\end{equation}
+Como la densidad de estados de un sistema de cuerdas 
 
 \subsection{Formulación canónica}
+
+  \ref{eq:zp}
+\begin{equation}
+  \begin{aligned}
+    z&=(\beta-\beta_H)^{D/2}\ln(\beta-\beta_H), &\text{si $D$ par}\\
+    z&=(\beta-\beta_H)^{D/2}, &\text{si $D$ impar}.
+  \end{aligned}
+\end{equation}
+
+$Z=e^z$
+
+\begin{equation}
+  \begin{aligned}
+   &Z(\beta)= 1-C(\beta-\beta_H)^{D/2} +\frac{C^2}{2}(\beta-\beta_H)^D-\frac{C^3}{6}(\beta-\beta_H)^{3D/2}+\cdots,\\
+   &Z(\beta)= 1-C(\beta-\beta_H)^{D/2}\ln(\beta-\beta_H) +\frac{C^2}{2}(\beta-\beta_H)^D\ln(\beta-\beta_H) ^2-\frac{C^3}{6}(\beta-\beta_H)^{3D/2}\ln(\beta-\beta_H)^3 +\cdots,\\
+   &Z(\beta)= 1-\ln(\beta-\beta_H) +\frac{1}{2}\ln(\beta-\beta_H) ^2-\frac{1}{6}\ln(\beta-\beta_H)^3 +\cdots.\\
+  \end{aligned}
+\end{equation}
 
 \section{Termodinámica de cuerdas en espacio plano}
 
