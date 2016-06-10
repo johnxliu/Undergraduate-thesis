@@ -95,46 +95,63 @@ por lo que las cuerdas largas tiende a enmarañarse.
 
 \section{Coalescencia multicuerda}
 
-\todo{Repaso física estadística}
+Tras haber estudiado una solo cuerda, pasamos a considerar un gas de cuerdas.
+Las cuerdas pueden interaccionar entre sí, uniéndose o dividiéndose, por lo que
+no tiene sentido fijar el número de cuerdas (al igual que ocurre con fotones).
+Como no cuesta ninguna energía crear una cuerda, el potencial químico es nulo, $\mu=0$.
+Veremos dos formas alternativas de concluir que al aumentar la temperatura, las cuerdas
+tienden a unirse en una sola cuerda.
 
 \subsection{Formulación microcanónica}
 
-La función de partición de una cuerda es
+\todo{Contradicción?}
+En la formulación microcanónica tanto la energía como el número de cuerdas está fijo.
+La función relevante que describe la termodinámica es la densidad de estados. 
+
+La función de partición de una cuerda se relaciona con la densidad de estados de una cuerda $\omega(E)$, mediante
+una transformada de Laplace
 \begin{equation}
   z(\beta) = \int_0^\infty \omega(E)e^{-\beta E}.
 \end{equation}
 
-La función de partición de un sistema de cuerdas es
+Del mismo modo, la función de partición de un sistema de cuerdas se obtiene a partir de la
+densidad de estados de un gas de cuerdas $\Omega(E)$, como
 \begin{equation}
   Z(\beta) = \int_0^\infty \Omega(E)e^{-\beta E}.
+  \label{eq:z1}
 \end{equation}
 
-Aplicando la aproximación de Maxwell-Boltzmann $Z=e^z$ y haciendo un dsarrollo de Taylor,
+\todo{Entender}
+Aplicando la aproximación de Maxwell-Boltzmann $Z=e^z$ y haciendo un desarrollo de Taylor,
 \begin{equation}
   \begin{aligned}
       Z = e^z&= 1+ \int_0^\infty dE_1\omega(E_1)e^{-\beta E_1} +\frac 1 2 \int_0^\infty \int_0^\infty
       \omega(E_1)\omega(E_2)e^{-\beta(E_1+E_2)}\dots \\
-      &=\int_0^\infty dE \delta(E) + \int_0^\infty dE e^{-\beta E}\int  dE_1\omega(E_1)\delta(E-E_1)\\
+      &=\int_0^\infty dE \delta(E) + \int_0^\infty dE e^{-\beta E}\int_0^\infty  dE_1\omega(E_1)\delta(E-E_1)\\
       &+\frac 1 2\int_0^\infty dE e^{-\beta E} \int_0^\infty\int_0^\infty dE_1 dE_2 \omega(E_1)\omega(E_2) \delta(E-E_1-E_2)\dots
   \end{aligned}
+  \label{eq:z2}
 \end{equation}
-Donde hemos aplicado la definición de la delta de Dirac $\delta(x) =\int du e^{-u-x}$.
-Entonces
+Donde hemos aplicado la propiedad de la delta de Dirac $\int_0^\infty dx f(x)\delta(x-x_0) = f(x_0)$.
+Comparando las ecuaciones \ref{eq:z1} y \ref{eq:z2},
 \begin{equation}
-  \Omega(E)=\sum_{n=0}^\infty \frac{1}{n!}\int \prod_{i=1}^n dE_i \omega(E_i)\delta\qty(E-\sum_{j=1}^n E_j).
+  \Omega(E)=\sum_{n=0}^\infty \frac{1}{n!}\int_0^\infty \prod_{i=1}^n dE_i \omega(E_i)\delta\qty(E-\sum_{j=1}^n E_j).
 \end{equation}
 
-Teniendo en cuenta que la densidad de estados para una sola cuerda es
+Procedemos a sustituir la densidad de estados para una sola cuerda,
 \begin{equation}
   \omega(E)\sim \frac{e^{\beta_H E}}{E^{D/2+1}}.
+  \label{eq:dd}
 \end{equation}
 
-\todo{Acabar deducción}
-Integral $E_0$ y  $E_1=E$
+Puesto que la densidad de estados \ref{eq:dd} solo es válida para altas energías, acotamos inferiormente
+las integrales por $E_0$.
+Suponiendo además que para la variable de integración $E_1$ se cumple $E=E_1$ e ignorando
+la contribución del vacío ($n=0$), pues solo es relevante a $E=0$, la densidad de estados es
 \begin{equation}
   \begin{aligned}
-    &\Omega(E) \sim \frac{e^{\beta_H E}}{E^{D/2+1}} \sum_{n=1}^\infty \frac{1}{(n-1)!}\qty(\frac{2}{DE_0})^{n-1},\\
-    &\Omega(E) \sim \frac{e^{\beta_H E}}{E} \sum_{n=1}^\infty \frac{1}{(n-1)!}\qty(\ln \frac{E}{E_0})^{n-1}.\\
+    &\Omega(E) \sim \frac{e^{\beta_H E}}{E^{D/2+1}} \sum_{n=1}^\infty \frac{1}{(n-1)!}\qty(\frac{2}{DE_0})^{n-1},\quad D>0\\
+    &\Omega(E) \sim \frac{e^{\beta_H E}}{E} \sum_{n=1}^\infty \frac{1}{(n-1)!}\qty(\ln \frac{E}{E_0})^{n-1},\quad D=0.\\
   \end{aligned}
 \end{equation}
 La suma da lugar a una exponencial,
@@ -144,11 +161,15 @@ La suma da lugar a una exponencial,
     &\Omega(E) \sim \frac{e^{\beta_H E}}{E_0}}, \quad D=0.
   \end{aligned}
 \end{equation}
-Como la densidad de estados de un sistema de cuerdas 
+Comparando la densidad de estados de múltiples cuerdas con la densidad de estados de una sola cuerda, vemos que 
+ambas coinciden si $D>0$.
+Esto quiere decir que a altas energías, predomina una sola cuerda muy larga.
+\todo{Completar}
+
 
 \subsection{Formulación canónica}
 
-  \ref{eq:zp}
+La función de partición de una sola cuerda es (\ref{eq:zp}),
 \begin{equation}
   \begin{aligned}
     z&=(\beta-\beta_H)^{D/2}\ln(\beta-\beta_H), &\text{si $D$ par}\\
@@ -156,25 +177,27 @@ Como la densidad de estados de un sistema de cuerdas
   \end{aligned}
 \end{equation}
 
-$Z=e^z$
-
+Aplicando la aproximación Maxwell-Boltzmann $Z=e^z$,
 \begin{equation}
   \begin{aligned}
-   &Z(\beta)= 1-C(\beta-\beta_H)^{D/2} +\frac{C^2}{2}(\beta-\beta_H)^D-\frac{C^3}{6}(\beta-\beta_H)^{3D/2}+\cdots,\\
-   &Z(\beta)= 1-C(\beta-\beta_H)^{D/2}\ln(\beta-\beta_H) +\frac{C^2}{2}(\beta-\beta_H)^D\ln(\beta-\beta_H) ^2-\frac{C^3}{6}(\beta-\beta_H)^{3D/2}\ln(\beta-\beta_H)^3 +\cdots,\\
-   &Z(\beta)= 1-\ln(\beta-\beta_H) +\frac{1}{2}\ln(\beta-\beta_H) ^2-\frac{1}{6}\ln(\beta-\beta_H)^3 +\cdots.\\
+   Z(\beta)= &1-C(\beta-\beta_H)^{D/2} +\frac{C^2}{2}(\beta-\beta_H)^D-\frac{C^3}{6}(\beta-\beta_H)^{3D/2}+\cdots, \text{ si $D$ impar}\\
+   Z(\beta)= &1-C(\beta-\beta_H)^{D/2}\ln(\beta-\beta_H) +\frac{C^2}{2}(\beta-\beta_H)^D\ln(\beta-\beta_H) ^2\\
+         &-\frac{C^3}{6}(\beta-\beta_H)^{3D/2}\ln(\beta-\beta_H)^3 +\cdots, \quad \text{si $D$ par}.\\
+%   &Z(\beta)= 1-\ln(\beta-\beta_H) +\frac{1}{2}\ln(\beta-\beta_H) ^2-\frac{1}{6}\ln(\beta-\beta_H)^3 +\cdots, \text{si $D$ par}.\\
   \end{aligned}
 \end{equation}
+
+Ignorando el término constante, la contribución principal a la no analiticidad de la función de partición es una sola cuerda, salvo si $D=0$.
+\todo{Reescribir}
 
 \section{Termodinámica de cuerdas en espacio plano}
 
 %Termodinámica de cuerdas. Energía libre. Invariancia modular explícita. Escalar termal.
-Buscamos la energía libre de una cuerda bosónica cerrada.
-\todo{Estamos estudiando un gas de cuerdas}
+Buscamos la energía libre de una cuerdas bosónicas cerradas en el espacio de Minkowski.
 
-La función de partición bosónica en un espectro discreto es $z=\prod_i 1/(1-\exp(-\beta E_i))$.
+La función de partición bosónica para un solo grado de libertad en un espectro discreto es $z=\prod_i 1/(1-\exp(-\beta E_i))$.
 La energía libre viene dada por $F=-1/\beta \ln z=\beta\sum_i \ln(1-\exp(-\beta E_i))$.
-En el caso continuo, donde $E=E(k)$, reemplazamos el sumatorio por $V\int d^{d-1}k/(2\pi)^{d-1}$.Por tanto,
+Si el espectro es continuo, con $E=E(k)$, reemplazamos el sumatorio por $V\int d^{d-1}k/(2\pi)^{d-1}$. Por tanto,
 \begin{equation}
   F=\frac{V}{\beta}\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\ln(1-\exp(-\beta E)).
 \end{equation}
@@ -200,21 +223,21 @@ La integral en momentos tiene como resultado $(2\pi s)^{\frac{d-1}{2}}$, por lo 
   F=-V \int_0^\infty \frac{ds}{s(2\pi s)^{d/2}}\sum^\infty_{r=1} \exp \qty(-\frac{m^2s}{2}- \frac{r^2\beta^2}{2s}).
 \end{equation}
 
-Por otro lado, la función de partición de estado multicuerda es $Z=e^z=-\beta F$. 
-\todo{Omitir path-integral?}
-Entonces podemos hacer la asociación de la energía libre con integral de camino de 
-una partícula tras aplicar una rotación de Wick en la dimensión temporal y compactificando el
-tiempo con periodo $\beta$
-\begin{equation}
-  Z=-\beta F= \int_0^\infty \frac{ds}{2s}\sum^{'\infty}_{w=-\infty} \int \mathcal{D}x 
-  \exp\qty(-\frac 1 2 \int_0^s d\tau \qty[\qty(\pdv{X^\mu}{t})^2+m^2])
-\end{equation}
+%Por otro lado, la función de partición de estado multicuerda es $Z=e^z=e^{-\beta F}$. 
+%\todo{Omitir path-integral?}
+%Entonces podemos hacer la asociación de la energía libre con integral de camino de 
+%una partícula tras aplicar una rotación de Wick en la dimensión temporal y compactificando el
+%tiempo con periodo $\beta$
+%\begin{equation}
+%  Z=-\beta F= \int_0^\infty \frac{ds}{2s}\sum^{'\infty}_{w=-\infty} \int \mathcal{D}x 
+%  \exp\qty(-\frac 1 2 \int_0^s d\tau \qty[\qty(\pdv{X^\mu}{t})^2+m^2])
+%\end{equation}
 
-Se llega al mismo resultado calculando la función de partición de una partícula  si identificamos 
-el parámetro $s$ con el tiempo propio  de la partícula y compactificamos 
-la coordenada $X^0$ con periodo $\beta$. El número de vueltas que da la
-partícula en la dimensión temporal es $w$. La función de partición se suma sobre
-todas las vueltas posibles y se integra en todos los tiempos propios.
+%Se llega al mismo resultado calculando la función de partición de una partícula si identificamos 
+%el parámetro $s$ con el tiempo propio  de la partícula y compactificamos 
+%la coordenada $X^0$ con periodo $\beta$. El número de vueltas que da la
+%partícula en la dimensión temporal es $w$. La función de partición se suma sobre
+%todas las vueltas posibles y se integra en todos los tiempos propios.
 
 En una teoría de cuerdas bosónica, $d=26$ y la energía libre se obtendría sumando las
 energías libres para todo el espectro posible, con la fórmula de masas
@@ -299,6 +322,8 @@ por lo que al integrar $\tau_2$ desde cero la energía libre diverge si $\beta\l
 
 Si examinamos el integrando en la región fundamental \ref{eq:fund}, 
 
+Cálculo de $Z$ por path-integral
+
 %\section{Cuerdas en background estático}
 %Supongamos una cuerda en presencia de un background $G_{\mu\nu}$ independiente del tiempo.
 %La función de partición calculada como la integral de camino en el toro es
@@ -309,6 +334,6 @@ Si examinamos el integrando en la región fundamental \ref{eq:fund},
 %
 %La métrica de la worldsheet
 
-\section{Discrepancia entre colectividad microcanónica y canónica}
+%\section{Discrepancia entre colectividad microcanónica y canónica}
 
 \todo{Comentar más allá de Hagedorn? No perturbativo, interacciones, transición de fase\ldots}
