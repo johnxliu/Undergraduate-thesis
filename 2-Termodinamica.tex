@@ -4,43 +4,69 @@ En este capítulo
 
 \section{Cálculo de la densidad de estados para una cuerda excitada}
 
+Queremos calcular cuántos estados de cuerda posibles hay para una masa determinada.
 La fórmula de masas \ref{eq:massdef} para una cuerda bosónica cerrada en $d=26$ es
 \begin{equation}
   \alpha' m^2=-4+2(N+\bar N).
 \end{equation}
 
-\todo{Explicar def densidad estados}
-Queremos calcular la densidad de estados de una cuerda en función del número de 
-oscilador, 
+La masa depende de los valores que tomen los números de oscilador $N$ y $\bar N$, que además
+satisfacen el level-matching $N=\bar N$.
+Por tanto, debemos conocer cuántos estados se pueden construir para un valor fijo de $N$.
+
+El primer estado excitado, $N=1$, es $\bar \alpha^i_{-1} \alpha^j_{-1} \ket{p;0}$, como 
+$i$ y $j$ toman $D-2$ valores independientes hay $(D-2)^2$ estados posibles.
+
+Para $N=2$, los estados posibles son del tipo $\bar \alpha^i_{-2}\bar \alpha^j_{-2}\ket{p;0}$, 
+$\bar \alpha^i_{-1} \bar \alpha^j_{-1} \alpha^k_{-1} \alpha^l_{-1} \ket{p;0}$,
+$\bar \alpha^i_{-2} \alpha^j_{-1} \alpha^k_{-1}\ket{p;0}$ y $\bar \alpha^i_{-1} \bar \alpha^j_{-1} \alpha^k_{-2} \ket{p;0}$.
 
 
-Tenemos que considerar el número de estados posibles 
-
+El número de estados para un valor de $N$ se denomina las particiones de $N$ y se denota por $p(N)$.
+Para valores altos de $N$, se aproxima por la fórmula de Hardy-Ramanujan
 \begin{equation}
-  N=\sum_{m=1}^N m n_m, \qquad n_m\in\mathbb N
+  p(N)\approx \alpha N^ {\frac{d-1}{2}}\exp\qty(2\pi\sqrt{\frac{N(d-2)}{6}}),
+\end{equation}
+donde $\alpha$ es una constante.
+
+Si $N$ es muy grande, se puede aproximar la masa por un espectro continuo y se define la
+densidad de estados $\rho(M)$ de forma que $\int dM \rho(M)$ proporciona el número total
+de estados 
+
+En el caso de cuerdas bosónicas cerradas, la densidad de estados en función de la masa
+\begin{equation}
+  \rho(M)\approx \alpha N^ {\frac{d-1}{2}}\exp\qty(2\pi\sqrt{\frac{N(d-2)}{6}}).
 \end{equation}
 
-Las particiones de $N$
-\todo{Demostracion particiones de N}
+Ahora buscamos la densidad de estados en función de la energía, suponiendo que hay $d-D-1$ dimensiones compactas 
+de radio $R_i$.
+La energía de la cuerda es
 \begin{equation}
-  p(N)\approx \alpha N^ {\frac{d-1}{2}}\exp\qty(2\pi\sqrt{\frac{N(d-2)}{6}}).
-\end{equation}
-
-En el caso de cuerdas bosónicas cerradas, expresando la densidad de estados en función de la masa
-\begin{equation}
-  p(M)\approx \alpha N^ {\frac{d-1}{2}}\exp\qty(2\pi\sqrt{\frac{N(d-2)}{6}}).
+  \alpha E^2 = \alpha' \mathbf p ^2 + \alpha\frac{n^2_i}{R_i^2} + \frac{w_i^2 R^2_i}{\alpha'} -4+ 2(N+\bar N).
 \end{equation}
 
 
 \begin{equation}
   \omega(E) \approx V \frac{e^{\beta_H E}}{E^{D/2+1}}.
 \end{equation}
-
-La función de partición en la colectividad macrocanónica es
+Donde 
 \begin{equation}
-  z(\beta)=\int^\infty_{E_0} dE \frac{e^{\beta_H E}}{{E^{D/2+1}}}e^{-\beta E}
+  \beta_H = \2\pi \sqrt{\alpha'}\sqrt{\frac{d-2}{6}}.
 \end{equation}
 
+La temperatura $T_H=1/(k_B \beta_H)$ se denomina temperatura de Hagedorn.
+
+La función de partición es la transformada de Laplace de la densidad de estados,
+\begin{equation}
+  z(\beta)=\int^\infty_{E_0} dE \frac{e^{\beta_H E}}{{E^{D/2+1}}}e^{-\beta E},
+\end{equation}
+donde se integra desde $E_0$ porque la expresión de la densidad de estados solo es válida a altas
+energías.
+La integral diverge si $\beta < \beta_H$, por lo que $T_H$ aparece como una temperatura límite
+a partir de la cual la función de partición deja de tener sentido.
+
+La contribución no analítica dominante de la función de partición a alta temperatura se aproxima
+por 
 \begin{equation}
   \begin{aligned}
     z&=(\beta-\beta_H)^{D/2}\ln(\beta-\beta_H), &\text{si $D$ par}\\
@@ -246,22 +272,21 @@ energías libres para todo el espectro posible, con la fórmula de masas
   m^2=\frac{2}{\alpha'}(N+\bar N-2).
 \end{equation}
 
-Puesto que se tiene que cumplir la condición $N=\bar N$, hay que incluir en la 
-integral la expresión de la delta de Kronecker
-\begin{equation}
-   \delta_{N\bar N}=\int_{-1/2}^{1/2}d\tau_1 \exp(2\pi i\tau_1 (N-\bar N)).
-\end{equation}
 
 La energía libre sería
 \begin{equation}
   F=\sum_i \delta_{N_i \bar N_i} F(N_i,\bar N_i),
 \end{equation}
-
 donde $i$ recorre todas las posibles combinaciones de $N_i$ y $\bar N_i$.
-Haciendo el cambio de variable $s=2\pi\alpha'\tau_2$,
+La delta the Kronecker impone la condición $N=\bar N$. 
+Empleando la forma integral de la delta de Kronecker
+\begin{equation}
+   \delta_{N\bar N}=\int_{-1/2}^{1/2}d\tau_1 \exp(2\pi i\tau_1 (N-\bar N)).
+\end{equation}
+y haciendo el cambio de variable $s=2\pi\alpha'\tau_2$,
 \begin{equation}
   F=-V \int_0^\infty \frac{d\tau_2}{\tau_2(4\pi^2\alpha'\tau_2)^{d/2}}\frac 1 2\sum_{r=-\infty}^{'\infty} 
-  \sum_i e^{-(N_i+\bar N_i -2)2\pi\tau_2} e^{-\frac{r^2\beta^2}{4\pi\alpha'\tau_2}}\int_{-1/2}^{1/2} d\tau_1 e^{2\pi i\tau_1(N_i-\bar N_i)}
+  \sum_i e^{-(N_i+\bar N_i -2)2\pi\tau_2} e^{-\frac{r^2\beta^2}{4\pi\alpha'\tau_2}}\int_{-1/2}^{1/2} d\tau_1 e^{2\pi i\tau_1(N_i-\bar N_i)}.
 \end{equation}
 
 El apóstrofe indica que se ha omitido el término con $r=0$ del sumatorio, pues es la contribución
@@ -278,6 +303,14 @@ Sustituyendo, llegamos a
   \abs{\eta(\tau)}^{-2d+4}\exp\qty(-\frac{r^2\beta^2}{4\pi\alpha'\tau_2}).
   \label{eq:strip}
 \end{equation}
+
+Para valores próximos a $\tau_2=0$, los términos con $r=\pm 1$ son dominantes.
+El comportamiento de la exponencial es
+\begin{equation}
+  \exp\qty(\frac{8\pi^2 \alpha' -\beta^2}{4\pi\alpha'\tau_2}),
+\end{equation}
+por lo que al integrar $\tau_2$ desde cero la energía libre diverge si $\beta\leq \beta_H=4\pi\sqrt{\alpha'}$.
+
 \todo{De momento no comentamos la path integral}
 %El mismo resultado se obtiene calculando la integral de camino en el toro
 %\begin{equation}
@@ -300,6 +333,16 @@ se suma, de modo que para $d=26$ se tiene
   \label{eq:fund}
 \end{equation}
 
+Esta expresión de la energía libre se corresponde con la integral de camino $Z$ del toro en
+un espacio donde la dimensión temporal forma un círculo de radio $R=\beta/(2\pi)$ y con enrollamientos
+de las cuerdas, según $Z=-\beta F$.
+
+Al haber excluido la región próxima a $\tau_2=0$, la divergencia de Hagedorn aparece para
+valores muy altos de $\tau_2$.
+La divergencia se manifiesta como un campo cuya masa se hace cero a la temperatura de Hagedorn
+y se vuelve taquiónico por encima de esta.
+
+
 %Haciendo la suma, se llega a
 %\begin{equation}
 %  Z=-\beta F=\int_{\mathcal F}\frac{d\tau_1d\tau_2}{2\tau_2}\Tr\qty(q^{L_0}\bar q^{\bar L_0})
@@ -320,9 +363,17 @@ son dominantes. El comportamiento de la exponencial es
 \end{equation}
 por lo que al integrar $\tau_2$ desde cero la energía libre diverge si $\beta\leq \beta_H=4\pi\sqrt{\alpha'}$.
 
-Si examinamos el integrando en la región fundamental \ref{eq:fund}, 
+La divergencia de  la región fundamental \ref{eq:fund}, 
 
 Cálculo de $Z$ por path-integral
+La energía libre puede calcularse como la integral de camino en un espacio con tiempo euclídeo
+y cuya temperatura se relaciona con el periodo $\beta=1/(K_BT)$.
+La divergencia de la energía libre se corresponde con el estado que se enrolla una vez en el 
+tiempo y cuya masa es cero.
+Es importante notar que este estado no se corresponde a ningún estado
+Este estado se describe por un campo efectivo llamado thermal scalar.
+
+Explicar campo taquiónico.
 
 %\section{Cuerdas en background estático}
 %Supongamos una cuerda en presencia de un background $G_{\mu\nu}$ independiente del tiempo.

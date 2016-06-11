@@ -147,7 +147,7 @@ en una onda moviéndose hacia la izquierda $X^+_L$ y otra hacia la derecha $X^+_
 Teniendo en cuenta la periodicidad en $\sigma$, la expansión de Fourier conduce a
 \begin{equation}
   \begin{gathered}
-    X^+_L=\frac 1 2 x^+ + \frac 1 2 \alpha' p^+ \sigma^+ + i\sqrt{\frac{\alpha'}{2}}\sum_{n\neq 0} \frac{1}{n}\tilde \alpha^+_n e^{-in\sigma^+},\\
+    X^+_L=\frac 1 2 x^+ + \frac 1 2 \alpha' p^+ \sigma^+ + i\sqrt{\frac{\alpha'}{2}}\sum_{n\neq 0} \frac{1}{n}\bar \alpha^+_n e^{-in\sigma^+},\\
     X^+_R=\frac 1 2 x^+ + \frac 1 2 \alpha' p^+ \sigma^- +i\sqrt{\frac{\alpha'}{2}}\sum_{n\neq 0} \frac{1}{n}\alpha^+_n e^{-in\sigma^-}.
   \end{gathered}
 \end{equation}
@@ -203,30 +203,30 @@ En el desarrollo de Fourier
 \begin{equation}
   \begin{gathered}
     X^-_L(\sigma^+)=\frac 1 2 x^- + \frac 1 2 \alpha' p^- \sigma^+ + i\sqrt{\frac{ \alpha'}{ 2}}
-    \sum_{n\neq0} \frac 1 n \tilde{\alpha}^-_n e^{-in\sigma^+} \\                             
+    \sum_{n\neq0} \frac 1 n \bar{\alpha}^-_n e^{-in\sigma^+} \\                             
     X^-_R(\sigma^+)=\frac 1 2 x^- + \frac 1 2 \alpha' p^- \sigma^- + i\sqrt{\frac{ \alpha'}{ 2}}
     \sum_{n\neq0} \frac 1 n \alpha^-_n e^{-in\sigma^-},
   \end{gathered}
 \end{equation}
-las constantes $p^-$, $\tilde \alpha^-_n$ y $\alpha^-_n$ quedan determinadas por las ecuaciones
+las constantes $p^-$, $\bar \alpha^-_n$ y $\alpha^-_n$ quedan determinadas por las ecuaciones
 \ref{eq:lig1} y \ref{eq:lig2}.
 
-El momento $p^-$ se puede expresar a través de $\alpha^i_n$ y de $\tilde \alpha^i_n$ como
+El momento $p^-$ se puede expresar a través de $\alpha^i_n$ y de $\bar \alpha^i_n$ como
 \begin{equation}
   p^- = \frac{1}{\alpha' p^+}\sum_{i=1}^{d-2} \qty(\frac{1}{2}\alpha'p^i p^i +\sum_{n\neq0}\alpha_n^i\alpha_{-n}^i) 
-   = \frac{1}{\alpha' p^+}\sum_{i=1}^{d-2} \qty(\frac{1}{2}\alpha'p^i p^i +\sum_{n\neq0}\tilde \alpha_n^i\tilde \alpha_{-n}^i) .
+   = \frac{1}{\alpha' p^+}\sum_{i=1}^{d-2} \qty(\frac{1}{2}\alpha'p^i p^i +\sum_{n\neq0}\bar \alpha_n^i\bar \alpha_{-n}^i) .
 \end{equation}
 
 La masa de la cuerda es por tanto
 \begin{equation}
   m^2=-p_\mu p^\mu = 2p^+p^- - \sum_{i=1}^{d-2} p^i p^i = 
   \frac{2}{\alpha'}\sum_{i=1}^{d-2} \sum_{n\neq 0} \alpha_{-n}^i \alpha_n^i
-  =\frac{2}{\alpha'}\sum_{i=1}^{d-2} \sum_{n\neq 0}\tilde \alpha_{-n}^i \tilde\alpha_n^i.
+  =\frac{2}{\alpha'}\sum_{i=1}^{d-2} \sum_{n\neq 0}\bar \alpha_{-n}^i \bar\alpha_n^i.
   \label{eq:mass}
 \end{equation}
 
 Hemos obtenido la solución clásica mediante los $2(d-2)$ modos de oscilación transversos 
-$\alpha^i_n$ y $\tilde \alpha_n^i$ y las constantes $x^i$, $p^i$,$p^+$ y $x^-$, donde $i=1,\cdots d-2$.
+$\alpha^i_n$ y $\bar \alpha_n^i$ y las constantes $x^i$, $p^i$,$p^+$ y $x^-$, donde $i=1,\cdots d-2$.
 La cuantización consiste en promover los grados de libertad a operadores (denotados
 por un acento circunflejo) que satisfacen una reglas de conmutación.
 \footnote{En realidad, debido a la simetría gauge, la cuantización se haría a partir de los
@@ -236,7 +236,7 @@ Estas reglas son
 \begin{equation}
   \begin{gathered}
     \qty[\widehat x^i,\widehat p^j] = i\delta^{ij}\qquad , \qquad [\widehat x^-,\widehat p^+] = -i,\\
-    \qty[\widehat \alpha_n^i,\widehat \alpha_m^j]= \qty[\widehat {\tilde \alpha}_n^i,\widehat {\tilde \alpha}_m^j]= n \delta^{ij}\delta_{n+m,0}
+    \qty[\widehat \alpha_n^i,\widehat \alpha_m^j]= \qty[\widehat {\bar \alpha}_n^i,\widehat {\bar \alpha}_m^j]= n \delta^{ij}\delta_{n+m,0}
   \end{gathered}
 \end{equation}
 
@@ -244,10 +244,10 @@ Los estados físicos sobre los que actúan los operadores se construyen a partir
 de vacío $\ket{0;p}$, que describe una cuerda de momento $p$ en el estado fundamental.
 El vacío verifica
 \begin{equation}
-  \widehat p^\mu \ket{0;p} = p^\mu \ket{0;p} \qquad, \qquad \widehat \alpha^i_n\ket{0;p}=\widehat {\tilde\alpha}^i_n = 0 \qquad \text{con} \quad n>0.
+  \widehat p^\mu \ket{0;p} = p^\mu \ket{0;p} \qquad, \qquad \widehat \alpha^i_n\ket{0;p}=\widehat {\bar\alpha}^i_n = 0 \qquad \text{con} \quad n>0.
 \end{equation}
 
-Las distintas excitaciones de la cuerda se obtienen aplicando $\alpha_{-n}^i$ y $\widehat{\tilde\alpha}_{-n}^i$
+Las distintas excitaciones de la cuerda se obtienen aplicando $\alpha_{-n}^i$ y $\widehat{\bar\alpha}_{-n}^i$
 con $n>0$ sobre el vacío.
 Cada excitación de la cuerda corresponde a una partícula, como veremos más adelante.
 
@@ -257,21 +257,21 @@ ambigüedad en el orden a asignar a los operadores $\widehat\alpha^i_{-n}$ y $\w
 La ambigüedad introduce una constante $c$ desconocida en el operador de la masa al cuadrado,
 \begin{equation}
   \widehat m^2 = \frac{4}{\alpha'}\qty(\sum_{i=1}^{d-2} \sum_{n>0} \alpha_{-n}^i\alpha_n -c)
-   = \frac{4}{\alpha'}\qty(\sum_{i=1}^{d-2} \sum_{n>0} \tilde \alpha_{-n}^i\tilde \alpha_n -c).
+   = \frac{4}{\alpha'}\qty(\sum_{i=1}^{d-2} \sum_{n>0} \bar \alpha_{-n}^i\bar \alpha_n -c).
 \end{equation}
 
 Por conveniencia, definimos los operadores número
 \begin{equation}
   \widehat N=\sum_{i=1}^{d-2} \sum_{n>0}\widehat \alpha_{-n}^i\widehat\alpha_n^i \quad , \quad   
-  \widehat {\tilde N}=\sum_{i=1}^{d-2} \sum_{n>0} \widehat{\tilde \alpha}_n^i\widehat{ \tilde\alpha}_n^i, 
+  \widehat {\bar N}=\sum_{i=1}^{d-2} \sum_{n>0} \widehat{\bar \alpha}_n^i\widehat{ \bar\alpha}_n^i, 
 \end{equation}
 por lo que 
 \begin{equation}
-  \widehat m^2 = \frac{4}{\alpha'} (\widehat N -c ) = \frac{4}{\alpha'} (\widehat{\tilde N} -c).
+  \widehat m^2 = \frac{4}{\alpha'} (\widehat N -c ) = \frac{4}{\alpha'} (\widehat{\bar N} -c).
   \label{eq:massdef}
 \end{equation}
 
-La condición $\widehat N=\widehat {\tilde N}$ se conoce como \emph{level-matching}.
+La condición $\widehat N=\widehat {\bar N}$ se conoce como \emph{level-matching}.
 
 La forma general de determinar $c$ (la carga central) consiste en imponer la simetría Weyl.
 Nosotros no entraremos en los detalles, nos basta saber que para cuerdas bosónicas libres
@@ -279,7 +279,7 @@ bosónicas, $c=\frac{d-2}{24}$.
 
 
 \subsection{Espectro de una cuerda}
-En el estado de vacío, $\widehat N\ket{0;p}=\widehat {\tilde N}\ket{0;p}=0$, por lo que la masa es
+En el estado de vacío, $\widehat N\ket{0;p}=\widehat {\bar N}\ket{0;p}=0$, por lo que la masa es
 \begin{equation}
   m^2 = -\frac{1}{\alpha'}\frac{d-2}{6}.
 \end{equation}
@@ -300,7 +300,7 @@ desaparece.
 
 El primer estado excitado se obtiene como
 \begin{equation}
-  \widehat{\tilde\alpha}_{-1}^i\widehat \alpha_{-1}^j\ket{0;p},
+  \widehat{\bar\alpha}_{-1}^i\widehat \alpha_{-1}^j\ket{0;p},
 \end{equation}
 con masa
 \begin{equation}
@@ -413,7 +413,7 @@ a la contribución al momento total $wR/\alpha'$.
 
 La fórmula de masas con una dimensión compacta es
 \begin{equation}
-  m^2 = \frac{n^2}{R^2} + \frac{w^2 R^2}{\alpha'^2} +\frac{2}{\alpha'}\qty(N+\tilde N -2).
+  m^2 = \frac{n^2}{R^2} + \frac{w^2 R^2}{\alpha'^2} +\frac{2}{\alpha'}\qty(N+\bar N -2).
 \end{equation}
 
 Si hacemos la transformación $R\leftrightarrow \alpha'/R$ y $n\leftrightarrow w$, la
@@ -441,7 +441,7 @@ Definiendo
 \end{equation}
 
 \begin{equation}
-  \tilde{L}_n=\frac 1 2 \sum_m \tilde{\alpha}_{n-m} \cdot \tilde{\alpha}_m.
+  \bar{L}_n=\frac 1 2 \sum_m \bar{\alpha}_{n-m} \cdot \bar{\alpha}_m.
 \end{equation}
 
 Es importante ver que hay una expresión en términos de modos moviéndose a la derecha
