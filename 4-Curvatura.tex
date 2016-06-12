@@ -12,6 +12,15 @@ la integral de camino a un loop de un campo taquiónico.
 
 \section{Path integral en la worldsheet}
 
+Partimos de la suposición que la integral de camino del toro de una cuerda se relaciona
+con la energía libre de un gas de cuerdas mediante
+\begin{equation}
+  Z =  -\beta F.
+\end{equation}
+
+Esta relación se ha demostrado exacta para ciertos casos.
+
+
 La integral de camino del toro en una campo $G_{\mu\nu}$, el cual representa la curvatura
 del espacio-tiempo, en $d$ dimensiones es
 \begin{equation}
@@ -48,6 +57,12 @@ que la acción se convierte en
   \end{aligned}
 \end{equation}
 
+La divergencia de Hagedorn aparece al tener en cuenta cuerdas que se enrollan en el tiempo una
+vez.
+\begin{equation}
+  X^0(\sigma_1,\sigma_2+1) = X^0(\sigma_1,\sigma_2)\pm \beta.
+\end{equation}
+
 Haciendo el desarrollo de Fourier de $X^\mu(\sigma,\tau)$ en la coordenada $\sigma$, obtenemos
 \begin{equation}
   \begin{aligned}
@@ -56,6 +71,7 @@ Haciendo el desarrollo de Fourier de $X^\mu(\sigma,\tau)$ en la coordenada $\sig
   \end{aligned}
 \end{equation}
 
+Definimos $X^i_0(\tau)=X^i(\tau)$ y $X_0^0(\tau)=X^0(\tau)$.
 Como la divergencia de Hagedorn se produce en $\tau_2\to\infty$, nos quedamos con el modo $n=0$.
 %Esto significa que despreciamos las vibraciones de la cuerda ortogonales a 
 Al integrar en $\tau_2$, obtenemos la acción de una partícula
@@ -74,10 +90,11 @@ En una métrica plana, la corrección a la acción es
   \Delta S = - \frac{\tau_2^2 \beta^2_{H0}}{4\pi\alpha' \tau_2}.
 \end{equation}
 
+Donde $\beta_{H0}$ es la temperatura de Hagedorn en espacio plano.
 Definiendo un nuevo parámetro $t=\tau_2 \tau$ e incluyendo la corrección a la acción
 \begin{equation}
   \begin{aligned}
-    S=\frac{1}{4\pi\alpha'}\biggl[ -\beta^2\tau_2 + \int_0^{\tau_2} dt \biggl\{
+    S=\frac{1}{4\pi\alpha'}\biggl[ -\beta_{H0}^2\tau_2 + \int_0^{\tau_2} dt \biggl\{
       \beta^2 \frac{\tau_1^2+\tau_2^2}{\tau_2^2}G_{00} \pm 2\beta\frac{\tau_1}{\tau_2} G_{0\mu}\partial_t X^\mu  +G_{\mu\nu} \partial_t X^\mu \partial_t X^\nu
     \biggl\}\biggl].
   \end{aligned}
@@ -86,7 +103,7 @@ Definiendo un nuevo parámetro $t=\tau_2 \tau$ e incluyendo la corrección a la 
 En una métrica estacionaria y que cumpla $G_{0i}=0$
 \begin{equation}
   \begin{aligned}
-    S=\frac{1}{4\pi\alpha'}\biggl[ -\beta^2\tau_2 + \int_0^{\tau_2} dt \biggl\{&
+    S=\frac{1}{4\pi\alpha'}\biggl[ -\beta_{H0}^2\tau_2 + \int_0^{\tau_2} dt \biggl\{&
       \beta^2 \frac{\tau_1^2+\tau_2^2}{\tau_2^2}G_{00} \pm 2\beta\frac{\tau_1}{\tau_2} G_{00}\partial_t X^0  +G_{00} \qty(\partial_t X^0)^2 \\
     &+G_{ij} \partial_t X^i \partial_t X^j
     \biggl\}\biggl].
@@ -116,7 +133,7 @@ Promediando,
   \ev{\partial_t X^c} \pm \ev{\beta \frac{\tau_1}{\tau_2}}=\ev{\frac{C}{G_{00}}} .
 \end{equation}
 
-Obtenemos
+Obtenemos la constante
 \begin{equation}
   C = \pm \beta \frac{\tau_1}{\ev{G_{00}^{-1}}}
 \end{equation}
@@ -140,7 +157,7 @@ la acción clásica puede escribirse como
 \end{equation}
 
 Como la trayectoria clásica hace estacionaria la acción, los términos lineales en $\tilde X^0$
-se anulan y la integral de camino en $\tilde X^0$ es
+se anulan y la integral de camino en $\tilde X^0$, tras varios cálculos, es
 \begin{equation}
   Z_0=\frac{1}{\sqrt{4\pi^2\alpha'\ev{G_{00}^{-1}}}}\beta.
 \end{equation}
@@ -154,13 +171,15 @@ La integral de camino se reduce a
 \begin{equation}
   Z=2\int_0^\infty \frac{d\tau_2}{2\tau_2}\int \mathcal D \vec {X} \sqrt{\prod_t \det G_{ij}}e^{-Sp}
 \end{equation}
-donde la acción 
+donde la acción es
 \begin{equation}
-  S=\frac{1}{4\pi\alpha'}\qty[-\beta^2_{H0}\tau_2+\beta^2 \int_0^{\tau_2}dt \qty(G_{00}+G_{ij}\partial_t X^i\partial_t X^j)]
+  S_p=\frac{1}{4\pi\alpha'}\qty[-\beta^2_{H0}\tau_2+\beta^2 \int_0^{\tau_2}dt \qty(G_{00}+G_{ij}\partial_t X^i\partial_t X^j)]
 \end{equation}
 
 Hemos reducido la función de partición de una cuerda a la integral de camino de
 una partícula no relativista moviéndose en un espacio curvo.
+
+No empleamos este método, sino que 
 
 \section{Campo efectivo}
 
