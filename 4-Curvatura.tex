@@ -62,6 +62,7 @@ vez.
 \begin{equation}
   X^0(\sigma_1,\sigma_2+1) = X^0(\sigma_1,\sigma_2)\pm \beta.
 \end{equation}
+\todo{Explicar periodicidad}
 
 Haciendo el desarrollo de Fourier de $X^\mu(\sigma,\tau)$ en la coordenada $\sigma$, obtenemos
 \begin{equation}
@@ -181,7 +182,13 @@ una partícula no relativista moviéndose en un espacio curvo.
 
 No empleamos este método, sino que 
 
+\todo{Acabar}
 \section{Campo efectivo}
+En la sección ?? vimos que en un espacio plano, la divergencia de Hagedorn se manifiesta
+como una campo que se vuelve taquiónico a temperatura por encima de la temperatura de
+Hagedorn.
+Por tanton, intentaremos hallar la energía libre a partir de la acción de un campo taquiónico
+en espacio curvo.
 
 La acción de un campo taquiónico a orden más bajo en $\alpha'$ es
 \begin{equation}
@@ -189,13 +196,12 @@ La acción de un campo taquiónico a orden más bajo en $\alpha'$ es
 \end{equation}
 donde $T$ es un campo escalar real y $\Phi$ el campo del dilatón.
 
-Si el tiempo tiene periodo $2\pi R$, el desarrollo de Fourier de $T$ es
+Si el tiempo tiene periodo $2\pi R=\beta$, el desarrollo de Fourier de $T$ es
 \begin{equation}
   T(x^0,x^i)=\sum_{n=-\infty}^{\infty} T_n(x^i)e^{\frac{inx^0}{R}}.
 \end{equation}
 Hay que tener en cuenta que $T_n(x^i)$ es un campo escalar complejo
 y $n$ es el momento discretizado en la dimensión compacta.
-En la variedad termal, $R=\beta/2\pi$. 
 Suponemos una métrica estacionaria y $G_{i0}=0$.
 Sustituyendo,
 \begin{equation}
@@ -219,7 +225,7 @@ Como $T$ es un campo real, $T_n=T^*_{-n}$ y por tanto
 Aunque en la acción solo aparece el momento $n$ y no los enrollamientos $w$, esto se debe 
 al desarrollo de Fourier, pues la acción completa cumpliría la dualidad T. 
 Haciendo las transformaciones 
-\todo{Dudoso}
+\todo{Explicar mejor}
 \begin{equation}
   \begin{aligned}
     G_{00}&\to \frac{1}{G_{00}},\\
@@ -235,13 +241,13 @@ enrrollamientos
 
 Vemos cómo aparece un término de masa efectiva $m^2_{loc} = m^2 +\frac{w^2 R^2 G_{00}}{{\alpha'}^2}$,
 que depende de la posición espacio-temporal.
-Dependiendo del tipo de teoría que se considere (bośonica, tipo II supersimétrica o heterótica), 
-esta masa efectiva será distinta.
-\todo{O no?}
+\footnote{Haciendo el cálculo para cuerdas heteróticas, hay una corrección a esta fórmula.}
+%Dependiendo del tipo de teoría que se considere (bośonica, tipo II supersimétrica o heterótica), 
+%esta masa efectiva será distinta.
+%\todo{O no?}
 
 La contribución dominante de la acción vendrá dada por $w=\pm 1$, por lo que definimos $T=T_1$.
 Integrando por partes la acción 
-\todo{Demostrar}
 \begin{equation}
   S = \int d^{d-1} x \sqrt G e^{-2\Phi} T^* \qty[-\nabla^2-G^{ij}\frac{\partial_j \sqrt{G_{00}}}{\sqrt G_{00}}\partial_i + m^2_{loc}]T,
 \end{equation}
@@ -266,12 +272,17 @@ propias $\psi_n$ con valores propios reales, $\lambda_n$.
 
 La integral de camino da como resultado
 \begin{equation}
-  Z=\int \mathcal D T e^{-S} =\pi_n \frac{1}{\lambda_n} = \det(\widehat O)^{-1}.
+  Z=\int \mathcal D T e^{-S} =\prod_n \frac{1}{\lambda_n} = \det(\widehat O)^{-1}.
 \end{equation}
 
 La energía libre de un gas de cuerdas es
 \begin{equation}
-  F=-\frac{1}{\beta}\ln Z =\frac{1}{\beta} \Tr \ln \widehat O.
+  F=-\frac{1}{\beta}\ln Z. 
+\end{equation}
+
+Teniendo en cuenta que $\Tr \ln X = \ln \det X$, la energía libre es
+\begin{equation}
+  F=\frac{1}{\beta} \Tr \ln \widehat O.
 \end{equation}
 
 Aplicando la fórmula de Schwinger del logaritmo, 
@@ -280,13 +291,13 @@ Aplicando la fórmula de Schwinger del logaritmo,
 \end{equation}
 y despreciando el término $e^{-T}$, la energía libre es
 \begin{equation}
-  F=-\frac{1}{\beta}\int_0^\infty \frac{dT}{T} \Tr e^{T\widehat O}.
+  F=-\frac{1}{\beta}\int_0^\infty \frac{dT}{T} \Tr e^{-T\widehat O}.
 \end{equation}
 
-Para poder interpretar la energía líbre en términos de una partícula
+Para poder interpretar la energía libre en términos de una partícula
 moviéndose en un espacio sin tiempo, tenemos que aislar la componente $G_{00}$
 de la métrica, que aparece al tomar la traza.
-Haciendo el cambio de base
+Hacemos el cambio de base
 \begin{equation}
   \ket{\phi_n}=G_{00}^{1/4}  \ket{\psi_n}.
 \end{equation}
@@ -296,16 +307,17 @@ El producto escalar asociado es
   \braket{\phi_1}{\phi_2} = \int d^{d-1} x \sqrt G_{ij} \phi_1(x)^* \phi_2(x).
 \end{equation}
 
-Tras el cambio de base
+Tras el cambio de base,
 \begin{equation}
-  F=\frac{1}{\beta}\int_0^\infty \frac{dT}{T} \Tr e^{T\widehat D}.
+  F=-\frac{1}{\beta}\int_0^\infty \frac{dT}{T} \Tr e^{-T\widehat D},
 \end{equation}
 
+donde aparece el operador hermítico
 \begin{equation}
   \widehat D = -\nabla^2  + m_{loc}^2- \frac{3}{16}\frac{G^{ij} \partial_i G_{00}\partial_j G_{00}}{G_{00}^2}
   +\frac{\nabla^2 G_{00}}{4G_{00}}.
 \end{equation}
-Los últimos dos términos corresponden con un potencial efectivo
+Los últimos dos términos se corresponden con un potencial efectivo
 \begin{equation}
   K(x) = \frac{3}{16}\frac{G^{ij} \partial_i G_{00}\partial_j G_{00}}{G_{00}^2}
   +\frac{\nabla^2 G_{00}}{4G_{00}}.
@@ -315,7 +327,7 @@ Los últimos dos términos corresponden con un potencial efectivo
   F=\frac{1}{\beta}\int_0^\infty \frac{dT}{T} \int_{S^1} \mathcal D x\sqrt G_{ij}  e^{ -\frac{1}{4\pi\alpha'}\int_0^T dt \qty(  
   \frac{1}{4}G_{ij}\dot x^i \dot x^j  + m_{loc}^2+K(x) )}.
 \end{equation}
-\todo{Turbio}
+\todo{Interpretación partícula, comparación}
 
 
 
