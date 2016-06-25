@@ -340,9 +340,9 @@ En resumen, haciendo el cambio de variable en la integral $t\to\pi \alpha't$, la
 donde
 \begin{equation}
   \begin{aligned}
-    m_{loc}^2 &= -\frac{4}{\alpha'}+\frac{\beta^2G_{00}}{4\pi^2 \alpha'^2},\\
-    m_{loc}^2 &= -\frac{2}{\alpha'}+\frac{\beta^2G_{00}}{4\pi^2 \alpha'^2},\\
-    m_{loc}^2 &= -\frac{3}{\alpha'}+\frac{\pi^2}{\beta^2 G_{00}}+\frac{\beta^2G_{00}}{4\pi^2 \alpha'^2}.
+    m_{loc}^2 &= -\frac{4}{\alpha'}+\frac{\beta^2G_{00}}{4\pi^2 \alpha'^2} \quad\text{para cuerdas bosónicas},\\
+    m_{loc}^2 &= -\frac{2}{\alpha'}+\frac{\beta^2G_{00}}{4\pi^2 \alpha'^2} \quad\text{para cuerdas de tipo II},\\
+    m_{loc}^2 &= -\frac{3}{\alpha'}+\frac{\pi^2}{\beta^2 G_{00}}+\frac{\beta^2G_{00}}{4\pi^2 \alpha'^2}\quad\text{para cuerdas heteróticas}.
   \end{aligned}
 \end{equation}
 \todo{Interpretación partícula, comparación}
@@ -356,6 +356,8 @@ mediante \ref{eq:final},
 ambas energías libres coinciden al sustuir el valor apropiado de la temperatura de Hagedorn
 en espacio plano, $\beta_{H0}$ salvo por el término $K(x)$.
 Además, para cuerdas heteróticas habría una corrección adicional.
+
+Faltaría considerar correcciones a la acción a orden superior en $\alpha'$.
 
 
 
@@ -378,23 +380,24 @@ El laplaciano en coordenadas de Rindler es
 
 La masa efectiva es 
 \begin{equation}
-  m_{loc}^2=-\frac{2}{\alpha'}+\frac{R^2G_{00}}{\alpha'^2}.
+  m_{loc}^2=-\frac{2}{\alpha'}+\frac{\beta^2G_{00}}{4\pi^2\alpha'^2}.
 \end{equation}
 
 
-Para calcular la traza buscamos los valores propios del operador en el exponente.
+Para calcular la traza buscamos los valores propios del operador en el exponente,
+pues la traza de un operador es la suma de sus valores propios.
 Las funciones propias regulares son del tipo
 \begin{equation}
   \psi_n(\rho)\propto e^{-\frac{\beta \rho^2}{4\pi\alpha'^{3/2}} }
   L_n\qty(\frac{\beta\rho^2}{2\pi\alpha'^{3/2}}),
 \end{equation}
-con valores propios
+donde $L_n$ es un polinomio de Laguerre de grado $n\geq0$.
 \begin{equation}
   \lambda_n=\frac{\beta-2\pi\sqrt{\alpha'}+2\beta n }{\pi\alpha'^{3/2}}.
 \end{equation}
 
-La contribución dominante a la energía libre viene dada por $\lambda_0$.
-La traza depende las dimensiones adicionales al espacio de Rindler. 
+La contribución dominante a la energía libre viene dada por el modo más bajo, $n=0$.
+Esto no basta para calcular la traza pues tenemos que tener en cuenta las dimensiones adicionales al espacio de Rindler. 
 En una teoría supersimétrica, tenemos ocho dimensiones cuya variedad tenemos que especificar.
 Suponiendo dimensiones planas, la energía libre es
 \begin{equation}
@@ -416,12 +419,22 @@ Identificando las funciones propias como funciones de onda de una cuerda, el est
 \begin{equation}
   \psi_0(\rho)\propto e^{-\frac{\beta \rho^2}{4\pi\alpha'^{3/2}} }
 \end{equation}
-representa una cuerda localizada a la distancia $l_s$
+representa una cuerda localizada a la distancia $l_s$.
+Este es otro motivo para pensar que las cuerdas formarían una membrana alrededor del agujero
+negro.
 
-%Analiticidad vs divergencia
-
-%Densidad de estados
-
-%Streched horizon. Local temp.
+\todo{No perturbativo}
 
 \section{Entropía de agujeros negros}
+
+\begin{equation}
+  \delta S = \beta \delta E
+\end{equation}
+
+\begin{equation}
+  \delta S = \beta 8\pi GM\delta M
+\end{equation}
+
+\begin{equation}
+  S=\frac{A}{4G}
+\end{equation}
