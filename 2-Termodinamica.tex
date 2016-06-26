@@ -232,6 +232,8 @@ con la asociada a una sola cuerda, salvo si $D=0$.
 
 \section{Termodinámica de cuerdas en espacio plano}
 
+\label{sec:free}
+
 En esta sección calcularemos la energía libre de un gas de cuerdas en el espacio de Minkowski,
 con el fin de generalizar la temperatura de Hagedorn en un espacio curvo.
 
@@ -316,14 +318,6 @@ Sustituyendo, llegamos a
   \label{eq:strip}
 \end{equation}
 
-El mismo resultado se obtiene calculando la integral de camino en el toro
-\begin{equation}
-  Z= \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal Dx
-  \exp\qty(-\frac{1}{4\pi\alpha'}\int d^2\sigma \sqrt h h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X_\mu),
-\end{equation}
-considerando cuerdas que se enrollan $r$ veces alrededor de una dimensión temporal de periodo $\beta$
-y aplicando $F=-Z/\beta$.
-
 Para valores próximos a $\tau_2=0$, los términos con $r=\pm 1$ proporcionan la divergencia 
 dominante.
 El comportamiento de la exponencial en \ref{eq:strip} es
@@ -331,6 +325,15 @@ El comportamiento de la exponencial en \ref{eq:strip} es
   \exp\qty(\frac{16\pi^2 \alpha' -\beta^2}{4\pi\alpha'\tau_2}),
 \end{equation}
 por lo que al integrar $\tau_2$ desde cero, la energía libre diverge si $\beta\leq \beta_H=4\pi\sqrt{\alpha'}$.
+
+El mismo resultado se obtiene calculando la integral de camino en el toro
+\begin{equation}
+  Z= \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal Dx
+  \exp\qty(-\frac{1}{4\pi\alpha'}\int d^2\sigma \sqrt h h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X_\mu),
+\end{equation}
+considerando cuerdas que se enrollan $r$ veces alrededor de una dimensión temporal de periodo $\beta$
+y aplicando $F=-Z/\beta$.
+La importancia de este resultado es permite hacer el cálculo de la energía libre en espacio curvo.
 
 \subsection{Formulación invariante modular}
 \label{sec:taq}
@@ -340,7 +343,7 @@ transformaciones modulares $\tau\to\tau+1$ y $\tau\to-1/\tau$ en el integrando m
 de la integral.
 Cualquier punto del plano complejo puede ser llevado al dominio fundamental,
 \begin{equation}
-  \mathcal F = { \tau \in \mathbb{C} \abs{\tau} \geq 1, \Re\tau \in \qty[-\frac 1 2, \frac 1 2]},
+  \mathcal F = \qty{ \tau \in \mathbb{C} \mid \abs{\tau} \geq 1, \Re\tau \in [-1/2,1/2]}
 \end{equation}
 mediante composición de transformaciones modulares.
 
@@ -371,11 +374,23 @@ donde
 
 Al haber excluido la región próxima a $\tau_2=0$ en la integral, la divergencia de Hagedorn aparece para
 valores muy altos de $\tau_2$.
-La divergencia se manifiesta aparece al tomar la traza sobre el estado con $w=\pm 1$, $n=0$ y $N=\bar N=0$.
+La divergencia se manifiesta al tomar la traza sobre el estado con $w=\pm 1$, $n=0$ y $N=\bar N=0$.
 La masa de este estado es
 \begin{equation}
   \alpha' \frac{m^2}{4} = \frac{\beta^2}{16\pi^2\alpha'} -1.
 \end{equation}
+
+A la temperatura de Hagedorn, el estado tiene masa nula y a temperaturas superiores, masa
+imaginaria.
+
+En resumen, si compactificamos el tiempo e identificamos periodo temporal con el inverso de la
+temperatura, podemos calcular la energía libre mediante una integral de camino restringida
+al dominio fundamental.
+El estado que se enrolla una vez en el tiempo es el responsable de la divergencia de Hagedorn y
+a temperaturas por encima de la temperatura de Hagedorn se vuelve taquiónico.
+Es importante notar que es un estado efectivo, pues no aparece en el espectro de la cuerda en 
+el espacio de Minkowski, sino que es consecuencia de compactificar el tiempo.
+Sin embargo, este enfoque es muy útil para poder hacer una generalización a espacios curvos.
 
 
 %Haciendo la suma, se llega a

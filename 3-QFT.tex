@@ -15,7 +15,6 @@ En este apartado, seguiremos la derivación expuesta en \cite{Barbado:2015uua}.
 
 En la deducción del efecto Unruh estudiaremos un campo escalar sin masa $\phi(t,z)$ en un espacio de Minkowski
 con una dimensión espacial $t$ y una dimensión espacial $z$.  
-\todo{Se puede argumentar por qué se pueden extrapolar los resultados?}
 La ecuación que describe el campo es la ecuación de Klein-Gordon
 \begin{equation}
   -\pdv[2]{\phi}{t}+\pdv[2]{\phi}{z}=0.
@@ -152,6 +151,7 @@ Minkowski, introducimos las coordenadas de Rindler $(\eta,\xi)$ definidas por
 \begin{gather}
   t=\frac{1}{a} e^{a\xi} \sinh a\eta ,\\
   z=\frac{1}{a}e^{a\xi} \cosh a\eta,
+  \label{eq:rindler}
 \end{gather}
 donde $\abs{t}<z$ y $a>0$.
 
@@ -336,15 +336,12 @@ la cuña izquierda, obtenemos que la matriz densidad
 que describe una distribución de Maxwell-Boltzmann a temperatura $T_U=a/(2\pi k_B)$.
 \todo{Contradicción distribución MB vs BE?}
 
-\todo{Omitimos sutilezas de detectores Unruh-DeWitt, cálculo alternativo a la path integral\ldots}
-
 %\begin{equation}
 %  \ev{0_U}{N^u_{n,\bar n}} =
 %\end{equation}
 
 
 \section{Radiación de Hawking}
-\todo{Introducción}
 La radiación de Hawking consiste en la emisión de partículas por un agujero negro.
 Esta radiación sigue una distribución de cuerpo negro a la temperatura de Hawking
 \begin{equation}
@@ -424,15 +421,45 @@ corresponde con el vacío para un observador en caída libre muy alejado de la f
 gravitacional.
 
 
-Tenemos que describir la formación de un agujero negro y la variación de estado de vacío
+La energía radiada por el agujero negro proviene de la materia que colapsa en el agujero negro.
+Por tanto, tenemos que describir la formación de un agujero negro y ver cómo varía el estado de vacío.
 para un observador asintótico.
-Los modos salientes que escapan la materia en colapso poco antes de formarse el horizonte
+Suponemos que antes de formarse el agujero negro, la materia ocupa un volumen arbitrariamente grande,
+de forma que la métrica fuera del objeto es la métrica de Minkowski y el vacío es el correspondiente
+al espacio de Minkowski.
 
+Una vez formadoo el agujero negro,todo el espacio viene descrito por la métrica de Schwarzschild y
+el estado de vacío es el vacío de Boulware.
+
+Considermos los modos de Boulware salientes que escapan la materia en colapso poco antes de formarse el horizonte.
 Cerca del horizonte, si definimos la coordenadas de Kruskal-Szeckeres
-
 \begin{equation}
-  \phi^{\bar u}_\omega \propto e^{i\omega 4M\ln \abs{\frac{u'}{4M}}}.
+  \begin{aligned}
+    u'&=-4Me^{-\frac{u}{4M}},\\
+    v'&=4Me^{-\frac{v}{4M}},
+  \end{aligned}
+\end{equation}
+los modos salientes son
+\begin{equation}
+  \phi^{u}_\omega = \frac{1}{\sqrt{4\pi\omega}}e^{i\omega 4M\ln \abs{\frac{u'}{4M}}}.
 \end{equation}
 
+Vemos que al aproximarse al horizonte, $u'\to 0$, la frequencia de estos modos tiende a infinito.
+Por tanto, podemos despreciar la interacción con la materia en colapso. 
+La aparición de frecuencias arbitrariamente altas, las cuales deberían ser tratadas mediante
+una teoría de gravedad cuántica, se denomina problema transplanckiano.
+
+
+\begin{equation}
+  \phi^{u}_\omega = \frac{1}{\sqrt{4\pi\omega}}e^{i\omega 4M\ln \abs{A(V_H-V)}}.
+\end{equation}
+
+\begin{equation}
+  u'=-4M\ln (A(V_H-V))
+\end{equation
+
+\begin{equation}
+  T_{haw}=\frac{1}{8\pi k_B M}
+\end{equation}
 
 

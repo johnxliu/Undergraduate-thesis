@@ -12,14 +12,13 @@ la integral de camino a un loop de un campo taquiónico.
 
 \section{Path integral en la worldsheet}
 
-Partimos de la suposición que la integral de camino del toro de una cuerda se relaciona
-con la energía libre de un gas de cuerdas mediante
+Partimos de la suposición que la integral de camino del toro de una cuerda cerrada, con
+un tiempo compactificado de periodo $\beta$, se relaciona con la energía libre de un gas de cuerdas mediante
 \begin{equation}
   Z =  -\beta F.
 \end{equation}
 
 Esta relación se ha demostrado exacta para ciertos casos.
-
 
 La integral de camino del toro en una campo $G_{\mu\nu}$, el cual representa la curvatura
 del espacio-tiempo, en $d$ dimensiones es
@@ -29,12 +28,12 @@ del espacio-tiempo, en $d$ dimensiones es
   \label{eq:toruspi}
 \end{equation}
 donde el determinante de Faddeev-Popov se introduce debido a la libertad gauge bajo difeomorfismos
-y trasformaciones Weyl.
+y trasformaciones de Weyl.
 La acción es 
 \begin{equation}
-  S= \frac{1}{4\pi \alpha'}\int_{0}^{1} d^2\sigma \sqrt h h^{\alpha\beta} \partial_\alpha X^\mu\partial_\beta X^\nu G_{\mu\nu}.
+  S= \frac{1}{4\pi \alpha'}\int_{[0,1]^2} d^2\sigma \sqrt h h^{\alpha\beta} \partial_\alpha X^\mu\partial_\beta X^\nu G_{\mu\nu}.
 \end{equation}
-La métrica de la worldsheet es
+Escogemos la métrica de la worldsheet como
 \begin{equation}
   h_{\alpha\beta} =
 \qty(
@@ -43,6 +42,28 @@ La métrica de la worldsheet es
   \tau_1 & \tau_1^2+\tau_2^2
 \end{array}
 ).
+\end{equation}
+
+La divergencia de Hagedorn aparece calcular la integral de camino de una que se enrolla en el tiempo 
+a lo largo de la coordenada  $\sigma_2$, pues diverge en el límite $\tau_2\to0$.
+Las condiciones de periodicidad son
+\begin{equation}
+  \begin{aligned}
+    &X^\mu(\sigma_1+1,\sigma_2)=X^\mu(\sigma_1,\sigma_2),\\
+    &X^i(\sigma_1,\sigma_2+1)=X^i(\sigma_1,\sigma_2),\\
+    &X^0(\sigma_1,\sigma_2+1) = X^0(\sigma_1,\sigma_2)\pm \beta.
+  \end{aligned}
+\end{equation}
+
+\todo{Aislar taquión}
+Haciendo la transformación modular $\tau\to-1/\tau$ e intercambiando $\sigma_1$ y $\sigma_2$, las
+condiciones de periodicidad son
+\begin{equation}
+  \begin{aligned}
+    &X^\mu(\sigma_1,\sigma_2+1)=X^\mu(\sigma_1,\sigma_2),\\
+    &X^i(\sigma_1+1,\sigma_2)=X^i(\sigma_1,\sigma_2),\\
+    &X^0(\sigma_1+1,\sigma_2) = X^0(\sigma_1,\sigma_2)\pm \beta.
+  \end{aligned}
 \end{equation}
 
 Definimos las nuevas coordenadas $\sigma=\sigma_1/\tau_2$ y $\tau=\sigma_2$, de modo 
@@ -57,23 +78,18 @@ que la acción se convierte en
   \end{aligned}
 \end{equation}
 
-La divergencia de Hagedorn aparece al tener en cuenta cuerdas que se enrollan en el tiempo una
-vez.
-\begin{equation}
-  X^0(\sigma_1,\sigma_2+1) = X^0(\sigma_1,\sigma_2)\pm \beta.
-\end{equation}
-\todo{Explicar periodicidad}
 
-Haciendo el desarrollo de Fourier de $X^\mu(\sigma,\tau)$ en la coordenada $\sigma$, obtenemos
+Haciendo un desarrollo de Fourier de $X^\mu(\sigma,\tau)$ en la coordenada $\sigma$, obtenemos
 \begin{equation}
   \begin{aligned}
-    X^i(\sigma,\tau) =& \sum_{n=-\infty}^\infty X_n^i(\tau) e^{in2\pi \tau_2 \sigma} \\
+    X^i(\sigma,\tau) =& \sum_{n=-\infty}^\infty X_n^i(\tau) e^{in2\pi \tau_2 \sigma}, \\
     X^0(\sigma,\tau) =& \pm \beta \tau_2 \sigma +  \sum_{n=-\infty}^\infty X_n^0(\tau) e^{in2\pi \tau_2 \sigma}.
   \end{aligned}
 \end{equation}
 
-Definimos $X^i_0(\tau)=X^i(\tau)$ y $X_0^0(\tau)=X^0(\tau)$.
-Como la divergencia de Hagedorn se produce en $\tau_2\to\infty$, nos quedamos con el modo $n=0$.
+Definimos $X^i(\tau)=X^i_0(\tau)$ y $X^0(\tau)=X_0^0(\tau)$.
+En la sección \ref{sec:free}, vimos que la divergencia de Hagedorn se produce al integrar en la región $\tau_2\to\infty$.
+Por tanto, nos quedamos con la contribución dominante, $n=0$.
 %Esto significa que despreciamos las vibraciones de la cuerda ortogonales a 
 Al integrar en $\tau_2$, obtenemos la acción de una partícula
 \begin{equation}
@@ -84,15 +100,15 @@ Al integrar en $\tau_2$, obtenemos la acción de una partícula
   \end{aligned}
 \end{equation}
 
-Depreciar el resto de modos en la serie de Fourier hace que a la acción resultante le falten
+Despreciar el resto de modos en la serie de Fourier hace que a la acción resultante le falten
 términos adicionales. 
 En una métrica plana, la corrección a la acción es
 \begin{equation}
-  \Delta S = - \frac{\tau_2^2 \beta^2_{H0}}{4\pi\alpha' \tau_2}.
+  \Delta S = - \frac{\tau_2^2 \beta^2_{H0}}{4\pi\alpha' \tau_2},
 \end{equation}
 
-Donde $\beta_{H0}$ es la temperatura de Hagedorn en espacio plano.
-Definiendo un nuevo parámetro $t=\tau_2 \tau$ e incluyendo la corrección a la acción
+siendo $\beta_{H0}$ la temperatura de Hagedorn en espacio plano.
+Incluyendo esta corrección y definiendo un nuevo parámetro $t=\tau_2 \tau$ 
 \begin{equation}
   \begin{aligned}
     S=\frac{1}{4\pi\alpha'}\biggl[ -\beta_{H0}^2\tau_2 + \int_0^{\tau_2} dt \biggl\{
@@ -181,14 +197,13 @@ donde la acción es
 Hemos reducido la función de partición de una cuerda a la integral de camino de
 una partícula no relativista moviéndose en un espacio curvo.
 
-No empleamos este método, sino que 
+No emplearemos este método, sino que haremos los cálculos con un campo efectivo.
 
-\todo{Acabar}
 \section{Campo efectivo}
 En la sección \ref{sec:taq} vimos que en un espacio plano, la divergencia de Hagedorn se manifiesta
-como una campo que se vuelve taquiónico a temperatura por encima de la temperatura de
+como una campo que se vuelve taquiónico a temperaturas por encima de la temperatura de
 Hagedorn.
-Por tanton, intentaremos hallar la energía libre a partir de la acción de un campo taquiónico
+Por tanto, intentaremos hallar la energía libre a partir de la acción de un campo taquiónico
 en espacio curvo.
 
 La acción de un campo taquiónico a orden más bajo en $\alpha'$ es
@@ -225,13 +240,13 @@ Como $T$ es un campo real, $T_n=T^*_{-n}$ y por tanto
 
 Aunque en la acción solo aparece el momento $n$ y no los enrollamientos $w$, la acción completa debería satisfacer la dualidad T, 
 la cual apareció en la sección \ref{sec:dual}.
-Las transformaciones necesarias para intercambiar el momento discreto por enrollamientos son
+Aprovechando la dualidad T, las  transformaciones necesarias para intercambiar el momento discreto por enrollamientos son
 \begin{equation}
   \begin{aligned}
     G_{00}&\to \frac{1}{G_{00}},\\
     \Phi&\to \Phi -\frac{1}{2}\ln G_{00},\\
     T_n&\to T_w,\\
-    R &\to \frac{\alpha}{R}$.
+    R &\to \frac{\alpha'}{R}$.
   \end{aligned}
 \end{equation}
 
@@ -245,7 +260,7 @@ que depende de la posición espacio-temporal.
 \footnote{Haciendo el cálculo para cuerdas heteróticas, hay una corrección a esta fórmula.}
 
 \todo{Pq quitamos el dilatón}
-La contribución dominante de la acción vendrá dada por $w=\pm 1$, por lo que definimos $T=T_1$.
+La contribución dominante de vendrá dada por $w=\pm 1$, por lo que definimos $T=T_1$.
 Ignorando el campo del dilatón,
 \begin{equation}
   S  =  \int d^{d-1} x \sqrt{G_{00}}\sqrt{G_{ij}} \qty(G^{ij}\partial_i T \partial_j T^* +m^2_{local} TT^*) .
@@ -296,10 +311,11 @@ Aplicando la fórmula de Schwinger del logaritmo,
 y despreciando el término $e^{-T}$, la energía libre es
 \begin{equation}
   F=-\frac{1}{\beta}\int_0^\infty \frac{dT}{T} \Tr e^{-T\widehat O}.
+  \label{eq:fO}
 \end{equation}
 
 Sigue habiendo una contribución de $\sqrt{G_{00}}$ al término cinético, que aparece al tomar la traza.
-Hacemos el cambio de base
+Para solucionarlo, hacemos el cambio de base
 \begin{equation}
   \ket{\phi_n}=G_{00}^{1/4}  \ket{\psi_n}.
 \end{equation}
@@ -345,7 +361,6 @@ donde
     m_{loc}^2 &= -\frac{3}{\alpha'}+\frac{\pi^2}{\beta^2 G_{00}}+\frac{\beta^2G_{00}}{4\pi^2 \alpha'^2}\quad\text{para cuerdas heteróticas}.
   \end{aligned}
 \end{equation}
-\todo{Interpretación partícula, comparación}
 
 Si comparamos con la energía libre que obtendríamos a partir de la acción de la cuerda obtenida
 mediante \ref{eq:final},
@@ -353,52 +368,50 @@ mediante \ref{eq:final},
   F=-\frac{1}{\beta} \int_0^\infty \frac{d\tau_2}{\tau_2} \int_{S^1} \mathcal D X\sqrt G_{ij}  e^{ -\frac{1}{4\pi\alpha'}\int_0^{\tau_2} dt \qty(  
   G_{ij}\dot X^i \dot X^j  + \beta^2 G_{00} - \beta^2_{H0})},
 \end{equation}
-ambas energías libres coinciden al sustuir el valor apropiado de la temperatura de Hagedorn
+ambas energías libres coinciden al sustituir el valor apropiado de la temperatura de Hagedorn
 en espacio plano, $\beta_{H0}$ salvo por el término $K(x)$.
-Además, para cuerdas heteróticas habría una corrección adicional.
 
-Faltaría considerar correcciones a la acción a orden superior en $\alpha'$.
-
-
-
+Además, podrían estudiarse posibles correcciones a la acción del campo taquiónico a orden superior en $\alpha'$.
 
 \section{Cuerdas cerca de agujeros negros}
 
-Al aplicar los cálculos anteriores a un espacio de Rindler, hemos de tener en cuenta si la
-correcciones a orden superior en $\alpha'$ modifican la divergencia de la energía libre.
-
+Aplicaremos ahora el cálculo de la energía libre a un gas de cuerdas en las proximidades
+de un agujero negro de Schwarzschild. 
+Tomaremos como ejemplo la teoría supersimétrica de tipo II. 
+Partimos de la expresión de la energía libre deducida a partir del campo taquiónico \ref{eq:fO},
 \begin{equation}
   F=-\frac{1}{\beta}\int \frac{dT}{T} \Tr e^{-T\qty(  -\nabla^2-G^{ij}\frac{\partial_j \sqrt{G_{00}}}{\sqrt G_{00}}\partial_i + m^2_{loc}) }.
 \end{equation}
 
-Tomemos como ejemplo la teoría supersimétrica de tipo II.
 
+Cerca del agujero negro, es conveniente emplear las coordenadas de Rindler, introducidas en \ref{eq:rindler}.
 El laplaciano en coordenadas de Rindler es
 \begin{equation}
   \nabla^2  = \partial_\rho^2 + \frac{1}{\rho}\partial_\rho.
 \end{equation}
+\todo{Poner misma notación}
 
-La masa efectiva es 
+La masa efectiva para cuerdas de tipo II es 
 \begin{equation}
   m_{loc}^2=-\frac{2}{\alpha'}+\frac{\beta^2G_{00}}{4\pi^2\alpha'^2}.
 \end{equation}
 
-
 Para calcular la traza buscamos los valores propios del operador en el exponente,
 pues la traza de un operador es la suma de sus valores propios.
-Las funciones propias regulares son del tipo
+Las funciones propias regulares (descartamos las que divergen) son del tipo
 \begin{equation}
   \psi_n(\rho)\propto e^{-\frac{\beta \rho^2}{4\pi\alpha'^{3/2}} }
   L_n\qty(\frac{\beta\rho^2}{2\pi\alpha'^{3/2}}),
 \end{equation}
 donde $L_n$ es un polinomio de Laguerre de grado $n\geq0$.
+Sus correspondientes valores propios son
 \begin{equation}
   \lambda_n=\frac{\beta-2\pi\sqrt{\alpha'}+2\beta n }{\pi\alpha'^{3/2}}.
 \end{equation}
 
 La contribución dominante a la energía libre viene dada por el modo más bajo, $n=0$.
 Esto no basta para calcular la traza pues tenemos que tener en cuenta las dimensiones adicionales al espacio de Rindler. 
-En una teoría supersimétrica, tenemos ocho dimensiones cuya variedad tenemos que especificar.
+En una teoría supersimétrica, tenemos ocho dimensiones descritas por una variedad que tenemos que especificar.
 Suponiendo dimensiones planas, la energía libre es
 \begin{equation}
   F= -\frac{V_T}{\beta}\int_0^\infty \frac{dT}{T}\qty(\frac{1}{4\pi T})^4 e^{\frac{\beta-2\pi\sqrt{\alpha'}}{\pi\alpha'^{3/2}}T}.
@@ -412,18 +425,17 @@ En el límite superior de $T$, la energía libre diverge si
 Concluimos que la temperatura de Hagedorn en un espacio de Rindler coincide con la temperatura
 de Hawking.
 Hemos supuesto cuerdas de tipo II y que las dimensiones adicionales son planas.
-De haber escogido otras condiciones, la temperatura de Hagedorn recibiría nuevas correcciones,
-como veremos más adelante.
+De haber escogido otras condiciones, la temperatura de Hagedorn podría recibir correcciones.
 
 Identificando las funciones propias como funciones de onda de una cuerda, el estado fundamental
 \begin{equation}
-  \psi_0(\rho)\propto e^{-\frac{\beta \rho^2}{4\pi\alpha'^{3/2}} }
+  \psi_0(\rho)\propto e^{-\frac{\beta \rho^2}{4\pi\alpha'^{3/2}} },
 \end{equation}
-representa una cuerda localizada a la distancia $l_s$.
-Este es otro motivo para pensar que las cuerdas formarían una membrana alrededor del agujero
-negro.
+representa una cuerda localizada a la distancia $l_s$ del horizonte de sucesos.
+Este resultado refuerza la idea de la existencia de una \emph{membrana} formada por cuerdas
+que rodea al agujero negro.
+\todo{Refs}
 
-\todo{No perturbativo}
 
 \section{Entropía de agujeros negros}
 
