@@ -1,7 +1,6 @@
 \chapter{QFT en sistemas acelerados y espacio curvo}
 %\todo{Corregir numeracion}
 
-%\todo{Mejor meter subsecciones?}
 \section{Efecto Unruh}
 
 Una propiedad sorprendente de las teorías cuánticas de campos es que el estado de vacío
@@ -11,10 +10,11 @@ visto por un observador con aceleración constante corresponde con un estado té
 \begin{equation}
   T_U=\frac{a}{2\pi k_B}.
 \end{equation}
-En este apartado, seguiremos la derivación expuesta en \cite{Barbado:2015uua}.
 
 En la deducción del efecto Unruh estudiaremos un campo escalar sin masa $\phi(t,z)$ en un espacio de Minkowski
 con una dimensión espacial $t$ y una dimensión espacial $z$.  
+\footnote{Es posible derivar el efecto Unruh para teorías más generales empleando la integral
+  de camino euclídea, véase \cite{Susskind}}
 La ecuación que describe el campo es la ecuación de Klein-Gordon
 \begin{equation}
   -\pdv[2]{\phi}{t}+\pdv[2]{\phi}{z}=0.
@@ -142,10 +142,7 @@ En el espacio de Minkowski la energía está bien definida y coincide para todos
 inerciales, al ser invariante de Lorentz.
 Sin embargo, en un espacio-tiempo curvo el concepto de energía puede no estar bien definido
 y por tanto no hay un estado de vacío privilegiado.
-%\todo{Tiene algún sentido el concepto de partícula en un espacio que no sea asintóticamente
-%plano o no estacionario?}
 
-%Observadores acelerados
 Con el fin de estudiar cuál es el vacío dado por un observador acelerado en un espacio de 
 Minkowski, introducimos las coordenadas de Rindler $(\eta,\xi)$ definidas por
 \begin{gather}
@@ -196,13 +193,11 @@ coordenadas de Rindler para la cuña derecha
   \label{eq:kgr}
 \end{equation}
 
-Definiendo la coordenadas nulas de Rindler 
-\begin{equation}
-  \begin{gathered}
-  u=\eta-\xi,\\
-  v=\eta+\xi, 
-  \end{gathered}
-\end{equation}
+Definiendo las coordenadas nulas de Rindler 
+  \begin{align}
+    u&=\eta-\xi=-\frac{1}{a}\ln(-aU)\label{eq:coorind} ,\\
+    v&=\eta+\xi=\frac{1}{a}\ln(aV), 
+  \end{align}
 
 la solución general de \ref{eq:kgr} es $\phi(u,v)=\phi_u(u)+\phi_v(v)$, que se expande en los
 modos normales
@@ -345,34 +340,33 @@ que describe una distribución de Maxwell-Boltzmann a temperatura $T_U=a/(2\pi k
 La radiación de Hawking consiste en la emisión de partículas por un agujero negro.
 Esta radiación sigue una distribución de cuerpo negro a la temperatura de Hawking
 \begin{equation}
-  T_{haw}= \frac{1}{8\pi k_B M}.
+  T_{haw}= \frac{1}{8\pi k_B G M}.
 \end{equation}
 
-
-%Introducción relatividad general. Métrica Schwarzschild
-
-Consireraremos el caso más sencillo de agujero negro, el agujero negro de Schwarzschild, que
+Trabajaremos con el caso más sencillo de agujero negro, el agujero negro de Schwarzschild, que
 describe una distribución de masa con simetría esférica y estática. La métrica asociada
 es 
 \begin{equation}
-  ds^2= \qty(1-\frac{2MG}{r})dt^2-\qty(1-\frac{2MG}{r})^{-1}dr^2-r^2d\Omega^2.
+  ds^2= -\qty(1-\frac{2MG}{r})dt^2+\qty(1-\frac{2MG}{r})^{-1}dr^2+r^2d\Omega^2.
 \end{equation}
 
 Observamos que en el radio de Schwarzschild $r_s=2MG$, la componente temporal de la 
-métrica se anula mientras que la componente radial va a infinito.
-Se denomina horizonte de sucesos a la esfera con radio $r_s$ centrada en $r=0$.
-%Singularidad
+métrica se anula mientras que la componente radial va a infinito, pero esta singularidad se debe
+a la elección particular de coordenadas.
+Se denomina horizonte de sucesos a la esfera de radio $r_s$ centrada en $r=0$.
+Desde el punto de vista de la relatividad general, la  relevancia del horizonte de sucesos es
+que la materia que lo atraviese no podrá salir, sino que se caerá inevitablemente en la singularidad en $r=0$.
+Por otro lado, la dilatación temporal de la gravedad  hace que un observador fuera del agujero negro nunca
+vea materia atravesar el horizonte, solo la verá moverse arbitrariamente cerca del horizonte.
 
-
-%Coordenadas tortuga
 Es conveniente introducir la coordenada tortuga
 \begin{equation}
-  r^*=r+2M\ln\qty(\frac{r}{r_s}-1),
+  r^*=r+2MG\ln\qty(\frac{r}{r_s}-1),
 \end{equation}
 que toma el valor $r^*=-\infty$ en el horizonte.
 La métrica en estas coordenadas es
 \begin{equation}
-  ds^2= \qty(1-\frac{2M}{r})[-dt^2+dr^{*2}]+r^2d\Omega^2.
+  ds^2= \qty(1-\frac{2MG}{r})[-dt^2+dr^{*2}]+r^2d\Omega^2.
 \end{equation}
 
 Si estudiamos un campo escalar no masivo con simetría esférica $\psi(t,r)$, la ecuación de Klein-Gordon
@@ -381,14 +375,13 @@ en un espacio de Schwarzschild es
   -\pdv[2]{\psi}{t} + \pdv[2]{\psi}{r^{*}} + \frac{2}{r}\qty(1-\frac{r_s}{r}) \pdv{\psi}{r^{*}} = 0.
 \end{equation}
 
-Las soluciones a esta ecuación ya no son ondas planas como en la métrica de Minkowski.
-Haciendo el cambio de variable $\psi=\phi/r$, obtenemos
+Para ver cómo difiere esta ecuación de la ecuación de ondas unidimensional en espacio de Minkowski, hacemos el cambio $\psi=\phi/r$,
 \begin{equation}
   -\pdv[2]{\phi}{t} + \pdv[2]{\phi}{r^*} - \frac{r_s}{r^3}\qty(1-\frac{r_s}{r}) \phi= 0.
 \end{equation}
 
-La cual se corresponde con la ecuación de Klein-Gordon que vimos en \ref{eq:kg}, salvo 
-por un término de potencial efectivo
+Esta ecuación se corresponde con la ecuación de Klein-Gordon que vimos en \ref{eq:kg}, salvo 
+por el término de potencial efectivo
 \begin{equation}
   V(r) = \frac{r_s}{r^3}\qty(1-\frac{r_s}{r}).
 \end{equation}
@@ -396,7 +389,7 @@ por un término de potencial efectivo
 En una primera aproximación podemos ignorar este potencial, pues su único efecto es distorsionar
 la radiación de Hawking emitida (\emph{backscattering}).
 
-Definiendo las coordenadas Eddington-Finkelstein
+Definiendo las coordenadas nulas Eddington-Finkelstein
 \begin{equation}
   \begin{aligned}
     u=t-r^*,\\
@@ -417,49 +410,93 @@ El campo se descompone en los modos de Boulware
 \end{equation}
 
 El vacío asociado a la cuantización con estos modos se denomina vacío de Boulware y 
-corresponde con el vacío para un observador en caída libre muy alejado de la fuente
+corresponde con el vacío que describe un observador en caída libre muy alejado de la fuente
 gravitacional.
 
+\subsection{Formación de un agujero negro}
 
-La energía radiada por el agujero negro proviene de la materia que colapsa en el agujero negro.
-Por tanto, tenemos que describir la formación de un agujero negro y ver cómo varía el estado de vacío.
+La energía radiada por el agujero negro proviene de la materia que colapsa para formar el agujero negro.
+Por tanto, tenemos que describir la formación de un agujero negro y ver cómo varía el estado de vacío
 para un observador asintótico.
 Suponemos que antes de formarse el agujero negro, la materia ocupa un volumen arbitrariamente grande,
-de forma que la métrica fuera del objeto es la métrica de Minkowski y el vacío es el correspondiente
-al espacio de Minkowski.
+de forma que la métrica fuera del objeto es aproximadamente la métrica de Minkowski y el vacío es el correspondiente
+a cuantizar los modos
+\begin{equation}
+  \begin{gathered}
+    \phi_\omega^U (U)=\frac{1}{\sqrt{4\pi\omega}} e^{-i\omega U},\\
+    \phi_\omega^V (V)=\frac{1}{\sqrt{4\pi\omega}} e^{-i\omega V},\\
+  \end{gathered}
+\end{equation}
+donde $U=t-r$ y $V=t+r$.
 
-Una vez formadoo el agujero negro,todo el espacio viene descrito por la métrica de Schwarzschild y
-el estado de vacío es el vacío de Boulware.
+Una vez formado el agujero negro, todo el espacio viene descrito por la métrica de Schwarzschild y
+el estado de vacío para observadores inerciales alejados del agujero negro es el vacío de Boulware.
+Las partículas que emite el agujero negro y son detectadas por estos observadores se corresponden a los
+modos salientes
+\begin{equation}
+  \phi^u_\omega(u) = \frac{1}{\sqrt{4\pi \omega}}e^{-i\omega u}.
+\end{equation}
 
-Considermos los modos de Boulware salientes que escapan la materia en colapso poco antes de formarse el horizonte.
+Tenemos que estudiar cómo se comportan los modos salientes al propagarlos al pasado, cuando todo
+el espacio es de Minkowski.
+Consideremos los modos que escapan la materia en colapso poco antes de formarse el horizonte.
 Cerca del horizonte, si definimos la coordenadas de Kruskal-Szeckeres
 \begin{equation}
   \begin{aligned}
-    u'&=-4Me^{-\frac{u}{4M}},\\
-    v'&=4Me^{-\frac{v}{4M}},
+    u'&=-4MGe^{-\frac{u}{4MG}},\\
+    v'&=4MGe^{-\frac{v}{4MG}},
   \end{aligned}
 \end{equation}
 los modos salientes son
 \begin{equation}
-  \phi^{u}_\omega = \frac{1}{\sqrt{4\pi\omega}}e^{i\omega 4M\ln \abs{\frac{u'}{4M}}}.
+  \phi^{u}_\omega = \frac{1}{\sqrt{4\pi\omega}}e^{i\omega 4MG\ln \abs{\frac{u'}{4MG}}}.
 \end{equation}
 
-Vemos que al aproximarse al horizonte, $u'\to 0$, la frequencia de estos modos tiende a infinito.
-Por tanto, podemos despreciar la interacción con la materia en colapso. 
+Vemos que al aproximarse al horizonte, $u'\to 0$, la frecuencia de estos modos tiende a infinito.
+Por tanto, podemos despreciar la interacción con la materia en colapso.
 La aparición de frecuencias arbitrariamente altas, las cuales deberían ser tratadas mediante
 una teoría de gravedad cuántica, se denomina problema transplanckiano.
 
-
+Como cerca del horizonte la frecuencias son muy altas, los modos se pueden aproximar por rayos (aproximación de la óptica geométrica).
+Si definimos $V_H$ de forma que $V=V_H$ es la trayectoria del último rayo que pasa por $r=0$
+y logra escapar justo antes de formarse el horizonte, podemos relacionar la coordenada
+$u'$ con $V$.
+El modo a la distancia nula $u'$ del horizonte se mantendrá en el pasado a la misma distancia de la trayectoria $V=V_H$.
+Por tanto,
 \begin{equation}
-  \phi^{u}_\omega = \frac{1}{\sqrt{4\pi\omega}}e^{i\omega 4M\ln \abs{A(V_H-V)}}.
+  \phi^{u}_\omega = \frac{1}{\sqrt{4\pi\omega}}e^{i\omega 4MG\ln \abs{A(V_H-V)}}.
 \end{equation}
 
+La constante $A$ aparece por la evolución del campo gravitatorio durante el colapso.
+Entonces llegamos a la relación entre coordenadas de nulas de Eddington-Finkelstein futuras y de Minkowski pasadas,
+que describen la propagación de un rayo que atraviesa el objeto en colapso,
 \begin{equation}
-  u'=-4M\ln (A(V_H-V))
-\end{equation
-
+  u'=-4MG\ln (A(V_H-V)).
+\end{equation}
+Esta ecuación es equivalente a la relación entre coordenadas nulas de Rindler y de Minkowski (\ref{eq:coorind}) si identificamos $a=\frac{1}{4MG}$, salvo por las constantes $A$ y $V_H$.
+Escogiendo los orígenes de coordenadas de $u$ y $V$ apropiados, la equivalencia se cumple exactamente.
+Haciendo un tratamiento análogo al del efecto Unruh, deduciríamos que para tiempo suficientemente tardíos,
+los observadores situados en $r\to\infty$ medirían un espectro de radiación correspondiente a un 
+cuerpo negro a la temperatura de Hawking,
 \begin{equation}
-  T_{haw}=\frac{1}{8\pi k_B M}
+  T_{haw}=\frac{1}{8\pi k_B G M}.
 \end{equation}
 
+En el siguiente capítulo, veremos cómo aparece esta misma temperatura al tratar el problema de Hagedorn
+cerca de agujeros negros.
+
+\subsection{Deducción alternativa}
+
+La métrica de Schwarzschild, en coordenadas de Rindler, cerca del horizonte se aproxima por 
+\begin{equation}
+  ds^2= -\frac{\rho^2}{(4GM)^2}dt^2 + d\rho^2 +r^2 d\Omega^2.
+\end{equation}
+
+Si pasamos a un tiempo imaginario, $t\to \tau=it$, la métrica se convierte en
+\begin{equation}
+  ds^2= \frac{\rho^2}{(4GM)^2}d\tau^2 + d\rho^2 +r^2 d\Omega^2.
+\end{equation}
+
+Esta métrica se corresponde al espacio euclídeo descrito en coordenadas polares.
+Para que la métrica no sea singular, el tiempo euclídeo debe tener periodo $\beta=8\pi G M$.
 
