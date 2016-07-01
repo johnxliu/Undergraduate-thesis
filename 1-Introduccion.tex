@@ -11,7 +11,8 @@
 Tomamos una métrica con signatura $(-+++)$.
 dimensión total $d$ y dimensiones espaciales no compactas $D$
 Determinante de un tensor
-\todo{Decir cuerda cerrada y bosónica}
+Los índices latinos denotan las componentes espaciales de un tensor,
+Emplearemos unidades tal que $\hbar = 1$ y $c=1$.
 
 \section{La cuerda relativista}
 
@@ -21,9 +22,9 @@ La teoría de cuerdas parte de considerar que las entidades fundamentales son cu
 en vez de partículas. 
 
 La trayectoria $\mathbf x(t)$ de una partícula satisface que su acción $S$ es un extremal.
-Coloquialmente, esto significa que la variación de la acción a primer orden es nula bajo
+Informalmente, esto significa que la variación de la acción a primer orden es nula bajo
 variaciones pequeñas de la trayectoria, supuestas fijas las posiciones iniciales y finales.
-La acción de una partícula libre es
+La acción de una partícula libre relativista es
 \begin{equation}
   S=-m\int dt \sqrt{1-\dot {\vec{x}} \cdot \dot {\vec{x}}},
 \end{equation}
@@ -34,8 +35,9 @@ parametrizamos el tiempo y la posición por el tiempo propio $\tau$.
 El tiempo propio es el tiempo que mediría un reloj que se moviese con la partícula.
 Con esta transformación, la acción es
 \begin{equation}
- S = -m\int d\tau \sqrt{-\dv{x_\mu}{\tau}\dv{x^\mu}{\tau}}=-m\int d\tau .
+ S = -m\int d\tau \sqrt{-\dv{x_\mu}{\tau}\dv{x^\mu}{\tau}}=-m\int d\tau,
 \end{equation}
+donde $x^\mu(\tau)=(t(\tau),\mathbf x(\tau))$ es el cuadrivector posición.
 
 Generalizaremos la acción de una partícula libre a una cuerda libre.
 Una cuerda está parametrizada por una variable temporal $\tau$ y una variable espacial $\sigma$, adimensional.
@@ -46,14 +48,15 @@ espacio \emph{target} para evitar confusión.
 \todo{Dibujo}
 
 En este trabajo, consideraremos solo cuerdas cerradas. 
-Si la cuerda tiene periodicidad $2\pi$, identificamos $X^\mu(\tau,\sigma)=X^\mu(\tau,\sigma+2\pi)$.
+Esto significa que la cuerda tendrá periodicidad $2\pi$, por lo que $X^\mu(\tau,\sigma)=X^\mu(\tau,\sigma+2\pi)$.
 
 \subsection{Acción de Nambu-Goto}
 
 La acción de una partícula es proporcional a la longitud de su línea de universo.
 De forma análoga, la acción de una cuerda debería ser proporcional al área de la
 worldsheet.
-Para poder medir el área, es necesario definir una métrica $\gamma_{\alpha\beta}$ en la worldsheet.
+Para poder medir el área, es necesario definir una métrica $\gamma_{\alpha\beta}$ en la worldsheet (en este caso, $\alpha$ y $\beta$ 
+toman solo los valores $1$ y $2$).
 La forma natural de definir una métrica en una superficie, a partir de la métrica del espacio que
 contiene a la superficie, es mediante el concepto de \emph{pull-back}.
 En este caso, la métrica en la worldsheet es el pull-back de la métrica de Minkowski
@@ -62,7 +65,7 @@ En este caso, la métrica en la worldsheet es el pull-back de la métrica de Min
 \end{equation}
 
 La propiedad esencial de la métrica $\gamma_{\alpha\beta}$ es que la distancia entre dos puntos próximos 
-coincide con la calcula con la métrica $\eta_{\mu\nu}$, ya que
+coincide con la calculada con la métrica $\eta_{\mu\nu}$, ya que
 \begin{equation}
   g_{\mu\nu}(X(\sigma)) dX^\mu(\sigma)dX^\nu(\sigma) = \gamma_{\alpha\beta} d\sigma^\alpha d\sigma^\beta.
 \end{equation}
@@ -88,27 +91,33 @@ un campo tensorial $h$ definido sobre la worldsheet en la llamada acción de Pol
   S_P=-\frac{1}{4\pi\alpha'}\int d^2\sigma  \sqrt{-h}h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X_\mu.
 \end{equation}
 
-Este campo $h$ se comporta como una métrica en dos dimensiones y queda fijada por las
+Este campo $h$ se comporta como una métrica en dos dimensiones y queda fijado por las
 ecuaciones de movimiento
 \begin{equation}
   h_{\alpha\beta}=2f(\sigma)\partial_\alpha X^\mu \partial_\beta X_\mu
 \end{equation}
 donde $f(\sigma)$ es una función cualquiera. La libertad de poder escoger $f(\sigma)$
-es una simetría gauge
+es una simetría gauge.
 
-La acción de Polyakov presenta tres tipos de simetrías, que son transformaciones que dejan
-invariante la acción. Estas son
-
+\todo{Simetrias}
+Una simetría es una transformación que deja invariante la acción. 
+Si la transformación depende de las coordenadas, se dice que es una simetría gauge. 
+Por ejemplo, al potencial eléctrico se le puede sumar una función $\xi(\mathbf x)$ que
+tenga divergencia nula ($\nabla$
+estados redundantes en la teoría
+La acción de Polyakov presenta dos simetrías gauge en la worldsheet que nos interesan. 
 \begin{itemize}
-  \item Simetría de Poincaré. $X^\mu \to \Lambda^\mu_\nu X^\nu + c^\mu$
-  \item Invariancia reparametrización 
-  \item Simetría de Weyl
+  \item Simetría bajo reparametrizaciones. 
+    Si hacemos un cambio de coordenadas de la worldsheet $\sigma^\alpha \to \tilde \sigma^\alpha$. 
+    Quiere decir que las coordenadas en la worldsheet no tienen significado físico y por tanto 
+    son redundantes.
+  \item Simetría de Weyl. La acción no varía al transformar la métrica de la worldsheet de acuerdo 
+    a
     \begin{equation}
-      h_{\alpha\beta} \to \Omega^2 h_{\alpha\beta}
+      h_{\alpha\beta}(\sigma) \to \Omega^2(\sigma) h_{\alpha\beta}(\sigma)
     \end{equation}
 \end{itemize}
 
-\todo{Simetría gauge, Weyl}
 
 
 \section{Cuantización}
@@ -124,12 +133,11 @@ Definimos las coordenadas en el cono de luz
   \sigma^\pm=\tau\pm\sigma
 \end{equation}
 
-y
 \begin{equation}
   X^\pm=\frac{1}{\sqrt 2} (X^0 \pm X^{d-1}).
 \end{equation}
 
-Gracias a la simetría gauge, imponemos $h_{\alpha\beta}=\eta_{\alpha\beta}$, de forma que 
+Gracias a la simetría gauge, fijamos la métrica en la worldsheet $h_{\alpha\beta}=\eta_{\alpha\beta}$, de forma que 
 la acción de Polyakov es
 \begin{equation}
   S = -\frac{1}{4\pi\alpha'} \int d^2\sigma \partial_\alpha X^\mu \partial^\alpha X_\mu,
@@ -139,23 +147,29 @@ que da lugar a la ecuaciones de movimiento de ondas libres
   \partial_\alpha \partial^\alpha X^\mu=0.
 \end{equation}
 
-La solución general de la ecuación de movimiento para $X^+$ se descompone
-en una onda moviéndose hacia la izquierda $X^+_L$ y otra hacia la derecha $X^+_R$,
+La solución general de la ecuación de movimiento se descompone
+en una onda moviéndose hacia la izquierda $X^\mu_L$ y otra hacia la derecha $X^\mu_R$,
 \begin{equation}
-   X^+ =X^+_L(\sigma^+) + X^+_R(\sigma^-).
+   X^\mu =X^\mu_L(\sigma^+) + X^\mu_R(\sigma^-).
 \end{equation}
 
 Teniendo en cuenta la periodicidad en $\sigma$, la expansión de Fourier conduce a
 \begin{equation}
   \begin{gathered}
-    X^+_L=\frac 1 2 x^+ + \frac 1 2 \alpha' p^+ \sigma^+ + i\sqrt{\frac{\alpha'}{2}}\sum_{n\neq 0} \frac{1}{n}\bar \alpha^+_n e^{-in\sigma^+},\\
-    X^+_R=\frac 1 2 x^+ + \frac 1 2 \alpha' p^+ \sigma^- +i\sqrt{\frac{\alpha'}{2}}\sum_{n\neq 0} \frac{1}{n}\alpha^+_n e^{-in\sigma^-}.
+    X^\mu_L=\frac 1 2 x^\mu + \frac 1 2 \alpha' p^\mu \sigma^+ + i\sqrt{\frac{\alpha'}{2}}\sum_{n\neq 0} \frac{1}{n}\bar \alpha^\mu_n e^{-in\sigma^+},\\
+    X^\mu_R=\frac 1 2 x^\mu + \frac 1 2 \alpha' p^\mu \sigma^- +i\sqrt{\frac{\alpha'}{2}}\sum_{n\neq 0} \frac{1}{n}\alpha^\mu_n e^{-in\sigma^-}.
   \end{gathered}
 \end{equation}
-Donde $x^+$ y $p^+$ se corresponden con la posición y el momento del centro de masas, respectivamente.
+Donde $x^\mu$ y $p^\mu$ se corresponden con la posición y el momento del centro de masas de la cuerda, respectivamente. 
+Las coeficientes del desarrollo de Fourier se denotan por $\bar \alpha^\mu_n$ y $\alpha^\mu_n$.
+Los factores numéricos, las constante $\alpha'$ y $1/n$ se introducen por comodidad.
 
+En términos de $X^+$, tendríamos
+\begin{equation}
+   X^+ =X^+_L(\sigma^+) + X^+_R(\sigma^-).
+\end{equation}
 
-Debido a la invariancia baja reparametrizaciones, escogemos
+Debido a la invariancia baja reparametrizaciones, escogemos unas coordenadas de forma que
 \begin{equation}
   X^+_L=\frac 1 2 x^+ + \frac 1 2 \alpha' p^+ \sigma^+,
 \end{equation}
@@ -171,14 +185,15 @@ Por tanto,
 La constante $x^+$ puede eliminarse mediante una traslación en $\tau$.
 
 Con esta elección gauge, la solución $X^-$ que determinada casi por completo.
-La ecuación de movimiento para la métrica $h$ se obtiene variando a acción
+La ecuación de movimiento para la métrica $h$ se obtiene imponiendo que la variación de la acción
+se anule para toda variación de la métrica $\delta h$,
 \begin{equation}
   \delta S = \frac{1}{4\pi\alpha'}\int d^2\sigma \delta h^{\alpha\beta}
   \qty(
   \sqrt{-h}\partial_\alpha X^\mu \partial_\beta X_\mu -
   \frac 1 2 \sqrt{-h}h_{\alpha\beta}h^{\rho\sigma} \partial_\rho X^\mu \partial_\sigma X_\mu).
 \end{equation}
-Como habíamos elegido $h_{\alpha\beta}=\eta_{\mu\nu}$, la ecuación de movimiento impone
+Como habíamos elegido $h_{\alpha\beta}=\eta_{\mu\nu}$, la ecuación de movimiento es
 \begin{equation}
   \partial_\alpha X^\mu \partial_\beta X_\mu - \frac 1 2 \eta_{\alpha\beta} \eta^{\sigma\rho} 
   \partial_\rho X^\mu  \partial_\sigma X_\mu = 0.
@@ -186,20 +201,24 @@ Como habíamos elegido $h_{\alpha\beta}=\eta_{\mu\nu}$, la ecuación de movimien
 
 En las coordenadas del cono de luz, esto se traduce en
 \begin{equation}
-  (\partial_+ X)^2 = (\partial_- X)^2 = 0.
+  \partial_+ X^\mu \partial_+ X_\mu = \partial_- X^\mu \partial_- X_\mu = 0.
   \label{eq:lig}
 \end{equation}
 
-Haciendo la descomposición de la solución $X^-$ 
+Haciendo la descomposición de la solución $X^-$,
 \begin{equation}
   X^-=X^-_L(\sigma^+)+X^-_R(\sigma^-),
 \end{equation}
 la ecuación \ref{eq:lig} conduce a 
-  \begin{align}
-    \partial_+ X_L^- = \frac{1}{\alpha'p^+}\sum_{i=1}^{d-2} \partial_+ X^i \partial_+ X^i, \label{eq:lig1}\\
-    \partial_- X_R^- = \frac{1}{\alpha'p^-}\sum_{i=1}^{d-2} \partial_- X^i \partial_- X^i. \label{eq:lig2}
-  \end{align}
+\begin{equation}
+  -2\partial_+ X^+ \partial_+ X^- + \sum_{i=1}^{d-2} \partial_+ X^i \partial_+ X^i = 0.
+\end{equation}
 
+Sustituyendo el la expresión de $X^+$,
+\begin{align}
+  \partial_+ X_L^- = \frac{1}{\alpha'p^+}\sum_{i=1}^{d-2} \partial_+ X^i \partial_+ X^i, \label{eq:lig1}\\
+  \partial_- X_R^- = \frac{1}{\alpha'p^+}\sum_{i=1}^{d-2} \partial_- X^i \partial_- X^i. \label{eq:lig2}
+\end{align}
 En el desarrollo de Fourier
 \begin{equation}
   \begin{gathered}
@@ -226,8 +245,9 @@ La masa de la cuerda es por tanto
   \label{eq:mass}
 \end{equation}
 
-Hemos obtenido la solución clásica mediante los $2(d-2)$ modos de oscilación transversos 
-$\alpha^i_n$ y $\bar \alpha_n^i$ y las constantes $x^i$, $p^i$,$p^+$ y $x^-$, donde $i=1,\cdots d-2$.
+Hemos obtenido que la solución clásica queda determinada por los $2(d-2)$ modos de oscilación transversos 
+$\alpha^i_n$ y $\bar \alpha_n^i$ y las constantes $x^i$, $p^i$, $p^+$ y $x^-$, donde $i=1,\cdots d-2$.
+\todo{Grados de libertad}
 La cuantización consiste en promover los grados de libertad a operadores (denotados
 por un acento circunflejo) que satisfacen una reglas de conmutación.
 \footnote{En realidad, debido a la simetría gauge, la cuantización se haría a partir de los
