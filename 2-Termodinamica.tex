@@ -1,7 +1,14 @@
 \chapter{Termodinámica de cuerdas}
 
-En este capítulo deduciremos la temperatura de Hagedorn mediante varios enfoques.
-Calculando la divergencia de la función de equipartición, coalescencia, energía libre
+En este capítulo estudiaremos la termodinámica de cuerdas a altas energías.
+Deduciremos que la densidad de estados de una cuerda muy energética tiene un comportamiento
+exponencial, que conduce a la divergencia de la función de partición a la temperatura de 
+Hagedorn.
+Para entender mejor el comportamiento cerca de la temperatura de Hagedorn, razonaremos 
+que las cuerdas tienden a formar una sola cuerda muy larga.
+La energía libre de un gas de cuerdas relacionarlo con la integral de camino una cuerda
+en un tiempo compacto.
+Esta interpretación será la que nos permita hacer una generalización a espacios curvos.
 
 \section{Cálculo de la densidad de estados para una cuerda excitada}
 
@@ -11,63 +18,66 @@ La fórmula de masas \ref{eq:massdef} para una cuerda bosónica cerrada en $d=26
   \alpha' m^2=-4+2(N+\bar N).
 \end{equation}
 
-La masa depende de los valores que tomen los números de oscilador $N$ y $\bar N$, que además
-hand de cumplir el level-matching $N=\bar N$.
+La masa de un estado depende de los valores que tomen los números de oscilador $N$ y $\bar N$, que además
+han de cumplir el level-matching $N=\bar N$.
 Las distintas excitaciones de una cuerda se obtienen aplicando los operadores
 de creación $\alpha^i_{-n}$ y $\bar \alpha^i_{-n}$ sucesivamente sobre el estado fundamental.
 Como para un mismo número de oscilador, la cuerda puede haber sido excitada en distintas direcciones
 $i$ y hay aplicando distintas combinaciones de operadores de creación, hay degeneración energética.
 
-Tomemos como ejemplo el primer estado excitado, $N=1$, se forma mediante $\bar \alpha^i_{-1} \alpha^j_{-1} \ket{p;0}$.
-Como $i$ y $j$ toman $d-2$ valores independientes (al trabajar en la gauge del cono de luz hemos perdido dos grados de libertad)
-hay $(d-2)^2$ estados posibles ($576$).
+Tomemos como ejemplo el primer estado excitado, $N=1$, que se forma mediante $\bar \alpha^i_{-1} \alpha^j_{-1} \ket{0;p}$.
+Como $i$ y $j$ toman $d-2$ valores independientes (al trabajar en la gauge del cono de luz desaparecen dos grados de libertad)
+hay $(d-2)^2=576$ estados posibles.
 
-Para $N=2$, los estados posibles son del tipo $\bar \alpha^i_{-2}\bar \alpha^j_{-2}\ket{p;0}$, 
+Para $N=2$, los estados posibles son del tipo $\bar \alpha^i_{-2} \alpha^j_{-2}\ket{p;0}$, 
 $\bar \alpha^i_{-1} \bar \alpha^j_{-1} \alpha^k_{-1} \alpha^l_{-1} \ket{p;0}$,
 $\bar \alpha^i_{-2} \alpha^j_{-1} \alpha^k_{-1}\ket{p;0}$ y $\bar \alpha^i_{-1} \bar \alpha^j_{-1} \alpha^k_{-2} \ket{p;0}$.
-En total, hay $(d-2)^2(d-1) + (d-2)^2 +(d-2)^4$ ($346752$).
+En total, hay $(d-2)^2 + (d-2)^2(d-1) + \frac{1}{4}(d-2)^2(d-1)^2= 104976$ estados, muchos más que para $N=1$.
+Para simplificar los cálculos, podemos obtener el número de estados asociados $\alpha^i_n$,
+sin preocuparnos de $\bar \alpha^i_n$ y luego tomar el cuadrado.
 
-
-El número de estados para un valor de $N$ se denomina las particiones de $N$ y se denota por $p(N)$.
-Para valores altos de $N$, se aproxima por la fórmula de Hardy-Ramanujan
+El número de estados para un valor de $N$ (sin tener en cuenta las combinaciones de $\bar \alpha^i_n$) se denomina la particiones de $N$ 
+y se denota por $p(N)$.
+El cálculo preciso de $p(N)$ es muy complicado, pero podemos obtener una aproximación para
+valores grandes de $N$ mediante la fórmula de Hardy-Ramanujan
 \begin{equation}
-  p(N)\approx \alpha N^ {\frac{d-1}{2}}\exp\qty(2\pi\sqrt{\frac{N(d-2)}{6}}),
+  p(N)\propto \alpha N^ {\frac{d-1}{2}}\exp\qty(2\pi\sqrt{\frac{N(d-2)}{6}}).
 \end{equation}
-donde $\alpha$ es una constante.
+Como se intuía, el crecimiento de el número de estados es muy rápido.
 
-Si $N$ es muy grande, se puede aproximar la masa por un espectro continuo y se define la
-densidad de estados $\rho(M)$ de forma que $\int dM \rho(M)$ proporciona el número total
-de estados 
+Si $N$ es muy grande, se puede aproximar la masa de la cuerda por un espectro continuo y entonces se define la
+densidad de estados $\rho(M)$ de forma que $\int_0^M dm \rho(m)$ proporciona el número total
+de estados con masa $M$.
 
-En el caso de cuerdas bosónicas cerradas, la densidad de estados en función de la masa
+En el caso de cuerdas bosónicas cerradas, la densidad de estados en función de la masa es
 \begin{equation}
   \rho(M)\approx \alpha N^ {\frac{d-1}{2}}\exp\qty(2\pi\sqrt{\frac{N(d-2)}{6}}).
 \end{equation}
 
-Ahora buscamos la densidad de estados en función de la energía, suponiendo que hay $d-D-1$ dimensiones compactas 
-de radio $R_i$.
+Ahora buscamos la densidad de estados en función de la energía, generalizando el problema a $d-D-1$ dimensiones compactas 
+de radio $R$.
 La energía de la cuerda es
 \begin{equation}
-  \alpha E^2 = \alpha' \mathbf p ^2 + \alpha'\frac{n^2_i}{R_i^2} + \frac{w_i^2 R^2_i}{\alpha'} -4+ 2(N+\bar N).
+  \alpha E^2 = \alpha' \mathbf p ^2 + \alpha'\frac{n^2}{R^2} + \frac{w^2 R^2}{\alpha'} -4+ 2(N+\bar N).
 \end{equation}
 
 Puesto que la densidad de estados en función de $N$ crece exponencialmente, mientras 
 que la densidad de estados en función de $\abs{\mathbf p}$ crece como una potencia,
-hacemos la aproximación $\abs{\mathbf p} \ll E$.
-
-
-
+a altas energías $\abs{\mathbf p} \ll E$.
+También podemos despreciar la contribución de las dimensiones compactas a la energía.
+Bajo estas aproximaciones, la densidad de estados es
 \begin{equation}
-  \omega(E) \approx V \frac{e^{\beta_H E}}{E^{D/2+1}}.
+  \omega(E) \approx V \frac{e^{\beta_H E}}{E^{D/2+1}},
 \end{equation}
-Donde 
+donde 
 \begin{equation}
   \beta_H = 2\pi \sqrt{\alpha'}\sqrt{\frac{d-2}{6}}.
 \end{equation}
 
+%Vemos que la densidad de estados no depende del número de dimensiones compactas.
 La temperatura $T_H=1/(k_B \beta_H)$ se denomina temperatura de Hagedorn.
 
-La función de partición es la transformada de Laplace de la densidad de estados,
+Si la cuerda está en contacto con una fuente de calor a la temperatura inversa $\beta$, la función de partición asociada es la transformada de Laplace de la densidad de estados,
 \begin{equation}
   z(\beta)=\int^\infty_{E_0} dE \frac{e^{\beta_H E}}{{E^{D/2+1}}}e^{-\beta E},
 \end{equation}
@@ -85,53 +95,47 @@ por
   \end{aligned}
   \label{eq:zp}
 \end{equation}
-\todo{Conclusión}
 
-\section{Modelo random walk}
+\todo{QCD}
+La temperatura de Hagedorn también aparece al 
+%\cite{}
 
-Una forma heurística sencilla pero heurística de obtener la densidad de estados 
-de una cuerda es mediante el modelo \emph{random walk}.
-Consideremos una cuerda abierta. 
-La masa (energía) de una cuerda es su densidad lineal $\sigma$ por su longitud $L$.
-que la cuerda está dividida en $N$ segmentos de longitud $l_s$ con masa asociada $m_s$, 
+\section{Modelo del random walk}
+
+Una forma sencilla pero heurística de obtener la densidad de estados 
+de una cuerda es mediante el modelo del \emph{random walk}.
+Consideremos de momento una cuerda abierta, 
+cuya energía viene dada por su densidad lineal $\sigma$ multiplicada por su longitud $L$.
+Si la cuerda está dividida en $N$ segmentos de longitud $l_s$ con masa asociada $m_s$, 
 \begin{equation}
   E = \sigma L  =  \frac{m_s}{l_s} L.
 \end{equation}
-En unidades naturales, la masa tiene unidades inversas a la longitud, por lo que $m_s\sim l_s^{-1}$.
+En unidades naturales, la masa tiene unidades inversas a la longitud, por lo que identificamos $m_s\sim l_s^{-1}$.
 Entonces,
 \begin{equation}
   E \sim \frac{L}{l_s^2}.
 \end{equation}
 
-Cada segmento podrá tener una orientación arbitraria. Para simplificar los cálculos,
-supongamos que solo toman direcciones ortogonales. Entonces el número de orientaciones posibles
-de cada segmento es $2n$, donde $n$ es el número de dimensiones espaciales accesibles.
+Cada segmento podrá tener una orientación arbitraria. 
+Para simplificar los cálculos,supongamos que solo toman direcciones ortogonales entre sí.
+Entonces el número de orientaciones posibles de cada segmento es $2n$, donde $n$ es el número de dimensiones espaciales accesibles.
 El número de segmentos es $L/l_s$.
-Por tanto, el número de microestados para una energía dada es
+Por tanto, el número de configuraciones (microestados) de una cuerda a energía fija es
 \begin{equation}
-  \omega(E)=(2n)^{(L/l_s)}\propto e^{l_s E \ln (n)}.
+  \omega(E)=(2n)^{(L/l_s)}\sim e^{l_s E \ln (2n)}.
 \end{equation}
 
 %Se puede calcular que el radio del random walk es $R=\expval{r}\sim E^{1/2}$. Esto
 %nos dice que cuerdas muy largas estarán contenidas en un volumen pequeño $V\sim E^{D/2}$.
 
-Para una cuerda cerrada, habría que dividir el número de microestados por el 
-volumen que ocupa, multiplicar por el volumen accesible y dividir por la longitud de la cuerda.
-Recuperamos la densidad de estados vista en la sección anterior,
+Para una cuerda cerrada, habría que dividir el número de microestados entre el 
+volumen que ocupa, multiplicar por el volumen accesible y dividir entre su energía.
+De esta forma, recuperamos la densidad de estados vista en la sección anterior,
 \begin{equation}
   \omega(E)\sim V \frac{e^{\beta_H E}}{E^{1+D/2}}.
 \end{equation}
 
-Sin embargo, este procedimiento no permite obtener el valor concreto de $\beta_H$.
-
-%El cálculo de la extensión de una cuerda altamente excitada con respecto a su centro de masas 
-%conduce a que $R^2_i$ es proporcional a la suma de las inversas de los números oscilatorios para
-%la dirección $i$.
-%Por ello, para un nivel energético $N$ fijo, $(\alpha^i_{-1})^N\ket{0}$ tendría la mayor extensión en la dirección $i$, $\sim N$ y
-%$\alpha^i_N\ket{0}$ tendría la menor extensión.
-%Tomando el promedio sobre todas las direcciones espaciales, $R^2\sim (d-1)\sqrt{N}$, siendo
-%$d-1$ el número de direcciones espaciales. Volvemos a  observa la importante peculariadad $R\sim \sqrt{L}$,
-%por lo que las cuerdas largas tiende a enmarañarse.
+%Sin embargo, este procedimiento no permite obtener el valor concreto de $\beta_H$.
 
 \section{Coalescencia multicuerda}
 
@@ -140,14 +144,11 @@ Las cuerdas pueden interaccionar entre sí, uniéndose o dividiéndose, por lo q
 no tiene sentido fijar el número de cuerdas. 
 Como no cuesta ninguna energía crear una cuerda, el potencial químico es nulo, $\mu=0$.
 Veremos dos formas alternativas de concluir que al aumentar la temperatura, las cuerdas
-tienden a unirse en una sola cuerda.
-Comparando las densidades de estados y las funciones de partición para una sola 
-cuerda un gas de cuerdas, veremos que las cuerdas tienden a unirse en una sola cuerda.
+tienden a unirse en una sola cuerda:
+comparando las densidades de estados y las funciones de partición para una sola 
+cuerda y para un gas de cuerdas, 
 
 \subsection{Densidad de estados}
-
-%En la formulación microcanónica tanto la energía como el número de cuerdas está fijo.
-%La función relevante que describe la termodinámica es la densidad de estados. 
 
 La función de partición de una cuerda se relaciona con la densidad de estados de una cuerda $\omega(E)$, mediante
 una transformada de Laplace
@@ -201,7 +202,7 @@ La suma da lugar a una exponencial,
     &\Omega(E) \sim \frac{e^{\beta_H E}}{E_0}, \quad D=0.
   \end{aligned}
 \end{equation}
-Comparando la densidad de estados de múltiples cuerdas con la densidad de estados de una sola cuerda, vemos que 
+Comparando la densidad de estados de un gas de cuerdas con la densidad de estados de una sola cuerda, vemos que 
 ambas coinciden si $D>0$.
 Esto quiere decir que a altas energías, predomina una sola cuerda muy larga.
 
@@ -221,8 +222,8 @@ Aplicando la aproximación Maxwell-Boltzmann $Z=e^z$,
   \begin{aligned}
    Z(\beta)= &1-C(\beta-\beta_H)^{D/2} +\frac{C^2}{2}(\beta-\beta_H)^D-\frac{C^3}{6}(\beta-\beta_H)^{3D/2}+\cdots, \text{ si $D$ impar}\\
    Z(\beta)= &1-C(\beta-\beta_H)^{D/2}\ln(\beta-\beta_H) +\frac{C^2}{2}(\beta-\beta_H)^D\ln(\beta-\beta_H) ^2\\
-         &-\frac{C^3}{6}(\beta-\beta_H)^{3D/2}\ln(\beta-\beta_H)^3 +\cdots, \quad \text{si $D$ par}.\\
-%   &Z(\beta)= 1-\ln(\beta-\beta_H) +\frac{1}{2}\ln(\beta-\beta_H) ^2-\frac{1}{6}\ln(\beta-\beta_H)^3 +\cdots, \text{si $D$ par}.\\
+         &-\frac{C^3}{6}(\beta-\beta_H)^{3D/2}\ln(\beta-\beta_H)^3 +\cdots, \quad \text{si $D\neq 0$ par},\\
+   Z(\beta)=& \frac{1}{\beta-\beta_H}, \quad \text{si $D=0$}.
   \end{aligned}
 \end{equation}
 
@@ -235,11 +236,12 @@ con la asociada a una sola cuerda, salvo si $D=0$.
 \label{sec:free}
 
 En esta sección calcularemos la energía libre de un gas de cuerdas en el espacio de Minkowski,
-con el fin de generalizar la temperatura de Hagedorn en un espacio curvo.
+con el fin de generalizar la temperatura de Hagedorn a espacios curvos.
 
 La función de partición bosónica para un solo grado de libertad con un espectro discreto es $z=\prod_i 1/(1-\exp(-\beta E_i))$.
-La energía libre viene dada por $F=-1/\beta \ln z=1/\beta\sum_i \ln(1-\exp(-\beta E_i))$.
-Si el espectro es continuo, con $E=E(k)$, reemplazamos el sumatorio por $V\int d^{d-1}k/(2\pi)^{d-1}$. Por tanto,
+La energía libre se obtiene a partir de la función de partición como $F=-1/\beta \ln z=1/\beta\sum_i \ln(1-\exp(-\beta E_i))$.
+Si el espectro es continuo, con $E=E(k)$, reemplazamos el sumatorio por la integral $V\int d^{d-1}k/(2\pi)^{d-1}$.
+Por tanto,
 \begin{equation}
   F=\frac{V}{\beta}\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\ln(1-\exp(-\beta E)).
 \end{equation}
@@ -266,7 +268,6 @@ La integral en momentos tiene como resultado $(2\pi s)^{\frac{d-1}{2}}$, por lo 
 \end{equation}
 
 %Por otro lado, la función de partición de estado multicuerda es $Z=e^z=e^{-\beta F}$. 
-%\todo{Omitir path-integral?}
 %Entonces podemos hacer la asociación de la energía libre con integral de camino de 
 %una partícula tras aplicar una rotación de Wick en la dimensión temporal y compactificando el
 %tiempo con periodo $\beta$
@@ -291,8 +292,8 @@ La energía libre sería
 \begin{equation}
   F=\sum_i \delta_{N_i \bar N_i} F(N_i,\bar N_i),
 \end{equation}
-donde $i$ recorre todas las posibles combinaciones de $N_i$ y $\bar N_i$.
-La delta the Kronecker impone la condición $N=\bar N$. 
+donde la suma recorre todos los estados posibles de la cuerda, incluyendo aquellos con $N_i\neq \bar N_i$.
+La delta de Kronecker impone la condición $N_i=\bar N_i$. 
 Empleando la forma integral de la delta de Kronecker
 \begin{equation}
    \delta_{N\bar N}=\int_{-1/2}^{1/2}d\tau_1 \exp(2\pi i\tau_1 (N-\bar N)),
@@ -304,7 +305,7 @@ y haciendo el cambio de variable $s=2\pi\alpha'\tau_2$,
 \end{equation}
 
 El apóstrofe indica que se ha omitido el término con $r=0$ del sumatorio, pues es la contribución
-de vacío que no depende de la temperatura.
+de vacío, que no depende de la temperatura.
 
 Definiendo $\tau=\tau_1+i\tau_2$ y $q=e^{2\pi i\tau_1}$, introducimos la $\eta$ de 
 Dedekind como
@@ -325,15 +326,17 @@ El comportamiento de la exponencial en \ref{eq:strip} es
   \exp\qty(\frac{16\pi^2 \alpha' -\beta^2}{4\pi\alpha'\tau_2}),
 \end{equation}
 por lo que al integrar $\tau_2$ desde cero, la energía libre diverge si $\beta\leq \beta_H=4\pi\sqrt{\alpha'}$.
+Hay otra divergencia al integrar hasta infinito en $\tau_2$, pero esta se debe a la presencia 
+del taquión en el estado fundamental, que desaparece al considerar cuerdas supersimétricas.
 
-El mismo resultado se obtiene calculando la integral de camino en el toro
+El mismo resultado se obtiene calculando la integral de camino para una worldsheet toroidal,
 \begin{equation}
   Z= \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal Dx
   \exp\qty(-\frac{1}{4\pi\alpha'}\int d^2\sigma \sqrt h h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X_\mu),
 \end{equation}
 considerando cuerdas que se enrollan $r$ veces alrededor de una dimensión temporal de periodo $\beta$
 y aplicando $F=-Z/\beta$.
-La importancia de este resultado es permite hacer el cálculo de la energía libre en espacio curvo.
+La importancia de este resultado es que permite calcular la energía libre en espacio curvo.
 
 \subsection{Formulación invariante modular}
 \label{sec:taq}
@@ -358,7 +361,7 @@ se suma, de modo que para $d=26$ se tiene
 
 Esta expresión de la energía libre se puede calcular como $F=-Z/\beta$, siendo $Z$ la integral de camino del toro en
 un espacio donde la dimensión temporal forma un círculo de radio $R=\beta/(2\pi)$ y con enrollamientos
-de las cuerdas.
+de las cuerdas e integrando solo sobre el dominio fundamental.
 
 Una forma equivalente de expresar la integral es tomando la traza sobre todos los estados posibles,
 \begin{equation}
@@ -383,57 +386,11 @@ La masa de este estado es
 A la temperatura de Hagedorn, el estado tiene masa nula y a temperaturas superiores, masa
 imaginaria.
 
-En resumen, si compactificamos el tiempo e identificamos periodo temporal con el inverso de la
+En resumen, si compactificamos el tiempo e identificamos el periodo temporal con el inverso de la
 temperatura, podemos calcular la energía libre mediante una integral de camino restringida
 al dominio fundamental.
 El estado que se enrolla una vez en el tiempo es el responsable de la divergencia de Hagedorn y
 a temperaturas por encima de la temperatura de Hagedorn se vuelve taquiónico.
-Es importante notar que es un estado efectivo, pues no aparece en el espectro de la cuerda en 
+Es importante notar que este es un estado efectivo, pues no aparece en el espectro de la cuerda en 
 el espacio de Minkowski, sino que es consecuencia de compactificar el tiempo.
 Sin embargo, este enfoque es muy útil para poder hacer una generalización a espacios curvos.
-
-
-%Haciendo la suma, se llega a
-%\begin{equation}
-%  Z=-\beta F=\int_{\mathcal F}\frac{d\tau_1d\tau_2}{2\tau_2}\Tr\qty(q^{L_0}\bar q^{\bar L_0})
-%\end{equation}
-%
-%donde
-%\begin{align}
-%  L_0&=\alpha'\frac{p^2}{4}+\frac{\alpha'}{4}\qty(\frac{2\pi n}{\beta}+\frac{w\beta}{2\pi\alpha'})^2+N\\ 
-% \bar L_0&=\alpha'\frac{p^2}{4}+\frac{\alpha'}{4}\qty(\frac{2\pi n}{\beta}-\frac{w\beta}{2\pi\alpha'})^2+\bar N
-%\end{align}
-%
-
-%Ahora que ya hemos hallado la energía libre, buscamos cuándo diverge.
-%De acuerdo con \ref{eq:strip}, para valores próximos a $\tau_2=0$, los términos con $r=\pm 1$
-%son dominantes. El comportamiento de la exponencial es
-%\begin{equation}
-%  \exp\qty(\frac{8\pi^2 \alpha' -\beta^2}{4\pi\alpha'\tau_2}),
-%\end{equation}
-%por lo que al integrar $\tau_2$ desde cero la energía libre diverge si $\beta\leq \beta_H=4\pi\sqrt{\alpha'}$.
-%
-%La divergencia de  la región fundamental \ref{eq:fund}, 
-%
-%Cálculo de $Z$ por path-integral
-%La energía libre puede calcularse como la integral de camino en un espacio con tiempo euclídeo
-%y cuya temperatura se relaciona con el periodo $\beta=1/(K_BT)$.
-%La divergencia de la energía libre se corresponde con el estado que se enrolla una vez en el 
-%tiempo y cuya masa es cero.
-%Es importante notar que este estado no se corresponde a ningún estado
-%Este estado se describe por un campo efectivo llamado thermal scalar.
-
-
-%\section{Cuerdas en background estático}
-%Supongamos una cuerda en presencia de un background $G_{\mu\nu}$ independiente del tiempo.
-%La función de partición calculada como la integral de camino en el toro es
-%\begin{equation}
-%  Z= \int_0^\infty\frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal Dx \sqrt G
-%  \exp\qty(-\frac{1}{4\pi\alpha'}\int d^2\sigma \sqrt h h^{\alpha\beta}\partial_\alpha X^\mu \partial_\beta X^\nu G_{\mu\nu})
-%\end{equation}
-%
-%La métrica de la worldsheet
-
-%\section{Discrepancia entre colectividad microcanónica y canónica}
-
-\todo{Comentar más allá de Hagedorn? No perturbativo, interacciones, transición de fase\ldots}
