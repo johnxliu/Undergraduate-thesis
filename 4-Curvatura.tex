@@ -389,7 +389,6 @@ El laplaciano en coordenadas de Rindler es
 \begin{equation}
   \nabla^2  = \partial_\rho^2 + \frac{1}{\rho}\partial_\rho.
 \end{equation}
-\todo{Poner misma notación}
 
 La masa efectiva para cuerdas de tipo II es 
 \begin{equation}
@@ -430,46 +429,76 @@ De haber escogido otras condiciones, la temperatura de Hagedorn podría recibir 
 Identificando las funciones propias como funciones de onda de una cuerda, el estado fundamental
 \begin{equation}
   \psi_0(\rho)\propto e^{-\frac{\beta \rho^2}{4\pi\alpha'^{3/2}} },
+  \label{eq:func}
 \end{equation}
 representa una cuerda localizada a la distancia $l_s$ del horizonte de sucesos.
+Podemos  presión que compensa la atracción gravitatoria del agujero negro
 Este resultado refuerza la idea de la existencia de una \emph{membrana} formada por cuerdas
 que rodea al agujero negro.
-\todo{Refs}
+\todo{Refs} %\cite
 
 
 \section{Entropía de agujeros negros}
 
-$\omega(E) = E^\alpha e^{\beta_H E}$
-
+La igualdad entre la temperatura de Hagedorn y la temperatura Hawking permite justificar
+la entropía Bekenstein-Hawking de un agujero negro,
 \begin{equation}
-  S(E) = k_B\ln\Omega(E)
+  S = \frac{A}{4G},
+\end{equation}
+donde $A$ es el área del agujero negro.
+Pero antes, debemos entender si tiene sentido la existencia del equilibro termodinámico alrededor
+de un agujero negro. 
+En teoría cuántica de campos, si colocamos un agujero en una fuente de calor y partículas, 
+la materia que cae al agujero negro entra en equilibrio con la radiación de Hawking.
+En cambio, si mantenemos aislado un sistema formado por materia en caída y un agujero
+negro, nunca se alcanzará el equilibrio.
+La materia se iría aproximando arbitrariamente cerca del horizonte, ocupando un volumen muy
+pequeño, de modo que cerca del horizonte se puede almacenar una cantidad infinita de información.
+Esta el la causa de la divergencia de la entropía de un agujero negro en teoría cuántica de campos.
+
+En teoría de cuerdas, el problema se soluciona al considerar que las cuerdas se mantienen a
+una cierta distancia del horizonte, como refleja \ref{eq:func}.
+De esta forma, las cuerdas alcanzan el equilibrio y al ocupar un volumen extenso, la entropía
+permanece finita.
+
+Para deducir la entropía de un agujero negro, calculamos el incremento de entropía asociado 
+a lanzar cuerdas a un agujero negros, suponiendo que la interacción de la materia añadida con la
+ya presente es pequeña. 
+La densidad de estados de una cuerda es
+$\omega(E) = E^\alpha e^{\beta_H E}$.
+
+La entropía, en función del número de microestados $\Omega(E)$ es 
+\begin{equation}
+  S(E) = k_B\ln\Omega(E).
 \end{equation}
 
-$\Omega(E) = \omega(E)\delta E$
-
+Como el número de microestados en el intervalo $(E,E+dE)$ es $\Omega(E) = \omega(E)\delta E$,
 \begin{equation}
-  S(E) = k_B \ln \omega(E) + k_B \ln \delta E
+  S(E) = k_B \ln \omega(E) + k_B \ln \delta E.
 \end{equation}
 
+El segundo término de la suma es una constante arbitraria que podemos ignorar, luego
+la entropía en función de la densidad de estados es
 \begin{equation}
-  S(E) = k_B \ln \omega(E)
+  S(E) = k_B \ln \omega(E).
 \end{equation}
 
-A altas energías, $E \gg k_B T_H$, solo es relevante la contribución exponencial y por 
-tanto el incremento de entropía es
-
+A altas energías ($E \gg k_B T_H$) solo es relevante la contribución exponencial y por 
+tanto el incremento de entropía del agujero negro es
 \begin{equation}
   \delta S = k_B  \frac{\delta \omega}{\omega} = k_B \beta_H \delta E
 \end{equation}
 
-$\beta_H = \beta_{haw}$
-
+Teniendo en cuenta que $\beta_H = \beta_{haw}$, en términos de la masa,
 \begin{equation}
   \delta S =  8\pi GM\delta M
 \end{equation}
 
- $R=2GM$
-
+El radio de un agujero negro de Schwarzschild es $R=2GM$, por lo que obtenemos la entropía
+de Bekenstein-Hawking,
 \begin{equation}
-  S=\frac{A}{4G}
+  S=\frac{A}{4G}.
 \end{equation}
+
+Una interpretación alternativa de este resultado es que para que las cuerdas proporcionen
+la entropía de un agujero negro, se ha de cumplir la igualdad $\beta_H = \beta_{haw}$.

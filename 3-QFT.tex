@@ -1,5 +1,6 @@
 \chapter{QFT en sistemas acelerados y espacio curvo}
 %\todo{Corregir numeracion}
+C teoría cuántica de campos (QFT) en sistemas acelerados y espacio con curvatura.
 
 \section{Efecto Unruh}
 
@@ -286,7 +287,6 @@ Por tanto,
 Este valor esperado se corresponde con un sistema de bosones a temperatura $T=a/(2\pi k_B)$.
 Sin embargo, todavía no conocemos la forma exacta del vacío de Minkowski.
 
-\todo{Pq usar paquetes? Se puede omitir de la demostración?}
 En vez de considerar ondas armónicas con frecuencia bien definida, trabajamos con paquetes
 de onda con resolución $\Delta \omega$ centrados en $(n+1/2)\Delta \omega$,
 \begin{equation}
@@ -328,8 +328,7 @@ la cuña izquierda, obtenemos que la matriz densidad
 \begin{equation}
   \rho  \propto \prod_{n,\bar n} \qty(\sum_{m=0}^\infty e^{-2\pi m n\Delta  \omega/a}\ket{m_{n\bar n}}_u \bra{m_{n\bar n}}_u),
 \end{equation}
-que describe una distribución de Maxwell-Boltzmann a temperatura $T_U=a/(2\pi k_B)$.
-\todo{Contradicción distribución MB vs BE?}
+que describe una distribución de Planck a temperatura $T_U=a/(2\pi k_B)$.
 
 %\begin{equation}
 %  \ev{0_U}{N^u_{n,\bar n}} =
@@ -489,8 +488,9 @@ cerca de agujeros negros.
 
 La métrica de Schwarzschild, en coordenadas de Rindler, cerca del horizonte se aproxima por 
 \begin{equation}
-  ds^2= -\frac{\rho^2}{(4GM)^2}dt^2 + d\rho^2 +r^2 d\Omega^2.
+  ds^2= -\frac{\rho^2}{(4GM)^2}dt^2 + d\rho^2 +r^2 d\Omega^2
 \end{equation}
+donde $\rho = \sqrt{8GM (r-2GM)}$.
 
 Si pasamos a un tiempo imaginario, $t\to \tau=it$, la métrica se convierte en
 \begin{equation}
