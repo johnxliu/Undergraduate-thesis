@@ -1,5 +1,6 @@
 \chapter{QFT en sistemas acelerados y espacio curvo}
-%\todo{Corregir numeracion}
+\todo{Corregir numeracion}
+\todo{Intro}
 C teoría cuántica de campos (QFT) en sistemas acelerados y espacio con curvatura.
 
 \section{Efecto Unruh}
@@ -11,6 +12,9 @@ visto por un observador con aceleración constante corresponde con un estado té
 \begin{equation}
   T_U=\frac{a}{2\pi k_B}.
 \end{equation}
+Esta temperatura es muy pequeña, necesitaríamos que la aceleración fuese $a=\SI{e21}{m/s^2}$
+para alcanzar $T_U=\SI{4}{K}$. 
+Por lo que una comprobación experimental presenta importantes dificultades.
 
 En la deducción del efecto Unruh estudiaremos un campo escalar sin masa $\phi(t,z)$ en un espacio de Minkowski
 con una dimensión espacial $t$ y una dimensión espacial $z$.  
@@ -39,19 +43,22 @@ De este modo, la solución general se expresa como
   \phi(U,V)=\phi_U(U)+\phi_V(V).
 \end{equation}
 
+La onda $\phi_U(U)$ se mueve hacia la derecha, mientras que $\phi_V(V)$ se propaga hacia la izquierda.
 Nos interesa expandir la solución en términos de ondas armónicas
 \begin{gather}
   \phi_\omega^U(U)=\frac{1}{\sqrt{4\pi\omega}} e^{-i\omega U},  \\
-  \phi_\omega^V(V)=\frac{1}{\sqrt{4\pi\omega}} e^{-i\omega V}.
+  \phi_\omega^V(V)=\frac{1}{\sqrt{4\pi\omega}} e^{-i\omega V},
 \end{gather}
-
-Puesto que la solución $\phi_V$ está desacoplada de $\phi_U$, basta considerar $\phi_U$ ya que
+con $\omega>0$. Puesto que la solución $\phi_V$ está desacoplada de $\phi_U$, basta considerar $\phi_U$ ya que
 el tratamiento de $\phi_V$ sería análogo.
 
 La expansión del campo en modos es
 \begin{equation}
-\phi_U(U) = \int_0^\infty d\omega \qty[a_\omega^U \phi_\omega^\phi (U)+a_\omega^{U*} \phi_\omega^\phi (U)^*].
+\phi_U(U) = \int_0^\infty d\omega \qty[a_\omega^U \phi_\omega^U (U)+a_\omega^{U*} \phi_\omega^U (U)^*],
 \end{equation}
+donde $a_\omega^U$ y $a_\omega^{U*}$ son los coeficientes del desarrollo.
+
+\subsection{Cuantización}
 
 El proceso de cuantización canónica consiste en reemplazar en valor del campo en cada
 punto del espacio-tiempo $\phi(x,t)$, por un operador $\widehat \phi(x,t)$ que satisfará unas
@@ -73,21 +80,20 @@ Las relaciones de conmutación que cumplen son
 
 Todavía no hemos especificado el espacio de Hilbert sobre el que actúa el operador del campo, el cual
 se denota por $\mathcal H_\phi$. 
-El estado del campo queda especificado descrito por un elemento de $\mathcal H_\phi$.
-Como en este caso los modos $U$ y $V$ están desacoplados, podemos considerar independientemente el espacio
+El estado del campo queda descrito por un elemento de $\mathcal H_\phi$.
+Como en este caso los modos $U$ y $V$ están desacoplados, podemos definir independientemente el espacio
 de Hilbert asociado a cada uno, $\mathcal H_U$ y $\mathcal H_V$.
-El espacio de Hilbert del campo es el producto tensorial de ambos $\mathcal H_\phi=\mathcal H_U\otimes \mathcal H_V$.
+El espacio de Hilbert del campo es el producto tensorial de ambos, $\mathcal H_\phi=\mathcal H_U\otimes \mathcal H_V$.
 
-%Construcción espacio de Fock
 La base del espacio $\mathcal H_U$ se puede construir mediante la representación de Fock. 
-Para ello, se define el estado de vacío $\ket{0_U}$, como el estado que no contiene ningún tipo
+Para ello, se define el estado de vacío $\ket{0_U}$ como el estado que no contiene ningún tipo
 de partícula, por tanto
 \begin{equation}
   a^U_\omega \ket{0_U} = 0.
 \end{equation}
 
-Donde omitimos el acento circunflejo de los operadores por comodidad.
-Luego procedemos a crear estados con $n_i$ partículas de frecuencia $\omega_i$, mediante
+Omitiremos el acento circunflejo de los operadores por comodidad.
+Procedemos a crear estados con $n_i$ partículas de frecuencia $\omega_i$, mediante
 aplicación repetida del operador creación $a_{\omega_i}^{U\dagger}$, con la normalización apropiada
 \begin{equation}
   \ket{n_{1,\omega_1}, n_{2,\omega_2},\cdots,n_{N,\omega_N}} = \frac{1}{\sqrt{n_1!n_2!\cdots n_N!}}(a_{\omega_1}^{U\dagger})^{n_1}
@@ -98,20 +104,14 @@ Los estados construidos son estados propios del operador número de partículas 
 con valor propio $n_i$.
 La base de $\mathcal H_U$ se obtiene juntando los estados con un número arbitrario de partículas
 de todas las frecuencias posibles.
-%\todo{Definición exacta? La suma directa es no numerable, al tener que considerar todas las frecuencias?}
-%Formalmente, $\mathcal H_U$ es la completitud de la suma directa de 
-%\todo{Rigor}
-%\begin{equation}
-%  \mathcal H_U = \overline{\bigoplus  \otimes \ket{n_i}} .
-%\end{equation}
 
-%Expansión en otra base. Transformación Bogoliubov. Vacío.
-Supongamos que queremos expandir el campo en otra base de modos $u$
+\subsection{Transformaciones de Bogoliubov}
+
+Supongamos que queremos expandir el campo en otra base de modos, que depende de $U$ a través de  $u(U)$,
 \begin{equation}
   \phi_\omega^u(U)=\frac{1}{\sqrt{4\pi\omega}}e^{-i\omega u(U)}, 
 \end{equation}
-
-entonces
+Entonces el campo se descompone como
 \begin{equation}
   \phi_U(U) = \int_0^\infty d\omega [a_\omega^u \phi^u_\omega(U) +  a_\omega^{u*} \phi_\omega^u(U)^*].
 \end{equation}
@@ -119,9 +119,8 @@ entonces
 Expandiendo la nueva base en términos de la anterior
 \begin{equation}
   \phi_\omega^u(U) = \int_0^\infty d\omega'\qty[ \alpha_{\omega\omega'} \phi_{\omega'}^U(U) 
-  +\beta_{\omega\omega'} \phi_{\omega'}^U(U)^*].
+  +\beta_{\omega\omega'} \phi_{\omega'}^U(U)^*],
 \end{equation}
-
 Los coeficientes $\alpha_{\omega\omega'}$ y $\beta_{\omega\omega'}$ se denominan coeficientes
 de Bogoliubov y vienen dados por
 \begin{gather}
@@ -131,9 +130,9 @@ de Bogoliubov y vienen dados por
 
 Cuantizando la teoría y formando el espacio de Fock, comprobamos que el vacío obtenido mediante
 los modos $\phi^U_\omega (U)$, puede contener partículas asociadas a los modos $u$
-si el coeficiente $\beta_{\omega\omega'}$ no es nulo
+si el coeficiente $\beta_{\omega\omega'}$ no es nulo,
 \begin{equation}
-  \ev{0_U}{N_\omega^u}=\int_0^\infty d\omega' \abs{\beta_{\omega\omega'}}^2.
+  \ev{N_\omega^u}{0_U}=\int_0^\infty d\omega' \abs{\beta_{\omega\omega'}}^2.
 \end{equation}
 
 Esto quiere decir que en una teoría cuántica de campos, el vacío depende de la base de modos
@@ -144,10 +143,12 @@ inerciales, al ser invariante de Lorentz.
 Sin embargo, en un espacio-tiempo curvo el concepto de energía puede no estar bien definido
 y por tanto no hay un estado de vacío privilegiado.
 
+\subsection{Campo escalar para observadores acelerados}
+
 Con el fin de estudiar cuál es el vacío dado por un observador acelerado en un espacio de 
 Minkowski, introducimos las coordenadas de Rindler $(\eta,\xi)$ definidas por
 \begin{gather}
-  t=\frac{1}{a} e^{a\xi} \sinh a\eta ,\\
+  t=\frac{1}{a} e^{a\xi} \sinh a\eta,\\
   z=\frac{1}{a}e^{a\xi} \cosh a\eta,
   \label{eq:rindler}
 \end{gather}
@@ -157,11 +158,17 @@ Las coordenadas de Rindler solo cubren la región $\abs{t}<z$, denominada cuña 
 De forma análoga, se puede cubrir la cuña izquierda de Rindler ($\abs{t}<-z$) mediante
 las coordenadas $(\tilde \eta, \tilde \xi)$ dadas por
 \begin{gather}
-  t=-\frac{1}{a} e^{a\tilde \xi} \sinh a\tilde \eta \\
+  t=-\frac{1}{a} e^{a\tilde \xi} \sinh a\tilde \eta,\\
   z=-\frac{1}{a} e^{a\tilde \xi} \cosh a\tilde \eta.
 \end{gather}
 
-%Usar imagen libre, centrar
+Las trayectorias con $\xi=\xi_0$ constante describen observadores que se mueven con
+aceleración propia $ae^{-a\xi_0}$.
+El tiempo propio que miden estos observadores es $\tau = e^{a\xi_0}\eta$.
+Escogiendo el origen de tiempos en $\tau=0$, un observador con aceleración constante
+viene dado por $\eta=\tau$ y $\xi=0$.
+
+\todo{Añadir dibujo}
 \begin{figure}[htb]
 \includegraphics[width=0.8\textwidth]{rindler.png}\hfill
  \caption{Espacio de Minkowski en coordenadas de Rindler (usar imagen libre)
@@ -169,17 +176,10 @@ las coordenadas $(\tilde \eta, \tilde \xi)$ dadas por
   \label{fig:rindler}
 \end{figure}
 
-Las trayectorias con $\eta=\eta_0$ constante corresponden con observadores que se mueven con
-aceleración propia $ae^{-a\xi_0}$.
-%\todo{Pq $\xi_0=0$}
-El tiempo propio que miden estos observadores es $\tau = e^{a\xi_0}\eta$.
-Escogiendo apropiadamente el origen de coordenadas, un observador con aceleración constante
-viene dado por $\eta=\tau$ y $\xi=0$.
-
 Fijándonos en el diagrama de Rindler (figura \ref{fig:rindler}),
 un observador con aceleración constante moviéndose a la derecha no puede percibir los 
 efectos producidos  en III ni influir en II. 
-Además, la información que le llegue de II será percibida como proveniente de un tiempo
+Además, la información que le llegue de IV será percibida como proveniente de un tiempo
 infinitamente anterior, por lo que la recta $t=z$ define un horizonte de sucesos futuro y 
 la recta $t=-z$ un horizonte de sucesos pasado.
 
@@ -199,27 +199,26 @@ Definiendo las coordenadas nulas de Rindler
     u&=\eta-\xi=-\frac{1}{a}\ln(-aU)\label{eq:coorind} ,\\
     v&=\eta+\xi=\frac{1}{a}\ln(aV), 
   \end{align}
-
 la solución general de \ref{eq:kgr} es $\phi(u,v)=\phi_u(u)+\phi_v(v)$, que se expande en los
 modos normales
 \begin{equation}
   \begin{aligned}
     \phi^u_\omega(u) &=\frac{1}{\sqrt{4\pi\omega}}e^{-i\omega u},\\
-    \phi^u_\omega(v) &=\frac{1}{\sqrt{4\pi\omega}}e^{-i\omega v}.
+    \phi^v_\omega(v) &=\frac{1}{\sqrt{4\pi\omega}}e^{-i\omega v}.
   \end{aligned}
 \end{equation}
 
-Aplicaríamos un tratamiento análogo a la cuña izquierda.
+Aplicando un tratamiento análogo a la cuña izquierda, obtendríamos los modos $\phi^{\tilde u}_\omega(\tilde u)$
+y $\phi^{\tilde v}_\omega(\tilde v)$.
 
 El campo propagándose hacia la derecha en coordenadas de Minkowski se expande como
 \begin{equation}
   \begin{aligned}
-    \phi_U(U)=&\int_0^\infty \Theta(-U)\qty[a^u_\omega \phi^u_\omega(u(U))+a_\omega^{u*}\phi_\omega^u(u(U))^*] \\
-    &+\Theta(U)\qty[a^{\tilde u}_\omega \phi^{\tilde u}_\omega(\tilde u(U))+a_\omega^{\tilde u*}\phi_\omega^{\tilde u}(\tilde u(U))^*].
+    \phi_U(U)=&\int_0^\infty d\omega \left\{\Theta(-U)\qty[a^u_\omega \phi^u_\omega(u(U))+a_\omega^{u*}\phi_\omega^u(u(U))^*] \right\\
+    &\left+\Theta(U)\qty[a^{\tilde u}_\omega \phi^{\tilde u}_\omega(\tilde u(U))+a_\omega^{\tilde u*}\phi_\omega^{\tilde u}(\tilde u(U))^*]\right\},
   \end{aligned}
 \end{equation}
-
-Donde $\Theta(U)$ es la función de Heaviside 
+donde $\Theta(U)$ es la función de Heaviside 
 \begin{equation}
    \Theta(U)=
   \begin{cases}
@@ -230,17 +229,16 @@ Donde $\Theta(U)$ es la función de Heaviside
 \end{equation}
 
 El cálculo de los coeficientes de Bogoliubov conduce a 
-%\todo{Tal vez separar}
 \begin{equation}
   \begin{aligned}
-    &\alpha_{\omega,\omega'}^{ u} = -\frac{e^{\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{-i\omega/a}
+    &\alpha_{\omega\omega'}^{ u} = -\frac{e^{\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{-i\omega/a}
     \Gamma(i\omega/a), \quad
-    \beta_{\omega,\omega'}^{ u} = \frac{e^{-\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{-i\omega/a}
-    \Gamma(i\omega/a)\\
-    &\alpha_{\omega,\omega'}^{\tilde u} = -\frac{e^{\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{i\omega/a}
+    \beta_{\omega\omega'}^{ u} = \frac{e^{-\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{-i\omega/a}
+    \Gamma(i\omega/a),\\
+    &\alpha_{\omega\omega'}^{\tilde u} = -\frac{e^{\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{i\omega/a}
     \Gamma(-i\omega/a), \quad
-    \beta_{\omega,\omega'}^{\tilde u} = \frac{e^{-\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{i\omega/a} 
-    \Gamma(-i\omega/a)
+    \beta_{\omega\omega'}^{\tilde u} = \frac{e^{-\frac{\pi\omega}{2 a}}}{2\pi a}\sqrt{\frac{\omega}{\omega'}}\qty(\frac{\omega'}{a})^{i\omega/a} 
+    \Gamma(-i\omega/a).
   \end{aligned}
 \end{equation}
 
@@ -261,43 +259,43 @@ La cuantización de los modos de Unruh conduce a los operadores de destrucción
   \end{aligned}
 \end{equation}
 
-El vacío de estos modos es el vacío de Minkowski, es decir
+El vacío de estos modos es el vacío de Minkowski, es decir,
 \begin{equation}
-  a_\omega^I \ket{0_H} = a_\omega^{II}\ket{0_H} = 0.
+  a_\omega^I \ket{0_U} = a_\omega^{II}\ket{0_U} = 0.
 \end{equation}
  
 Para buscar el valor esperado de partículas que observa un observador acelerado
 en el vacío de Minkowski, primero calculamos
 \begin{equation}
-  \ev{a_\omega^{u\dagger}a_\omega^u}{0_H} = \int_0^\infty d\omega'' \beta_{\omega\omega''}^u
+  \ev{a_\omega^{u\dagger}a_{\omega'}^u}{0_U} = \int_0^\infty d\omega'' \beta_{\omega\omega''}^u
   \beta_{\omega'\omega''}^{u*} = \frac{1}{e^{\frac{2\pi\omega}{a}}-1}\delta(\omega-\omega').
 \end{equation}
 
-En el límite $\omega'\to\omega$, esta cantidad es el valor esperado de partículas que se
-detectarían, pero debido a la delta, se obtiene una divergencia.
+En el límite $\omega'\to\omega$, esta cantidad es el valor esperado de partículas de frecuencia $\omega$ que se
+detectarían, pero vemos que diverge.
 El motivo es que calcular el número de partículas en toda la cuña derecha de Rindler, 
-implica que hay que considerar un observador acelerado eternamente, lo que requiere infinita
+se está considerando un observador eternamente acelerado, lo que se traduce en que aparezca infinita
 energía.
 En una situación real, la delta se transformaría en un valor finito.
 Por tanto,
 \begin{equation}
-  \ev{N_\omega^u}{0_H} \sim \frac{1}{e^{\frac{2\pi\omega}{a}}-1}.
+  \ev{N_\omega^u}{0_U} \sim \frac{1}{e^{\frac{2\pi\omega}{a}}-1}.
 \end{equation}
 
-Este valor esperado se corresponde con un sistema de bosones a temperatura $T=a/(2\pi k_B)$.
+Este valor esperado se corresponde con una distribución de Planck a temperatura $T=a/(2\pi k_B)$.
 Sin embargo, todavía no conocemos la forma exacta del vacío de Minkowski.
 
 En vez de considerar ondas armónicas con frecuencia bien definida, trabajamos con paquetes
 de onda con resolución $\Delta \omega$ centrados en $(n+1/2)\Delta \omega$,
 \begin{equation}
-  \phi_{n\bar n}^u(u)=\frac{1}{\sqrt{\Delta \omega}}\int_{n\Delta\omega}^{(n+1)\Delta \omega}d\omega e^{i\frac{2\pi \bar n n}{\Delta \omega}\omega}
+  \phi_{n\bar n}^u(u)=\frac{1}{\sqrt{\Delta \omega}}\int_{n\Delta\omega}^{(n+1)\Delta \omega}d\omega e^{i\frac{2\pi \bar n}{\Delta \omega}\omega}
   \phi^u_\omega(u).
 \end{equation}
 
 Al cuantizar estos paquetes se introduce para la cuña derecha el operador destrucción $a_{n\bar n}^u$
 y en la cuña izquierda $a_{n\bar n}^{\tilde u}$. 
 Construyendo los modos de Unruh asociados a paquetes de ondas, se obtiene que
-los operadores que los operadores $a_{n\bar n}^I$ y $a_{n\bar n}^{II}$ cumplen
+los operadores $a_{n\bar n}^I$ y $a_{n\bar n}^{II}$ cumplen
 \begin{equation}
   a_{n\bar n}^I\ket{0_U} = a_{n\bar n}^{II} \ket{0_U} = 0.
 \end{equation}
@@ -311,29 +309,15 @@ cuñas.
 
 Teniendo en cuenta que el estado de vacío ha contener el mismo número de partículas en cada cuña,
 \begin{equation}
-  \ket{0_H} = \prod_{n,\bar n} \qty(\sum_{m=0}^\infty K_{nm} \ket{m_{n\bar n}}_u\otimes \ket{m_{n\bar n}}_{\bar u}).
+  \ket{0_U} = \prod_{n,\bar n} \qty(\sum_{m=0}^\infty K_{nm} \ket{m_{n\bar n}}_u\otimes \ket{m_{n\bar n}}_{\bar u}).
 \end{equation}
-\todo{Es $\prod$ un producto tensorial/ suma directa?}
 
-%\begin{equation}
-%  K_{n,m+1}=e^{-\frac{\pi n\Delta \omega }{a}}K_{nm}.
-%\end{equation}
-
-%\begin{equation}
-%  \ket{0_H} = \prod_{n,\bar n} \qty(\sum_{m=0}^\infty e^{-\frac{\pi n\Delta \omega }{a}}K_{nm}\ket{m_{n\bar n}}_u\otimes \ket{m_{n\bar n}}_{\bar u}).
-%\end{equation}
-
-Tras calcular los coeficientes $K_{n \bar n}$ y hacer la traza parcial sobre los estados de
-la cuña izquierda, obtenemos que la matriz densidad
+Tras calcular los coeficientes $K_{n \bar n}$ y tomar la traza parcial sobre los estados de
+la cuña izquierda, obtenemos que la matriz densidad para un observador con aceleración $a$ es
 \begin{equation}
   \rho  \propto \prod_{n,\bar n} \qty(\sum_{m=0}^\infty e^{-2\pi m n\Delta  \omega/a}\ket{m_{n\bar n}}_u \bra{m_{n\bar n}}_u),
 \end{equation}
-que describe una distribución de Planck a temperatura $T_U=a/(2\pi k_B)$.
-
-%\begin{equation}
-%  \ev{0_U}{N^u_{n,\bar n}} =
-%\end{equation}
-
+que describe un estado térmico a temperatura $T_U=a/(2\pi k_B)$.
 
 \section{Radiación de Hawking}
 La radiación de Hawking consiste en la emisión de partículas por un agujero negro.
@@ -486,9 +470,12 @@ cerca de agujeros negros.
 
 \subsection{Deducción alternativa}
 
+Una forma rápida de deducir la temperatura de un agujero negro es estudiando el problema en
+tiempo imaginario.
+
 La métrica de Schwarzschild, en coordenadas de Rindler, cerca del horizonte se aproxima por 
 \begin{equation}
-  ds^2= -\frac{\rho^2}{(4GM)^2}dt^2 + d\rho^2 +r^2 d\Omega^2
+  ds^2= -\frac{\rho^2}{(4GM)^2}dt^2 + d\rho^2 +r^2 d\Omega^2,
 \end{equation}
 donde $\rho = \sqrt{8GM (r-2GM)}$.
 
@@ -499,4 +486,4 @@ Si pasamos a un tiempo imaginario, $t\to \tau=it$, la métrica se convierte en
 
 Esta métrica se corresponde al espacio euclídeo descrito en coordenadas polares.
 Para que la métrica no sea singular, el tiempo euclídeo debe tener periodo $\beta=8\pi G M$.
-
+\todo{Acabar}
