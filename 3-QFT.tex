@@ -1,7 +1,10 @@
 \chapter{QFT en sistemas acelerados y espacio curvo}
-\todo{Corregir numeracion}
-\todo{Intro}
-C teoría cuántica de campos (QFT) en sistemas acelerados y espacio con curvatura.
+El objetivo de este capítulo es encontrar que un agujero emite radiación que sigue el espectro
+de un cuerpo negro.
+La deducción se enmarca dentro de la teoría cuántica de campos (QFT) en espacios curvos.
+Pero antes es conveniente estudiar el efecto Unruh, según el cual un observador acelerado en 
+espacio Minkowski percibiría radiación por el hecho de estar acelerado.
+Ambos fenómenos están estrechamente relacionados, pues requieren un horizonte de sucesos y emplean herramientas similares.
 
 \section{Efecto Unruh}
 
@@ -168,16 +171,65 @@ El tiempo propio que miden estos observadores es $\tau = e^{a\xi_0}\eta$.
 Escogiendo el origen de tiempos en $\tau=0$, un observador con aceleración constante
 viene dado por $\eta=\tau$ y $\xi=0$.
 
-\todo{Añadir dibujo}
 \begin{figure}[htb]
-\includegraphics[width=0.8\textwidth]{rindler.png}\hfill
- \caption{Espacio de Minkowski en coordenadas de Rindler (usar imagen libre)
+  \centering
+\begin{tikzpicture}[%
+    scale=3,%
+    maingrid/.style={draw=gridcolor,very thick},%
+    subgrid/.style={draw=gridcolor,thin},%
+    tlabels/.style={pos=0.88,above,sloped,yshift=-.3ex,gridlabelcolor},%
+    ctelabels/.style={pos=0.88,above,sloped,yshift=-.3ex},%
+    label/.style={%
+        postaction={%
+            decorate,%
+            transform shape,%
+            decoration={%
+                markings,%
+                mark=at position .65 with \node #1;%
+            }%
+        }%
+    },%
+]%
+    \pgfmathdeclarefunction{arcosh}{1}{\pgfmathparse{ln(#1+sqrt(#1+1)*sqrt(#1-1))}}
+    \pgfmathsetmacro{\Xmax}{1.2}
+    \pgfmathsetmacro{\Tmax}{1.2}
+    \pgfmathsetmacro{\g}{1}
+    \newcommand\mylabelstyle\tiny
+
+    % X-axis, T-axis, and dashed lines t=+/-infty 
+    \draw[thick,-stealth] (-\Xmax,0) -- (\Xmax,0) node[below] {$z$};
+    \draw[thick,-stealth] (0,-\Tmax) -- (0,\Tmax) node[left] {$t$};
+
+
+    \draw[thin] (-\Xmax,-0.3*\Tmax) -- (\Xmax,0.3*\Tmax);
+    \path (-\Xmax,-0.3*\Tmax,0) -- (\Xmax,0.3*\Tmax)
+            node[ctelabels,below] {$\eta=$cte.};
+
+     \draw[thin] plot[domain=-{arcosh(\Xmax/0.5)/\g}:{arcosh(\Xmax/0.5)/\g}]
+        ({0.5*cosh(\g*\x)}, {0.5*sinh(\g*\x)});
+      \path[label={[above]{$\xi=$cte.}}]
+         plot[domain=-{arcosh(\Xmax/0.5)/\g}:{arcosh(\Xmax/0.5)/\g}] ({0.5*cosh(\g*\x)},{0.5*sinh(\g*\x)});  
+
+    \draw[dashed] (0,0) -- (1.1*\Xmax,1.1*\Tmax) 
+        %node[pos=0.37,above,sloped,yshift=-.3ex] {\mylabelstyle$x=0$}
+        node[tlabels,black] {\mylabelstyle$\eta=\infty$};
+    \draw[dashed] (0,0) -- (-1.1*\Xmax,-1.1*\Tmax);
+    \draw[dashed] (0,0) -- (-1.1*\Xmax,1.1*\Tmax);
+    \draw[dashed] (0,0) -- (1.1*\Xmax,-1.1*\Tmax)
+        node[tlabels,black,below] {\mylabelstyle$\eta=-\infty$};     
+    \node at (1.3,0) {$I$};
+    \node at (0,1.3) {$II$};
+    \node at (-1.3,0) {$III$};
+    \node at (0,-1.3) {$IV$};
+\end{tikzpicture}
+
+ \caption{Espacio de Minkowski en coordenadas de Rindler.
 }                   
   \label{fig:rindler}
 \end{figure}
 
 Fijándonos en el diagrama de Rindler (figura \ref{fig:rindler}),
-un observador con aceleración constante moviéndose a la derecha no puede percibir los 
+un observador con aceleración constante moviéndose a la derecha, al estar en la zona I,  no puede percibir los 
 efectos producidos  en III ni influir en II. 
 Además, la información que le llegue de IV será percibida como proveniente de un tiempo
 infinitamente anterior, por lo que la recta $t=z$ define un horizonte de sucesos futuro y 
@@ -214,8 +266,8 @@ y $\phi^{\tilde v}_\omega(\tilde v)$.
 El campo propagándose hacia la derecha en coordenadas de Minkowski se expande como
 \begin{equation}
   \begin{aligned}
-    \phi_U(U)=&\int_0^\infty d\omega \left\{\Theta(-U)\qty[a^u_\omega \phi^u_\omega(u(U))+a_\omega^{u*}\phi_\omega^u(u(U))^*] \right\\
-    &\left+\Theta(U)\qty[a^{\tilde u}_\omega \phi^{\tilde u}_\omega(\tilde u(U))+a_\omega^{\tilde u*}\phi_\omega^{\tilde u}(\tilde u(U))^*]\right\},
+    \phi_U(U)=&\int_0^\infty d\omega \{\Theta(-U)\qty[a^u_\omega \phi^u_\omega(u(U))+a_\omega^{u*}\phi_\omega^u(u(U))^*] \\
+    &+\Theta(U)\qty[a^{\tilde u}_\omega \phi^{\tilde u}_\omega(\tilde u(U))+a_\omega^{\tilde u*}\phi_\omega^{\tilde u}(\tilde u(U))^*]\},
   \end{aligned}
 \end{equation}
 donde $\Theta(U)$ es la función de Heaviside 
@@ -264,7 +316,7 @@ El vacío de estos modos es el vacío de Minkowski, es decir,
   a_\omega^I \ket{0_U} = a_\omega^{II}\ket{0_U} = 0.
 \end{equation}
  
-Para buscar el valor esperado de partículas que observa un observador acelerado
+Para buscar el valor esperado de partículas que detecta un observador acelerado
 en el vacío de Minkowski, primero calculamos
 \begin{equation}
   \ev{a_\omega^{u\dagger}a_{\omega'}^u}{0_U} = \int_0^\infty d\omega'' \beta_{\omega\omega''}^u
@@ -325,6 +377,8 @@ Esta radiación sigue una distribución de cuerpo negro a la temperatura de Hawk
 \begin{equation}
   T_{haw}= \frac{1}{8\pi k_B G M}.
 \end{equation}
+Esta temperatura es muy pequeña, para un agujero negro con la masa del sol, $T_{haw}=\SI{60}{nK}$.
+Como comparación, la radiación de fondo de microondas corresponde a un cuerpo negro a $\SI{2.7}{K}$.
 
 Trabajaremos con el caso más sencillo de agujero negro, el agujero negro de Schwarzschild, que
 describe una distribución de masa con simetría esférica y estática. La métrica asociada
@@ -369,8 +423,8 @@ por el término de potencial efectivo
   V(r) = \frac{r_s}{r^3}\qty(1-\frac{r_s}{r}).
 \end{equation}
 
-En una primera aproximación podemos ignorar este potencial, pues su único efecto es distorsionar
-la radiación de Hawking emitida (\emph{backscattering}).
+En una primera aproximación podemos ignorar este potencial. Su efecto es distorsionar
+la radiación emitida y hacer que la radiación saliente vuelva a entrar al agujero negro (\emph{backscattering}).
 
 Definiendo las coordenadas nulas Eddington-Finkelstein
 \begin{equation}
@@ -393,7 +447,7 @@ El campo se descompone en los modos de Boulware
 \end{equation}
 
 El vacío asociado a la cuantización con estos modos se denomina vacío de Boulware y 
-corresponde con el vacío que describe un observador en caída libre muy alejado de la fuente
+corresponde con el vacío que describe un observador inercial muy alejado de la fuente
 gravitacional.
 
 \subsection{Formación de un agujero negro}
@@ -435,7 +489,7 @@ los modos salientes son
   \phi^{u}_\omega = \frac{1}{\sqrt{4\pi\omega}}e^{i\omega 4MG\ln \abs{\frac{u'}{4MG}}}.
 \end{equation}
 
-Vemos que al aproximarse al horizonte, $u'\to 0$, la frecuencia de estos modos tiende a infinito.
+Vemos que al aproximarse al horizonte ($u'\to 0$), la frecuencia de estos modos tiende a infinito.
 Por tanto, podemos despreciar la interacción con la materia en colapso.
 La aparición de frecuencias arbitrariamente altas, las cuales deberían ser tratadas mediante
 una teoría de gravedad cuántica, se denomina problema transplanckiano.
@@ -476,6 +530,7 @@ tiempo imaginario.
 La métrica de Schwarzschild, en coordenadas de Rindler, cerca del horizonte se aproxima por 
 \begin{equation}
   ds^2= -\frac{\rho^2}{(4GM)^2}dt^2 + d\rho^2 +r^2 d\Omega^2,
+  \label{eq:ri}
 \end{equation}
 donde $\rho = \sqrt{8GM (r-2GM)}$.
 
@@ -484,6 +539,6 @@ Si pasamos a un tiempo imaginario, $t\to \tau=it$, la métrica se convierte en
   ds^2= \frac{\rho^2}{(4GM)^2}d\tau^2 + d\rho^2 +r^2 d\Omega^2.
 \end{equation}
 
-Esta métrica se corresponde al espacio euclídeo descrito en coordenadas polares.
-Para que la métrica no sea singular, el tiempo euclídeo debe tener periodo $\beta=8\pi G M$.
-\todo{Acabar}
+Fijándonos en el subespacio $(\tau,\rho)$, esta métrica es similar el plano en coordenadas polares, $ds^2=r^2d \theta^2 + dr^2$.
+Como la coordenada angular $\theta$ tiene periodo $2\pi$, identificando $\theta=\tau/(4GM)$, el tiempo euclídeo debe tener periodo $\beta=8\pi G M$.
+Asociando el periodo temporal con la temperatura del agujero negro, se obtiene la temperatura de Hawking.

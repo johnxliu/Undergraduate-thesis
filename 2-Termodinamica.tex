@@ -30,9 +30,13 @@ Tomemos como ejemplo el primer estado excitado, $N=1$, que se forma mediante $\b
 Como $i$ y $j$ toman $d-2$ valores independientes (al trabajar en la gauge del cono de luz desaparecen dos grados de libertad)
 hay $(d-2)^2=576$ estados posibles.
 
-Para $N=2$, los estados posibles son del tipo $\bar \alpha^i_{-2} \alpha^j_{-2}\ket{p;0}$, 
-$\bar \alpha^i_{-1} \bar \alpha^j_{-1} \alpha^k_{-1} \alpha^l_{-1} \ket{p;0}$,
-$\bar \alpha^i_{-2} \alpha^j_{-1} \alpha^k_{-1}\ket{p;0}$ y $\bar \alpha^i_{-1} \bar \alpha^j_{-1} \alpha^k_{-2} \ket{p;0}$.
+Para $N=2$, los estados posibles son
+\begin{equation*}
+  \bar \alpha^i_{-2} \alpha^j_{-2}\ket{p;0},  \quad
+  \bar \alpha^i_{-1} \bar \alpha^j_{-1} \alpha^k_{-1} \alpha^l_{-1} \ket{p;0}, \quad
+  \bar \alpha^i_{-2} \alpha^j_{-1} \alpha^k_{-1}\ket{p;0} \text{ y } 
+  \bar \alpha^i_{-1} \bar \alpha^j_{-1} \alpha^k_{-2} \ket{p;0}.
+\end{equation*}
 En total, hay $(d-2)^2 + (d-2)^2(d-1) + \frac{1}{4}(d-2)^2(d-1)^2= 104976$ estados, muchos más que para $N=1$.
 Para simplificar los cálculos, podemos obtener el número de estados asociados $\alpha^i_n$,
 sin preocuparnos de $\bar \alpha^i_n$ y luego tomar el cuadrado.
@@ -47,7 +51,7 @@ valores grandes de $N$ mediante la fórmula de Hardy-Ramanujan
 Como se intuía, el crecimiento de el número de estados es muy rápido.
 
 Si $N$ es muy grande, se puede aproximar la masa de la cuerda por un espectro continuo y entonces se define la
-densidad de estados $\rho(M)$ de forma que $\int_0^M dm \rho(m)$ proporciona el número total
+densidad de estados $\rho(M)$ de forma que $\int_0^M dm \rho(m)$ proporcione el número total
 de estados con masa $M$.
 
 En el caso de cuerdas bosónicas cerradas, la densidad de estados en función de la masa es
@@ -97,10 +101,6 @@ por
   \label{eq:zp}
 \end{equation}
 
-\todo{QCD}
-La temperatura de Hagedorn también aparece al 
-%\cite{}
-
 \section{Modelo del random walk}
 
 Una forma sencilla pero heurística de obtener la densidad de estados 
@@ -138,7 +138,7 @@ De esta forma, recuperamos la densidad de estados vista en la sección anterior,
 
 %Sin embargo, este procedimiento no permite obtener el valor concreto de $\beta_H$.
 
-\section{Coalescencia multicuerda}
+\section{Coalescencia de cuerdas}
 
 Tras haber estudiado una solo cuerda, pasamos a considerar un gas de cuerdas.
 Las cuerdas pueden interaccionar entre sí, uniéndose o dividiéndose, por lo que
@@ -268,21 +268,6 @@ La integral en momentos tiene como resultado $(2\pi s)^{\frac{d-1}{2}}$, por lo 
   F=-V \int_0^\infty \frac{ds}{s(2\pi s)^{d/2}}\sum^\infty_{r=1} \exp \qty(-\frac{m^2s}{2}- \frac{r^2\beta^2}{2s}).
 \end{equation}
 
-%Por otro lado, la función de partición de estado multicuerda es $Z=e^z=e^{-\beta F}$. 
-%Entonces podemos hacer la asociación de la energía libre con integral de camino de 
-%una partícula tras aplicar una rotación de Wick en la dimensión temporal y compactificando el
-%tiempo con periodo $\beta$
-%\begin{equation}
-%  Z=-\beta F= \int_0^\infty \frac{ds}{2s}\sum^{'\infty}_{w=-\infty} \int \mathcal{D}x 
-%  \exp\qty(-\frac 1 2 \int_0^s d\tau \qty[\qty(\pdv{X^\mu}{t})^2+m^2])
-%\end{equation}
-
-%Se llega al mismo resultado calculando la función de partición de una partícula si identificamos 
-%el parámetro $s$ con el tiempo propio  de la partícula y compactificamos 
-%la coordenada $X^0$ con periodo $\beta$. El número de vueltas que da la
-%partícula en la dimensión temporal es $w$. La función de partición se suma sobre
-%todas las vueltas posibles y se integra en todos los tiempos propios.
-
 En una teoría de cuerdas bosónica, para la cual $d=26$, la energía libre se obtendría sumando las
 energías libres para todo el espectro posible, con la fórmula de masas
 \begin{equation}
@@ -341,7 +326,7 @@ La importancia de este resultado es que permite calcular la energía libre en es
 
 \subsection{Formulación invariante modular}
 \label{sec:taq}
-\todo{Dibujo}
+
 Se ha llegado a una expresión cuyo integrando no es invariante modular. Es decir, las
 transformaciones modulares $\tau\to\tau+1$ y $\tau\to-1/\tau$ en el integrando modifican el resultado
 de la integral.
@@ -351,8 +336,56 @@ Cualquier punto del plano complejo puede ser llevado al dominio fundamental,
 \end{equation}
 mediante composición de transformaciones modulares.
 
+\begin{figure}[htb]
+  \centering 
+
+\pgfmathsetmacro{\myxlow}{-2}
+\pgfmathsetmacro{\myxhigh}{2}
+\pgfmathsetmacro{\myiterations}{6}
+
+\begin{tikzpicture}[scale=2]
+    \draw[-latex](\myxlow-0.1,0) -- (\myxhigh+0.2,0);
+    \pgfmathsetmacro{\succofmyxlow}{\myxlow+0.5}
+    \foreach \x in {\myxlow,\succofmyxlow,...,\myxhigh}
+    {   \draw (\x,0) -- (\x,-0.05) node[below,font=\tiny] {\x};
+    }
+    \foreach \y  in {0.2,0.4,...,2}
+    {   \draw (0,\y) -- (-0.05,\y) node[left,font=\tiny] {\pgfmathprintnumber{\y}};
+    }
+    \draw[-latex](0,-0.1) -- (0,2.2);
+    \begin{scope}   
+        \clip (\myxlow,0) rectangle (\myxhigh,1.1);
+        \foreach \i in {1,...,\myiterations}
+        {   \pgfmathsetmacro{\mysecondelement}{\myxlow+1/pow(2,floor(\i/3))}
+            \pgfmathsetmacro{\myradius}{pow(1/3,\i-1}
+            \foreach \x in {-2,\mysecondelement,...,2}
+            {   \draw[very thin, blue] (\x,0) arc(0:180:\myradius);
+                \draw[very thin, blue] (\x,0) arc(180:0:\myradius);
+            }   
+        }
+    \end{scope}
+    \foreach \x in {-1.5,-0.5,...,1.5}
+    \draw[very thin, blue] (-\x,0) -- (-\x,2.1);
+    \node at (0.25,1.7) {$\mathcal F$};
+    \node at (2.2,-0.17) {$\tau_1$};
+    \node at (0.15,2) {$\tau_2$};
+    \begin{scope}
+        \begin{pgfonlayer}{background}
+            \clip (-0.5,0) rectangle (0.5,2.2);
+            \clip   (1,2.2) -| (-1,0) arc (180:0:1) -- cycle;
+            \fill[gray,opacity=0.8] (-1,-1) rectangle (1,2.1);
+        \end{pgfonlayer}
+    \end{scope}
+\end{tikzpicture}
+
+ \caption{Todas las regiones encerradas por curvas azules son equivalentes al dominio fundamental (región sombreada).
+}                   
+\label{fig:dom}
+\end{figure}
+
+
 Para conseguir la invariancia modular, se restringe el dominio de integración al dominio
-fundamental y se modifica el integrado, añadiendo el número cuántico $w$ sobre el que 
+fundamental (figura \ref{fig:dom}) y se modifica el integrando, añadiendo el número cuántico $w$ sobre el que 
 se suma, de modo que para $d=26$ se tiene
 \begin{equation}
   F=-V \sum_{r,w=-\infty}^{\infty} \int_\mathcal{F}  \frac{d\tau_1d\tau_2}{2\tau_2}   \frac{1}{(4\pi^2\alpha'\tau_2)^{13}}

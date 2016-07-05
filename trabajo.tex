@@ -34,17 +34,39 @@
 \graphicspath{{images/}}
 
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
-\setlength{\parindent}{0pt}
+\nouppercaseheads
+%\setlength{\parindent}{0pt}
 
+%tikz
+
+\usepackage{tikz}
+\usetikzlibrary
+{decorations.markings}
+\usepackage{xcolor}
+\definecolor{gridcolor}{RGB}{255 216 234}
+\definecolor{gridlabelcolor}{RGB}{255 24 131}
+\def\rnd#1{
+    \pgfmathprintnumberto
+[precision=2]{#1}{\temp}\temp
+}
+
+\usetikzlibrary{arrows}
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+\usetikzlibrary{tqft}
+\usetikzlibrary{calc}
+
+\usepackage{wrapfig}
 
 \begin{document}
 
-\listoftodos
+%\listoftodos
 
 \title{ La entropía de los agujeros negros y el problema de Hagedorn }
 \author         {John Liu Anta
+                \\Tutor: Miguel Ángel Ramos Osorio
                 \\ Universidad de Oviedo
-                \\Tutor: Miguel Ángel Ramos Osorio}
+              }
 \date{\today}
 
 \maketitle
@@ -70,7 +92,6 @@
 
 \include{5-Conclusion}
 
-%\nocite{*}
 \bibliographystyle{babunsrt}
 \bibliography{mybib}
 \end{document}

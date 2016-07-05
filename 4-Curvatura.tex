@@ -1,28 +1,25 @@
 \chapter{Cuerdas en espacios curvos}
 
-Queremos ver cómo se modifica la temperatura de Hagedorn cerca de un agujero negro.
+Este capítulo se centra en el estudio de las cuerdas en la proximidad de un agujero negro.
+Como  la temperatura de Hagedorn se extrae del comportamiento divergente de la energía libre, 
+necesitamos encontrar una forma de calcular la energía libre en un espacio-tiempo curvo.
+Veremos dos métodos distintos: mediante la integral de camino toroidal de una cuerda
+que se enrolla un tiempo periódico y la integral de camino de un campo taquiónico.
+Aplicando este último método a cuerdas de tipo II cerca de un agujero negro, encontraremos que
+la divergencia de Hagedorn aparece a la temperatura de Hawking.
+Concluiremos con la justificación de la entropía de un agujero negro a partir de los resultados anteriores.
 
-La temperatura de Hagedorn se extrae del comportamiento divergente de la energía libre.
+\section{Integral de camino en la worldsheet}
 
-
-Por tanto, necesitamos ver cómo calcular la energía libre en un espacio-tiempo curvo.
-Veremos dos métodos distintos: mediante la integral de camino en el toro de una cuerda
-que se enrolla en el tiempo de la variedad termal (tiempo euclídeo con periodo $\beta$) y
-la integral de camino a un loop de un campo taquiónico.
-
-agujero negro entropía
-
-\section{Path integral en la worldsheet}
-
-Partimos de la suposición que la integral de camino del toro de una cuerda cerrada, con
+Partimos de la suposición que la integral de camino toroidal de una cuerda cerrada, con
 un tiempo compactificado de periodo $\beta$, se relaciona con la energía libre de un gas de cuerdas mediante
 \begin{equation}
   Z =  -\beta F.
 \end{equation}
 
-Esta relación se ha demostrado exacta para ciertos casos.
+Esta relación se ha demostrado exacta para ciertos casos concretos, pero no hay una demostración general.
 
-La integral de camino del toro en una campo $G_{\mu\nu}$, el cual representa la curvatura
+La integral de camino toroidal en un campo $G_{\mu\nu}$, el cual representa la curvatura
 del espacio-tiempo, en $d$ dimensiones es
 \begin{equation}
   Z=\int_0^\infty \frac{d\tau_2}{2\tau_2} \int_{-1/2}^{1/2} d\tau_1 \Delta_{FP} \int \mathcal DX
@@ -57,7 +54,6 @@ Las condiciones de periodicidad son
   \end{aligned}
 \end{equation}
 
-\todo{Aislar taquión}
 Haciendo la transformación modular $\tau\to-1/\tau$ e intercambiando $\sigma_1$ y $\sigma_2$, las
 condiciones de periodicidad son
 \begin{equation}
@@ -86,13 +82,13 @@ Haciendo un desarrollo de Fourier de $X^\mu(\sigma,\tau)$ en la coordenada $\sig
   \begin{aligned}
     X^i(\sigma,\tau) =& \sum_{n=-\infty}^\infty X_n^i(\tau) e^{in2\pi \tau_2 \sigma}, \\
     X^0(\sigma,\tau) =& \pm \beta \tau_2 \sigma +  \sum_{n=-\infty}^\infty X_n^0(\tau) e^{in2\pi \tau_2 \sigma}.
+    \label{eq:four}
   \end{aligned}
 \end{equation}
 
 Definimos $X^i(\tau)=X^i_0(\tau)$ y $X^0(\tau)=X_0^0(\tau)$.
 En la sección \ref{sec:free}, vimos que la divergencia de Hagedorn se produce al integrar en la región $\tau_2\to\infty$.
 Por tanto, nos quedamos con la contribución dominante, $n=0$.
-%Esto significa que despreciamos las vibraciones de la cuerda ortogonales a 
 Al integrar en $\tau_2$, obtenemos la acción de una partícula
 \begin{equation}
   \begin{aligned}
@@ -199,7 +195,8 @@ donde la acción es
 Hemos reducido la función de partición de una cuerda a la integral de camino de
 una partícula no relativista moviéndose en un espacio curvo.
 
-No emplearemos este método, sino que haremos los cálculos con un campo efectivo.
+Aunque este método parece una opción viable, haremos los cálculos con un campo efectivo, razonando
+que ambos procedimientos deberían conducir a los mismos resultados.
 
 \section{Campo efectivo}
 En la sección \ref{sec:taq} vimos que en un espacio plano, la divergencia de Hagedorn se manifiesta
@@ -267,6 +264,7 @@ Ignorando el campo del dilatón,
   S  =  \int d^{d-1} x \sqrt{G_{00}}\sqrt{G_{ij}} \qty(G^{ij}\partial_i T \partial_j T^* +m^2_{local} TT^*) .
 \end{equation}
 
+Aquí $\sqrt{G_{ij}}$ indica la raíz cuadrada del determinante de la parte espacial de la métrica.
 Intentaremos interpretar esta acción como la de una partícula que se mueve en un espacio-tiempo con 
 curvatura solo en la parte espacial y no en la temporal, para poder compararla con la acción obtenida
 en la sección anterior.
@@ -370,7 +368,9 @@ mediante \ref{eq:final},
   G_{ij}\dot X^i \dot X^j  + \beta^2 G_{00} - \beta^2_{H0})},
 \end{equation}
 ambas energías libres coinciden al sustituir el valor apropiado de la temperatura de Hagedorn
-en espacio plano, $\beta_{H0}$ salvo por el término $K(x)$.
+en espacio plano, $\beta_{H0}$ salvo por el término $K(x)$. 
+Cabe esperar que este término apareciese al tener en cuenta todos los términos del desarrollo de 
+Fourier \ref{eq:four}.
 
 Además, podrían estudiarse posibles correcciones a la acción del campo taquiónico a orden superior en $\alpha'$.
 
@@ -378,14 +378,14 @@ Además, podrían estudiarse posibles correcciones a la acción del campo taqui�
 
 Aplicaremos ahora el cálculo de la energía libre a un gas de cuerdas en las proximidades
 de un agujero negro de Schwarzschild. 
-Tomaremos como ejemplo la teoría supersimétrica de tipo II. 
+Tomaremos como ejemplo la teoría supersimétrica de tipo II, se puede seguir un procedimiento
+similar para cuerdas heteróticas y bosónicas, pero presentan más sutilezas.
 Partimos de la expresión de la energía libre deducida a partir del campo taquiónico \ref{eq:fO},
 \begin{equation}
   F=-\frac{1}{\beta}\int \frac{dT}{T} \Tr e^{-T\qty(  -\nabla^2-G^{ij}\frac{\partial_j \sqrt{G_{00}}}{\sqrt G_{00}}\partial_i + m^2_{loc}) }.
 \end{equation}
 
-
-Cerca del agujero negro, es conveniente emplear las coordenadas de Rindler, introducidas en \ref{eq:rindler}.
+Cerca del agujero negro, es conveniente emplear las coordenadas de Rindler, introducidas en \ref{eq:ri}.
 El laplaciano en coordenadas de Rindler es
 \begin{equation}
   \nabla^2  = \partial_\rho^2 + \frac{1}{\rho}\partial_\rho.
@@ -433,11 +433,9 @@ Identificando las funciones propias como funciones de onda de una cuerda, el est
   \label{eq:func}
 \end{equation}
 representa una cuerda localizada a la distancia $l_s$ del horizonte de sucesos.
-Podemos  presión que compensa la atracción gravitatoria del agujero negro
-Este resultado refuerza la idea de la existencia de una \emph{membrana} formada por cuerdas
-que rodea al agujero negro.
-\todo{Refs} %\cite
-
+Intuitivamente, las cuerdas sufren una presión radial que compensa la atracción gravitatoria del agujero negro
+Este resultado refuerza la idea de la existencia de un horizonte \emph{estirado}, comentada en 
+\cite{Susskind1993}.
 
 \section{Entropía de agujeros negros}
 
@@ -463,7 +461,7 @@ De esta forma, las cuerdas alcanzan el equilibrio y al ocupar un volumen extenso
 permanece finita.
 
 Para deducir la entropía de un agujero negro, calculamos el incremento de entropía asociado 
-a lanzar cuerdas a un agujero negros, suponiendo que la interacción de la materia añadida con la
+a lanzar cuerdas a un agujero negro, suponiendo que la interacción de la materia añadida con la
 ya presente es pequeña. 
 La densidad de estados de una cuerda es
 $\omega(E) = E^\alpha e^{\beta_H E}$.
@@ -495,7 +493,7 @@ Teniendo en cuenta que $\beta_H = \beta_{haw}$, en términos de la masa,
   \delta S =  8\pi GM\delta M
 \end{equation}
 
-El radio de un agujero negro de Schwarzschild es $R=2GM$, por lo que obtenemos la entropía
+El radio de un agujero negro de Schwarzschild es $R=2GM$, lo que conduce a la entropía
 de Bekenstein-Hawking,
 \begin{equation}
   S=\frac{A}{4G}.
