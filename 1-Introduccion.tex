@@ -1,7 +1,7 @@
 \chapter{Introducción a la teoría de cuerdas}
 
 En primer lugar, veremos como describir una cuerda clásicamente en relatividad especial.
-Tras esto, cuantizaremos la cuerda en la gauge del cono de luz, obteniendo una descripción de la cuerda bosónica.
+Tras esto, cuantizaremos la cuerda en el gauge del cono de luz, obteniendo una descripción de la cuerda bosónica.
 Como procedimiento alternativo, introduciremos la integral de camino.
 Por último, comentaremos la dualidad T, que aparece al haber dimensiones compactas.
 
@@ -104,7 +104,7 @@ es una simetría gauge.
 
 Una simetría es una transformación que deja invariante la acción. 
 Si la transformación depende de las coordenadas, se dice que es una simetría gauge. 
-Por ejemplo, el campo eléctrico se obtiene a partir de el potencial escalar $\phi$ y
+Por ejemplo, el campo eléctrico se obtiene a partir del potencial escalar $\phi$ y
 el potencial vector $\mathbf A$ como $\mathbf E = -\nabla \phi - \partial_t \mathbf A$.
 Si hacemos las transformaciones $\phi \to \phi + \partial_t \xi(t,\mathbf x)$ y 
 $\mathbf A \to \mathbf A + \nabla \xi(t,\mathbf x)$, el campo eléctrico no cambia.
@@ -119,7 +119,7 @@ La acción de Polyakov presenta dos simetrías gauge en la worldsheet que nos in
       h_{\alpha\beta}(\sigma) \to \Omega^2(\sigma) h_{\alpha\beta}(\sigma).
     \end{equation}
     Intuitivamente, una transformación Weyl corresponde a un cambio local de escala que mantiene
-    deja invariante la medida de ángulos.
+    invariante la medida de ángulos.
 \end{itemize}
 
 
@@ -173,7 +173,7 @@ En términos de $X^+$, tendríamos
    X^+ =X^+_L(\sigma^+) + X^+_R(\sigma^-).
 \end{equation}
 
-Debido a la invariancia baja reparametrizaciones, escogemos unas coordenadas de forma que
+Debido a la invariancia bajo reparametrizaciones, escogemos unas coordenadas de forma que
 \begin{equation}
   X^+_L=\frac 1 2 x^+ + \frac 1 2 \alpha' p^+ \sigma^+,
 \end{equation}
@@ -188,7 +188,7 @@ Por tanto,
 \end{equation}
 La constante $x^+$ puede eliminarse mediante una traslación en $\tau$.
 
-Con esta elección gauge, la solución $X^-$ que determinada casi por completo.
+Con esta elección gauge, la solución $X^-$ queda determinada casi por completo.
 La ecuación de movimiento para la métrica $h$ se obtiene imponiendo que la variación de la acción
 se anule para toda variación de la métrica $\delta h$,
 \begin{equation}
@@ -218,7 +218,7 @@ la ecuación \ref{eq:lig} conduce a
   -2\partial_+ X^+ \partial_+ X^- + \sum_{i=1}^{d-2} \partial_+ X^i \partial_+ X^i = 0.
 \end{equation}
 
-Sustituyendo el la expresión de $X^+$,
+Sustituyendo en la expresión de $X^+$,
 \begin{align}
   \partial_+ X_L^- = \frac{1}{\alpha'p^+}\sum_{i=1}^{d-2} \partial_+ X^i \partial_+ X^i, \label{eq:lig1}\\
   \partial_- X_R^- = \frac{1}{\alpha'p^+}\sum_{i=1}^{d-2} \partial_- X^i \partial_- X^i. \label{eq:lig2}
@@ -297,7 +297,8 @@ por lo que
   \label{eq:massdef}
 \end{equation}
 
-La condición $\widehat N=\widehat {\bar N}$ se conoce como \emph{level-matching}.
+La condición $\widehat N=\widehat {\bar N}$ se conoce como \emph{level-matching} y
+se debe a que las cuerdas están cerradas.
 
 La constante $c$ cumple $c=\frac{d-2}{2} \sum_{n=1}^\infty n$, donde aparece el problema de
 una suma divergente.
@@ -308,7 +309,7 @@ Tratando la suma divergente de forma adecuada, por ejemplo mediante regularizaci
 \end{equation}
 
 \subsection{Espectro de una cuerda}
-En el estado de vacío, $\widehat N\ket{0;p}=\widehat {\bar N}\ket{0;p}=0$, por lo que la masa es
+En el estado de vacío, $\widehat N\ket{0;p}=\widehat {\bar N}\ket{0;p}=0$, por lo que la masa correspondiente es
 \begin{equation}
   m^2 = -\frac{1}{\alpha'}\frac{d-2}{6}.
 \end{equation}
@@ -349,7 +350,7 @@ Además, la representación de estos estados se descompone un una parte simétri
 y una traza. Los campos asociados son el campo del gravitón $G_{\mu\nu}$, el campo Kalb-Ramond $B_{\mu\nu}$
 y el dilatón $\Phi$, respectivamente.
 
-Por tanto, la teoría bosónica predice métrica de la relatividad general $G_{\mu\nu}$ de forma 
+Por tanto, la teoría bosónica predice la métrica de la relatividad general $G_{\mu\nu}$ de forma 
 natural, además de otro campo tensorial y un campo escalar.
 
 Las siguientes excitaciones empiezan a tener masas del orden de la masa de Planck
@@ -390,7 +391,7 @@ Formalmente, la amplitud de probabilidad se expresa mediante el propagador
   K(x',t';x_0,t_0) = \int \mathcal Dx e^{\frac{i}{\hbar} S[x]}.
 \end{equation}
 
-La integral no es integral el sentido habitual (Riemann o Lebesgue) y su definición matemática
+La integral no es una integral en el sentido habitual (Riemann o Lebesgue) y su definición matemática
 es muy elaborada, pero basta tomarla en el sentido de suma sobre trayectorias.
 Para evitar tratar con un integrando complejo, reemplazaremos el tiempo $t$ en la acción por un tiempo imaginario de modo que
 \begin{equation}
@@ -411,14 +412,14 @@ En el exponente aparece un factor adicional $\lambda\chi$ que determina la
 contribuciones de las distintas topologías de la worldsheet.
 La constante $\lambda$ determina cómo interaccionan las cuerdas entre sí y $\chi$ es la característica
 de Euler de la worldsheet.
-La característica de Euler de una superficie de género $g$ (número de agujeros) es
+La característica de Euler de una superficie sin fronteras de género $g$ (número de agujeros) es
 \begin{equation}
   \chi = 2(1-g).
 \end{equation}
 Por ejemplo, una esfera tiene $g=0$ y un toro $g=1$.
 
 Para incorporar interacciones de cuerdas con campos de fondo, introducimos términos adicionales a la acción.
-Por ejemplo, el model sigma no lineal describe cuerdas propagándose en campos $G_{\mu\nu}$, $B_{\mu\nu}$ y $\Phi$.
+Por ejemplo, el modelo sigma no lineal describe cuerdas propagándose en campos $G_{\mu\nu}$, $B_{\mu\nu}$ y $\Phi$.
 \begin{equation}
   S = -\frac{1}{4\pi \alpha'}\int d^2 \sigma \sqrt h \qty[\qty(h^{\alpha\beta}G_{\mu\nu} + i\epsilon^{\alpha\beta}B_\mu\nu)\partial_\alpha X^\mu
   \partial_\beta X^\nu +\alpha'R\Phi].
@@ -438,7 +439,7 @@ El momento $p$ en la dimensión compacta no puede tomar cualquier valor, sino qu
 Llamaremos a $n$ momento discreto.
 Pero además las cuerdas pueden enrollarse sobre la dimensión compacta $w$ veces, dando lugar
 a la contribución al momento total $wR/\alpha'$.
-Entonces, la fórmula de masas con una dimensión compacta es
+Entonces, la fórmula de masas en la cuerda bosónica con una dimensión compacta es
 \begin{equation}
   m^2 = \frac{n^2}{R^2} + \frac{w^2 R^2}{\alpha'^2} +\frac{2}{\alpha'}\qty(N+\bar N -2).
 \end{equation}

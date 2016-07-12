@@ -6,7 +6,7 @@ exponencial, lo que conduce a la divergencia de la función de partición a la t
 Hagedorn.
 Para entender mejor el comportamiento cerca de la temperatura de Hagedorn, razonaremos 
 que las cuerdas tienden a formar una sola cuerda muy larga.
-La energía libre de un gas de cuerdas relacionarlo con la integral de camino una cuerda
+La energía libre de un gas de cuerdas se corresponde con la integral de camino de una cuerda
 en un tiempo compacto.
 Esta interpretación será la que nos permita hacer una generalización a espacios curvos.
 
@@ -48,11 +48,12 @@ valores grandes de $N$ mediante la fórmula de Hardy-Ramanujan
 \begin{equation}
   p(N)\propto \alpha N^ {\frac{d-1}{2}}\exp\qty(2\pi\sqrt{\frac{N(d-2)}{6}}).
 \end{equation}
-Como se intuía, el crecimiento de el número de estados es muy rápido.
+Como se intuía, el crecimiento del número de estados es muy rápido.
 
 Si $N$ es muy grande, se puede aproximar la masa de la cuerda por un espectro continuo y entonces se define la
-densidad de estados $\rho(M)$ de forma que $\int_0^M dm \rho(m)$ proporcione el número total
-de estados con masa $M$.
+densidad de estados $\rho(M)$ de forma que $\int_{M_0}^M dm \rho(m)$ proporcione el número total
+de estados con masa $M$ (el límite de integración no es cero porque la densidad de estados deducida
+solo es aplicable para altas energías).
 
 En el caso de cuerdas bosónicas cerradas, la densidad de estados en función de la masa es
 \begin{equation}
@@ -118,7 +119,7 @@ Entonces,
 \end{equation}
 
 Cada segmento podrá tener una orientación arbitraria. 
-Para simplificar los cálculos,supongamos que solo toman direcciones ortogonales entre sí.
+Para simplificar los cálculos, supongamos que solo toman direcciones ortogonales entre sí.
 Entonces el número de orientaciones posibles de cada segmento es $2n$, donde $n$ es el número de dimensiones espaciales accesibles.
 El número de segmentos es $L/l_s$.
 Por tanto, el número de configuraciones (microestados) de una cuerda a energía fija es
@@ -144,7 +145,7 @@ Tras haber estudiado una solo cuerda, pasamos a considerar un gas de cuerdas.
 Las cuerdas pueden interaccionar entre sí, uniéndose o dividiéndose, por lo que
 no tiene sentido fijar el número de cuerdas. 
 Como no cuesta ninguna energía crear una cuerda, el potencial químico es nulo, $\mu=0$.
-Veremos dos formas alternativas de concluir que al aumentar la temperatura, las cuerdas
+Veremos dos formas alternativas de concluir que, al aumentar la temperatura, las cuerdas
 tienden a unirse en una sola cuerda:
 comparando las densidades de estados y las funciones de partición para una sola 
 cuerda y para un gas de cuerdas, 
@@ -205,12 +206,12 @@ La suma da lugar a una exponencial,
 \end{equation}
 Comparando la densidad de estados de un gas de cuerdas con la densidad de estados de una sola cuerda, vemos que 
 ambas coinciden si $D>0$.
-Esto quiere decir que a altas energías, predomina una sola cuerda muy larga.
+Esto quiere decir que a altas energías, predomina una sola cuerda muy larga y energética.
 
 \subsection{Función de partición}
 
 Otra forma de estudiar el comportamiento termodinámico es examinando la falta de analiticidad de la función de partición.
-La función de partición de una sola cuerda es (\ref{eq:zp}),
+La función de partición de una sola cuerda a temperaturas próximas a $\beta_H$ es (\ref{eq:zp}),
 \begin{equation}
   \begin{aligned}
     z&=(\beta-\beta_H)^{D/2}\ln(\beta-\beta_H), &\text{si $D$ par}\\
@@ -247,7 +248,7 @@ Por tanto,
   F=\frac{V}{\beta}\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\ln(1-\exp(-\beta E)).
 \end{equation}
 
-Expandiendo el logaritmo por el desarrollo de Taylor $\ln(1-x)=-\sum^\infty_{r=1} x^r/r$,
+Expandiendo el logaritmo por el desarrollo de Taylor, $\ln(1-x)=-\sum^\infty_{r=1} x^r/r$,
 \begin{equation}
   F=-\frac{V}{\beta}\sum^\infty_{r=1} \frac 1 r\int \frac{d^{d-1}k}{(2\pi)^{d-1}}\exp(-r\beta E).
 \end{equation}
@@ -263,7 +264,7 @@ y como $E^2=k^2+m^2$, se llega a
   \int \frac{d^{d-1}k}{(2\pi)^{d-1}}\exp\qty(-\frac{k^2s}{2}).
 \end{equation}
 
-La integral en momentos tiene como resultado $(2\pi s)^{\frac{d-1}{2}}$, por lo que
+La integral en momentos da como resultado $(2\pi s)^{\frac{d-1}{2}}$, por lo que
 \begin{equation}
   F=-V \int_0^\infty \frac{ds}{s(2\pi s)^{d/2}}\sum^\infty_{r=1} \exp \qty(-\frac{m^2s}{2}- \frac{r^2\beta^2}{2s}).
 \end{equation}
