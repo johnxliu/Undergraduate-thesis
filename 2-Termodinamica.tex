@@ -23,11 +23,11 @@ han de cumplir el level-matching $N=\bar N$.
 Las distintas excitaciones de una cuerda se obtienen aplicando los operadores
 de creación $\alpha^i_{-n}$ y $\bar \alpha^i_{-n}$ sucesivamente sobre el estado fundamental (en este
 capítulo el acento circunflejo de los operadores queda implícito).
-Como para un mismo número de oscilador, la cuerda puede haber sido excitada en distintas direcciones
-$i$ y hay aplicando distintas combinaciones de operadores de creación, hay degeneración energética.
+Como un mismo valor de $N$ puede corresponder a estados diferentes, obtenidos al aplicar distintas
+combinaciones de operadores de creación sobre el estado fundamental, hay degeneración en $N$.
 
 Tomemos como ejemplo el primer estado excitado, $N=1$, que se forma mediante $\bar \alpha^i_{-1} \alpha^j_{-1} \ket{0;p}$.
-Como $i$ y $j$ toman $d-2$ valores independientes (al trabajar en la gauge del cono de luz desaparecen dos grados de libertad)
+Como $i$ y $j$ toman $d-2$ valores independientes (al trabajar en el gauge del cono de luz desaparecen dos grados de libertad)
 hay $(d-2)^2=576$ estados posibles.
 
 Para $N=2$, los estados posibles son
@@ -52,7 +52,7 @@ Como se intuía, el crecimiento del número de estados es muy rápido.
 
 Si $N$ es muy grande, se puede aproximar la masa de la cuerda por un espectro continuo y entonces se define la
 densidad de estados $\rho(M)$ de forma que $\int_{M_0}^M dm \rho(m)$ proporcione el número total
-de estados con masa $M$ (el límite de integración no es cero porque la densidad de estados deducida
+de estados con masa $M$ (el límite inferior de integración no es cero porque la densidad de estados deducida
 solo es aplicable para altas energías).
 
 En el caso de cuerdas bosónicas cerradas, la densidad de estados en función de la masa es
@@ -328,7 +328,12 @@ La importancia de este resultado es que permite calcular la energía libre en es
 \subsection{Formulación invariante modular}
 \label{sec:taq}
 
-Se ha llegado a una expresión cuyo integrando no es invariante modular. Es decir, las
+Otra interpretación alternativa se basa en que al hacer la integral de camino hemos de sumar sobre 
+todas las métricas posibles definidas en el toro, que se describen mediante el parámetro $\tau$.
+Debido a la a invariancia de la worldsheet bajo reparametrizaciones y transformaciones de Weyl,
+las métricas relacionadas mediante una transformación modular son equivalentes.
+Pero se ha llegado a una expresión cuyo integrando no es invariante modular.
+Es decir, las
 transformaciones modulares $\tau\to\tau+1$ y $\tau\to-1/\tau$ en el integrando modifican el resultado
 de la integral.
 Cualquier punto del plano complejo puede ser llevado al dominio fundamental,
